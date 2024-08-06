@@ -1,0 +1,53 @@
+{
+    "name": "Maria-MD",
+    "description": "A WhatsApp bot based on Baileysjs with Multi-Device support",
+    "repository": "https://github.com/AYUSH-PANDEY023/Maria-Md",
+    "logo": "https://telegra.ph/file/351133422917a8bd7d776.jpg",
+    "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+      "env": {
+       "OWNER_NAME": {
+      "description": "Put Owner Name Here"
+    },
+        "OWNER_NUMBER": {
+      "description": "Put your number here"
+    },
+         "BOTNAME": {
+      "description": "Name of your bot. Ex: - Maria-Bot"
+    },
+     "PREFIX": {
+      "description": "set your bot prefix here ex:- '!' "
+     },
+    "AUTHOR": {
+      "description": "set your bot author name here"
+    },
+    "STICKER": {
+      "description": "set your bot sticker package name ex:- Ayush"
+    },
+     "id": {
+      "description": "Put your session id here"
+    },     
+     "PM_BLOCKER": {
+      "description": "type True for enable Pm blocker"
+    },
+     "WELCOME": {
+      "description": "Type True for enable welcome message"
+    }     
+  },
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      },
+      {
+        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+      },
+      {
+        "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+      }
+    ],
+     "formation": {
+          "worker": {
+              "quantity": 1,
+              "size": "eco"
+          }
+     }
+}
