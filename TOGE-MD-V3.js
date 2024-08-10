@@ -3106,7 +3106,7 @@ let wallmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: wallmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -3125,11 +3125,11 @@ let wallmsg = generateWAMessageFromContent(from, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -3139,8 +3139,8 @@ let wallmsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -3188,7 +3188,7 @@ await Maria.relayMessage(wallmsg.key.remoteJid, wallmsg.message, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: snapblendmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -3206,11 +3206,11 @@ await Maria.relayMessage(wallmsg.key.remoteJid, wallmsg.message, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -3220,8 +3220,8 @@ contextInfo: {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -3296,11 +3296,11 @@ let othmsg = generateWAMessageFromContent(from, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -3310,8 +3310,8 @@ let othmsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -3372,11 +3372,11 @@ await Maria.relayMessage(othmsg.key.remoteJid, othmsg.message, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -3386,8 +3386,8 @@ await Maria.relayMessage(othmsg.key.remoteJid, othmsg.message, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -3409,7 +3409,7 @@ await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
 ┃ *👨‍✈️ Creator:* ${ownername}
 ┃ *💻 RUNTIME:* ${runtime(process.uptime())}
 ┃ *📅 TODAY:* ${Ayuxxdate}
-┃ *💠 Github:* https://github.com/AYUSH-PANDEY023/Maria-MD
+┃ *💠 Github:* https://github.com/toge012345/TOGE-MD-V3
 ┃ *💬MESSAGE:* 𝙔𝙀𝙎! 𝙄 𝘼𝙈 𝘼𝙇𝙄𝙑𝙀 𝘽𝘼𝘽𝙔😚!!
 ┗━━━━━━━━━━━━━━━᯽
 _Please Select Button Below_
@@ -3429,7 +3429,7 @@ let msg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3473,8 +3473,8 @@ let msg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -3507,7 +3507,7 @@ let liistmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3575,8 +3575,8 @@ let liistmsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -3629,7 +3629,7 @@ case 'profile':
     try {
         pfp = await Maria.profilePictureUrl(m.sender, 'image');
     } catch (e) {
-        pfp = 'https://wallpapercave.com/wp/wp10524580.jpg';
+        pfp = 'https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg';
     }
 
     const profilexx = `*「🎀Profile Info🎀」*\n\n🏮 *Username* : ${pushname}\n🎗️ *About* : ${bioo}\n👑 *Admin* : ${adn}\n`;
@@ -3784,7 +3784,7 @@ Maria.sendMessage(from, {text:  `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw
 if (!AntiNsfw) return reply('Already deactivated')
 let off = isnsfw.indexOf(from)
 isnsfw.splice(off, 1)
-fs.writeFileSync('./Gallery/database/nsfw.json', JSON.stringify(isnsfw))
+fs.writeFileSync('./Media/database/nsfw.json', JSON.stringify(isnsfw))
 reply('Successfully deactivating nsfw mode in this group ✔️')
 } else {
   await reply(`*Kindly input the choice as follows:*
@@ -3814,7 +3814,7 @@ case 'ribbons':
         case 'blowjob':
  if (!m.isGroup) return reply(mess.group);
    if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Gallery/nsfw/blowjob.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/blowjob.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3822,7 +3822,7 @@ break;
 case 'cum':
  if (!m.isGroup) return reply(mess.group);
    if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Gallery/nsfw/cum.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/cum.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3830,7 +3830,7 @@ break;
 case 'foot':
  if (!m.isGroup) return reply(mess.group); 
   if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Gallery/nsfw/foot.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/foot.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3838,7 +3838,7 @@ break;
 case 'gangbang':
  if (!m.isGroup) return reply(mess.group);
    if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Gallery/nsfw/gangbang.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/gangbang.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3846,7 +3846,7 @@ break;
 case 'hentai':
  if (!m.isGroup) return reply(mess.group);
    if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Gallery/nsfw/hentai.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/hentai.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3854,7 +3854,7 @@ break;
 case 'pussy':
  if (!m.isGroup) return reply(mess.group);   
 if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Gallery/nsfw/pussy.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/pussy.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3862,7 +3862,7 @@ break;
 case 'ass':
  if (!m.isGroup) return reply(mess.group);  
  if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Gallery/nsfw/ass.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/ass.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3915,7 +3915,7 @@ case 'doraemon': {
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               ...mediaData,
-              title: 'Check out this Doraemon wallpaper! 🤖✨\n\n© Ayush Botz.Inc',
+              title: 'Check out this Doraemon wallpaper! 🤖✨\n\n© 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.',
               subtitle: themeemoji,
               hasMediaAttachment: true
             }),
@@ -3974,7 +3974,7 @@ case 'pokemon': {
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               ...mediaData,
-              title: 'Here is a Pokemon wallpaper for you! ⚡🔥\n\n© Ayush Botz.Inc',
+              title: 'Here is a Pokemon wallpaper for you! ⚡🔥\n\n© 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.',
               subtitle: themeemoji,
               hasMediaAttachment: true
             }),
@@ -4034,7 +4034,7 @@ case 'zero-two': {
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               ...mediaData,
-              title: 'Enjoy this Zero-Two wallpaper! ❤️🖤\n\n© Ayush Botz.Inc',
+              title: 'Enjoy this Zero-Two wallpaper! ❤️🖤\n\n© 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.',
               subtitle: themeemoji,
               hasMediaAttachment: true
             }),
@@ -4068,7 +4068,7 @@ case 'zero-two': {
 			if (!quoted) return reply(`Where is the picture?`)
 			if (!/image/.test(mime)) return reply(`Send/Reply Photos With Captions ${prefix + command}`)
 			reply(mess.wait)
-			const { remini } = require('./Gallery/lib/remini')
+			const { remini } = require('./Media/lib/remini')
 			let media = await quoted.download()
 			let proses = await remini(media, "enhance")
 			Maria.sendMessage(m.chat, { image: proses, caption: mess.done}, { quoted: m})
@@ -4199,8 +4199,8 @@ case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH Botz.Inc",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -4243,8 +4243,8 @@ return await Maria.relayMessage(m.chat, msgs.message, {})
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH Botz.Inc",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -4321,7 +4321,7 @@ case 'welcome':
 
 
 case 'git': case 'gitclone':
-if (!text) return reply(`🧩Where is the link?\n🔮Example :\n${prefix}${command} https://github.com/AYUSH-PANDEY023/Maria-Md `)
+if (!text) return reply(`🧩Where is the link?\n🔮Example :\n${prefix}${command} https://github.com/toge012345/TOGE-MD-V3 `)
 if (!isUrl(text) && !text.includes('github.com')) return reply(`Link invalid!!`)
     let repo = text.split('/');
     let url = `https://api.github.com/repos/${repo[3]}/${repo[4]}/zipball`
@@ -4377,7 +4377,7 @@ case 'naturetypography':
 case 'quotesunder':
 case 'shinetext':{
 
-if (!q) return reply(`🔮Example : ${prefix+command} Ayush`) 
+if (!q) return reply(`🔮Example : ${prefix+command} toge`) 
 let link
 if (/stonetext/.test(command)) link = 'https://photooxy.com/online-3d-white-stone-text-effect-utility-411.html'
 if (/writeart/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html'
@@ -4416,7 +4416,7 @@ if (!m.isGroup) return replay(mess.grouponly)
             let [poll, opt] = text.split("|")
             if (text.split("|") < 2)
                 return await reply(
-                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Ayush,Maria,Owner...`
+                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|togev3,toge,Owner...`
                 )
             let options = []
             for (let i of opt.split(',')) {
@@ -4461,12 +4461,12 @@ https://chat.whatsapp.com/${response}
         break;
  case 'p':
 case 'ping': 
-    let thumbnail = './Gallery/thumb.jpg';
+    let thumbnail = './Media/thumb.jpg';
     let fgg = {
         key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' },
         message: {
             contactMessage: {
-                displayName: 'MARIA-MD 📱',
+                displayName: 'TOGE-MD-V3 📱',
                 vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:MARIA-MD 📱\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
             }
         }
@@ -4500,17 +4500,11 @@ case 'ping':
 case 'developer':
 case 'dev':
     const devmod = `  🍥 *Moderators* 🍥\n\n
-*🎫Ayush* @919931122319
-
-*🎫xeon* @916909137213
-
-*🎫Pikachu* @918811074852
-
-*🎫OldUser* @918602239106
- \n
+*🎫TOGE INUMAKI* @24105114159
+\n
 \n📛*Don't Spam them to avoid Blocking !*\n\n For any help, type *${prefix}support* and ask in the group.\n\n*✨️Thanks for using Maria-Md* `;
 
-    Maria.sendMessage(m.chat, { text: devmod, mentions: ["919931122319@s.whatsapp.net", "918811074852@s.whatsapp.net", "916909137213@s.whatsapp.net","918602239106@s.whatsapp.net"] }, { quoted: m });
+    Maria.sendMessage(m.chat, { text: devmod, mentions: ["24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net","24102150169@s.whatsapp.net"] }, { quoted: m });
     break;
 
 
@@ -4559,11 +4553,11 @@ case 'dice': {
         let resultMessage;
 
         if (playerNumber > mariaNumber) {
-            resultMessage = `🎲 You chose ${playerNumber}! Maria rolled a ${mariaNumber}. 🏆 You win! 🎉`;
+            resultMessage = `🎲 You chose ${playerNumber}! TOGE-MD-V3 rolled a ${mariaNumber}. 🏆 You win! 🎉`;
         } else if (playerNumber < mariaNumber) {
-            resultMessage = `🎲 You chose ${playerNumber}! Maria rolled a ${mariaNumber}. 😞 You lose! 💔`;
+            resultMessage = `🎲 You chose ${playerNumber}! TOGE-MD-V3 rolled a ${mariaNumber}. 😞 You lose! 💔`;
         } else {
-            resultMessage = `🎲 You chose ${playerNumber}! Maria rolled a ${mariaNumber}. 🤝 It's a tie! 😅`;
+            resultMessage = `🎲 You chose ${playerNumber}! TOGE-MD-V3 rolled a ${mariaNumber}. 🤝 It's a tie! 😅`;
         }
 
         caption = `🎲 *Dice Roll Game* 🎲\n`;
@@ -4609,7 +4603,7 @@ case 'poker': {
         if (userScore > mariaScore) {
             resultMessage += `\t\t\uD83C\uDF89 Congratulations! You win! \uD83C\uDF89`;
         } else if (userScore < mariaScore) {
-            resultMessage += `\t\t\uD83D\uDE22 Better luck next time. Maria wins. \uD83D\uDE22`;
+            resultMessage += `\t\t\uD83D\uDE22 Better luck next time. toge wins. \uD83D\uDE22`;
         } else {
             resultMessage += `\t\t\uD83C\uDF9D It's a tie! \uD83C\uDF9D`;
         }
@@ -4721,7 +4715,7 @@ caption += `🟣 *Density:* ${responsee.density} g/mL\n`;
 caption += `⚫ *Shells:* ${responsee.shells.join(", ")}\n`;
 caption += `🌐 *URL:* ${responsee.source}\n\n`;
 caption += `💬 *Summary:* ${responsee.summary}\n`;
-    await Maria.sendMessage(from,  {image: {url: 'https://graph.org/file/c8ad7dc322c0b9b7eca8f.jpg'},caption: caption}, {quoted: m });
+    await Maria.sendMessage(from,  {image: {url: 'https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg: caption}, {quoted: m });
 break;
 
 
@@ -4820,7 +4814,7 @@ break;
   
 case 'google': {
 Maria.sendMessage(from, { react: { text: "🔎", key: m.key }}) 
-if (!q) return reply(`Example : ${prefix + command} 𝘈𝘺𝘶𝘴𝘩 𝘱𝘢𝘯𝘥𝘦𝘺`)
+if (!q) return reply(`Example : ${prefix + command} toge012345`)
 let google = require('google-it')
 google({'query': text}).then(res => {
 let teks = `「🏮 *Google Search Engine*🏮」 \n\n
@@ -4947,7 +4941,7 @@ case 'chat':
         
 case "info":
             Maria.sendMessage(from, { react: { text: "", key: m.key }}) 
-        let ifx = `❁ ════ ❃•💙 *MARIA* 💙•❃ ════ ❁
+        let ifx = `❁ ════ ❃•💙 *TOGE-MD-V3* 💙•❃ ════ ❁
 
 \`\`\`A FULL FLEDGED MULTI DEVICE WHATSAPP BOT WITH COOL FEATURES\`\`\`
 
@@ -4964,7 +4958,7 @@ case "info":
 ❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
 \`\`\`Feel free to open issues regarding any problems or if you have any feature feel free to contact owner by typing ${prefix}owner or ${prefix}mods`
 
-Maria.sendMessage(m.chat, { image: { url: "https://graph.org/file/c8ad7dc322c0b9b7eca8f.jpg" }, caption: ifx, gifPlayback: true }, { quoted: m });
+Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg" }, caption: ifx, gifPlayback: true }, { quoted: m });
         break;
 
 
@@ -4974,7 +4968,7 @@ Maria.sendMessage(m.chat, { image: { url: "https://graph.org/file/c8ad7dc322c0b9
         let tifx = `*𝚃𝙴𝚁𝙼𝚜 𝙰𝙽𝙳 𝙲𝙾𝙽𝙳𝙸𝚃𝙸𝙾𝙽*\n\n
 ⍟ *────────────────* ⍟ 
 
-📝 Note: Beware of fake Maria-MD bots! People may falsely claim to represent Maria-MD. Please exercise caution.
+📝 Note: Beware of fake TOGE-MD-V3 bots! People may falsely claim to represent TOGE-MD-V3. Please exercise caution.
 
 _Whatsapp Bots have become increasingly popular, but with that comes the risk of encountering fake accounts. Stay vigilant._
 
@@ -4991,11 +4985,11 @@ _We will update the bot's terms and conditions periodically, so it's your respon
 _If you have any questions regarding our terms, please reach out to us._
 _For everything else, use common sense._
 
-*FUTURE IS NOW🚀~MARIA-MD*
-*_🚀Team Ayush_*
+*FUTURE IS NOW🚀~TOGE-MD-V3*
+*_🚀Team toge_*
 
 ⍟ *────────────────* ⍟`
- let mariajpg= "https://graph.org/file/c8ad7dc322c0b9b7eca8f.jpg" 
+ let mariajpg= "https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg" 
  
 let tifxmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -5012,7 +5006,7 @@ let tifxmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image: { url: "https://graph.org/file/c8ad7dc322c0b9b7eca8f.jpg" }}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image: { url: "https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg" }}, { upload: Maria.waUploadToServer})), 
             title: tifx,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -5022,11 +5016,11 @@ let tifxmsg = generateWAMessageFromContent(from, {
 
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -5036,8 +5030,8 @@ let tifxmsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -5089,8 +5083,8 @@ case '': {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
