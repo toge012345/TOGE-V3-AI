@@ -29,8 +29,8 @@ const store = makeInMemoryStore({
     })
 })
 
-let phoneNumber = "919931122319"
-let owner = JSON.parse(fs.readFileSync('./Gallery/database/owner.json'))
+let phoneNumber = "24105114159"
+let owner = JSON.parse(fs.readFileSync('./Media/database/owner.json'))
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
 const useMobile = process.argv.includes("--mobile")
@@ -73,18 +73,18 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +919931122319")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +24105114159")))
             process.exit(0)
          }
       } else {
-         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number\nFor example: +919931122319 : `)))
+         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number\nFor example: +24105114159 : `)))
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          // Ask again when entering the wrong number
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +919931122319")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +24105114159")))
 
-            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number please\nFor example: +919931122319: `)))
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number please\nFor example: +24105114159: `)))
             phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
             rl.close()
          }
@@ -111,7 +111,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
             if (!Maria.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
             if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
             const m = smsg(Maria, mek, store)
-            require("./Heart")(Maria, m, chatUpdate, store)
+            require("./TOGE-MD-V3")(Maria, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }
@@ -122,7 +122,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await Maria.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Maria.getName(i + '@s.whatsapp.net')}\nFN:${await Maria.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:okeae2410@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/cak_haho\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Maria.getName(i + '@s.whatsapp.net')}\nFN:${await Maria.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:togeoff2@gmail.com@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/lawliet.kfx\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
 	Maria.sendMessage(jid, { contacts: { displayName: global.ownername, contacts: list }, ...opts }, { quoted })
@@ -171,10 +171,10 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
 Maria.ev.on("connection.update",async  (s) => {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
-console.log(chalk.green('🟨Welcome to Maria-md'));
+console.log(chalk.green('🟨Welcome to TOGE-MD-V3'));
 console.log(chalk.gray('\n\n🚀Initializing...'));
            await delay(1000 * 2) 
-            Maria.groupAcceptInvite("FGPKxVnjgJ7KnBGiDeb4ij")
+            Maria.groupAcceptInvite("FGLKxVnjgJ7KnBGiTeb4ij")
             
 console.log(chalk.cyan('\n\n🥵Connected'));
 
@@ -184,7 +184,7 @@ Maria.sendMessage(Maria.user.id, {
 ᴘʀᴇꜰɪx: [ ${prefix} ]\n
 ᴄᴏᴍᴍᴀɴᴅꜱ: 246\n
 ᴠᴇʀꜱɪᴏɴ: 3.0\n
-ᴄʀᴇᴀᴛᴏʀ: ᴀʏᴜꜱʜ ᴘᴀɴᴅᴇʏ\n
+ᴄʀᴇᴀᴛᴏʀ: toge012345\n
 _ᴛʏᴘᴇ ${prefix}ᴀʟɪᴠᴇ ᴛᴏ ᴜꜱᴇ ᴛʜᴇ ʙᴏᴛ_ 🤖
  `
 });
@@ -306,7 +306,7 @@ async function getMessage(key){
             return msg?.message
         }
         return {
-            conversation: "MARIA Bot Here!"
+            conversation: "TOGE-MD-V3 Bot Here!"
         }
     }
     Maria.ev.on('messages.update', async chatUpdate => {
@@ -343,12 +343,12 @@ for (let num of participants) {
 try {
 ppuser = await Maria.profilePictureUrl(num, 'image')
 } catch (err) {
-ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+ppuser = 'https://telegra.ph/file/9c5908211362519d4dda1.jpg'
 }
 try {
 ppgroup = await Maria.profilePictureUrl(anu.id, 'image')
 } catch (err) {
-ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
+ppgroup = 'https://telegra.ph/file/9c5908211362519d4dda1.jpg'
 }
 	
 memb = metadata.participants.length
