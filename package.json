@@ -1,5 +1,5 @@
 {
-  "name": "Maria-Bot",
+  "name": "TOGE-MD-V3",
   "version": "3.0.0",
   "description": "WhatsApp Bot Using Nodejs",
   "main": "index.js",
@@ -13,8 +13,8 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Ayush",
-  "license": "MIT",
+  "author": "toge012345",
+  "license": "Apache-2.0",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@distube/ytdl-core": "latest",
