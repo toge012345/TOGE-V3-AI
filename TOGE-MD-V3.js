@@ -2158,7 +2158,7 @@ break;
                          
                            
   case 'menu': case 'help': case 'h': 
-      const txt = `┏━⍟ *Konichiwa* ⍟
+      const txt = `┏━⍟*Konichiwa*⍟
 ┃✺ 𝕌𝕤𝕖𝕣: ${pushname} 
 ┃✺ 𝔹𝕠𝕥:  ${botname}
 ┃✺ ℙ𝕣𝕖𝕗𝕚𝕩:  *${prefix}*
@@ -2170,174 +2170,169 @@ break;
 ┃✺ ℙ𝕝𝕒𝕥𝕗𝕠𝕣𝕞: ${os.platform()} 
 ┃✺ ℝ𝕦𝕟𝕥𝕚𝕞𝕖: ${runtime(process.uptime())}
 ┃✺ 𝕋𝕠𝕥𝕒𝕝𝕔𝕞𝕕: ${mariafeature()}
+┗━━━━━━━━━━━━━━━⊛ ${readmore}
+
+┏━⍟*🧧GENERAL🧧*⍟
+┃✺ ${prefix}hi
+┃✺ ${prefix}dev
+┃✺ ${prefix}info
+┃✺ ${prefix}support
+┃✺ ${prefix}tutorial
+┃✺ ${prefix}rules
+┃✺ ${prefix}term
+┃✺ ${prefix}help
+┃✺ ${prefix}runtime
+┃✺ ${prefix}ping
+┃✺ ${prefix}owner
+┃✺ ${prefix}script
 ┗━━━━━━━━━━━━━━━⊛
-
-┌──⊰ _*🧧GENERAL🧧*_
-│⊳ 🌿 ${prefix}hi
-│⊳ 🌿 ${prefix}dev
-│⊳ 🌿 ${prefix}info
-│⊳ 🌿 ${prefix}support
-│⊳ 🌿 ${prefix}tutorial
-│⊳ 🌿 ${prefix}rules
-│⊳ 🌿 ${prefix}term
-│⊳ 🌿 ${prefix}help
-│⊳ 🌿 ${prefix}runtime
-│⊳ 🌿 ${prefix}ping
-│⊳ 🌿 ${prefix}owner
-│⊳ 🌿 ${prefix}script
-
+┏━⍟*🎓Education🎓*⍟
+┃✺ ${prefix}element 
+┃✺ ${prefix}calculator 
+┃✺ ${prefix}sciencefact
+┃✺ ${prefix}sciencenews
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟*💻Coding💻*⍟
+┃✺ ${prefix}exec 
+┃✺ ${prefix}run
+┃✺ ${prefix}gitclone
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟*🧩OWNER🧩*⍟
+┃✺ ${prefix}session
+┃✺ ${prefix}join
+┃✺ ${prefix}mode
+┃✺ ${prefix}shutdown
+┃✺ ${prefix}restart
+┃✺ ${prefix}autoread
+┃✺ ${prefix}autotyping
+┃✺ ${prefix}autorecording
+┃✺ ${prefix}autorecordtyp
+┃✺ ${prefix}autobio
+┃✺ ${prefix}autoswview
+┃✺ ${prefix}setppbot
+┃✺ ${prefix}stealdp
+┃✺ ${prefix}block
+┃✺ ${prefix}unblock
+┃✺ ${prefix}backup
+┃✺ ${prefix}getcase
+┃✺ ${prefix}creategc
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟*👮🏻‍♂️GROUP👮🏻‍♂️*⍟
+┃✺ ${prefix}antilink
+┃✺ ${prefix}closetime
+┃✺ ${prefix}opentime
+┃✺ ${prefix}kick
+┃✺ ${prefix}promote
+┃✺ ${prefix}promoteall
+┃✺ ${prefix}demote
+┃✺ ${prefix}demoteall
+┃✺ ${prefix}joinrequest
+┃✺ ${prefix}setdesc
+┃✺ ${prefix}setppgc
+┃✺ ${prefix}tagall
+┃✺ ${prefix}hidetag
+┃✺ ${prefix}totag
+┃✺ ${prefix}group
+┃✺ ${prefix}editinfo
+┃✺ ${prefix}gclink
+┃✺ ${prefix}revoke
+┃✺ ${prefix}listonline
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟*🎉FUN🎉*⍟
+┃✺ ${prefix}truth
+┃✺ ${prefix}dare
+┃✺ ${prefix}couple 
+┃✺ ${prefix}Ship
+┃✺ ${prefix}insult 
+┃✺ ${prefix}flirt
+┃✺ ${prefix}shayari
+┃✺ ${prefix}joke
+┃✺ ${prefix}soulmate
+┃✺ ${prefix}checkdeath
+┃✺ ${prefix}uglycheck
+┃✺ ${prefix}lovelycheck
+┃✺ ${prefix}prettycheck
+┃✺ ${prefix}hornycheck
+┃✺ ${prefix}lesbiancheck
+┃✺ ${prefix}lesbicheck
+┃✺ ${prefix}lesbiancheck
+┃✺ ${prefix}cutecheck
+┃✺ ${prefix}gaycheck
+┃✺ ${prefix}greatcheck
+┃✺ ${prefix}awesomecheck 
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟*📂download📂*⍟
+┃✺ ${prefix}play
+┃✺ ${prefix}ytmp3
+┃✺ ${prefix}ytmp4
+┃✺ ${prefix}igimage 
+┃✺ ${prefix}igvideo 
+┃✺ ${prefix}pinterest
+┃✺ ${prefix}apk
+┃✺ ${prefix}mediafire
+┃✺ ${prefix}gitclone
+┃✺ ${prefix}telestick
+┃✺ ${prefix}tgs
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟*✨️WALLPAPER✨️*⍟
+┃✺ ${prefix}Doraemon
+┃✺ ${prefix}pokemon 
+┃✺ ${prefix}zero-two 
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟*🎐SnapBlend🎐*
+┃✺ ${prefix}shadow
+┃✺ ${prefix}write
+┃✺ ${prefix}smoke
+┃✺ ${prefix}burnpaper
+┃✺ ${prefix}romantic
+┃✺ ${prefix}writeart
+┃✺ ${prefix}rainboweffect
+┃✺ ${prefix}smokyneon
+┃✺ ${prefix}underwaterocean
+┃✺ ${prefix}coffecup
+┃✺ ${prefix}doublelove
+┃✺ ${prefix}undergrass
+┃✺ ${prefix}love
+┃✺ ${prefix}narutobanner
+┃✺ ${prefix}shinetext
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟*⛩️OTHERS⛩️*⍟
+┃✺ ${prefix}sticker
+┃✺ ${prefix}qc
+┃✺ ${prefix}smeme
+┃✺ ${prefix}take
+┃✺ ${prefix}getbio
+┃✺ ${prefix}toimage
+┃✺ ${prefix}tovideo
+┃✺ ${prefix}toaudio
+┃✺ ${prefix}tomp3
+┃✺ ${prefix}tovn
+┃✺ ${prefix}togif
+┃✺ ${prefix}tourl
+┃✺ ${prefix}toqr
+┃✺ ${prefix}toviewonce
+┃✺ ${prefix}fliptext
+┃✺ ${prefix}emojimix
+┃✺ ${prefix}circlevideo
+┃✺ ${prefix}google
+┃✺ ${prefix}pinterest
+┃✺ ${prefix}dalle
+┃✺ ${prefix}gpt
+┃✺ ${prefix}say
+┃✺ ${prefix}tts
+┃✺ ${prefix}obfuscate
 └──────────⊰
-┌──⊰ _*🎓Education🎓*_
-│⊳ 📚 ${prefix}element 
-│⊳ 📚 ${prefix}calculator 
-│⊳ 📚 ${prefix}sciencefact
-│⊳ 📚 ${prefix}sciencenews
-└──────────⊰
-┌──⊰ _*💻Coding💻*_
-│⊳ 🌀${prefix}exec
-│⊳ 🌀${prefix}run
-│⊳ 🌀${prefix}gitclone
-└──────────⊰
-┌──⊰ _*🧩OWNER🧩*_
-│⊳ ♠️ ${prefix}session
-│⊳ ♠️ ${prefix}join
-│⊳ ♠️ ${prefix}mode *[self/public]*
-│⊳ ♠️ ${prefix}shutdown
-│⊳ ♠️ ${prefix}restart
-│⊳ ♠️ ${prefix}autoread *[option]*
-│⊳ ♠️ ${prefix}autotyping *[option]*
-│⊳ ♠️ ${prefix}autorecording *[option]*
-│⊳ ♠️ ${prefix}autorecordtyp *[option]*
-│⊳ ♠️ ${prefix}autobio *[option]*
-│⊳ ♠️ ${prefix}autoswview *[option]*
-│⊳ ♠️ ${prefix}setppbot
-│⊳ ♠️ ${prefix}stealdp
-│⊳ ♠️ ${prefix}block
-│⊳ ♠️ ${prefix}unblock
-│⊳ ♠️ ${prefix}backup
-│⊳ ♠️ ${prefix}getcase
-│⊳ ♠️ ${prefix}creategc
-└──────────⊰
-┌──⊰ _*👮🏻‍♂️GROUP👮🏻‍♂️*_
-│⊳ 🍁 ${prefix}antilink
-│⊳ 🍁 ${prefix}closetime
-│⊳ 🍁 ${prefix}opentime
-│⊳ 🍁 ${prefix}kick
-│⊳ 🍁 ${prefix}promote
-│⊳ 🍁 ${prefix}promoteall
-│⊳ 🍁 ${prefix}demote
-│⊳ 🍁 ${prefix}demoteall
-│⊳ 🍁 ${prefix}joinrequest
-│⊳ 🍁 ${prefix}setdesc
-│⊳ 🍁 ${prefix}setppgc
-│⊳ 🍁 ${prefix}tagall
-│⊳ 🍁 ${prefix}hidetag
-│⊳ 🍁 ${prefix}totag
-│⊳ 🍁 ${prefix}group *[option]*
-│⊳ 🍁 ${prefix}editinfo
-│⊳ 🍁 ${prefix}gclink
-│⊳ 🍁 ${prefix}revoke
-│⊳ 🍁 ${prefix}listonline
-└──────────⊰
-┌──⊰ _*🎉FUN🎉*_
-│⊳🎟️ ${prefix}truth
-│⊳🎟️ ${prefix}dare
-│⊳🎟️ ${prefix}couple 
-│⊳🎟️ ${prefix}Ship
-│⊳🎟️ ${prefix}insult 
-│⊳🎟️ ${prefix}flirt
-│⊳🎟️ ${prefix}shayari
-│⊳🎟️ ${prefix}joke
-│⊳🎟️ ${prefix}soulmate
-│⊳🎟️ ${prefix}checkdeath
-│⊳🎟️ ${prefix}uglycheck
-│⊳🎟️ ${prefix}lovelycheck
-│⊳🎟️ ${prefix}prettycheck
-│⊳🎟️ ${prefix}hornycheck
-│⊳🎟️ ${prefix}lesbiancheck
-│⊳🎟️ ${prefix}lesbicheck
-│⊳🎟️ ${prefix}lesbiancheck
-│⊳🎟️ ${prefix}cutecheck
-│⊳🎟️ ${prefix}gaycheck
-│⊳🎟️ ${prefix}greatcheck
-│⊳🎟️ ${prefix}awesomecheck 
-└──────────⊰
-┌──⊰ _*📂download📂*_
-│⊳ 📥 ${prefix}play
-│⊳ 📥 ${prefix}ytmp3
-│⊳ 📥 ${prefix}ytmp4
-│⊳ 📥 ${prefix}igimage 
-│⊳ 📥 ${prefix}igvideo 
-│⊳ 📥 ${prefix}pinterest
-│⊳ 📥 ${prefix}apk
-│⊳ 📥 ${prefix}mediafire
-│⊳ 📥 ${prefix}gitclone
-│⊳ 📥 ${prefix}telestick
-│⊳ 📥 ${prefix}tgs
-└──────────⊰
-┌──⊰ _*✨️WALLPAPER✨️*_
-│⊳ 🎴 ${prefix}Doraemon
-│⊳ 🎴 ${prefix}pokemon 
-│⊳ 🎴 ${prefix}zero-two 
-└──────────⊰
-┌──⊰ _*🎐SnapBlend🎐*_
-│⊳🎀 ${prefix}shadow
-│⊳🎀 ${prefix}write
-│⊳🎀 ${prefix}smoke
-│⊳🎀 ${prefix}burnpaper
-│⊳🎀 ${prefix}romantic
-│⊳🎀 ${prefix}writeart
-│⊳🎀 ${prefix}rainboweffect
-│⊳🎀 ${prefix}smokyneon
-│⊳🎀 ${prefix}underwaterocean
-│⊳🎀 ${prefix}coffecup
-│⊳🎀 ${prefix}doublelove
-│⊳🎀 ${prefix}undergrass
-│⊳🎀 ${prefix}love
-│⊳🎀 ${prefix}narutobanner
-│⊳🎀 ${prefix}shinetext
-└──────────⊰
-┌──⊰ _*⛩️OTHERS⛩️*_
-│⊳ 🏮 ${prefix}sticker
-│⊳ 🏮 ${prefix}qc
-│⊳ 🏮 ${prefix}smeme
-│⊳ 🏮 ${prefix}take
-│⊳ 🏮 ${prefix}getbio
-│⊳ 🏮 ${prefix}toimage
-│⊳ 🏮 ${prefix}tovideo
-│⊳ 🏮 ${prefix}toaudio
-│⊳ 🏮 ${prefix}tomp3
-│⊳ 🏮 ${prefix}tovn
-│⊳ 🏮 ${prefix}togif
-│⊳ 🏮 ${prefix}tourl
-│⊳ 🏮 ${prefix}toqr
-│⊳ 🏮 ${prefix}toviewonce
-│⊳ 🏮 ${prefix}fliptext
-│⊳ 🏮 ${prefix}emojimix
-│⊳ 🏮 ${prefix}circlevideo
-│⊳ 🏮 ${prefix}google
-│⊳ 🏮 ${prefix}pinterest
-│⊳ 🏮 ${prefix}dalle
-│⊳ 🏮 ${prefix}gpt
-│⊳ 🏮 ${prefix}say
-│⊳ 🏮 ${prefix}tts
-│⊳ 🏮 ${prefix}obfuscate
-└──────────⊰
-┌──⊰ _*🃏Games🃏*_
-│⊳ 🎰 ${prefix}slot
-│⊳ 🎰 ${prefix}poker
-│⊳ 🎰 ${prefix}dice
-│⊳ 🎰 ${prefix}flipcoin
-│⊳ 🎰 ${prefix}Rps
-│⊳ 🎰 ${prefix}guess
-│⊳ 🎰 ${prefix}roulette
-│⊳ 🎰 ${prefix}blackjack
-│⊳ 🎰 ${prefix}compliment
-└──────────⊰
-
-🍂 To enable NSFW (Admin only!), enter  *${prefix}nsfw* 
-
-🍂 Obtain the full list of NSFW commands by typing  *${prefix}nsfwmenu*`
+┏━⍟*🃏Games🃏*⍟
+┃✺ ${prefix}slot
+┃✺ ${prefix}poker
+┃✺ ${prefix}dice
+┃✺ ${prefix}flipcoin
+┃✺ ${prefix}Rps
+┃✺ ${prefix}guess
+┃✺ ${prefix}roulette
+┃✺ ${prefix}blackjack
+┃✺ ${prefix}compliment
+┗━━━━━━━━━━━━━━━⊛`
 
   let menumsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2372,11 +2367,11 @@ break;
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -2386,8 +2381,8 @@ break;
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -2434,7 +2429,7 @@ if (!text) return reply('Where is the text?')
         break
         
         case 'obfus': case 'obfuscate':{
-if (!q) return reply(`Example ${prefix+command} const Maria = require('baileys')`)
+if (!q) return reply(`Example ${prefix+command} const toge = require('baileys')`)
 let meg = await obfus(q)
 reply(`Success
 ${meg.result}`)
@@ -2496,47 +2491,47 @@ case 'public': {
         if (!isNsfw) return reply(mess.nsfw);
         if (!m.isGroup) return reply(mess.group);
         
-        const nsfwmenu=`┌──⊰ _*🔞NSFW 🔞*_
-│⊳ 💦  ${prefix}blowjob
-│⊳ 💦  ${prefix}cum
-│⊳ 💦  ${prefix}foot
-│⊳ 💦  ${prefix}gangbang
-│⊳ 💦  ${prefix}hentai
-│⊳ 💦  ${prefix}pussy
-│⊳ 💦  ${prefix}ass
-│⊳ 💦  ${prefix}trap
-│⊳ 💦  ${prefix}maal
-│⊳ 💦  ${prefix}ʀɪʙʙᴏɴꜱ
-│⊳ 💦  ${prefix}ʜᴀᴛꜱᴜɴᴇᴍɪᴋᴜ
-│⊳ 💦  ${prefix}ʜᴇᴀᴅʙᴀɴᴅ
-│⊳ 💦  ${prefix}ꜰᴏxɢɪʀʟ
-│⊳ 💦  ${prefix}ᴀɴɪᴍᴀʟᴇᴀʀꜱ
-│⊳ 💦  ${prefix}ʙʀᴀ
-│⊳ 💦  ${prefix}ꜱᴋɪʀᴛ
-│⊳ 💦  ${prefix}ʙʀᴇᴀꜱᴛꜱ
-│⊳ 💦  ${prefix}ᴛᴀᴛᴛᴏᴏ
-│⊳ 💦  ${prefix}ᴄʜᴀɪɴ
-└──────────⊰ 
+        const nsfwmenu=`┏━⍟*🔞NSFW 🔞*⍟
+┃✺ ${prefix}blowjob
+┃✺ ${prefix}cum
+┃✺ ${prefix}foot
+┃✺ ${prefix}gangbang
+┃✺ ${prefix}hentai
+┃✺ ${prefix}pussy
+┃✺ ${prefix}ass
+┃✺ ${prefix}trap
+┃✺ ${prefix}maal
+┃✺ ${prefix}ʀɪʙʙᴏɴꜱ
+┃✺ ${prefix}ʜᴀᴛꜱᴜɴᴇᴍɪᴋᴜ
+┃✺ ${prefix}ʜᴇᴀᴅʙᴀɴᴅ
+┃✺ ${prefix}ꜰᴏxɢɪʀʟ
+┃✺ ${prefix}ᴀɴɪᴍᴀʟᴇᴀʀꜱ
+┃✺ ${prefix}ʙʀᴀ
+┃✺ ${prefix}ꜱᴋɪʀᴛ
+┃✺ ${prefix}ʙʀᴇᴀꜱᴛꜱ
+┃✺ ${prefix}ᴛᴀᴛᴛᴏᴏ
+┃✺ ${prefix}ᴄʜᴀɪɴ
+┗━━━━━━━━━━━━━━━⊛ 
 `
-        Maria.sendMessage(m.chat, { image: { url: "./Gallery/nsfw.jpg" }, caption: nsfwmenu }, { quoted: m });
+        Maria.sendMessage(m.chat, { image: { url: "./Media/nsfw.jpg" }, caption: nsfwmenu }, { quoted: m });
         break;
         
 ////////////////////menu_v2.1///////////////////////
    
 case 'generalmenu':
-    const generalmenu = `┌──⊰ _*🧧GENERAL🧧*_
-│⊳ 🌿 ${prefix}hi
-│⊳ 🌿 ${prefix}dev
-│⊳ 🌿 ${prefix}info
-│⊳ 🌿 ${prefix}support
-│⊳ 🌿 ${prefix}rules
-│⊳ 🌿 ${prefix}term
-│⊳ 🌿 ${prefix}help
-│⊳ 🌿 ${prefix}runtime
-│⊳ 🌿 ${prefix}ping
-│⊳ 🌿 ${prefix}owner
-│⊳ 🌿 ${prefix}script
-└──────────⊰
+    const generalmenu = `┏━⍟*🧧GENERAL🧧*⍟
+┃✺ ${prefix}hi
+┃✺ ${prefix}dev
+┃✺ ${prefix}info
+┃✺ ${prefix}support
+┃✺ ${prefix}rules
+┃✺ ${prefix}term
+┃✺ ${prefix}help
+┃✺ ${prefix}runtime
+┃✺ ${prefix}ping
+┃✺ ${prefix}owner
+┃✺ ${prefix}script
+┗━━━━━━━━━━━━━━━⊛
 `
 let gmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2553,7 +2548,7 @@ let gmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: generalmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2571,11 +2566,11 @@ let gmsg = generateWAMessageFromContent(from, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -2585,8 +2580,8 @@ let gmsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -2604,12 +2599,12 @@ await Maria.relayMessage(gmsg.key.remoteJid, gmsg.message, {
     
     
  case 'educationmenu':
-    const educationmenu = `┌──⊰ _*🎓Education🎓*_
-│⊳ 📚 ${prefix}element 
-│⊳ 📚 ${prefix}calculator 
-│⊳ 📚 ${prefix}sciencefact
-│⊳ 📚 ${prefix}sciencenews
-└──────────⊰
+    const educationmenu = `┏━⍟*🎓Education🎓*⍟
+┃✺ ${prefix}element 
+┃✺ ${prefix}calculator 
+┃✺ ${prefix}sciencefact
+┃✺ ${prefix}sciencenews
+┗━━━━━━━━━━━━━━━⊛
 `
 let emsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2626,7 +2621,7 @@ let emsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: educationmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2644,11 +2639,11 @@ let emsg = generateWAMessageFromContent(from, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2659,8 +2654,8 @@ let emsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -2676,11 +2671,11 @@ await Maria.relayMessage(emsg.key.remoteJid, emsg.message, {
     
     
  case 'codingmenu':
-    const codingmenu = `┌──⊰ _*💻Coding💻*_
-│⊳ 🌀${prefix}exec
-│⊳ 🌀${prefix}run
-│⊳ 🌀${prefix}gitclone
-└──────────⊰
+    const codingmenu = `┏━⍟*💻Coding💻*⍟
+┃✺ ${prefix}exec
+┃✺ ${prefix}run
+┃✺ ${prefix}gitclone
+┗━━━━━━━━━━━━━━━⊛
 `
  let cmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2697,7 +2692,7 @@ await Maria.relayMessage(emsg.key.remoteJid, emsg.message, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: codingmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2715,11 +2710,11 @@ await Maria.relayMessage(emsg.key.remoteJid, emsg.message, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2730,8 +2725,8 @@ await Maria.relayMessage(emsg.key.remoteJid, emsg.message, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -2747,26 +2742,26 @@ await Maria.relayMessage(cmsg.key.remoteJid, cmsg.message, {
          
    
  case 'ownermenu':
-    const ownermenu = `┌──⊰ _*🧩OWNER🧩*_
-│⊳ ♠️ ${prefix}session
-│⊳ ♠️ ${prefix}join
-│⊳ ♠️ ${prefix}mode *[self/public]*
-│⊳ ♠️ ${prefix}shutdown
-│⊳ ♠️ ${prefix}restart
-│⊳ ♠️ ${prefix}autoread *[option]*
-│⊳ ♠️ ${prefix}autotyping *[option]*
-│⊳ ♠️ ${prefix}autorecording *[option]*
-│⊳ ♠️ ${prefix}autorecordtyp *[option]*
-│⊳ ♠️ ${prefix}autobio *[option]*
-│⊳ ♠️ ${prefix}autoswview *[option]*
-│⊳ ♠️ ${prefix}setppbot
-│⊳ ♠️ ${prefix}stealdp
-│⊳ ♠️ ${prefix}block
-│⊳ ♠️ ${prefix}unblock
-│⊳ ♠️ ${prefix}backup
-│⊳ ♠️ ${prefix}getcase
-│⊳ ♠️ ${prefix}creategc
-└──────────⊰`
+    const ownermenu = `┏━⍟*🧩OWNER🧩*⍟
+┃✺ ${prefix}session
+┃✺ ${prefix}join
+┃✺ ${prefix}mode
+┃✺ ${prefix}shutdown
+┃✺ ${prefix}restart
+┃✺ ${prefix}autoread
+┃✺ ${prefix}autotyping
+┃✺ ${prefix}autorecording
+┃✺ ${prefix}autorecordtyp
+┃✺ ${prefix}autobio
+┃✺ ${prefix}autoswview
+┃✺ ${prefix}setppbot
+┃✺ ${prefix}stealdp
+┃✺ ${prefix}block
+┃✺ ${prefix}unblock
+┃✺ ${prefix}backup
+┃✺ ${prefix}getcase
+┃✺ ${prefix}creategc
+┗━━━━━━━━━━━━━━━⊛`
 
 let owmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2783,7 +2778,7 @@ let owmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: ownermenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2801,11 +2796,11 @@ let owmsg = generateWAMessageFromContent(from, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2816,8 +2811,8 @@ let owmsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -2832,24 +2827,24 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
  break
      
   case 'groupmenu':
-    const groupmenu = `┌──⊰ _*👮🏻‍♂️GROUP👮🏻‍♂️*_
-│⊳ 🍁 ${prefix}antilink
-│⊳ 🍁 ${prefix}closetime
-│⊳ 🍁 ${prefix}opentime
-│⊳ 🍁 ${prefix}kick
-│⊳ 🍁 ${prefix}promote
-│⊳ 🍁 ${prefix}demote
-│⊳ 🍁 ${prefix}setdesc
-│⊳ 🍁 ${prefix}setppgc
-│⊳ 🍁 ${prefix}tagall
-│⊳ 🍁 ${prefix}hidetag
-│⊳ 🍁 ${prefix}totag
-│⊳ 🍁 ${prefix}group *[option]*
-│⊳ 🍁 ${prefix}editinfo
-│⊳ 🍁 ${prefix}gclink
-│⊳ 🍁 ${prefix}revoke
-│⊳ 🍁 ${prefix}listonline
-└──────────⊰
+    const groupmenu = `┏━⍟*👮🏻‍♂️GROUP👮🏻‍♂️*⍟
+┃✺ ${prefix}antilink
+┃✺ ${prefix}closetime
+┃✺ ${prefix}opentime
+┃✺ ${prefix}kick
+┃✺ ${prefix}promote
+┃✺ ${prefix}demote
+┃✺ ${prefix}setdesc
+┃✺ ${prefix}setppgc
+┃✺ ${prefix}tagall
+┃✺ ${prefix}hidetag
+┃✺ ${prefix}totag
+┃✺ ${prefix}group *[option]*
+┃✺ ${prefix}editinfo
+┃✺ ${prefix}gclink
+┃✺ ${prefix}revoke
+┃✺ ${prefix}listonline
+┗━━━━━━━━━━━━━━━⊛
  `
   let gcmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2866,7 +2861,7 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: groupmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2885,11 +2880,11 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@toge012345\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2900,8 +2895,8 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -2916,29 +2911,29 @@ await Maria.relayMessage(gcmsg.key.remoteJid, gcmsg.message, {
  break
     
   case 'funmenu':
-    const funmenu = `┌──⊰ _*🎉FUN🎉*_
-│⊳🎟️ ${prefix}truth
-│⊳🎟️ ${prefix}dare
-│⊳🎟️ ${prefix}couple 
-│⊳🎟️ ${prefix}Ship
-│⊳🎟️ ${prefix}insult 
-│⊳🎟️ ${prefix}flirt
-│⊳🎟️ ${prefix}shayari
-│⊳🎟️ ${prefix}joke
-│⊳🎟️ ${prefix}soulmate
-│⊳🎟️ ${prefix}checkdeath
-│⊳🎟️ ${prefix}uglycheck
-│⊳🎟️ ${prefix}lovelycheck
-│⊳🎟️ ${prefix}prettycheck
-│⊳🎟️ ${prefix}hornycheck
-│⊳🎟️ ${prefix}lesbiancheck
-│⊳🎟️ ${prefix}lesbicheck
-│⊳🎟️ ${prefix}lesbiancheck
-│⊳🎟️ ${prefix}cutecheck
-│⊳🎟️ ${prefix}gaycheck
-│⊳🎟️ ${prefix}greatcheck
-│⊳🎟️ ${prefix}awesomecheck 
-└──────────⊰
+    const funmenu = `┏━⍟*🎉FUN🎉*⍟
+┃✺ ${prefix}truth
+┃✺ ${prefix}dare
+┃✺ ${prefix}couple 
+┃✺ ${prefix}Ship
+┃✺ ${prefix}insult 
+┃✺ ${prefix}flirt
+┃✺ ${prefix}shayari
+┃✺ ${prefix}joke
+┃✺ ${prefix}soulmate
+┃✺ ${prefix}checkdeath
+┃✺ ${prefix}uglycheck
+┃✺ ${prefix}lovelycheck
+┃✺ ${prefix}prettycheck
+┃✺ ${prefix}hornycheck
+┃✺ ${prefix}lesbiancheck
+┃✺ ${prefix}lesbicheck
+┃✺ ${prefix}lesbiancheck
+┃✺ ${prefix}cutecheck
+┃✺ ${prefix}gaycheck
+┃✺ ${prefix}greatcheck
+┃✺ ${prefix}awesomecheck 
+┗━━━━━━━━━━━━━━━⊛
 `
 let funmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2955,7 +2950,7 @@ let funmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: funmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2974,11 +2969,11 @@ let funmsg = generateWAMessageFromContent(from, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2989,8 +2984,8 @@ let funmsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -3006,19 +3001,19 @@ await Maria.relayMessage(funmsg.key.remoteJid, funmsg.message, {
     
   
    case 'downloadmenu':
-    const downloadmenu = `┌──⊰ _*📂download📂*_
-│⊳ 📥 ${prefix}play
-│⊳ 📥 ${prefix}ytmp3
-│⊳ 📥 ${prefix}ytmp4
-│⊳ 📥 ${prefix}igimage 
-│⊳ 📥 ${prefix}igvideo 
-│⊳ 📥 ${prefix}pinterest
-│⊳ 📥 ${prefix}apk
-│⊳ 📥 ${prefix}mediafire
-│⊳ 📥 ${prefix}gitclone
-│⊳ 📥 ${prefix}telestick
-│⊳ 📥 ${prefix}tgs
-└──────────⊰
+    const downloadmenu = `┏━⍟*📂download📂*⍟
+┃✺ ${prefix}play
+┃✺ ${prefix}ytmp3
+┃✺ ${prefix}ytmp4
+┃✺ ${prefix}igimage 
+┃✺ ${prefix}igvideo 
+┃✺ ${prefix}pinterest
+┃✺ ${prefix}apk
+┃✺ ${prefix}mediafire
+┃✺ ${prefix}gitclone
+┃✺ ${prefix}telestick
+┃✺ ${prefix}tgs
+┗━━━━━━━━━━━━━━━⊛
 `
 let dowmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3035,7 +3030,7 @@ let dowmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Gallery/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: downloadmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -3053,11 +3048,11 @@ let dowmsg = generateWAMessageFromContent(from, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@maria-md\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -3068,8 +3063,8 @@ let dowmsg = generateWAMessageFromContent(from, {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363213314329067@newsletter',
-                  newsletterName: "AYUSH BOTZ INC",
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
                   serverMessageId: 143
                 }
                 }
@@ -3085,11 +3080,11 @@ await Maria.relayMessage(dowmsg.key.remoteJid, dowmsg.message, {
     
     
 case 'wallmenu':
-        const wallmenu=`┌──⊰ _*✨️WALLPAPER✨️*_
-│⊳ 🎴 ${prefix}Doraemon
-│⊳ 🎴 ${prefix}pokemon 
-│⊳ 🎴 ${prefix}zero-two 
-└──────────⊰
+        const wallmenu=`┏━⍟*✨️WALLPAPER✨️*⍟
+┃✺ ${prefix}Doraemon
+┃✺ ${prefix}pokemon 
+┃✺ ${prefix}zero-two 
+┗━━━━━━━━━━━━━━━⊛
 `
 let wallmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3155,23 +3150,23 @@ await Maria.relayMessage(wallmsg.key.remoteJid, wallmsg.message, {
  break
     
   case 'snapblendmenu':
-    const snapblendmenu = `┌──⊰ _*🎐SnapBlend🎐*_
-│⊳🎀 ${prefix}shadow
-│⊳🎀 ${prefix}write
-│⊳🎀 ${prefix}smoke
-│⊳🎀 ${prefix}burnpaper
-│⊳🎀 ${prefix}romantic
-│⊳🎀 ${prefix}writeart
-│⊳🎀 ${prefix}rainboweffect
-│⊳🎀 ${prefix}smokyneon
-│⊳🎀 ${prefix}underwaterocean
-│⊳🎀 ${prefix}coffecup
-│⊳🎀 ${prefix}doublelove
-│⊳🎀 ${prefix}undergrass
-│⊳🎀 ${prefix}love
-│⊳🎀 ${prefix}narutobanner
-│⊳🎀 ${prefix}shinetext
-└──────────⊰
+    const snapblendmenu = `┏━⍟*🎐SnapBlend🎐*⍟
+┃✺ ${prefix}shadow
+┃✺ ${prefix}write
+┃✺ ${prefix}smoke
+┃✺ ${prefix}burnpaper
+┃✺ ${prefix}romantic
+┃✺ ${prefix}writeart
+┃✺ ${prefix}rainboweffect
+┃✺ ${prefix}smokyneon
+┃✺ ${prefix}underwaterocean
+┃✺ ${prefix}coffecup
+┃✺ ${prefix}doublelove
+┃✺ ${prefix}undergrass
+┃✺ ${prefix}Love 
+┃✺ ${prefix}narutobanner
+┃✺ ${prefix}shinetext
+┗━━━━━━━━━━━━━━━⊛
 `
     let snamsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3237,31 +3232,31 @@ await Maria.relayMessage(snamsg.key.remoteJid,  snamsg.message, {
     
     
   case 'othersmenu':
-    const othersmenu = `┌──⊰ _*⛩️OTHERS⛩️*_
-│⊳ 🏮 ${prefix}sticker
-│⊳ 🏮 ${prefix}qc
-│⊳ 🏮 ${prefix}smeme
-│⊳ 🏮 ${prefix}take
-│⊳ 🏮 ${prefix}toimage
-│⊳ 🏮 ${prefix}tovideo
-│⊳ 🏮 ${prefix}toaudio
-│⊳ 🏮 ${prefix}tomp3
-│⊳ 🏮 ${prefix}tovn
-│⊳ 🏮 ${prefix}togif
-│⊳ 🏮 ${prefix}tourl
-│⊳ 🏮 ${prefix}toqr
-│⊳ 🏮 ${prefix}toviewonce
-│⊳ 🏮 ${prefix}fliptext
-│⊳ 🏮 ${prefix}emojimix
-│⊳ 🏮 ${prefix}circlevideo
-│⊳ 🏮 ${prefix}google
-│⊳ 🏮 ${prefix}pinterest
-│⊳ 🏮 ${prefix}dalle
-│⊳ 🏮 ${prefix}gpt
-│⊳ 🏮 ${prefix}say
-│⊳ 🏮 ${prefix}tts
-│⊳ 🏮 ${prefix}obfuscate
-└──────────⊰
+    const othersmenu = `┏━⍟*⛩️OTHERS⛩️*⍟
+┃✺ ${prefix}sticker
+┃✺ ${prefix}qc
+┃✺ ${prefix}smeme
+┃✺ ${prefix}take
+┃✺ ${prefix}toimage
+┃✺ ${prefix}tovideo
+┃✺ ${prefix}toaudio
+┃✺ ${prefix}tomp3
+┃✺ ${prefix}tovn
+┃✺ ${prefix}togif
+┃✺ ${prefix}tourl
+┃✺ ${prefix}toqr
+┃✺ ${prefix}toviewonce
+┃✺ ${prefix}fliptext
+┃✺ ${prefix}emojimix
+┃✺ ${prefix}circlevideo
+┃✺ ${prefix}google
+┃✺ ${prefix}pinterest
+┃✺ ${prefix}dalle
+┃✺ ${prefix}gpt
+┃✺ ${prefix}say
+┃✺ ${prefix}tts
+┃✺ ${prefix}obfuscate
+┗━━━━━━━━━━━━━━━⊛
 `
 let othmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3327,17 +3322,17 @@ await Maria.relayMessage(othmsg.key.remoteJid, othmsg.message, {
     
        
   case 'gamemenu':
-    const gamesmenu = `┌──⊰ _*🃏Games🃏*_
-│⊳ 🎰 ${prefix}slot
-│⊳ 🎰 ${prefix}poker
-│⊳ 🎰 ${prefix}dice
-│⊳ 🎰 ${prefix}flipcoin
-│⊳ 🎰 ${prefix}Rps
-│⊳ 🎰 ${prefix}guess
-│⊳ 🎰 ${prefix}roulette
-│⊳ 🎰 ${prefix}blackjack
-│⊳ 🎰 ${prefix}compliment
-└──────────⊰
+    const gamesmenu = `┏━⍟*🃏Games🃏*⍟
+┃✺ ${prefix}slot
+┃✺ ${prefix}poker
+┃✺ ${prefix}dice
+┃✺ ${prefix}flipcoin
+┃✺ ${prefix}Rps
+┃✺ ${prefix}guess
+┃✺ ${prefix}roulette
+┃✺ ${prefix}blackjack
+┃✺ ${prefix}compliment
+┗━━━━━━━━━━━━━━━⊛
 `
     let gamemsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -3460,7 +3455,7 @@ let msg = generateWAMessageFromContent(from, {
    },
                  {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Deployment Tutorial 📺\",\"url\":\"https://youtu.be/bX6oGRiFs9A?si=HSgTLqWvS65nn-R1\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Deployment Tutorial 📺\",\"url\":\"https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\",\"merchant_url\":\"https://www.google.com\"}"
               },          
               {
                  "name": "cta_url",
