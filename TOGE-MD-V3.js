@@ -170,7 +170,7 @@ const getRandomImage = (directory) => {
   }
 };
 
-const imageDirectory = './Gallery/Theme-logo';
+const imageDirectory = './Media/Theme-logo';
   const randomImage = getRandomImage(imageDirectory);
 
 //group chat msg by Ayush
@@ -239,7 +239,7 @@ async function Telesticker(url) {
             data2 = await axios(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`)
             result = {
             status: 200,
-            author: '💙𓆩‎✘AʏᴜSʜ✘𓆪_✰',
+            author: 'toge012345',
             url: "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + data2.data.result.file_path
             }
             mariayresult.push(result)
@@ -722,7 +722,7 @@ break;
             case 'delsession':
             case 'clearsession': {
                 if (!isCreator) return reply(mess.owner)
-                fs.readdir("./Gallery/session", async function(err, files) {
+                fs.readdir("./Media/session", async function(err, files) {
                     if (err) {
                         console.log('Unable to scan directory: ' + err);
                         return reply('Unable to scan directory: ' + err);
@@ -1021,9 +1021,9 @@ break;
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
-                                title: ' *🎐Maria Broadcast🎐* ',
+                                title: ' *🎐 TOGE-MD-V3 BROADCAST🎐* ',
                                 body: `Sent ${i.length} Group`,
-                                thumbnailUrl: 'https://telegra.ph/file/3fd18ee11521117c7c882.jpg',
+                                thumbnailUrl: 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg',
                                 sourceUrl: global.link,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -1037,7 +1037,7 @@ break;
             case 'getcase':
                 if (!isCreator) return reply(mess.owner)
                 const getCase = (cases) => {
-                    return "case" + `'${cases}'` + fs.readFileSync("Heart.js").toString().split('case \'' + cases + '\'')[1].split("break;")[0] + "break;"
+                    return "case" + `'${cases}'` + fs.readFileSync("TOGE-MD-V3.js").toString().split('case \'' + cases + '\'')[1].split("break;")[0] + "break;"
                 }
                 reply(`${getCase(q)}`)
                 break;
@@ -1288,7 +1288,7 @@ case 'tag': case 'tagall': case 'all':{
             { detectLink: true }
           );
         }
-        await Maria.sendMessage(m.chat, { video: { url: `https://media.tenor.com/hzWYhzhMTeEAAAPo/maria-useless.mp4` }, caption: 'I sent you the Group Link in personal message.\n Pls check.', gifPlayback: true }, { quoted: m });
+        await Maria.sendMessage(m.chat, { video: { url: `https://telegra.ph/file/71df5c808c38683e8b304.mp4` }, caption: 'I sent you the Group Link in personal message.\n Pls check.', gifPlayback: true }, { quoted: m });
         break;
         
             case 'revoke':
@@ -1305,7 +1305,7 @@ case 'tag': case 'tagall': case 'all':{
             
             case "sc": case "script": case"repo": {
 const axios = require("axios");
-let repoInfo = await axios.get("https://api.github.com/repos/AYUSH-PANDEY023/Maria-MD");
+let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-V3");
         let repo = repoInfo.data;
         console.log(repo);
 
@@ -1320,7 +1320,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/AYUSH-PANDEY023/Mar
 ©️ 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑 
 *❝ Dont forget to give a Star ⭐ to the repo.*`
 
-        Maria.sendMessage(from, { video: { url: 'https://media.tenor.com/Zco-fadJri4AAAPo/code-matrix.mp4' }, gifPlayback: true, caption: scritxt }, { quoted: m })
+        Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: scritxt }, { quoted: m })
 }
         break;
         
@@ -1585,7 +1585,7 @@ break;
                     quote
                 } = require('./Media/lib/quote.js')
                 if (!q) return reply('Enter Text')
-                let ppnyauser = await await Maria.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/6880771a42bad09dd6087.jpg')
+                let ppnyauser = await await Maria.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg')
                 const rest = await quote(q, pushname, ppnyauser)
                 reply(mess.wait)
                 Maria.sendImageAsSticker(m.chat, rest.result, m, {
@@ -1598,7 +1598,7 @@ break;
 case 'play':  case 'song': {
 Maria.sendMessage(from, { react: { text: "📥", key: m.key }}) 
 if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  𝒂𝒏𝒊𝒎𝒆 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑 𝒔𝒕𝒂𝒕𝒖𝒔`)
-const Ayushplaymp3 = require('./Gallery/lib/ytdl2')
+const Ayushplaymp3 = require('./Media/lib/ytdl2')
 let yts = require("youtube-yts")
         let search = await yts(text)
         let anup3k = search.videos[0]
@@ -1645,7 +1645,7 @@ case 'chatgpt':
       case 'chatbot':
        const axios = require("axios");
         if (!args[0]) {
-          return reply(`Please provide a message to chat with the Maria chatbot. Example: ${prefix}chat How are you Maria ?`);
+          return reply(`Please provide a message to chat with the Maria chatbot. Example: ${prefix}chat How are you toge ?`);
         }
 
         const message = encodeURIComponent(args.join(' '));
@@ -1682,9 +1682,9 @@ case 'chatgpt':
 /////////////////////////////////////_//////////////
             case "rules":
       
-        const helptxt = `_*📍[Rules for Maria Md usage]📍*_\n\n\n*>>>* use ${prefix}support to get the Official group link in your dm.\n\n*--->* If you want to add Maria-Md in your group the contact the owner by *${prefix}owner/${prefix}mods* \n\n*--->* Dont use wrong command, use the command given in the *${prefix}help* list \n\n* Dont spam the bot with commands if Maria-Md is not responding, its means the maybe owner is offline or facing internet issue. \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ Ayush Bots inc* `
+        const helptxt = `_*📍[Rules for toge-md-v3 usage]📍*_\n\n\n*>>>* use ${prefix}support to get the Official group link in your dm.\n\n*--->* If you want to add Maria-Md in your group the contact the owner by *${prefix}owner/${prefix}mods* \n\n*--->* Dont use wrong command, use the command given in the *${prefix}help* list \n\n* Dont spam the bot with commands if Maria-Md is not responding, its means the maybe owner is offline or facing internet issue. \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ Ayush Bots inc* `
 
-        Maria.sendMessage(from, { video: { url: 'https://c.tenor.com/geMdtLCXZkAAAAPo/rules.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
+        Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
 
         break;
       case 'hii': case 'hi': case 'Hi':
@@ -1694,16 +1694,16 @@ case 'chatgpt':
 
  *_Team Ayush_*.`
 
-        Maria.sendMessage(m.chat, { image: { url: "https://graph.org/file/eb3821e4d2b0a54dd7ea6.jpg" }, caption: txxt}, { quoted: m });
+        Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg" }, caption: txxt}, { quoted: m });
         
         break;
       case "support":
      
         let tex = `  [🎀𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋🎀]\n\n🔖https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`
 
-        await Maria.sendMessage(m.sender,{ video: {url: "https://media.tenor.com/q5Lo2BINkaUAAAPo/beast-tamer-kanade.mp4"}, caption: `${tex}`,gifPlayback: true},);
+        await Maria.sendMessage(m.sender,{ video: {url: "https://telegra.ph/file/71df5c808c38683e8b304.mp4"}, caption: `${tex}`,gifPlayback: true},);
 
-        await Maria.sendMessage(m.chat, { video: { url: "https://media.tenor.com/27yYlTvQ6B0AAAPo/my-dress-up-darling-my-dress-up-darling-gif.mp4" }, caption: '🎀𝑪𝒉𝒆𝒄𝒌 𝑰 𝑺𝒆𝒏𝒕 𝒔𝒖𝒑𝒑𝒐𝒓𝒕 𝒈𝒓𝒐𝒖𝒑 𝒍𝒊𝒏𝒌 𝒊𝒏 𝒚𝒐𝒖𝒓 𝑫𝑴  𝑴𝒚 𝑫𝒂𝒓𝒍𝒊𝒏𝒈', gifPlayback: true }, { quoted: m });
+        await Maria.sendMessage(m.chat, { video: { url: "https://telegra.ph/file/71df5c808c38683e8b304.mp4" }, caption: '🎀𝑪𝒉𝒆𝒄𝒌 𝑰 𝑺𝒆𝒏𝒕 𝒔𝒖𝒑𝒑𝒐𝒓𝒕 𝒈𝒓𝒐𝒖𝒑 𝒍𝒊𝒏𝒌 𝒊𝒏 𝒚𝒐𝒖𝒓 𝑫𝑴  𝑴𝒚 𝑫𝒂𝒓𝒍𝒊𝒏𝒈', gifPlayback: true }, { quoted: m });
         break;
 
       case "info":
@@ -1725,7 +1725,7 @@ case 'chatgpt':
 ❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
 \`\`\`Feel free to open issues regarding any problems or if you have any feature feel free to contact owner by typing ${prefix}owner or ${prefix}mods`
 
-Maria.sendMessage(m.chat, { image: { url: "https://graph.org/file/c8ad7dc322c0b9b7eca8f.jpg" }, caption: pifx, gifPlayback: true }, { quoted: m });
+Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/ba64c8bc27477844bfc75.jpg" }, caption: pifx, gifPlayback: true }, { quoted: m });
         break;
 
 
@@ -1744,7 +1744,7 @@ Maria.sendMessage(m.chat, { image: { url: "https://graph.org/file/c8ad7dc322c0b9
 
 
 case 'wanumber': case 'nowa': case 'searchnumber':{
-           	if (!text) return reply(`📵🔢 Enter a number ending with 'x'\n\nExample: ${prefix + command} 9199311223xx`)
+           	if (!text) return reply(`📵🔢 Enter a number ending with 'x'\n\nExample: ${prefix + command} 241051141xx`)
 var inputnumber = text.split(" ")[0]
         
         reply(`📱🔍 Exploring for WhatsApp accounts within the range...`)
@@ -1889,7 +1889,7 @@ case 'dare':
           "send abusive words in any grup, excepting this grup, and send screenshot proof here"
      ]
                    const Mariadareww = dare[Math.floor(Math.random() * dare.length)]
-                   buffer = await getBuffer(`https://graph.org/file/8dd92e67cd4019b092f53.jpg`)
+                   buffer = await getBuffer(`https://telegra.ph/file/ba64c8bc27477844bfc75.jpg`)
                    Maria.sendMessage(from, { image: buffer, caption: '*You have chosen Dare*\n\n'+ Mariadareww }, {quoted:m})
                    break;
                        
@@ -2158,24 +2158,20 @@ break;
                          
                            
   case 'menu': case 'help': case 'h': 
-      const txt = `╭─「 *Konichiwa* 」
-│⋊ 𝕌𝕤𝕖𝕣: ${pushname} 
-│⋊ 𝔹𝕠𝕥:  ${botname}
-│⋊ ℙ𝕣𝕖𝕗𝕚𝕩:  *${prefix}*
-│⋊ 𝔻𝕒𝕥𝕖: ${Ayuxxdate}
-│⋊ 𝕋𝕚𝕞𝕖:  ${xtime}
-│⋊ 𝕆𝕨𝕟𝕖𝕣: ${ownername}
-│⋊ 𝕧𝕖𝕣𝕤𝕚𝕠𝕟: ${mver}
-│⋊ ℍ𝕠𝕤𝕥: ${os.hostname()}
-│⋊ ℙ𝕝𝕒𝕥𝕗𝕠𝕣𝕞: ${os.platform()} 
-│⋊ ℝ𝕦𝕟𝕥𝕚𝕞𝕖: ${runtime(process.uptime())}
-│⋊ 𝕋𝕠𝕥𝕒𝕝𝕔𝕞𝕕: ${mariafeature()}
-│⋊ 𝕆𝕗𝕗𝕚𝕔𝕚𝕒𝕝 𝔾𝕣𝕠𝕦𝕡: https://gg.gg/Maria-support
-╰────────────┈平和
- 🎀𝐅𝐨𝐥𝐥𝐨𝐰 𝐨𝐧: https://www.instagram.com/ayushpandeyy_023
+      const txt = `┏━⍟ *Konichiwa* ⍟
+┃✺ 𝕌𝕤𝕖𝕣: ${pushname} 
+┃✺ 𝔹𝕠𝕥:  ${botname}
+┃✺ ℙ𝕣𝕖𝕗𝕚𝕩:  *${prefix}*
+┃✺ 𝔻𝕒𝕥𝕖: ${Ayuxxdate}
+┃✺ 𝕋𝕚𝕞𝕖:  ${xtime}
+┃✺ 𝕆𝕨𝕟𝕖𝕣: ${ownername}
+┃✺ 𝕧𝕖𝕣𝕤𝕚𝕠𝕟: ${mver}
+┃✺ ℍ𝕠𝕤𝕥: ${os.hostname()}
+┃✺ ℙ𝕝𝕒𝕥𝕗𝕠𝕣𝕞: ${os.platform()} 
+┃✺ ℝ𝕦𝕟𝕥𝕚𝕞𝕖: ${runtime(process.uptime())}
+┃✺ 𝕋𝕠𝕥𝕒𝕝𝕔𝕞𝕕: ${mariafeature()}
+┗━━━━━━━━━━━━━━━⊛
 
-Here's the list of my Commands.🔖
- 
 ┌──⊰ _*🧧GENERAL🧧*_
 │⊳ 🌿 ${prefix}hi
 │⊳ 🌿 ${prefix}dev
