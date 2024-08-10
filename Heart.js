@@ -24,22 +24,22 @@ const { exec, spawn, execSync } = require("child_process")
 const { performance } = require('perf_hooks')
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
-const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./Gallery/lib/uploader')
-const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./Gallery/lib/converter')
-const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./Gallery/lib/myfunc')
-let afk = require("./Gallery/lib/afk");
+const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./Media/lib/uploader')
+const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./Media/lib/converter')
+const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./Media/lib/myfunc')
+let afk = require("./Media/lib/afk");
 const { download } = require('aptoide-scraper');
-const { fetchBuffer, buffergif } = require("./Gallery/lib/myfunc2")
+const { fetchBuffer, buffergif } = require("./Media/lib/myfunc2")
 
 /////log
- global.modnumber = '919060791616' 
+ global.modnumber = '24105114159' 
 //Gallery/database
-let ntilinkall =JSON.parse(fs.readFileSync('./Gallery/database/antilink.json'));
-// let autoblck =JSON.parse(fs.readFileSync('./Gallery/database/autoblock.json'));
-const isnsfw = JSON.parse(fs.readFileSync('./Gallery/database/nsfw.json'));
+let ntilinkall =JSON.parse(fs.readFileSync('./Media/database/antilink.json'));
+// let autoblck =JSON.parse(fs.readFileSync('./Media/database/autoblock.json'));
+const isnsfw = JSON.parse(fs.readFileSync('./Media/database/nsfw.json'));
 
-let _afk = JSON.parse(fs.readFileSync('./Gallery/database/afk-user.json'))
-let hit = JSON.parse(fs.readFileSync('./Gallery/database/total-hit-user.json'))
+let _afk = JSON.parse(fs.readFileSync('./Media/database/afk-user.json'))
+let hit = JSON.parse(fs.readFileSync('./Media/database/total-hit-user.json'))
 
 //time
 const replay = (teks) => {
@@ -182,8 +182,8 @@ mentionedJid:[sender],
 forwardingScore: 9999999,
 isForwarded: true,
 forwardedNewsletterMessageInfo: {
-newsletterName: "AYUSH BOTZ INC",
-newsletterJid: "120363213314329067@newsletter",
+newsletterName: "𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.",
+newsletterJid: "1203632993333611780@newsletter",
 },
 "externalAdReply": {
 "showAdAttribution": true,
@@ -192,7 +192,7 @@ newsletterJid: "120363213314329067@newsletter",
 "body": `${ownername}`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./Gallery/thumb.jpg`),
+"thumbnail": fs.readFileSync(`./Media/thumb.jpg`),
 "sourceUrl": `${link}`}}},
 { quoted: m})
 }
@@ -281,7 +281,7 @@ async function Telesticker(url) {
         }
         
         if (autobio) {
-            Maria.updateProfileStatus(`Hey, future leaders! 🌟 Maria-Md is here to inspire and lead, thanks to Ayush Botz, Inc. 🚀 ${runtime(process.uptime())} `).catch(_ => _)
+            Maria.updateProfileStatus(`Hey, future leaders! 🌟 TOGE-MD-V3 is here to inspire and lead, thanks to  toge012345. 🚀 ${runtime(process.uptime())} `).catch(_ => _)
         }
         if (m.sender.startsWith('212') && global.anti212 === true) {
             return Maria.updateBlockStatus(m.sender, 'block')
@@ -324,12 +324,12 @@ async function Telesticker(url) {
         if (command) {
             const cmdadd = () => {
                 hit[0].hit_cmd += 1
-                fs.writeFileSync('./Gallery/database/total-hit-user.json', JSON.stringify(hit))
+                fs.writeFileSync('./Media/database/total-hit-user.json', JSON.stringify(hit))
             }
             cmdadd()
-            const totalhit = JSON.parse(fs.readFileSync('./Gallery/database/total-hit-user.json'))[0].hit_cmd
+            const totalhit = JSON.parse(fs.readFileSync('./Media/database/total-hit-user.json'))[0].hit_cmd
         }
-        const photooxy = require('./Gallery/lib/photooxy')
+        const photooxy = require('./Media/lib/photooxy')
         
         
 
@@ -350,7 +350,7 @@ async function Telesticker(url) {
                 let getTime = Date.now() - afk.getAfkTime(getId, _afk)
                 let heheh = ms(getTime)
                 _afk.splice(afk.getAfkPosition(m.sender, _afk), 1)
-                fs.writeFileSync('./Gallery/database/afk-user.json', JSON.stringify(_afk))
+                fs.writeFileSync('./Media/database/afk-user.json', JSON.stringify(_afk))
                 Maria.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} have returned from afk`, m)
             }
         }
@@ -413,7 +413,7 @@ Maria.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.
 
  const verification = async () => {
   try {
-    const group = await Maria.groupMetadata('120363029833092005@g.us');
+    const group = await Maria.groupMetadata('120363292399307214@g.us');
     const participants = group.participants.map(i => i.id);
     if (participants.includes(botNumber) && participants.includes(ownernumber + "@s.whatsapp.net")) {
       console.log(chalk.blueBright('=>Verify:'), chalk.green('Available in the Group ✅️'));
@@ -430,8 +430,8 @@ return false;
 const verificationBot = await verification();
 
 if (!verificationBot) {
-m.reply(`⛩️ *❯─「 Maria-MD 」─❮* ⛩️\n
-Join our support group to interact with MARIA-MD 🌟 \n\n https://chat.whatsapp.com/FGPKxVnjgJ7KnBGiDeb4ij`);
+m.reply(`⛩️ *❯─「 TOGE-MD-V3 」─❮* ⛩️\n
+Join our support group to interact with TOGE-MD-V3 🌟 \n\n https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`);
 return;
 }
 
@@ -471,9 +471,9 @@ const mariafeature = () =>{
         `MARIA YOUTUBE CHANNEL `, // Body message
         botname, // Footer message
         'Visit', // Button display text
-        'https://youtube.com/@maria-md', // Command (URL in this case)
+        'https://youtube.com/@kenzo3146', // Command (URL in this case)
         'cta_url', // Button type
-        'https://youtube.com/@maria-md' // URL (used in image generation)
+        'https://youtube.com/@kenzo3146' // URL (used in image generation)
     ], 
     
     
@@ -582,7 +582,7 @@ const sendSlide = async (jid, title, message, footer, slides) => {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '919931122319@s.whatsapp.net',
+                  newsletterJid: '24105114159@s.whatsapp.net',
                   newsletterName: ownername,
                   serverMessageId: 143
                 }
@@ -598,7 +598,7 @@ const sendSlide = async (jid, title, message, footer, slides) => {
     });
 };
 // Call the function with example parameters
-sendSlide(m.chat, 'MARIA-MD', 'Here the Maria-MD deploy tutorial', botname, slides);
+sendSlide(m.chat, 'TOGE-MD-V3', 'Here the TOGE-MD-V3 deploy tutorial', botname, slides);
 }
 break
 
@@ -664,7 +664,7 @@ reply('Success in turning off all autoblock in this group')
 if (args[0] === "on") {
 if (AntiLinkAll) return reply('Already activated')
 ntilinkall.push(from)
-fs.writeFileSync('./Gallery/database/antilink.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./Media/database/antilink.json', JSON.stringify(ntilinkall))
 reply('Success in turning on all antilink in this group')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -677,7 +677,7 @@ Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf yo
 if (!AntiLinkAll) return reply('Already deactivated')
 let off = ntilinkall.indexOf(from)
 ntilinkall.splice(off, 1)
-fs.writeFileSync('./Gallery/database/antilinkall.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./Media/database/antilinkall.json', JSON.stringify(ntilinkall))
 reply('Success in turning off all antilink in this group')
 } else {
   await reply(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
@@ -740,7 +740,7 @@ break;
                     await sleep(2000)
                     reply("Delete junk files...")
                     await filteredArray.forEach(function(file) {
-                        fs.unlinkSync(`./Gallery/session/${file}`)
+                        fs.unlinkSync(`./Media/session/${file}`)
                     });
                     await sleep(2000)
                     reply("Successfully deleted all the trash in the session folder")
@@ -1283,7 +1283,7 @@ case 'tag': case 'tagall': case 'all':{
           let response = await Maria.groupInviteCode(m.chat);
           Maria.sendText(
             m.sender,
-            ` 🤖𝐵𝑜𝑡 𝑛𝑎𝑚𝑒:- Maria Bot\n\n🔖𝐺𝑟𝑜𝑢𝑝 𝑛𝑎𝑚𝑒:- ${groupMetadata.subject}\n\n🔰𝐺𝑟𝑜𝑢𝑝 𝑙𝑖𝑛𝑘:- https://chat.whatsapp.com/${response}`,
+            ` 🤖𝐵𝑜𝑡 𝑛𝑎𝑚𝑒:- 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.\n\n🔖𝐺𝑟𝑜𝑢𝑝 𝑛𝑎𝑚𝑒:- ${groupMetadata.subject}\n\n🔰𝐺𝑟𝑜𝑢𝑝 𝑙𝑖𝑛𝑘:- https://chat.whatsapp.com/${response}`,
             m,
             { detectLink: true }
           );
@@ -1309,15 +1309,15 @@ let repoInfo = await axios.get("https://api.github.com/repos/AYUSH-PANDEY023/Mar
         let repo = repoInfo.data;
         console.log(repo);
 
-   const scritxt = `*🚀𝑴𝒂𝒓𝒊𝒂-𝑩𝒐𝒕-𝑺𝒄𝒓𝒊𝒑𝒕🚀*\n
-  *🌟Creator:* 𝑨𝒚𝒖𝒔𝒉 𝒑𝒂𝒏𝒅𝒆𝒚\n
+   const scritxt = `*🚀𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.🚀*\n
+  *🌟Creator:* toge012345\n
   *🌟 Repo:* ${repo.html_url}\n
   *🌟 Total Forks:* ${repo.forks_count}\n
   *⭐ Total Stars:* ${repo.stargazers_count}\n
   *📁 Repo Size:* ${(repo.size/1024).toFixed(2)} MB\n
   *📅 Last Updated:* ${repo.updated_at}\n
  
-©️ *Ayush Bots inc* 
+©️ 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑 
 *❝ Dont forget to give a Star ⭐ to the repo.*`
 
         Maria.sendMessage(from, { video: { url: 'https://media.tenor.com/Zco-fadJri4AAAPo/code-matrix.mp4' }, gifPlayback: true, caption: scritxt }, { quoted: m })
@@ -1453,7 +1453,7 @@ break;
                 let media = await Maria.downloadMediaMessage(qmsg)
                 let {
                     toPTT
-                } = require('./Gallery/lib/converter')
+                } = require('./Media/lib/converter')
                 let audio = await toPTT(media, 'mp4')
                 Maria.sendMessage(m.chat, {
                     audio: audio,
@@ -1566,7 +1566,7 @@ break;
             }
             break;
             case 'fliptext': {
-                if (args.length < 1) return reply(`Example:\n${prefix}fliptext Ayushy`)
+                if (args.length < 1) return reply(`Example:\n${prefix}fliptext toge`)
                 quere = args.join(" ")
                 flipe = quere.split('').reverse().join('')
                 reply(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
@@ -1583,7 +1583,7 @@ break;
       case 'qc': {
                 const {
                     quote
-                } = require('./Gallery/lib/quote.js')
+                } = require('./Media/lib/quote.js')
                 if (!q) return reply('Enter Text')
                 let ppnyauser = await await Maria.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/6880771a42bad09dd6087.jpg')
                 const rest = await quote(q, pushname, ppnyauser)
@@ -1624,7 +1624,7 @@ await fs.unlinkSync(pl.path)
 break;
 
 case 'ytmp4': case 'ytvideo': {
-const Ayushvidoh = require('./Gallery/lib/ytdl2')
+const Ayushvidoh = require('./Media/lib/ytdl2')
 if (args.length < 1 || !isUrl(text) || !Ayushvidoh.isYTUrl(text)) reply(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
 const vid=await Ayushvidoh.mp4(text)
 const ytc=`
@@ -1690,7 +1690,7 @@ case 'chatgpt':
       case 'hii': case 'hi': case 'Hi':
        
         
-        let txxt = `*U^I^U ♡* Konichiwa ${pushname} Senpai, I'm MARIA-MD Created by
+        let txxt = `*U^I^U ♡* Konichiwa ${pushname} Senpai, I'm TOGE-MD-V3 Created by
 
  *_Team Ayush_*.`
 
@@ -1699,7 +1699,7 @@ case 'chatgpt':
         break;
       case "support":
      
-        let tex = `  [🎀𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋🎀]\n\n🔖_https://chat.whatsapp.com/FGPKxVnjgJ7KnBGiDeb4ij_`
+        let tex = `  [🎀𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋🎀]\n\n🔖https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`
 
         await Maria.sendMessage(m.sender,{ video: {url: "https://media.tenor.com/q5Lo2BINkaUAAAPo/beast-tamer-kanade.mp4"}, caption: `${tex}`,gifPlayback: true},);
 
@@ -1716,10 +1716,10 @@ case 'chatgpt':
 \`\`\`A simple and easy-to-use WhatsApp bot project based on Multi-Device Baileys and written in JavaScript\`\`\`
 
 ❁ ══════ ❃•📄 *NOTE* 📄•❃ ══════ ❁
-\`\`\`This bot is a free open source project by THE TEAM AYUSH\`\`\`
+\`\`\`This bot is a free open source project by toge012345\`\`\`
 
 ❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁
-*_LINK:- https://github.com/AYUSH-PANDEY023/Maria-MD_*
+*_LINK:- https://github.com/toge012345/TOGE-MD-V3_*
 
 
 ❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
