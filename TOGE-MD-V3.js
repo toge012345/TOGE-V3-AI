@@ -1657,7 +1657,7 @@ case 'chatgpt':
           reply(result);
         } catch (error) {
           console.error('Error fetching AI chatbot response:', error);
-          reply('An error occurred while fetching the Maria chatbot response. Please try again later.');
+          reply('An error occurred while fetching the TOGE-MD-V3 chatbot response. Please try again later.');
         }
         break;
                
@@ -1708,7 +1708,7 @@ case 'chatgpt':
 
       case "info":
             Maria.sendMessage(from, { react: { text: "", key: m.key }}) 
-        let pifx = `❁ ════ ❃•💙 *MARIA* 💙•❃ ════ ❁
+        let pifx = `❁ ════ ❃•💙 *TOGE-MD-V3* 💙•❃ ════ ❁
 
 \`\`\`A FULL FLEDGED MULTI DEVICE WHATSAPP BOT WITH COOL FEATURES\`\`\`
 
@@ -2459,7 +2459,7 @@ Cieeee, What's Going On❤️💖👀`,
                   previewType: "PHOTO",
                   thumbnailUrl: ``,
                   thumbnail: fs.readFileSync(
-                    `./Gallery/thumb.jpg`
+                    `./Media/thumb.jpg`
                   ),
                   sourceUrl: `${link}`,
                 },
@@ -2884,7 +2884,7 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@toge012345\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -4462,7 +4462,7 @@ case 'ping':
         message: {
             contactMessage: {
                 displayName: 'TOGE-MD-V3 📱',
-                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:MARIA-MD 📱\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:TOGE-MD-V3 📱\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
             }
         }
     };
@@ -4592,7 +4592,7 @@ case 'poker': {
         let resultMessage = `\t\uD83C\uDCCF *Poker Prestige* \uD83C\uDCCF\n`;
         resultMessage += `\t\t---------------------------------\n`;
         resultMessage += `*@${m.sender.split("@")[0]}*'s Hand: ${userHand.join(', ')}\n`;
-        resultMessage += `*Maria*'s Hand: ${mariaHand[0]}, \n`;
+        resultMessage += `*TOGE-MD-V3*'s Hand: ${mariaHand[0]}, \n`;
         resultMessage += `\t\t---------------------------------\n`;
 
         if (userScore > mariaScore) {
@@ -4710,7 +4710,7 @@ caption += `🟣 *Density:* ${responsee.density} g/mL\n`;
 caption += `⚫ *Shells:* ${responsee.shells.join(", ")}\n`;
 caption += `🌐 *URL:* ${responsee.source}\n\n`;
 caption += `💬 *Summary:* ${responsee.summary}\n`;
-    await Maria.sendMessage(from,  {image: {url: 'https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg: caption}, {quoted: m });
+    await Maria.sendMessage(from,  {image: {url: 'https://graph.org/file/c8ad7dc322c0b9b7eca8f.jpg'},caption: caption}, {quoted: m });
 break;
 
 
