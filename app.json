@@ -22,9 +22,6 @@
     },
     "STICKER": {
       "description": "set your bot sticker package name"
-    },
-     "id": {
-      "description": "Put your session id here"
     },     
      "PM_BLOCKER": {
       "description": "type True for enable Pm blocker"
