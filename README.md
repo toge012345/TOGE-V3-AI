@@ -86,5 +86,4 @@
 - *If You Modify The Bot And Face Any Issue, I will not Responsible Because It is not Possible For Me To Help Everyone*
 - *This Bot is For Fun and Educational Purpose, I will not Responsible If You Spam and Misuse It*
 - ***Regards [developper](https://github.com/toge012345)***
-- 
 
