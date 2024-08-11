@@ -33,7 +33,7 @@ const { fetchBuffer, buffergif } = require("./Media/lib/myfunc2")
 
 /////log
  global.modnumber = '24105114159' 
-//Gallery/database
+//Media/database
 let ntilinkall =JSON.parse(fs.readFileSync('./Media/database/antilink.json'));
 // let autoblck =JSON.parse(fs.readFileSync('./Media/database/autoblock.json'));
 const isnsfw = JSON.parse(fs.readFileSync('./Media/database/nsfw.json'));
