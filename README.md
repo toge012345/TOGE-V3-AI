@@ -37,7 +37,7 @@
 
 2. Upload the creds.json that you received to the session folder.
    <br>
-<a href='https://toge-md-web.onrender.com/pair' target="_blank"><img alt='PAIR CODE' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://toge-md-web.onrender.com/pair' target="_blank"><img alt='PAIR CODE' src='https://img.shields.io/badge/pair_code-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 #### DEPLOY TO HEROKU 
