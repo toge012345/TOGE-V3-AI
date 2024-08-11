@@ -1,29 +1,28 @@
-## _[Update My Repo](https://github.com/A-S-W-I-N-S-P-A-R-K-Y/X-BOT-MD/wiki/FORK-UPDATE)_
+## TOGE-MD-V3 
 </div>
   <a href="https://toge-md-web.onrender.com">
         <p align="center">
-   <img alt="toge01245" height="300" src="https://i.imgur.com/Q2UNwXR.jpg">
+   <img alt="toge01245" height="300" src="https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg">
               </p>
   </a>
 </p>
    
 <p align="center">
 
-  <a aria-label="Join our chats" href="https://chat.whatsapp.com/KMqXtMicl9uCgMuduidlXb" target="_blank">
+  <a aria-label="Join our chats" href="https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo" target="_blank">
     <img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
 
   
 <p align="center">
 
-  <a aria-label="Tutorial" href="https://github.com/toge012345/TOGE-MD-V3" target="_blank">
+  <a aria-label="Tutorial" href="https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo" target="_blank">
     <img alt="youtube" src="https://img.shields.io/badge/Tutorial-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
   
 <div align="center">
 
-## _[External Plugins](https://github.com/toge012345/TOGE-MD-V3)_
-      
-## _[Basic usage helper](https://github.com/toge012345/TOGE-MD-V3)_
+***TOGE-MD-V3 is a multi-device bot that can help you with different things on WhatsApp developed by toge012345**
+
 </div>
 
 ### FORK THIS REPO
@@ -81,5 +80,11 @@
 <a href='https://replit.com/github/toge012345/TOGE-MD-V3' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-IMPORT-black?style=for-the-badge&logo=replit'/></a>
 
 * Now fork it and enjoy 🗿🙌🏻
-<br>
+##
+## ```𝘓𝘦𝘨𝘢𝘭 𝘋𝘪𝘴𝘤𝘭𝘢𝘪𝘮𝘦𝘳```
+- *I will only Assist You in Bot Deployment and Hosting, Not in Bot Development*
+- *If You Modify The Bot And Face Any Issue, I will not Responsible Because It is not Possible For Me To Help Everyone*
+- *This Bot is For Fun and Educational Purpose, I will not Responsible If You Spam and Misuse It*
+- ***Regards [developper](https://github.com/toge012345)***
+- 
 
