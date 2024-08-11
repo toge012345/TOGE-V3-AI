@@ -468,7 +468,7 @@ const mariafeature = () =>{
     [
         'https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png', // Image URL
         '', // Title
-        `MARIA YOUTUBE CHANNEL `, // Body message
+        `TOGE-MD-V3 YOUTUBE CHANNEL `, // Body message
         botname, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@kenzo3146', // Command (URL in this case)
@@ -674,7 +674,7 @@ mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
 Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send any link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
-if (!AntiLinkAll) return reply('Already deactivated')
+if (!AntiLinkAll) return reply('Already desactivated')
 let off = ntilinkall.indexOf(from)
 ntilinkall.splice(off, 1)
 fs.writeFileSync('./Media/database/antilinkall.json', JSON.stringify(ntilinkall))
@@ -1310,7 +1310,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
         console.log(repo);
 
    const scritxt = `*🚀𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.🚀*\n
-  *🌟Creator:* toge012345\n
+  *🌟Creator:* 𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈\n
   *🌟 Repo:* ${repo.html_url}\n
   *🌟 Total Forks:* ${repo.forks_count}\n
   *⭐ Total Stars:* ${repo.stargazers_count}\n
@@ -1427,7 +1427,7 @@ break;
             }
             break;
             case 'checkdeath':
-             if (!text) return replay(`Use Someone's Name, Example : ${prefix + command} Ayush`)
+             if (!text) return replay(`Use Someone's Name, Example : ${prefix + command} toge`)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
               reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
               break;
@@ -1682,7 +1682,7 @@ case 'chatgpt':
 /////////////////////////////////////_//////////////
             case "rules":
       
-        const helptxt = `_*📍[Rules for toge-md-v3 usage]📍*_\n\n\n*>>>* use ${prefix}support to get the Official group link in your dm.\n\n*--->* If you want to add Maria-Md in your group the contact the owner by *${prefix}owner/${prefix}mods* \n\n*--->* Dont use wrong command, use the command given in the *${prefix}help* list \n\n* Dont spam the bot with commands if Maria-Md is not responding, its means the maybe owner is offline or facing internet issue. \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ Ayush Bots inc* `
+        const helptxt = `_*📍[Rules for toge-md-v3 usage]📍*_\n\n\n*>>>* use ${prefix}support to get the Official group link in your dm.\n\n*--->* If you want to add TOGE-MD-V3 in your group the contact the owner by *${prefix}owner/${prefix}mods* \n\n*--->* Dont use wrong command, use the command given in the *${prefix}help* list \n\n* Dont spam the bot with commands if TOGE-MD-V3 is not responding, its means the maybe owner is offline or facing internet issue. \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜* `
 
         Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
 
@@ -1692,7 +1692,7 @@ case 'chatgpt':
         
         let txxt = `*U^I^U ♡* Konichiwa ${pushname} Senpai, I'm TOGE-MD-V3 Created by
 
- *_Team Ayush_*.`
+ *_Team toge_*.`
 
         Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg" }, caption: txxt}, { quoted: m });
         
@@ -3455,11 +3455,11 @@ let msg = generateWAMessageFromContent(from, {
    },
                  {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Deployment Tutorial 📺\",\"url\":\"https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"Deployment Tutorial 📺\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },          
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀\",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               }                      
            ],
           }),
@@ -3561,7 +3561,7 @@ let liistmsg = generateWAMessageFromContent(from, {
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WHATSAPP 🚀\",\"url\":\"https://whatsapp.com/channel/0029VaImo5ZG3R3qjKOdyr1I\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WHATSAPP 🚀\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               }                      
            ],
           }),
@@ -3594,9 +3594,9 @@ case 'nobg': case 'removebg': case 'remove-bg': {
 	    let remobg = require('remove.bg')
 	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
 	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
-	    hmm = await './Gallery/remobg-'+getRandom('')
+	    hmm = await './Media/remobg-'+getRandom('')
 	    localFile = await Maria.downloadAndSaveMediaMessage(quoted, hmm)
-	    outputFile = await './Gallery/hremo-'+getRandom('.png')
+	    outputFile = await './Media/hremo-'+getRandom('.png')
 	    m.reply(mess.wait)
 	    remobg.removeBackgroundFromImageFile({
 	      path: localFile,
@@ -3731,7 +3731,7 @@ break;
 {
     if (!isGroup) return reply('This feature is only for groups');
     if (!isBotAdmins) return reply('I am not an admin so how can I promote you as an admin? ');
-    if (sender !== '919931122319@s.whatsapp.net') return reply('Ahh, only my Darling Ayush can access this command...');
+    if (sender !== '24105114159@s.whatsapp.net') return reply('Ahh, only my Darling toge can access this command...');
     // if (!isBotGroupAdmins) return reply('Bot Not Admin...');
     Maria.groupParticipantsUpdate(from, [sender], 'promote');
     reply('Mission successfully');
@@ -3742,7 +3742,7 @@ case 'dme':
 {
     if (!isGroup) return reply('This feature is only for groups');
     if (!isBotAdmins) return reply('Bro, just chill, I am also not an admin ');
-    if (sender !== '919931122319@s.whatsapp.net') return reply('Ahh, only my owner can use this command ');
+    if (sender !== '24105114159@s.whatsapp.net') return reply('Ahh, only my owner can use this command ');
     // if (!isBotGroupAdmins) return reply('Bot Not Admin...');
     Maria.groupParticipantsUpdate(from, [sender], 'demote');
     reply('*_You had a good run but you are no longer an admin. Embrace the freedom! _*');
@@ -3766,7 +3766,7 @@ break;
 if (args[0] === "on") {
 if (AntiNsfw) return reply('Already activated✅️')
 isnsfw.push(from)
-fs.writeFileSync('./Gallery/database/nsfw.json', JSON.stringify(isnsfw))
+fs.writeFileSync('./Media/database/nsfw.json', JSON.stringify(isnsfw))
 reply('Successfully activating nsfw mode in this group ✔️')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -4497,7 +4497,7 @@ case 'dev':
     const devmod = `  🍥 *Moderators* 🍥\n\n
 *🎫TOGE INUMAKI* @24105114159
 \n
-\n📛*Don't Spam them to avoid Blocking !*\n\n For any help, type *${prefix}support* and ask in the group.\n\n*✨️Thanks for using Maria-Md* `;
+\n📛*Don't Spam them to avoid Blocking !*\n\n For any help, type *${prefix}support* and ask in the group.\n\n*✨️Thanks for using TOGE-MD-V3* `;
 
     Maria.sendMessage(m.chat, { text: devmod, mentions: ["24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net","24102150169@s.whatsapp.net"] }, { quoted: m });
     break;
@@ -4981,7 +4981,7 @@ _If you have any questions regarding our terms, please reach out to us._
 _For everything else, use common sense._
 
 *FUTURE IS NOW🚀~TOGE-MD-V3*
-*_🚀Team toge_*
+*_🚀Team TOGE-BOT_*
 
 ⍟ *────────────────* ⍟`
  let mariajpg= "https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg" 
