@@ -78,7 +78,7 @@ function webp2mp4File(path) {
 				   const result = 'https:' + $('div#output > p.outfile > video > source').attr('src')
 				   resolve({
 						status: true,
-						message: "Created By MRHRTZ",
+						message: "Created By toge012345",
 						result: result
 				   })
 			  }).catch(reject)
