@@ -2,40 +2,40 @@ const prefix = global.prefa
   const pushname = m.pushName || "No Name"
 
 const helpmenu=` 
-「 *Maria BOT* 」
+「 *TOGE-MD-V3* 」
 ♡ۣۜۜ፝͜͜͡͡✿➤ *INFO BOT*
-  ♡ۣۜۜ፝͜͜͡͡✿➤ Name: Maria BOT
-  ♡ۣۜۜ፝͜͜͡͡✿➤ Version: 1.0
+  ♡ۣۜۜ፝͜͜͡͡✿➤ Name: 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑
+  ♡ۣۜۜ፝͜͜͡͡✿➤ Version: 3.0.0
   ♡ۣۜۜ፝͜͜͡͡✿➤ Type: VPS
-  ♡ۣۜۜ፝͜͜͡͡✿➤ Owner: 𝑨𝒚𝒖𝒔𝒉-𝒑𝒂𝒏𝒅𝒆𝒚
-  ♡ۣۜۜ፝͜͜͡͡✿➤ wa.me/919931122319
+  ♡ۣۜۜ፝͜͜͡͡✿➤ Owner: 𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈
+  ♡ۣۜۜ፝͜͜͡͡✿➤ wa.me/24105114159
   ♡ۣۜۜ፝͜͜͡͡✿➤ Prefix: 「  ${prefix}  」
  ♡ۣۜۜ፝͜͜͡͡✿➤ Total cmd: 51
  ♡ۣۜۜ፝͜͜͡͡✿➤Menu Type: 𝑯𝒆𝒍𝒑-𝑴𝒆𝒏𝒖
  ----------------------------------
  
  ----------------------------------
-	🍁 *Coding* 🍁
+⍟ *Coding* ⍟
 ⌬${prefix}gitclone
 ⌬${prefix}gdrive
-🍁 *General Commands* 🍁
+⍟ *General Commands* ⍟
 ⌬${prefix}menu
 ⌬${prefix}list
 ⌬${prefix}hi
 ⌬${prefix}support
-⌬${prefix}Maria
+⌬${prefix}toge
 ⌬${prefix}rules
 ⌬${prefix}info
-🍁 *Owner Commands* 🍁
+⍟ *Owner Commands* ⍟
 ⌬${prefix}join
 ⌬${prefix}bctext
 ⌬${prefix}creategc
 ⌬${prefix}leavegc
-🍁 *Search Commands* 🍁
+⍟ *Search Commands* ⍟
 ⌬${prefix}weather
 ⌬${prefix}coffee
 ⌬${prefix}google
-🍁 *Group Commands* 🍁
+⍟ *Group Commands* ⍟
 ⌬${prefix}antilink
 ⌬${prefix}kick
 ⌬${prefix}add
@@ -49,7 +49,7 @@ const helpmenu=`
 ⌬${prefix}demote
 ⌬${prefix}setname
 ⌬${prefix}setgcpp
-🍁 *Fun Commands* 🍁
+⍟ *Fun Commands* ⍟
 ⌬${prefix}handsomecheck
 ⌬${prefix}beautifulcheck
 ⌬${prefix}ship
@@ -59,13 +59,13 @@ const helpmenu=`
 ⌬${prefix}fact
 ⌬${prefix}couple
 ⌬${prefix}diffine
-🍁 *Weeb Commands* 🍁
+⍟ *Weeb Commands* ⍟
 ⌬${prefix}crossplay
 ⌬${prefix}neko
 ⌬${prefix}loli
 ⌬${prefix}wallpaper
 ⌬${prefix}waifu
-🍁 *Other Commands* 🍁
+⍟ *Other Commands* ⍟
 ⌬${prefix}iguser
 ⌬${prefix}sticker
 ⌬${prefix}steal
@@ -79,9 +79,9 @@ const helpmenu=`
 
 🌹𝒎𝒐𝒓𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒔 𝒄𝒐𝒎𝒊𝒏𝒈 𝒔𝒐𝒐𝒏
 
-『 Maria-Md 』
+『 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑 』
    Based on: Miku, 
-   created by : Ayush pandey
-   ©️ Ayush botz inc 
+   created by : 𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈
+   ©️ 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜 ✨ 
 `
 module.exports = helpmenu
