@@ -21,7 +21,7 @@
   
 <div align="center">
 
-***TOGE-MD-V3 is a multi-device bot that can help you with different things on WhatsApp developed by toge012345**
+**TOGE-MD-V3 is a multi-device bot that can help you with different things on WhatsApp developed by toge012345**
 
 </div>
 
