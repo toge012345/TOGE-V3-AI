@@ -342,12 +342,12 @@ for (let num of participants) {
 try {
 ppuser = await Maria.profilePictureUrl(num, 'image')
 } catch (err) {
-ppuser = 'https://telegra.ph/file/fc9bd6bdec777cfcae982.jpg'
+ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
 }
 try {
 ppgroup = await Maria.profilePictureUrl(anu.id, 'image')
 } catch (err) {
-ppgroup = 'https://telegra.ph/file/bc0309b8073ff548887c8.jpg'
+ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 	
 memb = metadata.participants.length
