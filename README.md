@@ -17,7 +17,7 @@
 <p align="center">
 
   <a aria-label="Tutorial" href="https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo" target="_blank">
-    <img alt="youtube" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+    <img alt="youtube" src="https://img.shields.io/badge/tutorial-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   
 <div align="center">
 
