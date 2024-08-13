@@ -41,7 +41,7 @@
 
 ### DEPLOY TO WORKFLOWS
 
-•Create a new file [`.github/workflows/deploye.yml`] After created, copy this code👇🏽and paste it there
+**Create a new file [`.github/workflows/deploye.yml`] After created, copy this code👇🏽and paste it there.**
 ```yml
 name: Node.js CI
 
