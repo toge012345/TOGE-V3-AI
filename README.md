@@ -16,7 +16,7 @@
   
 <p align="center">
 
-  <a aria-label="Tutorial" href="https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo" target="_blank">
+  <a aria-label="Tutorial" href="https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z" target="_blank">
     <img alt="youtube" src="https://img.shields.io/badge/tutorial-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   
 <div align="center">
@@ -39,6 +39,45 @@
    <br>
 <a href='https://toge-v3.onrender.com/' target="_blank"><img alt='PAIR CODE' src='https://img.shields.io/badge/session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
+### DEPLOY TO WORKFLOWS
+
+**Create a new file [`.github/workflows/deploye.yml`] After created, copy this code👇🏽and paste it there.**
+```yml
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Start application
+      run: npm start
+
+```
 
 #### DEPLOY TO HEROKU 
 
