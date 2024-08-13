@@ -2,7 +2,7 @@
 </div>
   <a href="https://toge-md-web.onrender.com">
         <p align="center">
-   <img alt="toge01245" height="300" src="https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg">
+   <img alt="toge01245" height="300" src="https://telegra.ph/file/83f41a017edaf21646b3f.jpg">
               </p>
   </a>
 </p>
@@ -17,7 +17,7 @@
 <p align="center">
 
   <a aria-label="Tutorial" href="https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo" target="_blank">
-    <img alt="youtube" src="https://img.shields.io/badge/Tutorial-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+    <img alt="youtube" src="https://img.shields.io/badge/tutorial-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   
 <div align="center">
 
