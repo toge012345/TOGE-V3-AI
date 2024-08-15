@@ -1,1 +1,444 @@
-const _0x4aeaf5=_0x43f2;(function(_0x2b7666,_0x300302){const _0x4a62ad=_0x43f2,_0x6bc72d=_0x2b7666();while(!![]){try{const _0x29aebf=-parseInt(_0x4a62ad(0x6f))/0x1+parseInt(_0x4a62ad(0xa8))/0x2*(parseInt(_0x4a62ad(0x100))/0x3)+parseInt(_0x4a62ad(0x76))/0x4*(-parseInt(_0x4a62ad(0xd7))/0x5)+-parseInt(_0x4a62ad(0xe5))/0x6*(-parseInt(_0x4a62ad(0xf6))/0x7)+-parseInt(_0x4a62ad(0xab))/0x8+parseInt(_0x4a62ad(0xd2))/0x9+parseInt(_0x4a62ad(0x91))/0xa;if(_0x29aebf===_0x300302)break;else _0x6bc72d['push'](_0x6bc72d['shift']());}catch(_0x11ce42){_0x6bc72d['push'](_0x6bc72d['shift']());}}}(_0x2c7e,0xe5046),require(_0x4aeaf5(0xaf)));const pino=require(_0x4aeaf5(0xfb)),{Boom}=require('@hapi/boom'),fs=require('fs'),moment=require(_0x4aeaf5(0x111)),chalk=require('chalk'),FileType=require(_0x4aeaf5(0xd4)),path=require('path'),axios=require('axios'),Config=require(_0x4aeaf5(0xaf)),PhoneNumber=require('awesome-phonenumber'),{imageToWebp,videoToWebp,writeExifImg,writeExifVid}=require(_0x4aeaf5(0xf7)),{smsg,isUrl,generateMessageTag,getBuffer,getSizeMedia,fetch,await,sleep,reSize}=require(_0x4aeaf5(0xb3)),{default:MariaConnect,delay,PHONENUMBER_MCC,makeCacheableSignalKeyStore,useMultiFileAuthState,DisconnectReason,fetchLatestBaileysVersion,generateForwardMessageContent,prepareWAMessageMedia,generateWAMessageFromContent,generateMessageID,downloadContentFromMessage,makeInMemoryStore,getAggregateVotesInPollMessage,jidDecode,proto,Browsers}=require(_0x4aeaf5(0x107)),NodeCache=require(_0x4aeaf5(0x8c)),Pino=require(_0x4aeaf5(0xfb)),readline=require(_0x4aeaf5(0xe4)),{parsePhoneNumber}=require(_0x4aeaf5(0x10e)),prefix=global[_0x4aeaf5(0x70)]||'.',makeWASocket=require(_0x4aeaf5(0x107))[_0x4aeaf5(0x8f)],store=makeInMemoryStore({'logger':pino()[_0x4aeaf5(0xa3)]({'level':_0x4aeaf5(0xce),'stream':'store'})});let phoneNumber=_0x4aeaf5(0x10a),owner=JSON[_0x4aeaf5(0xfa)](fs[_0x4aeaf5(0xbb)]('./Media/database/owner.json'));const pairingCode=!!phoneNumber||process[_0x4aeaf5(0x92)][_0x4aeaf5(0xd8)](_0x4aeaf5(0x88)),useMobile=process[_0x4aeaf5(0x92)][_0x4aeaf5(0xd8)](_0x4aeaf5(0x7d)),rl=readline[_0x4aeaf5(0xc8)]({'input':process[_0x4aeaf5(0xd6)],'output':process[_0x4aeaf5(0xfc)]}),question=_0x35f82d=>new Promise(_0x31a45d=>rl[_0x4aeaf5(0xe7)](_0x35f82d,_0x31a45d));async function startMaria(){const _0x1c3c09=_0x4aeaf5;let {version:_0x1483a2,isLatest:_0x3d2f13}=await fetchLatestBaileysVersion();const {state:_0x239cde,saveCreds:_0x34a3e4}=await useMultiFileAuthState('./session'),_0x862387=new NodeCache(),_0x3b8cd5=makeWASocket({'logger':pino({'level':_0x1c3c09(0xce)}),'printQRInTerminal':!pairingCode,'mobile':useMobile,'browser':Browsers[_0x1c3c09(0x95)]('Chrome'),'auth':_0x239cde,'markOnlineOnConnect':!![],'generateHighQualityLinkPreview':!![],'getMessage':async _0x3e176f=>{const _0x31f911=_0x1c3c09;let _0x51ac6f=jidNormalizedUser(_0x3e176f['remoteJid']),_0x386748=await store['loadMessage'](_0x51ac6f,_0x3e176f['id']);return _0x386748?.[_0x31f911(0xc2)]||'';},'msgRetryCounterCache':_0x862387,'defaultQueryTimeoutMs':undefined});store[_0x1c3c09(0xf3)](_0x3b8cd5['ev']);if(pairingCode&&!_0x3b8cd5['authState'][_0x1c3c09(0xba)][_0x1c3c09(0xfd)]){if(useMobile)throw new Error('Cannot\x20use\x20pairing\x20code\x20with\x20mobile\x20api');let _0x3655d9;!!_0x3655d9?(_0x3655d9=_0x3655d9['replace'](/[^0-9]/g,''),!Object[_0x1c3c09(0xd5)](PHONENUMBER_MCC)[_0x1c3c09(0x6d)](_0x1bc7dd=>_0x3655d9['startsWith'](_0x1bc7dd))&&(console[_0x1c3c09(0x108)](chalk['bgBlack'](chalk[_0x1c3c09(0xbf)](_0x1c3c09(0xbd)))),process[_0x1c3c09(0x6b)](0x0))):(_0x3655d9=await question(chalk[_0x1c3c09(0x10c)](chalk[_0x1c3c09(0xdf)](_0x1c3c09(0x102)))),_0x3655d9=_0x3655d9[_0x1c3c09(0xae)](/[^0-9]/g,''),!Object[_0x1c3c09(0xd5)](PHONENUMBER_MCC)[_0x1c3c09(0x6d)](_0x1d7d38=>_0x3655d9[_0x1c3c09(0x75)](_0x1d7d38))&&(console[_0x1c3c09(0x108)](chalk['bgBlack'](chalk[_0x1c3c09(0xbf)](_0x1c3c09(0xbd)))),_0x3655d9=await question(chalk['bgBlack'](chalk['greenBright'](_0x1c3c09(0x106)))),_0x3655d9=_0x3655d9[_0x1c3c09(0xae)](/[^0-9]/g,''),rl[_0x1c3c09(0x7a)]())),setTimeout(async()=>{const _0x5315bd=_0x1c3c09;let _0x4d34c1=await _0x3b8cd5[_0x5315bd(0x110)](_0x3655d9);_0x4d34c1=_0x4d34c1?.[_0x5315bd(0xc6)](/.{1,4}/g)?.[_0x5315bd(0x77)]('-')||_0x4d34c1,console[_0x5315bd(0x108)](chalk['black'](chalk[_0x5315bd(0xf5)]('🤖Your\x20Pairing\x20Code🤖:\x20')),chalk[_0x5315bd(0xe9)](chalk['white'](_0x4d34c1)));},0xbb8);}_0x3b8cd5['ev']['on'](_0x1c3c09(0x104),async _0x1ef52f=>{const _0x50bda6=_0x1c3c09;try{const _0x3fa26a=_0x1ef52f[_0x50bda6(0xb9)][0x0];if(!_0x3fa26a[_0x50bda6(0xc2)])return;_0x3fa26a[_0x50bda6(0xc2)]=Object[_0x50bda6(0xd5)](_0x3fa26a[_0x50bda6(0xc2)])[0x0]==='ephemeralMessage'?_0x3fa26a[_0x50bda6(0xc2)][_0x50bda6(0x80)][_0x50bda6(0xc2)]:_0x3fa26a['message'];_0x3fa26a[_0x50bda6(0xec)]&&_0x3fa26a['key'][_0x50bda6(0x71)]===_0x50bda6(0xa2)&&(autoread_status&&await _0x3b8cd5[_0x50bda6(0x94)]([_0x3fa26a[_0x50bda6(0xec)]]));if(!_0x3b8cd5['public']&&!_0x3fa26a[_0x50bda6(0xec)]['fromMe']&&_0x1ef52f[_0x50bda6(0xa9)]===_0x50bda6(0xe3))return;if(_0x3fa26a[_0x50bda6(0xec)]['id'][_0x50bda6(0x75)](_0x50bda6(0xf9))&&_0x3fa26a[_0x50bda6(0xec)]['id'][_0x50bda6(0x83)]===0x10)return;const _0x2f52cb=smsg(_0x3b8cd5,_0x3fa26a,store);require(_0x50bda6(0xd0))(_0x3b8cd5,_0x2f52cb,_0x1ef52f,store);}catch(_0x3333c4){console[_0x50bda6(0x108)](_0x3333c4);}}),_0x3b8cd5[_0x1c3c09(0xa1)]=async(_0x2f678d,_0x533c32,_0xb955e8='',_0x160b1f={})=>{const _0x3dba91=_0x1c3c09;let _0x463482=[];for(let _0x4644ae of _0x533c32){_0x463482['push']({'displayName':await _0x3b8cd5[_0x3dba91(0xa5)](_0x4644ae+_0x3dba91(0xda)),'vcard':_0x3dba91(0xa0)+await _0x3b8cd5['getName'](_0x4644ae+_0x3dba91(0xda))+'\x0aFN:'+await _0x3b8cd5[_0x3dba91(0xa5)](_0x4644ae+'@s.whatsapp.net')+_0x3dba91(0xad)+_0x4644ae+':'+_0x4644ae+_0x3dba91(0xde)});}_0x3b8cd5['sendMessage'](_0x2f678d,{'contacts':{'displayName':global[_0x3dba91(0xb8)],'contacts':_0x463482},..._0x160b1f},{'quoted':_0xb955e8});},_0x3b8cd5[_0x1c3c09(0x10b)]=_0x2162ef=>{const _0x504bd2=_0x1c3c09;if(!_0x2162ef)return _0x2162ef;if(/:\d+@/gi[_0x504bd2(0xed)](_0x2162ef)){let _0x433fe9=jidDecode(_0x2162ef)||{};return _0x433fe9[_0x504bd2(0x103)]&&_0x433fe9[_0x504bd2(0x73)]&&_0x433fe9['user']+'@'+_0x433fe9['server']||_0x2162ef;}else return _0x2162ef;},_0x3b8cd5['ev']['on'](_0x1c3c09(0xb4),_0x2bfc8d=>{const _0x55fa6a=_0x1c3c09;for(let _0x40696b of _0x2bfc8d){let _0x4c14b9=_0x3b8cd5[_0x55fa6a(0x10b)](_0x40696b['id']);if(store&&store[_0x55fa6a(0x8d)])store[_0x55fa6a(0x8d)][_0x4c14b9]={'id':_0x4c14b9,'name':_0x40696b[_0x55fa6a(0xe3)]};}}),_0x3b8cd5[_0x1c3c09(0xa5)]=(_0x21a245,_0x251650=![])=>{const _0x1dee6b=_0x1c3c09;id=_0x3b8cd5[_0x1dee6b(0x10b)](_0x21a245),_0x251650=_0x3b8cd5[_0x1dee6b(0x9b)]||_0x251650;let _0x5de4d2;if(id[_0x1dee6b(0x81)](_0x1dee6b(0xa7)))return new Promise(async _0x24d328=>{const _0x29d3a5=_0x1dee6b;_0x5de4d2=store[_0x29d3a5(0x8d)][id]||{};if(!(_0x5de4d2[_0x29d3a5(0x10f)]||_0x5de4d2[_0x29d3a5(0x89)]))_0x5de4d2=_0x3b8cd5[_0x29d3a5(0x87)](id)||{};_0x24d328(_0x5de4d2[_0x29d3a5(0x10f)]||_0x5de4d2[_0x29d3a5(0x89)]||PhoneNumber('+'+id[_0x29d3a5(0xae)](_0x29d3a5(0xda),''))[_0x29d3a5(0x93)]('international'));});else _0x5de4d2=id==='0@s.whatsapp.net'?{'id':id,'name':_0x1dee6b(0xe0)}:id===_0x3b8cd5[_0x1dee6b(0x10b)](_0x3b8cd5['user']['id'])?_0x3b8cd5[_0x1dee6b(0x103)]:store[_0x1dee6b(0x8d)][id]||{};return(_0x251650?'':_0x5de4d2[_0x1dee6b(0x10f)])||_0x5de4d2[_0x1dee6b(0x89)]||_0x5de4d2['verifiedName']||PhoneNumber('+'+_0x21a245[_0x1dee6b(0xae)](_0x1dee6b(0xda),''))[_0x1dee6b(0x93)]('international');},_0x3b8cd5[_0x1c3c09(0xcb)]=!![],_0x3b8cd5[_0x1c3c09(0xb7)]=_0xc49710=>smsg(_0x3b8cd5,_0xc49710,store),_0x3b8cd5['ev']['on'](_0x1c3c09(0x112),async _0x4678fc=>{const _0x159db7=_0x1c3c09,{connection:_0x156dc2,lastDisconnect:_0x4aaeb4}=_0x4678fc;if(_0x156dc2=='open'){console['log'](chalk['green'](_0x159db7(0xd3))),console[_0x159db7(0x108)](chalk[_0x159db7(0x97)](_0x159db7(0xe1))),await delay(0x3e8*0x2),console[_0x159db7(0x108)](chalk['cyan'](_0x159db7(0xca))),_0x3b8cd5[_0x159db7(0x78)](_0x3b8cd5[_0x159db7(0x103)]['id'],{'text':_0x159db7(0xf0)+prefix+'\x20]\x0a\x0aᴄᴏᴍᴍᴀɴᴅꜱ:\x20246\x0a\x0aᴠᴇʀꜱɪᴏɴ:\x203.0\x0a\x0aᴄʀᴇᴀᴛᴏʀ:\x20𓆩𝐓𝐎𝐆𝐄𓆪\x20✇\x20◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈\x0a\x0a_ᴛʏᴘᴇ\x20'+prefix+_0x159db7(0xbc)});const _0x4551fb=[_0x159db7(0x8e),_0x159db7(0xc9),_0x159db7(0x99),_0x159db7(0x101),_0x159db7(0xf8)];let _0x5b51d6=0x0;function _0x1bb3c7(){const _0x44aa90=_0x159db7,_0x71ed16=_0x4551fb[_0x5b51d6];console[_0x44aa90(0x108)](chalk[_0x44aa90(0xdd)](_0x71ed16)(_0x44aa90(0xb0))),_0x5b51d6=(_0x5b51d6+0x1)%_0x4551fb['length'],setTimeout(_0x1bb3c7,0xea60);}_0x1bb3c7();}_0x156dc2===_0x159db7(0x7a)&&_0x4aaeb4&&_0x4aaeb4['error']&&_0x4aaeb4['error'][_0x159db7(0x7f)]['statusCode']!=0x191&&startMaria();}),_0x3b8cd5['ev']['on']('creds.update',_0x34a3e4),_0x3b8cd5['ev']['on'](_0x1c3c09(0x104),()=>{}),_0x3b8cd5[_0x1c3c09(0x109)]=(_0x5c50d5,_0x4811e3,_0x5f002c='',_0x346f77)=>_0x3b8cd5['sendMessage'](_0x5c50d5,{'text':_0x4811e3,..._0x346f77},{'quoted':_0x5f002c,..._0x346f77}),_0x3b8cd5[_0x1c3c09(0xf1)]=async(_0x48dad8,_0x16dd4f,_0x3a29d7,_0x20d58e={})=>_0x3b8cd5[_0x1c3c09(0x78)](_0x48dad8,{'text':_0x16dd4f,'mentions':[..._0x16dd4f[_0x1c3c09(0xc7)](/@(\d{0,16})/g)][_0x1c3c09(0xc4)](_0x1f2c80=>_0x1f2c80[0x1]+_0x1c3c09(0xda)),..._0x20d58e},{'quoted':_0x3a29d7});async function _0x4a3302(_0x364e3d,_0x1e6e23){const _0x3c2001=_0x1c3c09;let _0x3e2f38=await generateWAMessage(m?.[_0x3c2001(0xc1)],{'text':_0x364e3d,'mentions':m?.[_0x3c2001(0xc5)]},{'userJid':_0x3b8cd5['user']['id'],'quoted':m?.['quoted']&&m?.[_0x3c2001(0xbe)][_0x3c2001(0xff)]});_0x3e2f38[_0x3c2001(0xec)][_0x3c2001(0xaa)]=areJidsSameUser(m?.['sender'],_0x3b8cd5['user']['id']),_0x3e2f38['key']['id']=m?.[_0x3c2001(0xec)]['id'],_0x3e2f38[_0x3c2001(0xee)]=m?.[_0x3c2001(0xee)];if(m?.['isGroup'])_0x3e2f38['participant']=m?.[_0x3c2001(0xdb)];let _0x1d8dfd={..._0x1e6e23,'messages':[proto[_0x3c2001(0x6e)]['fromObject'](_0x3e2f38)],'type':_0x3c2001(0xc0)};_0x3b8cd5['ev']['emit'](_0x3c2001(0x104),_0x1d8dfd);}_0x3b8cd5[_0x1c3c09(0xef)]=async(_0x4d4667,_0x56ada7,_0x15c525,_0x26aa8f={})=>{const _0xed1310=_0x1c3c09;let _0x1b916a=Buffer['isBuffer'](_0x56ada7)?_0x56ada7:/^data:.*?\/.*?;base64,/i[_0xed1310(0xed)](_0x56ada7)?Buffer[_0xed1310(0x72)](_0x56ada7[_0xed1310(0x7e)]`,`[0x1],_0xed1310(0x98)):/^https?:\/\//['test'](_0x56ada7)?await await getBuffer(_0x56ada7):fs[_0xed1310(0xb6)](_0x56ada7)?fs['readFileSync'](_0x56ada7):Buffer[_0xed1310(0x90)](0x0),_0x2a79df;return _0x26aa8f&&(_0x26aa8f[_0xed1310(0xf4)]||_0x26aa8f[_0xed1310(0x8b)])?_0x2a79df=await writeExifImg(_0x1b916a,_0x26aa8f):_0x2a79df=await imageToWebp(_0x1b916a),await _0x3b8cd5[_0xed1310(0x78)](_0x4d4667,{'sticker':{'url':_0x2a79df},..._0x26aa8f},{'quoted':_0x15c525}),_0x2a79df;},_0x3b8cd5[_0x1c3c09(0x74)]=async(_0x38b3b0,_0xc78a96,_0x55e8d7,_0xbeaf96={})=>{const _0xb7283d=_0x1c3c09;let _0x44aff6=Buffer[_0xb7283d(0xcc)](_0xc78a96)?_0xc78a96:/^data:.*?\/.*?;base64,/i[_0xb7283d(0xed)](_0xc78a96)?Buffer['from'](_0xc78a96[_0xb7283d(0x7e)]`,`[0x1],_0xb7283d(0x98)):/^https?:\/\//[_0xb7283d(0xed)](_0xc78a96)?await await getBuffer(_0xc78a96):fs[_0xb7283d(0xb6)](_0xc78a96)?fs[_0xb7283d(0xbb)](_0xc78a96):Buffer[_0xb7283d(0x90)](0x0),_0x47a2df;return _0xbeaf96&&(_0xbeaf96[_0xb7283d(0xf4)]||_0xbeaf96[_0xb7283d(0x8b)])?_0x47a2df=await writeExifVid(_0x44aff6,_0xbeaf96):_0x47a2df=await videoToWebp(_0x44aff6),await _0x3b8cd5[_0xb7283d(0x78)](_0x38b3b0,{'sticker':{'url':_0x47a2df},..._0xbeaf96},{'quoted':_0x55e8d7}),_0x47a2df;},_0x3b8cd5['downloadAndSaveMediaMessage']=async(_0x4d8322,_0x4a925b,_0x53d97f=!![])=>{const _0x3b6518=_0x1c3c09;let _0x297763=_0x4d8322[_0x3b6518(0x96)]?_0x4d8322['msg']:_0x4d8322,_0xc4b84c=(_0x4d8322[_0x3b6518(0x96)]||_0x4d8322)['mimetype']||'',_0x1987d6=_0x4d8322[_0x3b6518(0x79)]?_0x4d8322[_0x3b6518(0x79)][_0x3b6518(0xae)](/Message/gi,''):_0xc4b84c[_0x3b6518(0x7e)]('/')[0x0];const _0x474df5=await downloadContentFromMessage(_0x297763,_0x1987d6);let _0x2dee42=Buffer[_0x3b6518(0x72)]([]);for await(const _0x3c2869 of _0x474df5){_0x2dee42=Buffer['concat']([_0x2dee42,_0x3c2869]);}let _0x588816=await FileType['fromBuffer'](_0x2dee42);return trueFileName=_0x53d97f?_0x4a925b+'.'+_0x588816[_0x3b6518(0x7b)]:_0x4a925b,await fs[_0x3b6518(0xeb)](trueFileName,_0x2dee42),trueFileName;};async function _0x243e79(_0x6c6c17){const _0x2fd3f1=_0x1c3c09;if(store){const _0x5d8609=await store[_0x2fd3f1(0x9a)](_0x6c6c17[_0x2fd3f1(0x71)],_0x6c6c17['id']);return _0x5d8609?.[_0x2fd3f1(0xc2)];}return{'conversation':'TOGE-MD-V3\x20Here!'};}_0x3b8cd5['ev']['on'](_0x1c3c09(0xe8),async _0x34d3aa=>{const _0x434131=_0x1c3c09;for(const {key:_0x198840,update:_0x45d907}of _0x34d3aa){if(_0x45d907[_0x434131(0xe6)]&&_0x198840[_0x434131(0xaa)]){const _0x207e2f=await _0x243e79(_0x198840);if(_0x207e2f){const _0x12b812=await getAggregateVotesInPollMessage({'message':_0x207e2f,'pollUpdates':_0x45d907[_0x434131(0xe6)]});var _0x56ab94=_0x12b812['filter'](_0x1404c6=>_0x1404c6[_0x434131(0xdc)][_0x434131(0x83)]!==0x0)[0x0]?.[_0x434131(0x10f)];if(_0x56ab94==undefined)return;var _0xff40e3=xprefix+_0x56ab94;_0x3b8cd5[_0x434131(0x86)](_0xff40e3,_0x34d3aa);}}}}),_0x3b8cd5[_0x1c3c09(0xd1)]=(_0x24ccf6,_0x219e7f='',_0x56206a=[],_0x3c9ad=0x1)=>{const _0x27f70b=_0x1c3c09;return _0x3b8cd5[_0x27f70b(0x78)](_0x24ccf6,{'poll':{'name':_0x219e7f,'values':_0x56206a,'selectableCount':_0x3c9ad}});},_0x3b8cd5['ev']['on']('group-participants.update',async _0xd062ab=>{const _0x125d74=_0x1c3c09;if(global['welcome']){console['log'](_0xd062ab);try{let _0x10bd1c=await _0x3b8cd5[_0x125d74(0x87)](_0xd062ab['id']),_0x84fcf1=_0xd062ab['participants'];for(let _0x3a5743 of _0x84fcf1){try{ppuser=await _0x3b8cd5['profilePictureUrl'](_0x3a5743,_0x125d74(0xd9));}catch(_0x2b23d0){ppuser=_0x125d74(0x8a);}try{ppgroup=await _0x3b8cd5['profilePictureUrl'](_0xd062ab['id'],_0x125d74(0xd9));}catch(_0x347cb7){ppgroup='https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60';}memb=_0x10bd1c['participants'][_0x125d74(0x83)],MariaWlcm=await getBuffer(ppuser),MariaLft=await getBuffer(ppuser);if(_0xd062ab[_0x125d74(0x9d)]=='add'){const _0x422f70=await getBuffer(ppuser);let _0x5f3edb=_0x3a5743;const _0x350918=moment['tz'](_0x125d74(0xcf))[_0x125d74(0xf2)](_0x125d74(0xa4)),_0x3728ff=moment['tz'](_0x125d74(0xcf))[_0x125d74(0xf2)]('DD/MM/YYYY'),_0x31cf67=_0x10bd1c[_0x125d74(0x6c)][_0x125d74(0x83)];Mariabody=_0x125d74(0xea)+_0x10bd1c[_0x125d74(0x89)]+_0x125d74(0x7c)+_0x5f3edb[_0x125d74(0x7e)]('@')[0x0]+'\x0a│⊳\x20\x20👥\x20Members:\x20'+_0x31cf67+_0x125d74(0x10d)+_0x350918+'\x20'+_0x3728ff+_0x125d74(0xe2),_0x3b8cd5[_0x125d74(0x78)](_0xd062ab['id'],{'text':Mariabody,'contextInfo':{'mentionedJid':[_0x3a5743],'externalAdReply':{'showAdAttribution':!![],'containsAutoReply':!![],'title':'\x20'+global['botname'],'body':''+ownername,'previewType':_0x125d74(0xa6),'thumbnailUrl':'','thumbnail':MariaWlcm,'sourceUrl':''+link}}});}else{if(_0xd062ab[_0x125d74(0x9d)]=='remove'){const _0x2bfc4c=await getBuffer(ppuser),_0x223ccd=moment['tz'](_0x125d74(0xcf))[_0x125d74(0xf2)](_0x125d74(0xa4)),_0x225e7a=moment['tz'](_0x125d74(0xcf))['format']('DD/MM/YYYY');let _0x5845b9=_0x3a5743;const _0x5025cd=_0x10bd1c[_0x125d74(0x6c)][_0x125d74(0x83)];Mariabody=_0x125d74(0x84)+_0x10bd1c['subject']+_0x125d74(0x9e)+_0x5845b9['split']('@')[0x0]+_0x125d74(0xcd)+_0x5025cd+_0x125d74(0x9c)+_0x223ccd+'\x20'+_0x225e7a+_0x125d74(0xe2),_0x3b8cd5[_0x125d74(0x78)](_0xd062ab['id'],{'text':Mariabody,'contextInfo':{'mentionedJid':[_0x3a5743],'externalAdReply':{'showAdAttribution':!![],'containsAutoReply':!![],'title':'\x20'+global[_0x125d74(0x85)],'body':''+ownername,'previewType':_0x125d74(0xa6),'thumbnailUrl':'','thumbnail':MariaLft,'sourceUrl':''+link}}});}}}}catch(_0x4cfa45){console[_0x125d74(0x108)](_0x4cfa45);}}}),_0x3b8cd5[_0x1c3c09(0x82)]=async _0x4c148c=>{const _0x4d39d9=_0x1c3c09;let _0x4c78c5=(_0x4c148c[_0x4d39d9(0x96)]||_0x4c148c)[_0x4d39d9(0x9f)]||'',_0x494eaa=_0x4c148c[_0x4d39d9(0x79)]?_0x4c148c[_0x4d39d9(0x79)][_0x4d39d9(0xae)](/Message/gi,''):_0x4c78c5[_0x4d39d9(0x7e)]('/')[0x0];const _0x10a4b9=await downloadContentFromMessage(_0x4c148c,_0x494eaa);let _0x128b7b=Buffer[_0x4d39d9(0x72)]([]);for await(const _0x2b6c34 of _0x10a4b9){_0x128b7b=Buffer[_0x4d39d9(0xfe)]([_0x128b7b,_0x2b6c34]);}return _0x128b7b;};}return startMaria();let file=require[_0x4aeaf5(0x105)](__filename);function _0x43f2(_0x48d629,_0x26734d){const _0x2c7e49=_0x2c7e();return _0x43f2=function(_0x43f212,_0x10f64c){_0x43f212=_0x43f212-0x6b;let _0x45f944=_0x2c7e49[_0x43f212];return _0x45f944;},_0x43f2(_0x48d629,_0x26734d);}fs['watchFile'](file,()=>{const _0xe92211=_0x4aeaf5;fs[_0xe92211(0xb1)](file),console[_0xe92211(0x108)](chalk[_0xe92211(0xbf)]('Update\x20'+__filename)),delete require[_0xe92211(0xc3)][file],require(file);}),process['on']('uncaughtException',function(_0xf578dd){const _0x456724=_0x4aeaf5;let _0x22c4ad=String(_0xf578dd);if(_0x22c4ad[_0x456724(0xd8)](_0x456724(0xb5)))return;if(_0x22c4ad[_0x456724(0xd8)](_0x456724(0xac)))return;if(_0x22c4ad['includes']('rate-overlimit'))return;if(_0x22c4ad[_0x456724(0xd8)](_0x456724(0xb2)))return;if(_0x22c4ad[_0x456724(0xd8)]('Timed\x20Out'))return;if(_0x22c4ad['includes']('Value\x20not\x20found'))return;console[_0x456724(0x108)]('Caught\x20exception:\x20',_0xf578dd);});function _0x2c7e(){const _0x4a1043=['black','┌──⊰\x20🎗𝑾𝑬𝑳𝑪𝑶𝑴𝑬🎗⊰\x0a│⊳\x20\x20🌐\x20To:\x20','writeFileSync','key','test','pushName','sendImageAsSticker','𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹\x20𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳\x0a\x0aᴘʀᴇꜰɪx:\x20[\x20','sendTextWithMentions','format','bind','packname','bgGreen','9201003IiWesR','./Media/lib/exif','purple','BAE5','parse','pino','stdout','registered','concat','fakeObj','81GVSuxq','blue','Your\x20WhatsApp\x20bot\x20number\x0aFor\x20example:\x20+24105114159\x20:\x20','user','messages.upsert','resolve','Your\x20WhatsApp\x20bot\x20number\x20please\x0aFor\x20example:\x20+24105114159:\x20','@whiskeysockets/baileys','log','sendText','24105114159','decodeJid','bgBlack','th\x0a│⊳\x20\x20🕰️\x20Joined:\x20','libphonenumber-js','name','requestPairingCode','moment-timezone','connection.update','exit','participants','some','WebMessageInfo','841858fIlTTK','prefa','remoteJid','from','server','sendVideoAsSticker','startsWith','28ifrcZH','join','sendMessage','mtype','close','ext','\x0a│⊳\x20\x20📋\x20Name:\x20@','--mobile','split','output','ephemeralMessage','endsWith','downloadMediaMessage','length','┌──⊰🍁𝑭𝑨𝑹𝑬𝑾𝑬𝑳𝑳🍁⊰\x0a│⊳\x20\x20👤\x20From:\x20','botname','appenTextMessage','groupMetadata','--pairing-code','subject','https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60','author','node-cache','contacts','red','default','alloc','11862640nNLZZB','argv','getNumber','readMessages','ubuntu','msg','gray','base64','green','loadMessage','withoutContact','th\x0a│⊳\x20\x20🕒\x20Time:\x20','action','\x0a│⊳\x20\x20📃\x20Reason:\x20Left\x0a│⊳\x20\x20📔\x20Name:\x20@','mimetype','BEGIN:VCARD\x0aVERSION:3.0\x0aN:','sendContact','status@broadcast','child','HH:mm:ss','getName','PHOTO','@g.us','56458GYEwcv','type','fromMe','11186712VYeefC','item-not-found','\x0aitem1.TEL;waid=','replace','./Config','\x0a\x0a\x1a\x1awaiting\x20for\x20messages','unwatchFile','Connection\x20Closed','./Media/lib/myfunc.js','contacts.update','Socket\x20connection\x20timeout','existsSync','serializeM','ownername','messages','creds','readFileSync','ᴀʟɪᴠᴇ\x20ᴛᴏ\x20ᴜꜱᴇ\x20ᴛʜᴇ\x20ʙᴏᴛ_\x20🤖\x0a\x20','Start\x20with\x20country\x20code\x20of\x20your\x20WhatsApp\x20Number,\x20Example\x20:\x20+24105114159','quoted','redBright','append','chat','message','cache','map','mentionedJid','match','matchAll','createInterface','yellow','\x0a\x0a🥵\x1a\x1a\x1aConnected','public','isBuffer','\x0a│⊳\x20\x20👥\x20Members:\x20','silent','Asia/Kolkata','./TOGE-MD-V3','sendPoll','1916631mmEiqp','\x1a🟨Welcome\x20to\x20TOGE-MD-V3','file-type','keys','stdin','212560IzvRGM','includes','image','@s.whatsapp.net','sender','voters','keyword','\x0aitem1.X-ABLabel:Ponsel\x0aitem2.EMAIL;type=INTERNET:togeoff2@gmail.com\x0aitem2.X-ABLabel:Email\x0aitem3.URL:https://instagram.com/lawliet.kfx\x0aitem3.X-ABLabel:Instagram\x0aitem4.ADR:;;Indonesia;;;;\x0aitem4.X-ABLabel:Region\x0aEND:VCARD','greenBright','WhatsApp','\x0a\x0a🚀\x1aInitializing...','\x0a└──────────⊰','notify','readline','6MCIwEb','pollUpdates','question','messages.update'];_0x2c7e=function(){return _0x4a1043;};return _0x2c7e();}
+require('./Config')
+const pino = require('pino')
+const { Boom } = require('@hapi/boom')
+const fs = require('fs')
+const moment = require('moment-timezone');
+const chalk = require('chalk')
+const FileType = require('file-type')
+const path = require('path')
+const axios = require('axios')
+const Config = require("./Config")
+const PhoneNumber = require('awesome-phonenumber')
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetch, await, sleep, reSize } = require('./lib/myfunc.js')
+const { default: MariaConnect, delay, PHONENUMBER_MCC, makeCacheableSignalKeyStore, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore,getAggregateVotesInPollMessage, jidDecode, proto, Browsers } = require("@whiskeysockets/baileys")
+const NodeCache = require("node-cache")
+const Pino = require("pino")
+const readline = require("readline")
+const { parsePhoneNumber } = require("libphonenumber-js")
+
+const prefix = global.prefa || "." 
+
+const makeWASocket = 
+require("@whiskeysockets/baileys").default
+
+const store = makeInMemoryStore({
+    logger: pino().child({
+        level: 'silent',
+        stream: 'store'
+    })
+})
+
+let phoneNumber = "24105114159"
+let owner = JSON.parse(fs.readFileSync('./database/owner.json'))
+
+const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
+const useMobile = process.argv.includes("--mobile")
+
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+const question = (text) => new Promise((resolve) => rl.question(text, resolve))
+         
+async function startMaria() {
+//------------------------------------------------------
+let { version, isLatest } = await fetchLatestBaileysVersion()
+const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
+    const msgRetryCounterCache = new NodeCache() // for retry message, "waiting message"
+    const Maria = makeWASocket({
+      logger: pino({ level: 'silent' }),
+      printQRInTerminal: !pairingCode, // popping up QR in terminal log
+      mobile: useMobile, // mobile api (prone to bans)
+      browser: Browsers.ubuntu('Chrome'), // for this issues https://github.com/WhiskeySockets/Baileys/issues/328
+      auth: state,
+      markOnlineOnConnect: true, // set false for offline
+      generateHighQualityLinkPreview: true, // make high preview link
+      getMessage: async (key) => {
+         let jid = jidNormalizedUser(key.remoteJid)
+         let msg = await store.loadMessage(jid, key.id)
+
+         return msg?.message || ""
+      },
+      msgRetryCounterCache, // Resolve waiting messages
+      defaultQueryTimeoutMs: undefined, // for this issues https://github.com/WhiskeySockets/Baileys/issues/276
+   })
+   
+   store.bind(Maria.ev)
+
+    // login use pairing code
+   // source code https://github.com/WhiskeySockets/Baileys/blob/master/Example/example.ts#L61
+   if (pairingCode && !Maria.authState.creds.registered) {
+      if (useMobile) throw new Error('Cannot use pairing code with mobile api')
+
+      let phoneNumber
+      if (!!phoneNumber) {
+         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+
+         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +24105114159")))
+            process.exit(0)
+         }
+      } else {
+         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number\nFor example: +24105114159 : `)))
+         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+
+         // Ask again when entering the wrong number
+         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +24105114159")))
+
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number please\nFor example: +24105114159: `)))
+            phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
+            rl.close()
+         }
+      }
+
+      setTimeout(async () => {
+         let code = await Maria.requestPairingCode(phoneNumber)
+         code = code?.match(/.{1,4}/g)?.join("-") || code
+         console.log(chalk.black(chalk.bgGreen(`🤖Your Pairing Code🤖: `)), chalk.black(chalk.white(code)))
+      }, 3000)
+   }
+
+    Maria.ev.on('messages.upsert', async chatUpdate => {
+        //console.log(JSON.stringify(chatUpdate, undefined, 2))
+        try {
+            const mek = chatUpdate.messages[0]
+            if (!mek.message) return
+            mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+            if (mek.key && mek.key.remoteJid === 'status@broadcast'){
+            if (autoread_status) {
+            await Maria.readMessages([mek.key]) 
+            }
+            } 
+            if (!Maria.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+            if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
+            const m = smsg(Maria, mek, store)
+            require("./TOGE-MD-V3")(Maria, m, chatUpdate, store)
+        } catch (err) {
+            console.log(err)
+        }
+    })
+
+   Maria.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+	let list = []
+	for (let i of kon) {
+	    list.push({
+	    	displayName: await Maria.getName(i + '@s.whatsapp.net'),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Maria.getName(i + '@s.whatsapp.net')}\nFN:${await Maria.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:okeae2410@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/cak_haho\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    })
+	}
+	Maria.sendMessage(jid, { contacts: { displayName: global.ownername, contacts: list }, ...opts }, { quoted })
+    }
+    
+    Maria.decodeJid = (jid) => {
+        if (!jid) return jid
+        if (/:\d+@/gi.test(jid)) {
+            let decode = jidDecode(jid) || {}
+            return decode.user && decode.server && decode.user + '@' + decode.server || jid
+        } else return jid
+    }
+
+    Maria.ev.on('contacts.update', update => {
+        for (let contact of update) {
+            let id = Maria.decodeJid(contact.id)
+            if (store && store.contacts) store.contacts[id] = {
+                id,
+                name: contact.notify
+            }
+        }
+    })
+
+    Maria.getName = (jid, withoutContact = false) => {
+        id = Maria.decodeJid(jid)
+        withoutContact = Maria.withoutContact || withoutContact
+        let v
+        if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
+            v = store.contacts[id] || {}
+            if (!(v.name || v.subject)) v = Maria.groupMetadata(id) || {}
+            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
+        })
+        else v = id === '0@s.whatsapp.net' ? {
+                id,
+                name: 'WhatsApp'
+            } : id === Maria.decodeJid(Maria.user.id) ?
+            Maria.user :
+            (store.contacts[id] || {})
+        return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+    }
+    
+    Maria.public = true
+
+    Maria.serializeM = (m) => smsg(Maria, m, store)
+
+Maria.ev.on("connection.update",async  (s) => {
+        const { connection, lastDisconnect } = s
+        if (connection == "open") {
+console.log(chalk.green('🟨Welcome to TOGE-MD-V3'));
+console.log(chalk.gray('\n\n🚀Initializing...'));
+           await delay(1000 * 2) 
+            
+            
+console.log(chalk.cyan('\n\n🥵Connected'));
+
+Maria.sendMessage(Maria.user.id, {
+    text: `𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 ᴄᴏɴɴᴇᴄᴛᴇᴅ 
+
+ᴘʀᴇꜰɪx: [ ${prefix} ]\n
+ᴄᴏᴍᴍᴀɴᴅꜱ: 248\n
+ᴠᴇʀꜱɪᴏɴ: 3.0\n
+ᴄʀᴇᴀᴛᴏʀ: ᴛᴏɢᴇ ɪɴᴜᴍᴀᴋɪ\n
+_ᴛʏᴘᴇ ${prefix}ᴀʟɪᴠᴇ ᴛᴏ ᴜꜱᴇ ᴛʜᴇ ʙᴏᴛ_ 🤖
+ `
+});
+
+
+const rainbowColors = ['red', 'yellow', 'green', 'blue', 'purple'];
+let index = 0;
+
+function printRainbowMessage() {
+  const color = rainbowColors[index];
+  console.log(chalk.keyword(color)('\n\nwaiting for messages'));
+  index = (index + 1) % rainbowColors.length;
+  setTimeout(printRainbowMessage, 60000);  // Adjust the timeout for desired speed
+}
+
+printRainbowMessage();
+}
+    
+        
+                if (
+            connection === "close" &&
+            lastDisconnect &&
+            lastDisconnect.error &&
+            lastDisconnect.error.output.statusCode != 401
+        ) {
+            startMaria()
+        }
+    })
+    Maria.ev.on('creds.update', saveCreds)
+    Maria.ev.on("messages.upsert",  () => { })
+
+    Maria.sendText = (jid, text, quoted = '', options) => Maria.sendMessage(jid, {
+        text: text,
+        ...options
+    }, {
+        quoted,
+        ...options
+    })
+    Maria.sendTextWithMentions = async (jid, text, quoted, options = {}) => Maria.sendMessage(jid, {
+        text: text,
+        mentions: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net'),
+        ...options
+    }, {
+        quoted
+    })
+    
+     async function appenTextMessage(text, chatUpdate) {
+        let messages = await generateWAMessage(m?.chat, { text: text, mentions: m?.mentionedJid }, {
+            userJid: Maria.user.id,
+            quoted:m?.quoted && m?.quoted.fakeObj
+        })
+        messages.key.fromMe = areJidsSameUser(m?.sender, Maria.user.id)
+        messages.key.id = m?.key.id
+        messages.pushName = m?.pushName
+        if (m?.isGroup) messages.participant = m?.sender
+        let msg = {
+            ...chatUpdate,
+            messages: [proto.WebMessageInfo.fromObject(messages)],
+            type: 'append'}
+Maria.ev.emit('messages.upsert', msg)}       
+
+    Maria.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+            buffer = await writeExifImg(buff, options)
+        } else {
+            buffer = await imageToWebp(buff)
+        }
+
+        await Maria.sendMessage(jid, {
+            sticker: {
+                url: buffer
+            },
+            ...options
+        }, {
+            quoted
+        })
+        return buffer
+    }
+    Maria.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+            buffer = await writeExifVid(buff, options)
+        } else {
+            buffer = await videoToWebp(buff)
+        }
+
+        await Maria.sendMessage(jid, {
+            sticker: {
+                url: buffer
+            },
+            ...options
+        }, {
+            quoted
+        })
+        return buffer
+    }
+    Maria.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+        let quoted = message.msg ? message.msg : message
+        let mime = (message.msg || message).mimetype || ''
+        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
+        const stream = await downloadContentFromMessage(quoted, messageType)
+        let buffer = Buffer.from([])
+        for await (const chunk of stream) {
+            buffer = Buffer.concat([buffer, chunk])
+        }
+        let type = await FileType.fromBuffer(buffer)
+        trueFileName = attachExtension ? (filename + '.' + type.ext) : filename
+        // save to file
+        await fs.writeFileSync(trueFileName, buffer)
+        return trueFileName
+    }
+    //////
+async function getMessage(key){
+        if (store) {
+            const msg = await store.loadMessage(key.remoteJid, key.id)
+            return msg?.message
+        }
+        return {
+            conversation: "TOGE-MD-V3 Here!"
+        }
+    }
+    Maria.ev.on('messages.update', async chatUpdate => {
+        for(const { key, update } of chatUpdate) {
+			if(update.pollUpdates && key.fromMe) {
+				const pollCreation = await getMessage(key)
+				if(pollCreation) {
+				    const pollUpdate = await getAggregateVotesInPollMessage({
+							message: pollCreation,
+							pollUpdates: update.pollUpdates,
+						})
+	                var toCmd = pollUpdate.filter(v => v.voters.length !== 0)[0]?.name
+	                if (toCmd == undefined) return
+                    var prefCmd = xprefix+toCmd
+	                Maria.appenTextMessage(prefCmd, chatUpdate)
+				}
+			}
+		}
+    })
+
+
+
+Maria.sendPoll = (jid, name = '', values = [], selectableCount = 1) => {
+    return Maria.sendMessage(jid, { poll: { name, values, selectableCount } });
+}
+//welcome
+Maria.ev.on('group-participants.update', async (anu) => {
+    	if (global.welcome){
+console.log(anu)
+try {
+let metadata = await Maria.groupMetadata(anu.id)
+let participants = anu.participants
+for (let num of participants) {
+try {
+ppuser = await Maria.profilePictureUrl(num, 'image')
+} catch (err) {
+ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+}
+try {
+ppgroup = await Maria.profilePictureUrl(anu.id, 'image')
+} catch (err) {
+ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
+}
+	
+memb = metadata.participants.length
+MariaWlcm = await getBuffer(ppuser)
+MariaLft = await getBuffer(ppuser)
+                if (anu.action == 'add') {
+                const Mariabuffer = await getBuffer(ppuser)
+                let MariaName = num
+                const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+	            const xmembers = metadata.participants.length
+Mariabody = `┌──⊰ 𝚆𝙴𝙻𝙴𝙲𝙾𝙼𝙴⊰
+│⊳  🌐 To: ${metadata.subject}
+│⊳  📋 Name: @${MariaName.split("@")[0]}
+│⊳  👥 Members: ${xmembers}th
+│⊳  🕰️ Joined: ${xtime} ${xdate}
+└──────────⊰`
+Maria.sendMessage(anu.id,
+ { text: Mariabody,
+ contextInfo:{
+ mentionedJid:[num],
+ "externalAdReply": {"showAdAttribution": true,
+ "containsAutoReply": true,
+ "title": ` ${global.botname}`,
+"body": `${ownername}`,
+ "previewType": "PHOTO",
+"thumbnailUrl": ``,
+"thumbnail": MariaWlcm,
+"sourceUrl": `${link}`}}})
+                } else if (anu.action == 'remove') {
+                	const Mariabuffer = await getBuffer(ppuser)
+                    const Mariatime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+	                const Mariadate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                	let MariaName = num
+                    const Mariamembers = metadata.participants.length  
+     Mariabody = `┌──⊰ 𝙻𝙴𝙵⊰
+│⊳  👤 From: ${metadata.subject}
+│⊳  📃 Reason: Left
+│⊳  📔 Name: @${MariaName.split("@")[0]}
+│⊳  👥 Members: ${Mariamembers}th
+│⊳  🕒 Time: ${Mariatime} ${Mariadate}
+└──────────⊰`
+Maria.sendMessage(anu.id,
+ { text: Mariabody,
+ contextInfo:{
+ mentionedJid:[num],
+ "externalAdReply": {"showAdAttribution": true,
+ "containsAutoReply": true,
+ "title": ` ${global.botname}`,
+"body": `${ownername}`,
+ "previewType": "PHOTO",
+"thumbnailUrl": ``,
+"thumbnail": MariaLft,
+"sourceUrl": `${link}`}}})
+}
+}
+} catch (err) {
+console.log(err)
+}
+}
+})
+    Maria.downloadMediaMessage = async (message) => {
+        let mime = (message.msg || message).mimetype || ''
+        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
+        const stream = await downloadContentFromMessage(message, messageType)
+        let buffer = Buffer.from([])
+        for await (const chunk of stream) {
+            buffer = Buffer.concat([buffer, chunk])
+        }
+
+        return buffer
+    }
+    }
+return startMaria()
+
+let file = require.resolve(__filename)
+fs.watchFile(file, () => {
+    fs.unwatchFile(file)
+    console.log(chalk.redBright(`Update ${__filename}`))
+    delete require.cache[file]
+    require(file)
+})
+
+process.on('uncaughtException', function (err) {
+let e = String(err)
+if (e.includes("Socket connection timeout")) return
+if (e.includes("item-not-found")) return
+if (e.includes("rate-overlimit")) return
+if (e.includes("Connection Closed")) return
+if (e.includes("Timed Out")) return
+if (e.includes("Value not found")) return
+console.log('Caught exception: ', err)
+})
