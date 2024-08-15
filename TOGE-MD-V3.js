@@ -24,12 +24,12 @@ const { exec, spawn, execSync } = require("child_process")
 const { performance } = require('perf_hooks')
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
-const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./Media/lib/uploader')
-const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./Media/lib/converter')
-const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./Media/lib/myfunc')
-let afk = require("./Media/lib/afk");
+const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./lib/uploader')
+const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./lib/converter')
+const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./lib/myfunc')
+let afk = require("./lib/afk");
 const { download } = require('aptoide-scraper');
-const { fetchBuffer, buffergif } = require("./Media/lib/myfunc2")
+const { fetchBuffer, buffergif } = require("./lib/myfunc2")
 //bug database
 const { toge1 } = require('./virtex/toge1')
 const { toge2 } = require('./virtex/toge2')
@@ -47,12 +47,12 @@ const o = fs.readFileSync(`./virtex/o.jpg`)
 /////log
  global.modnumber = '24105114159' 
 //Media/database
-let ntilinkall =JSON.parse(fs.readFileSync('./Media/database/antilink.json'));
+let ntilinkall =JSON.parse(fs.readFileSync('./database/antilink.json'));
 // let autoblck =JSON.parse(fs.readFileSync('./Media/database/autoblock.json'));
-const isnsfw = JSON.parse(fs.readFileSync('./Media/database/nsfw.json'));
+const isnsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'));
 
-let _afk = JSON.parse(fs.readFileSync('./Media/database/afk-user.json'))
-let hit = JSON.parse(fs.readFileSync('./Media/database/total-hit-user.json'))
+let _afk = JSON.parse(fs.readFileSync('./database/afk-user.json'))
+let hit = JSON.parse(fs.readFileSync('./database/total-hit-user.json'))
 
 //time
 const replay = (teks) => {
@@ -337,12 +337,12 @@ async function Telesticker(url) {
         if (command) {
             const cmdadd = () => {
                 hit[0].hit_cmd += 1
-                fs.writeFileSync('./Media/database/total-hit-user.json', JSON.stringify(hit))
+                fs.writeFileSync('./database/total-hit-user.json', JSON.stringify(hit))
             }
             cmdadd()
-            const totalhit = JSON.parse(fs.readFileSync('./Media/database/total-hit-user.json'))[0].hit_cmd
+            const totalhit = JSON.parse(fs.readFileSync('./database/total-hit-user.json'))[0].hit_cmd
         }
-        const photooxy = require('./Media/lib/photooxy')
+        const photooxy = require('./lib/photooxy')
         
         
 
@@ -363,7 +363,7 @@ async function Telesticker(url) {
                 let getTime = Date.now() - afk.getAfkTime(getId, _afk)
                 let heheh = ms(getTime)
                 _afk.splice(afk.getAfkPosition(m.sender, _afk), 1)
-                fs.writeFileSync('./Media/database/afk-user.json', JSON.stringify(_afk))
+                fs.writeFileSync('./database/afk-user.json', JSON.stringify(_afk))
                 Maria.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} have returned from afk`, m)
             }
         }
@@ -677,7 +677,7 @@ reply('Success in turning off all autoblock in this group')
 if (args[0] === "on") {
 if (AntiLinkAll) return reply('Already activated')
 ntilinkall.push(from)
-fs.writeFileSync('./Media/database/antilink.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./database/antilink.json', JSON.stringify(ntilinkall))
 reply('Success in turning on all antilink in this group')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -690,7 +690,7 @@ Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf yo
 if (!AntiLinkAll) return reply('Already desactivated')
 let off = ntilinkall.indexOf(from)
 ntilinkall.splice(off, 1)
-fs.writeFileSync('./Media/database/antilinkall.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./database/antilinkall.json', JSON.stringify(ntilinkall))
 reply('Success in turning off all antilink in this group')
 } else {
   await reply(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
@@ -1034,9 +1034,9 @@ break;
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
-                                title: ' *🎐 TOGE-MD-V3 BROADCAST🎐* ',
+                                title: '𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝙱𝚁𝙾𝙰𝙳𝙲𝙰𝚂𝚃',
                                 body: `Sent ${i.length} Group`,
-                                thumbnailUrl: 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg',
+                               thumbnailUrl: 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg',
                                 sourceUrl: global.link,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -1296,7 +1296,7 @@ case 'tag': case 'tagall': case 'all':{
           let response = await Maria.groupInviteCode(m.chat);
           Maria.sendText(
             m.sender,
-            ` 🤖𝐵𝑜𝑡 𝑛𝑎𝑚𝑒:- 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.\n\n🔖𝐺𝑟𝑜𝑢𝑝 𝑛𝑎𝑚𝑒:- ${groupMetadata.subject}\n\n🔰𝐺𝑟𝑜𝑢𝑝 𝑙𝑖𝑛𝑘:- https://chat.whatsapp.com/${response}`,
+            ` 🤖𝐵𝑜𝑡 𝑛𝑎𝑚𝑒:- 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑\n\n🔖𝐺𝑟𝑜𝑢𝑝 𝑛𝑎𝑚𝑒:- ${groupMetadata.subject}\n\n🔰𝐺𝑟𝑜𝑢𝑝 𝑙𝑖𝑛𝑘:- https://chat.whatsapp.com/${response}`,
             m,
             { detectLink: true }
           );
@@ -1452,7 +1452,7 @@ break;
                 Maria.sendMessage(m.chat, {
                     document: audio,
                     mimetype: 'audio/mp3',
-                    fileName: `Maria-bot.mp3`
+                    fileName: `toge-bot.mp3`
                 }, {
                     quoted: m
                 })
@@ -1466,7 +1466,7 @@ break;
                 let media = await Maria.downloadMediaMessage(qmsg)
                 let {
                     toPTT
-                } = require('./Media/lib/converter')
+                } = require('./lib/converter')
                 let audio = await toPTT(media, 'mp4')
                 Maria.sendMessage(m.chat, {
                     audio: audio,
@@ -1596,7 +1596,7 @@ break;
       case 'qc': {
                 const {
                     quote
-                } = require('./Media/lib/quote.js')
+                } = require('./lib/quote.js')
                 if (!q) return reply('Enter Text')
                 let ppnyauser = await await Maria.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg')
                 const rest = await quote(q, pushname, ppnyauser)
@@ -1611,7 +1611,7 @@ break;
 case 'play':  case 'song': {
 Maria.sendMessage(from, { react: { text: "📥", key: m.key }}) 
 if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  𝒂𝒏𝒊𝒎𝒆 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑 𝒔𝒕𝒂𝒕𝒖𝒔`)
-const Ayushplaymp3 = require('./Media/lib/ytdl2')
+const Ayushplaymp3 = require('./lib/ytdl2')
 let yts = require("youtube-yts")
         let search = await yts(text)
         let anup3k = search.videos[0]
@@ -1637,7 +1637,7 @@ await fs.unlinkSync(pl.path)
 break;
 
 case 'ytmp4': case 'ytvideo': {
-const Ayushvidoh = require('./Media/lib/ytdl2')
+const Ayushvidoh = require('./lib/ytdl2')
 if (args.length < 1 || !isUrl(text) || !Ayushvidoh.isYTUrl(text)) reply(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
 const vid=await Ayushvidoh.mp4(text)
 const ytc=`
@@ -1700,7 +1700,7 @@ case 'chatgpt':
         Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
 
         break;
-      case 'hii': case 'hi': case 'Hi':
+      case 'hii': case 'toge': case 'Hi':
        
         
         let txxt = `*U^I^U ♡* Konichiwa ${pushname} Senpai, I'm TOGE-MD-V3 Created by
@@ -2185,7 +2185,7 @@ break;
 ┃✺ 𝕋𝕠𝕥𝕒𝕝𝕔𝕞𝕕: ${mariafeature()}
 ┗━━━━━━━━━━━━━━━⊛ ${readmore}
 
-┏━⍟*🧧GENERAL🧧*⍟
+┏━⍟ *GENERAL* ⍟
 ┃✺ ${prefix}hi
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
@@ -2199,18 +2199,18 @@ break;
 ┃✺ ${prefix}owner
 ┃✺ ${prefix}script
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*🎓Education🎓*⍟
+┏━⍟ *Education* ⍟
 ┃✺ ${prefix}element 
 ┃✺ ${prefix}calculator 
 ┃✺ ${prefix}sciencefact
 ┃✺ ${prefix}sciencenews
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*💻Coding💻*⍟
+┏━⍟ *Coding* ⍟
 ┃✺ ${prefix}exec 
 ┃✺ ${prefix}run
 ┃✺ ${prefix}gitclone
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*🧩OWNER🧩*⍟
+┏━⍟ *OWNER* ⍟
 ┃✺ ${prefix}session
 ┃✺ ${prefix}join
 ┃✺ ${prefix}mode
@@ -2230,7 +2230,7 @@ break;
 ┃✺ ${prefix}getcase
 ┃✺ ${prefix}creategc
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*👮🏻‍♂️GROUP👮🏻‍♂️*⍟
+┏━⍟*GROUP*⍟
 ┃✺ ${prefix}antilink
 ┃✺ ${prefix}closetime
 ┃✺ ${prefix}opentime
@@ -2251,7 +2251,7 @@ break;
 ┃✺ ${prefix}revoke
 ┃✺ ${prefix}listonline
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*🎉FUN🎉*⍟
+┏━⍟ FUN ⍟
 ┃✺ ${prefix}truth
 ┃✺ ${prefix}dare
 ┃✺ ${prefix}couple 
@@ -2274,7 +2274,7 @@ break;
 ┃✺ ${prefix}greatcheck
 ┃✺ ${prefix}awesomecheck 
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*📂download📂*⍟
+┏━⍟ *download* ⍟
 ┃✺ ${prefix}play
 ┃✺ ${prefix}ytmp3
 ┃✺ ${prefix}ytmp4
@@ -2287,12 +2287,12 @@ break;
 ┃✺ ${prefix}telestick
 ┃✺ ${prefix}tgs
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*✨️WALLPAPER✨️*⍟
+┏━⍟ *WALLPAPER* ⍟
 ┃✺ ${prefix}Doraemon
 ┃✺ ${prefix}pokemon 
 ┃✺ ${prefix}zero-two 
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*🎐SnapBlend🎐*
+┏━⍟ *SnapBlend* ⍟
 ┃✺ ${prefix}shadow
 ┃✺ ${prefix}write
 ┃✺ ${prefix}smoke
@@ -2309,7 +2309,7 @@ break;
 ┃✺ ${prefix}narutobanner
 ┃✺ ${prefix}shinetext
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*⛩️OTHERS⛩️*⍟
+┏━⍟ *OTHERS* ⍟
 ┃✺ ${prefix}sticker
 ┃✺ ${prefix}qc
 ┃✺ ${prefix}smeme
@@ -2335,7 +2335,7 @@ break;
 ┃✺ ${prefix}tts
 ┃✺ ${prefix}obfuscate
 └──────────⊰
-┏━⍟*🃏Games🃏*⍟
+┏━⍟ *Games* ⍟
 ┃✺ ${prefix}slot
 ┃✺ ${prefix}poker
 ┃✺ ${prefix}dice
