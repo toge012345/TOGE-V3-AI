@@ -3419,7 +3419,7 @@ await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
 			    
     
 case 'bugmenu':
-  const gamesmenu = `┏━⍟ *VIRTEX* ⍟
+  const bugmenu = `┏━⍟ *VIRTEX* ⍟
 ┃✺ ${prefix}xandroid
 ┃✺ ${prefix}xandroid2 
 ┃✺ ${prefix}xios
