@@ -4973,7 +4973,7 @@ case "xios2":
       return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
     }
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
-    replygcxeon("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+    replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
     await sleep(1500); // Adjusted sleep time for clarity
     sendMultiplePaymentInvites(from, encodedValue);
     await sleep(2500); // Adjusted sleep time for clarity
@@ -5020,7 +5020,7 @@ case "xios2":
       replay("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿");
       XeonBotInc.groupLeave(groupTarget);
     } catch (error) {
-      replygcxeon(util.format(error));
+      replay(util.format(error));
     }
   }
   break;
