@@ -39,7 +39,10 @@
    <br>
 <a href='https://toge-v3.onrender.com/' target="_blank"><img alt='PAIR CODE' src='https://img.shields.io/badge/session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
-### DEPLOY TO WORKFLOWS
+#
+
+<details close>
+<summary>DEPLOY TO WORKFLOWS</summary>
 
 **Create a new file [`.github/workflows/deploye.yml`] After created, copy this code👇🏽and paste it there.**
 ```yml
@@ -78,6 +81,7 @@ jobs:
       run: npm start
 
 ```
+</details>
 
 #### DEPLOY TO HEROKU 
 
