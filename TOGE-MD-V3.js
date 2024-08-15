@@ -183,7 +183,7 @@ const getRandomImage = (directory) => {
   }
 };
 
-const imageDirectory = './Media/Theme-logo';
+const imageDirectory = './Media/logo';
   const randomImage = getRandomImage(imageDirectory);
 
 //group chat msg by Ayush
@@ -294,7 +294,7 @@ async function Telesticker(url) {
         }
         
         if (autobio) {
-            Maria.updateProfileStatus(`Hey, future leaders! 🌟 TOGE-MD-V3 is here to inspire and lead, thanks to  toge012345. 🚀 ${runtime(process.uptime())} `).catch(_ => _)
+            Maria.updateProfileStatus(`𝙷𝚎𝚢, 𝚏𝚞𝚝𝚞𝚛𝚎 𝚕𝚎𝚊𝚍𝚎𝚛𝚜! 🌟 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚒𝚜 𝚑𝚎𝚛𝚎 𝚝𝚘 𝚒𝚗𝚜𝚙𝚒𝚛𝚎 𝚊𝚗𝚍 𝚕𝚎𝚊𝚍, 𝚝𝚑𝚊𝚗𝚔𝚜 𝚝𝚘  𝚝𝚘𝚐𝚎𝟶𝟷𝟸𝟹𝟺𝟻. ${runtime(process.uptime())} `).catch(_ => _)
         }
         if (m.sender.startsWith('212') && global.anti212 === true) {
             return Maria.updateBlockStatus(m.sender, 'block')
@@ -444,7 +444,7 @@ const verificationBot = await verification();
 
 if (!verificationBot) {
 m.reply(`⛩️ *❯─「 TOGE-MD-V3 」─❮* ⛩️\n
-Join our support group to interact with TOGE-MD-V3 🌟 \n\n https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`);
+𝙹𝚘𝚒𝚗 𝚘𝚞𝚛 𝚜𝚞𝚙𝚙𝚘𝚛𝚝 𝚐𝚛𝚘𝚞𝚙 𝚝𝚘 𝚒𝚗𝚝𝚎𝚛𝚊𝚌𝚝 𝚠𝚒𝚝𝚑 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 🌟 \n\n https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`);
 return;
 }
 
@@ -648,7 +648,7 @@ if (!isCreator) return replay(mess.botowner)
 if (args[0] === "on") {
 if (AutoBlock) return reply('Already activated')
 ntilinkall.push(from)
-fs.writeFileSync('./Gallery/database/autoblock.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./database/autoblock.json', JSON.stringify(ntilinkall))
 reply('Success in turning on all autoblock in this group')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -661,7 +661,7 @@ Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nDont 
 if (!AutoBlock) return reply('Already deactivated')
 let off = ntilinkall.indexOf(from)
 ntilinkall.splice(off, 1)
-fs.writeFileSync('./Gallery/database/autoblock.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./database/autoblock.json', JSON.stringify(ntilinkall))
 reply('Success in turning off all autoblock in this group')
 } else {
   await reply(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
@@ -685,7 +685,7 @@ var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send any link in this group or u will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\n𝙸𝚏 𝚢𝚘𝚞'𝚛𝚎 𝚗𝚘𝚝 𝚊𝚗 𝚊𝚍𝚖𝚒𝚗, 𝚍𝚘𝚗'𝚝 𝚜𝚎𝚗𝚍 𝚊𝚗𝚢 𝚕𝚒𝚗𝚔 𝚒𝚗 𝚝𝚑𝚒𝚜 𝚐𝚛𝚘𝚞𝚙 𝚘𝚛 𝚞 𝚠𝚒𝚕𝚕 𝚋𝚎 𝚔𝚒𝚌𝚔𝚎𝚍 𝚒𝚖𝚖𝚎𝚍𝚒𝚊𝚝𝚎𝚕𝚢!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLinkAll) return reply('Already desactivated')
 let off = ntilinkall.indexOf(from)
@@ -1245,7 +1245,7 @@ case 'tag': case 'tagall': case 'all':{
   
  *Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`
  for (let mem of participants) {
- teks += `🔮 @${mem.id.split('@')[0]}\n`
+ teks += `👾 @${mem.id.split('@')[0]}\n`
  }
  Maria.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
  }
@@ -1323,7 +1323,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
         console.log(repo);
 
    const scritxt = `*🚀𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.🚀*\n
-  *🌟Creator:* 𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈\n
+  *🌟 Creator:* 𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈\n
   *🌟 Repo:* ${repo.html_url}\n
   *🌟 Total Forks:* ${repo.forks_count}\n
   *⭐ Total Stars:* ${repo.stargazers_count}\n
@@ -1700,12 +1700,10 @@ case 'chatgpt':
         Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
 
         break;
-      case 'hii': case 'toge': case 'Hi':
+      case 'toge':
        
         
-        let txxt = `*U^I^U ♡* Konichiwa ${pushname} Senpai, I'm TOGE-MD-V3 Created by
-
- *_Team toge_*.`
+        let txxt = `𝚑𝚎𝚕𝚕𝚘 ${pushname} 𝙸 𝚊𝚖 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚊 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚍 𝚋𝚢 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚘𝚠 𝚌𝚊𝚗 𝙸 𝚑𝚎𝚕𝚙 𝚢𝚘𝚞 𝚋𝚊𝚋𝚢 ?`
 
         Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg" }, caption: txxt}, { quoted: m });
         
@@ -1732,7 +1730,7 @@ case 'chatgpt':
 \`\`\`This bot is a free open source project by toge012345\`\`\`
 
 ❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁
-*_LINK:- https://github.com/toge012345/TOGE-MD-V3_*
+*_LINK:- https://github.com/toge012345/TOGE-MD-V3 ._*
 
 
 ❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
@@ -2171,22 +2169,23 @@ break;
                          
                            
   case 'menu': case 'help': case 'h': 
-      const txt = `┏━⍟*Konichiwa*⍟
-┃✺ 𝕌𝕤𝕖𝕣: ${pushname} 
-┃✺ 𝔹𝕠𝕥:  ${botname}
-┃✺ ℙ𝕣𝕖𝕗𝕚𝕩:  *${prefix}*
-┃✺ 𝔻𝕒𝕥𝕖: ${Ayuxxdate}
-┃✺ 𝕋𝕚𝕞𝕖:  ${xtime}
-┃✺ 𝕆𝕨𝕟𝕖𝕣: ${ownername}
-┃✺ 𝕧𝕖𝕣𝕤𝕚𝕠𝕟: ${mver}
-┃✺ ℍ𝕠𝕤𝕥: ${os.hostname()}
-┃✺ ℙ𝕝𝕒𝕥𝕗𝕠𝕣𝕞: ${os.platform()} 
-┃✺ ℝ𝕦𝕟𝕥𝕚𝕞𝕖: ${runtime(process.uptime())}
-┃✺ 𝕋𝕠𝕥𝕒𝕝𝕔𝕞𝕕: ${mariafeature()}
+      const txt = `┏━⍟ *TOGE-MD-V3* ⍟
+┃✺ 𝖀𝖘𝖊𝖗: ${pushname} 
+┃✺ 𝕭𝖔𝖙:  ${botname}
+┃✺ 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
+┃✺ 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
+┃✺ 𝕿𝖎𝖒𝖊:  ${xtime}
+┃✺ 𝕺𝖜𝖓𝖊𝖗: ${ownername}
+┃✺ 𝖁𝖊𝖗𝖘𝖎𝖔𝖓: ${mver}
+┃✺ 𝕳𝖔𝖘𝖙: ${os.hostname()}
+┃✺ 𝕻𝖑𝖆𝖙𝖊𝖋𝖔𝖗𝖒: ${os.platform()} 
+┃✺ 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
+┃✺ 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
 ┗━━━━━━━━━━━━━━━⊛ ${readmore}
+𝙰𝙻𝙻 𝙼𝙴𝙽𝚄 ${readmore}
 
 ┏━⍟ *GENERAL* ⍟
-┃✺ ${prefix}hi
+┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
 ┃✺ ${prefix}support
@@ -2230,7 +2229,7 @@ break;
 ┃✺ ${prefix}getcase
 ┃✺ ${prefix}creategc
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟*GROUP*⍟
+┏━⍟ *GROUP* ⍟
 ┃✺ ${prefix}antilink
 ┃✺ ${prefix}closetime
 ┃✺ ${prefix}opentime
@@ -2251,7 +2250,7 @@ break;
 ┃✺ ${prefix}revoke
 ┃✺ ${prefix}listonline
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟ FUN ⍟
+┏━⍟ *FUN* ⍟
 ┃✺ ${prefix}truth
 ┃✺ ${prefix}dare
 ┃✺ ${prefix}couple 
@@ -2504,7 +2503,7 @@ case 'public': {
         if (!isNsfw) return reply(mess.nsfw);
         if (!m.isGroup) return reply(mess.group);
         
-        const nsfwmenu=`┏━⍟*🔞NSFW 🔞*⍟
+        const nsfwmenu=`┏━⍟ *🔞NSFW🔞* ⍟
 ┃✺ ${prefix}blowjob
 ┃✺ ${prefix}cum
 ┃✺ ${prefix}foot
@@ -2532,8 +2531,8 @@ case 'public': {
 ////////////////////menu_v2.1///////////////////////
    
 case 'generalmenu':
-    const generalmenu = `┏━⍟*🧧GENERAL🧧*⍟
-┃✺ ${prefix}hi
+    const generalmenu = `┏━⍟ *🧧GENERAL🧧* ⍟
+┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
 ┃✺ ${prefix}support
@@ -2612,7 +2611,7 @@ await Maria.relayMessage(gmsg.key.remoteJid, gmsg.message, {
     
     
  case 'educationmenu':
-    const educationmenu = `┏━⍟*🎓Education🎓*⍟
+    const educationmenu = `┏━⍟ *Education* ⍟
 ┃✺ ${prefix}element 
 ┃✺ ${prefix}calculator 
 ┃✺ ${prefix}sciencefact
@@ -2684,7 +2683,7 @@ await Maria.relayMessage(emsg.key.remoteJid, emsg.message, {
     
     
  case 'codingmenu':
-    const codingmenu = `┏━⍟*💻Coding💻*⍟
+    const codingmenu = `┏━⍟ *Coding* ⍟
 ┃✺ ${prefix}exec
 ┃✺ ${prefix}run
 ┃✺ ${prefix}gitclone
@@ -2755,7 +2754,7 @@ await Maria.relayMessage(cmsg.key.remoteJid, cmsg.message, {
          
    
  case 'ownermenu':
-    const ownermenu = `┏━⍟*🧩OWNER🧩*⍟
+    const ownermenu = `┏━⍟ *OWNER* ⍟
 ┃✺ ${prefix}session
 ┃✺ ${prefix}join
 ┃✺ ${prefix}mode
@@ -2840,7 +2839,7 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
  break
      
   case 'groupmenu':
-    const groupmenu = `┏━⍟*👮🏻‍♂️GROUP👮🏻‍♂️*⍟
+    const groupmenu = `┏━⍟ *GROUP* ⍟
 ┃✺ ${prefix}antilink
 ┃✺ ${prefix}closetime
 ┃✺ ${prefix}opentime
@@ -2852,7 +2851,7 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
 ┃✺ ${prefix}tagall
 ┃✺ ${prefix}hidetag
 ┃✺ ${prefix}totag
-┃✺ ${prefix}group *[option]*
+┃✺ ${prefix}group
 ┃✺ ${prefix}editinfo
 ┃✺ ${prefix}gclink
 ┃✺ ${prefix}revoke
@@ -2924,7 +2923,7 @@ await Maria.relayMessage(gcmsg.key.remoteJid, gcmsg.message, {
  break
     
   case 'funmenu':
-    const funmenu = `┏━⍟*🎉FUN🎉*⍟
+    const funmenu = `┏━⍟ *FUN* ⍟
 ┃✺ ${prefix}truth
 ┃✺ ${prefix}dare
 ┃✺ ${prefix}couple 
@@ -3014,7 +3013,7 @@ await Maria.relayMessage(funmsg.key.remoteJid, funmsg.message, {
     
   
    case 'downloadmenu':
-    const downloadmenu = `┏━⍟*📂download📂*⍟
+    const downloadmenu = `┏━⍟ *download* ⍟
 ┃✺ ${prefix}play
 ┃✺ ${prefix}ytmp3
 ┃✺ ${prefix}ytmp4
@@ -3093,7 +3092,7 @@ await Maria.relayMessage(dowmsg.key.remoteJid, dowmsg.message, {
     
     
 case 'wallmenu':
-        const wallmenu=`┏━⍟*✨️WALLPAPER✨️*⍟
+        const wallmenu=`┏━⍟ *WALLPAPER* ⍟
 ┃✺ ${prefix}Doraemon
 ┃✺ ${prefix}pokemon 
 ┃✺ ${prefix}zero-two 
@@ -3163,7 +3162,7 @@ await Maria.relayMessage(wallmsg.key.remoteJid, wallmsg.message, {
  break
     
   case 'snapblendmenu':
-    const snapblendmenu = `┏━⍟*🎐SnapBlend🎐*⍟
+    const snapblendmenu = `┏━⍟ *SnapBlend* ⍟
 ┃✺ ${prefix}shadow
 ┃✺ ${prefix}write
 ┃✺ ${prefix}smoke
@@ -3335,7 +3334,7 @@ await Maria.relayMessage(othmsg.key.remoteJid, othmsg.message, {
     
        
   case 'gamemenu':
-    const gamesmenu = `┏━⍟*🃏Games🃏*⍟
+    const gamesmenu = `┏━⍟ *Games* ⍟
 ┃✺ ${prefix}slot
 ┃✺ ${prefix}poker
 ┃✺ ${prefix}dice
@@ -3408,10 +3407,81 @@ await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
   messageId: gamemsg.key.id
 })
  break
+			    
     
-    
-    
-    case 'alive': {
+case 'bugmenu':
+const gamesmenu = `┏━⍟ *VIRTEX* ⍟
+┃✺ ${prefix}xandroid
+┃✺ ${prefix}xandroid2 
+┃✺ ${prefix}xios
+┃✺ ${prefix}xios2
+┃✺ ${prefix}xgc
+┃✺ ${prefix}systemuicrash 
+┗━━━━━━━━━━━━━━━⊛
+ `   
+Message: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: ""
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: botname
+          }),
+                    header: proto.Message.InteractiveMessage.Header.create({
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
+            title: gamesmenu,
+            subtitle: themeemoji,
+            hasMediaAttachment: false
+          }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [
+                            {
+  "name": "quick_reply",
+  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+   },
+   
+                               {
+  "name": "quick_reply",
+  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+   },
+              {
+                 "name": "cta_url",
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+              },
+              {
+                 "name": "cta_url",
+                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+              }
+
+           ],
+          }),
+          contextInfo: {
+                  mentionedJid: [m.sender], 
+                  forwardingScore: 999,
+                  isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
+                  serverMessageId: 143
+                }
+                }
+        })
+    }
+  }
+}, {})
+
+await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
+  messageId: gamemsg.key.id
+})
+ break
+	    
+		    
+  case 'alive': {
   const alivem = `┏━━━━❮ 𝚫𝐋𝚰𝛁𝚵 ❯━━━━━᯽
 ┃ *🤖 Bot Name:* ${botname}
 ┃ *👨‍✈️ Creator:* ${ownername}
