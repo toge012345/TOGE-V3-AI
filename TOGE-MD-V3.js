@@ -41,9 +41,6 @@ const { toge7 } = require('./virtex/toge7')
 const { toge8 } = require('./virtex/toge8')
 const { toge9 } = require('./virtex/toge9')
 const { toge10 } = require('./virtex/toge10')
-const wkwk = fs.readFileSync(`./virtex/x.mp3`)
-const xsteek = fs.readFileSync(`./virtex/x.webp`)
-const o = fs.readFileSync(`./virtex/o.jpg`)
 /////log
  global.modnumber = '24105114159' 
 //Media/database
@@ -2182,7 +2179,7 @@ break;
 ┃✺ 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
 ┃✺ 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
 ┗━━━━━━━━━━━━━━━⊛ ${readmore}
-𝙰𝙻𝙻 𝙼𝙴𝙽𝚄 ${readmore}
+> 𝙰𝙻𝙻 𝙼𝙴𝙽𝚄 ${readmore}
 
 ┏━⍟ *GENERAL* ⍟
 ┃✺ ${prefix}toge
@@ -3412,13 +3409,13 @@ let gamemsg = generateWAMessageFromContent(from, {
   }
 }, {})
 
-await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
+await Maria.relayMessage(virtexmsg.key.remoteJid, virtexmsg.message, {
   messageId: gamemsg.key.id
 })
  break
 			    
     
-case 'bugmenu':
+case 'virtexmenu':
   const bugmenu = `┏━⍟ *VIRTEX* ⍟
 ┃✺ ${prefix}xandroid
 ┃✺ ${prefix}xandroid2 
@@ -5176,7 +5173,7 @@ case "xsysui": {
 break
 	
 case 'clearall': {
-if (!isCreator) return replay(mess.owner);
+if (!isCreator) return reply(mess.owner);
 XeonBotInc.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
 }
 break;
@@ -5243,7 +5240,7 @@ case "info":
 \`\`\`A simple and easy-to-use WhatsApp bot project based on Multi-Device Baileys and written in JavaScript\`\`\`
 
 ❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁
-*_LINK:- https://github.com/toge012345/TOGE-MD-V3_*
+*_LINK:-_* https://github.com/toge012345/TOGE-MD-V3
 
 ❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
 \`\`\`Feel free to open issues regarding any problems or if you have any feature feel free to contact owner by typing ${prefix}owner or ${prefix}mods`
@@ -5276,7 +5273,6 @@ _If you have any questions regarding our terms, please reach out to us._
 _For everything else, use common sense._
 
 *FUTURE IS NOW🚀~TOGE-MD-V3*
-*_🚀TOGE-BOT_*
 
 ⍟ *────────────────* ⍟`
  let mariajpg= "https://telegra.ph/file/5c831c160ad93ad5c1bc7.jpg" 
