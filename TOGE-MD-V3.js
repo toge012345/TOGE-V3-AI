@@ -3413,81 +3413,7 @@ await Maria.relayMessage(gamesmsg.key.remoteJid, gamesmsg.message, {
   messageId: gamesmsg.key.id
 })
  break
-			    
-    
-case 'virtexmenu':
-  const virtexmenu = `┏━⍟ *VIRTEX* ⍟
-┃✺ ${prefix}xandroid
-┃✺ ${prefix}xandroid2 
-┃✺ ${prefix}xios
-┃✺ ${prefix}xios2
-┃✺ ${prefix}xsysui
-┃✺ ${prefix}xgc
-┃✺ ${prefix}systemuicrash 
-┗━━━━━━━━━━━━━━━⊛
- `
-     let virtexmsg = generateWAMessageFromContent(from, {
-   viewOnceMessage: {
-    message: {
-        "messageContextInfo": {
-          "deviceListMetadata": {},
-          "deviceListMetadataVersion": 2
-        },
-        interactiveMessage: proto.Message.InteractiveMessage.create({
-          body: proto.Message.InteractiveMessage.Body.create({
-            text: ""
-          }),
-          footer: proto.Message.InteractiveMessage.Footer.create({
-            text: botname
-          }),
-                    header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
-            title: virtexmenu,
-            subtitle: themeemoji,
-            hasMediaAttachment: false
-          }),
-          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-            buttons: [
-                            {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
-   },
-   
-                               {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
-   },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
-              }
 
-           ],
-          }),
-          contextInfo: {
-                  mentionedJid: [m.sender], 
-                  forwardingScore: 999,
-                  isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                  newsletterJid: '1203632993333611780@newsletter',
-                  newsletterName: "𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸",
-                  serverMessageId: 143
-                }
-                }
-        })
-    }
-  }
-}, {})
-
-await Maria.relayMessage(vsg.key.remoteJid, vsg.message, {
-  messageId: vsg.key.id
-})
- break
-	    
 
 case 'alive': {
   const alivem = `┏━━━━❮ 𝙰𝙻𝙸𝚅𝙴 ❯━━━━━᯽
@@ -3643,10 +3569,6 @@ let liistmsg = generateWAMessageFromContent(from, {
    {
   "name": "quick_reply",
   "buttonParamsJson": `{"display_text":"⛩️OTHERS⛩️","id":"${prefix}othersmenu"}`
-   },
-   {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"👾VIRTEX👾","id":"${prefix}bugmenu"}`
    },
    {
   "name": "quick_reply",
@@ -5146,7 +5068,7 @@ case "xsysui": {
     return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
-    return replay("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
+    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
