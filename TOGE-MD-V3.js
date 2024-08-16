@@ -3409,14 +3409,14 @@ let gamemsg = generateWAMessageFromContent(from, {
   }
 }, {})
 
-await Maria.relayMessage(virtexmsg.key.remoteJid, virtexmsg.message, {
-  messageId: gamemsg.key.id
+await Maria.relayMessage(gamesmsg.key.remoteJid, gamesmsg.message, {
+  messageId: gamesmsg.key.id
 })
  break
 			    
     
 case 'virtexmenu':
-  const bugmenu = `┏━⍟ *VIRTEX* ⍟
+  const virtexmenu = `┏━⍟ *VIRTEX* ⍟
 ┃✺ ${prefix}xandroid
 ┃✺ ${prefix}xandroid2 
 ┃✺ ${prefix}xios
@@ -3426,7 +3426,7 @@ case 'virtexmenu':
 ┃✺ ${prefix}systemuicrash 
 ┗━━━━━━━━━━━━━━━⊛
  `
-     let gamemsg = generateWAMessageFromContent(from, {
+     let virtexmsg = generateWAMessageFromContent(from, {
    viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -3442,7 +3442,7 @@ case 'virtexmenu':
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
-            title: bugmenu,
+            title: virtexmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
           }),
@@ -3483,20 +3483,18 @@ case 'virtexmenu':
   }
 }, {})
 
-await Maria.relayMessage(bugmsg.key.remoteJid, bugmsg.message, {
-  messageId: bugmsg.key.id
+await Maria.relayMessage(vsg.key.remoteJid, vsg.message, {
+  messageId: vsg.key.id
 })
  break
 	    
 
 case 'alive': {
-  const alivem = `┏━━━━❮ 𝚫𝐋𝚰𝛁𝚵 ❯━━━━━᯽
+  const alivem = `┏━━━━❮ 𝙰𝙻𝙸𝚅𝙴 ❯━━━━━᯽
 ┃ *🤖 Bot Name:* ${botname}
 ┃ *👨‍✈️ Creator:* ${ownername}
 ┃ *💻 RUNTIME:* ${runtime(process.uptime())}
 ┃ *📅 TODAY:* ${Ayuxxdate}
-┃ *💠 Github:* https://github.com/toge012345/TOGE-MD-V3
-┃ *💬MESSAGE:* 𝙔𝙀𝙎! 𝙄 𝘼𝙈 𝘼𝙇𝙄𝙑𝙀 𝘽𝘼𝘽𝙔😚!!
 ┗━━━━━━━━━━━━━━━᯽
 _Please Select Button Below_
 `  

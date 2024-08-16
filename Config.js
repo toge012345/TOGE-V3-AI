@@ -38,15 +38,15 @@ global.autoread_status = false //auto view status/story
 
 //reply messages
 global.mess = {
-    done: '🍭 *Here you go, darling!* ',
-    prem: '🍭 *My darling, this feature is reserved for premium users only*',
-    admin: '🍭 *My darling, this feature is reserved for admins only*',
-    botAdmin: '🍭 *Darling, this feature can only be used when the bot is a group admin* ',
-    owner: '🍭 *My dearest, this feature is reserved for the owner only*',
-    group: '🍭 *Sweetheart, this feature is exclusively for groups*',
-    private: '🍭 *My love, this feature is exclusively for private chats*',
-    wait: '🍭 *Darling, in process...* ',    
-    error: '🍭 *Oh darling, there seems to be an error!*',
+    done: '💫 *Here you go, sensei!* ',
+    prem: '💫 *hello senpai, this feature is reserved for premium users only*',
+    admin: '💫 *hello senpai, this feature is reserved for admins only*',
+    botAdmin: '💫 *senpai, this feature can only be used when the bot is a group admin* ',
+    owner: '💫 *hello senpai, this feature is reserved for the owner only*',
+    group: '💫 *sensei, this feature is exclusively for groups*',
+    private: '💫 *hello senpai, this feature is exclusively for private chats*',
+    wait: '💫 *hello senpai, in process...* ',    
+    error: '💫 *hello senpai, there seems to be an error!*',
 }
 
 global.thumb = fs.readFileSync('./Media/thumb.jpg')
