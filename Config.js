@@ -15,7 +15,7 @@ global.stickername = process.env.STICKER || "𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑"
 global.packname = 'Sticker By'
 global.author = process.env.AUTHOR || "𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈",
 //console view/theme
-global.themeemoji = '🛠️'
+global.themeemoji = '𓅃'
 global.wm = "𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜 ✨"
 
 //theme link
