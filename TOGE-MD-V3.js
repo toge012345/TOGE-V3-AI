@@ -31,16 +31,16 @@ let afk = require("./lib/afk");
 const { download } = require('aptoide-scraper');
 const { fetchBuffer, buffergif } = require("./lib/myfunc2")
 //bug database
-const { toge1 } = require('./virtex/toge1')
-const { toge2 } = require('./virtex/toge2')
-const { toge3 } = require('./virtex/toge3')
-const { toge4 } = require('./virtex/toge4')
-const { toge5 } = require('./virtex/toge5')
-const { toge6 } = require('./virtex/toge6')
-const { toge7 } = require('./virtex/toge7')
-const { toge8 } = require('./virtex/toge8')
-const { toge9 } = require('./virtex/toge9')
-const { toge10 } = require('./virtex/toge10')
+const { togetext1 } = require('./virtex/togetext1')
+const { togetext2 } = require('./virtex/togetext2')
+const { togetext3 } = require('./virtex/togetext3')
+const { togetext4 } = require('./virtex/togetext4')
+const { togetext5 } = require('./virtex/togetext5')
+const { togetext6 } = require('./virtex/togetext6')
+const { togetext7 } = require('./virtex/togetext7')
+const { togetext8 } = require('./virtex/togetext8')
+const { togetext9 } = require('./virtex/togetext9')
+const { togetext10 } = require('./virtex/togetext10')
 /////log
  global.modnumber = '24105114159' 
 //Media/database
