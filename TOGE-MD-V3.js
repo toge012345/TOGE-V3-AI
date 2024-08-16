@@ -3410,7 +3410,7 @@ let gamemsg = generateWAMessageFromContent(from, {
 }, {})
 
 await Maria.relayMessage(virtexmsg.key.remoteJid, virtexmsg.message, {
-  messageId: gamemsg.key.id
+  messageId: virtexmsg.key.id
 })
  break
 			    
@@ -3483,8 +3483,8 @@ case 'virtexmenu':
   }
 }, {})
 
-await Maria.relayMessage(bugmsg.key.remoteJid, bugmsg.message, {
-  messageId: bugmsg.key.id
+await Maria.relayMessage(alivemsg.key.remoteJid, alivemsg.message, {
+  messageId: alivemsg.key.id
 })
  break
 	    
