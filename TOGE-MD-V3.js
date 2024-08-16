@@ -2179,7 +2179,7 @@ break;
 ┃✺ 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
 ┃✺ 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
 ┗━━━━━━━━━━━━━━━⊛ ${readmore}
-𝙰𝙻𝙻 𝙼𝙴𝙽𝚄 ${readmore}
+> 𝙰𝙻𝙻 𝙼𝙴𝙽𝚄 ${readmore}
 
 ┏━⍟ *GENERAL* ⍟
 ┃✺ ${prefix}toge
@@ -3409,13 +3409,13 @@ let gamemsg = generateWAMessageFromContent(from, {
   }
 }, {})
 
-await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
+await Maria.relayMessage(virtexmsg.key.remoteJid, virtexmsg.message, {
   messageId: gamemsg.key.id
 })
  break
 			    
     
-case 'bugmenu':
+case 'virtexmenu':
   const bugmenu = `┏━⍟ *VIRTEX* ⍟
 ┃✺ ${prefix}xandroid
 ┃✺ ${prefix}xandroid2 
