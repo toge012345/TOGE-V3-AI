@@ -6,7 +6,7 @@ global.ownernumber = [ process.env.OWNER_NUMBER || "24105114159"],
 global.ownername = process.env.OWNER_NAME || "𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈",
 global.ytname = "YT: kenzo3146"
 global.socialm = "GitHub: toge012345"
-global.location = "Africa, Gabon, Libreville"
+global.location = "Africa"
 
 global.botname = process.env.BOTNAME || "𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑",//name of the bot
 
@@ -48,16 +48,6 @@ global.mess = {
     wait: '🍭 *Darling, in process...* ',    
     error: '🍭 *Oh darling, there seems to be an error!*',
 }
-
-module.exports = {
-ownernumber: global.ownernumber,
-ownername: global.ownername,
-sessionId: process.env.id || " ", // paste your session id here
-AUTO_BLOCK : process.env.PM_BLOCKER,
-STATUS_SAVER : "true",
-ANTI_BOT:"true",
-}
-
 
 global.thumb = fs.readFileSync('./Media/thumb.jpg')
 
