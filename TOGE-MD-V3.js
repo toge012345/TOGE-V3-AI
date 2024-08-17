@@ -1597,7 +1597,7 @@ break;
 case 'play':  case 'song': {
 Maria.sendMessage(from, { react: { text: "📥", key: m.key }}) 
 if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  𝒂𝒏𝒊𝒎𝒆 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑 𝒔𝒕𝒂𝒕𝒖𝒔`)
-const Ayushplaymp3 = require('./lib/ytdl2')
+const Ayushplaymp3 = require('./lib/ytdl-core')
 let yts = require("youtube-yts")
         let search = await yts(text)
         let anup3k = search.videos[0]
@@ -1623,7 +1623,7 @@ await fs.unlinkSync(pl.path)
 break;
 
 case 'ytmp4': case 'ytvideo': {
-const Ayushvidoh = require('./lib/ytdl2')
+const Ayushvidoh = require('./lib/ytdl-core')
 if (args.length < 1 || !isUrl(text) || !Ayushvidoh.isYTUrl(text)) reply(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
 const vid=await Ayushvidoh.mp4(text)
 const ytc=`
@@ -2154,19 +2154,19 @@ function getRandomJoke() {
 break;
                          
                            
-  case 'menu': case 'help': case 'inumaki': 
-      const txt = `┏━⍟ *TOGE-MD-V3* ⍟
-┃✺ 𝖀𝖘𝖊𝖗: ${pushname} 
-┃✺ 𝕭𝖔𝖙:  ${botname}
-┃✺ 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
-┃✺ 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
-┃✺ 𝕿𝖎𝖒𝖊:  ${xtime}
-┃✺ 𝕺𝖜𝖓𝖊𝖗: ${ownername}
-┃✺ 𝖁𝖊𝖗𝖘𝖎𝖔𝖓: ${mver}
-┃✺ 𝕳𝖔𝖘𝖙: ${os.hostname()}
-┃✺ 𝕻𝖑𝖆𝖙𝖊𝖋𝖔𝖗𝖒: ${os.platform()} 
-┃✺ 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
-┃✺ 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
+  case 'menu': case 'help': case 'bot': 
+      const txt = `┏━⍟ 𝗧𝗢𝗚𝗘-𝗠𝗗-𝗩𝟯 ⍟
+┃✦» 𝖀𝖘𝖊𝖗: @${pushname.split("@")[0]} 
+┃✦» 𝕭𝖔𝖙:  ${botname}
+┃✦» 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
+┃✦» 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
+┃✦» 𝕿𝖎𝖒𝖊:  ${xtime}
+┃✦» 𝕺𝖜𝖓𝖊𝖗: ${ownername}
+┃✦» 𝖁𝖊𝖗𝖘𝖎𝖔𝖓: ${mver}
+┃✦» 𝕳𝖔𝖘𝖙: ${os.hostname()}
+┃✦» 𝕻𝖑𝖆𝖙𝖊𝖋𝖔𝖗𝖒: ${os.platform()} 
+┃✦» 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
+┃✦» 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
 ┗━━━━━━━━━━━━━━━⊛ ${readmore}
 ┏━⍟ *GENERAL* ⍟
 ┃✺ ${prefix}toge
