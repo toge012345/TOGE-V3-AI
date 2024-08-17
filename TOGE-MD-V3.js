@@ -30,17 +30,6 @@ const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, s
 let afk = require("./lib/afk");
 const { download } = require('aptoide-scraper');
 const { fetchBuffer, buffergif } = require("./lib/myfunc2")
-//bug database
-const { togetext1 } = require('./virtex/togetext1')
-const { togetext2 } = require('./virtex/togetext2')
-const { togetext3 } = require('./virtex/togetext3')
-const { togetext4 } = require('./virtex/togetext4')
-const { togetext5 } = require('./virtex/togetext5')
-const { togetext6 } = require('./virtex/togetext6')
-const { togetext7 } = require('./virtex/togetext7')
-const { togetext8 } = require('./virtex/togetext8')
-const { togetext9 } = require('./virtex/togetext9')
-const { togetext10 } = require('./virtex/togetext10')
 /////log
  global.modnumber = '24105114159' 
 //Media/database
@@ -2340,13 +2329,7 @@ break;
 ┃✺ ${prefix}blackjack
 ┃✺ ${prefix}compliment
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟ *virtex* ⍟
-┃✺ ${prefix}xandroid
-┃✺ ${prefix}xandroid2
-┃✺ ${prefix}xios
-┃✺ ${prefix}xios2
-┃✺ ${prefix}xsysui 
-┗━━━━━━━━━━━━━━━⊛
+
 > 𝙱𝚈 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸`
 
   let menumsg = generateWAMessageFromContent(from, {
@@ -2373,20 +2356,20 @@ break;
             buttons: [
                             {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"List Menu 🧧","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙼𝙴𝙽𝚄 𝙻𝙸𝚂𝚃","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -2572,20 +2555,20 @@ let gmsg = generateWAMessageFromContent(from, {
             buttons: [
                              {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -2645,20 +2628,20 @@ let emsg = generateWAMessageFromContent(from, {
             buttons: [
                              {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2716,20 +2699,20 @@ await Maria.relayMessage(emsg.key.remoteJid, emsg.message, {
             buttons: [
                              {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2802,20 +2785,20 @@ let owmsg = generateWAMessageFromContent(from, {
             buttons: [
                               {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2886,20 +2869,20 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
                                       {
                              
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -2975,20 +2958,20 @@ let funmsg = generateWAMessageFromContent(from, {
                                       {
                              
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -3054,20 +3037,20 @@ let dowmsg = generateWAMessageFromContent(from, {
             buttons: [
                                                              {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
 
@@ -3126,20 +3109,20 @@ let wallmsg = generateWAMessageFromContent(from, {
  
                              {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -3207,20 +3190,20 @@ await Maria.relayMessage(wallmsg.key.remoteJid, wallmsg.message, {
             buttons: [
                              {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -3297,20 +3280,20 @@ await Maria.relayMessage(snamsg.key.remoteJid,  snamsg.message, {
             buttons: [
                             {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -3373,20 +3356,20 @@ let gamemsg = generateWAMessageFromContent(from, {
             buttons: [
                             {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Back 🎐","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝙱𝙰𝙲𝙺","id":"${prefix}list"}`
    },
    
                                {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Script🎀","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -3446,32 +3429,32 @@ let msg = generateWAMessageFromContent(from, {
             buttons: [
                             {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"MENU 🗃️","id":"${prefix}menu"}`
+  "buttonParamsJson": `{"display_text":"𝗠𝗘𝗡𝗨","id":"${prefix}menu"}`
    },
                  {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"List Menu 🔖","id":"${prefix}list"}`
+  "buttonParamsJson": `{"display_text":"𝗠𝗘𝗡𝗨 𝗟𝗜𝗦𝗧","id":"${prefix}list"}`
    },
                  {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"DEVELOPER 👨🏼‍💻","id":"${prefix}developer"}`
+  "buttonParamsJson": `{"display_text":"𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥","id":"${prefix}developer"}`
    },
    
                  {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"OWNER 🔮","id":"${prefix}owner"}`
+  "buttonParamsJson": `{"display_text":"𝗢𝗪𝗡𝗘𝗥","id":"${prefix}owner"}`
    },
                  {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"SCRIPT 🥵 ","id":"${prefix}sc"}`
+  "buttonParamsJson": `{"display_text":"𝗦𝗖𝗥𝗜𝗣𝗧 ","id":"${prefix}sc"}`
    },
                  {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Deployment Tutorial 📺\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗧𝗨𝗧𝗢𝗥𝗜𝗔𝗟\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },          
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               }                      
            ],
           }),
@@ -3524,56 +3507,56 @@ let liistmsg = generateWAMessageFromContent(from, {
             buttons: [
                             {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":" All MENU 🗃️","id":"${prefix}menu"}`
+  "buttonParamsJson": `{"display_text":"𝗔𝗟𝗟 𝗠𝗘𝗡𝗨","id":"${prefix}menu"}`
    },
                  {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"🧧GENERAL🧧","id":"${prefix}generalmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗚𝗘𝗡𝗘𝗥𝗔𝗟","id":"${prefix}generalmenu"}`
    },
                  {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"🎓Education🎓","id":"${prefix}educationmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗘𝗗𝗨𝗖𝗔𝗧𝗜𝗢𝗡","id":"${prefix}educationmenu"}`
    },
    
                  {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"💻Coding💻","id":"${prefix}codingmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗖𝗢𝗗𝗜𝗡𝗚","id":"${prefix}codingmenu"}`
    },
                  {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"🧩OWNER🧩","id":"${prefix}ownermenu"}`
+  "buttonParamsJson": `{"display_text":"𝗢𝗪𝗡𝗘𝗥","id":"${prefix}ownermenu"}`
    },
    {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"👮🏻‍♂️GROUP👮🏻‍♂️","id":"${prefix}groupmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗚𝗥𝗢𝗨𝗣","id":"${prefix}groupmenu"}`
    },
    {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"🎉FUN🎉","id":"${prefix}funmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗙𝗨𝗡","id":"${prefix}funmenu"}`
    },
    {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"📂download📂","id":"${prefix}downloadmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗","id":"${prefix}downloadmenu"}`
    },
    {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"✨️WALLPAPER✨️","id":"${prefix}wallmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗪𝗔𝗟𝗟𝗣𝗔𝗣𝗘𝗥","id":"${prefix}wallmenu"}`
    },
    {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"🎐SnapBlend🎐","id":"${prefix}snapblendmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗦𝗡𝗔𝗣𝗕𝗟𝗘𝗡𝗗","id":"${prefix}snapblendmenu"}`
    },
    {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"⛩️OTHERS⛩️","id":"${prefix}othersmenu"}`
+  "buttonParamsJson": `{"display_text":"𝗢𝗧𝗛𝗘𝗥𝗦","id":"${prefix}othersmenu"}`
    },
    {
   "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"🃏Games🃏","id":"${prefix}Gamemenu"}`
+  "buttonParamsJson": `{"display_text":"𝗚𝗔𝗠𝗘𝗦","id":"${prefix}Gamemenu"}`
    },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WHATSAPP 🚀\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣\",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               }                      
            ],
           }),
@@ -4890,61 +4873,6 @@ async function fetchRandomScienceFact() {
         reply('Failed to fetch science news headlines.');
     }
     break;
-			    
-//bug cases
-case "xandroid": {
-    if (!isCreator) return reply(mess.owner);	
-const { xeonorwot } = require('./virtex/togetext8');
-let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
-Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });  
-}
-}
-break;
-
-case "xios": {
-  if (!isCreator) return reply(mess.owner);	
-const { xeonorwot } = require('./virtex/togetext9');
-let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
-Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });  
-}
-}
-break;  
-	
-case "xios2": { 
-if (!isCreator) return reply(mess.owner);	
-const { xeonorwot } = require('./virtex/togetext7');
-let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
-Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });  
-}
-}
-break;
-	
-  case "xandroid2": {
- if (!isCreator) return reply(mess.owner);	
-const { xeonorwot } = require('./virtex/togetext4');
-let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
-Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });	  
-}
-}
-break;
-		
-  case "systemuicrash": {
-    if (!isCreator) return reply(mess.owner);	
-const { xeonorwot } = require('./virtex/togetext2');
-let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
-Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });  
-}
-}
-break;
-
-case "xsysui": //crashes both mod and playstore wa
-  if (!isCreator) return reply(mess.owner);	
-const { xeonorwot } = require('./virtex/togetext1');
-let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
-Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });	
-}
-}	    
-break;
 			
 // Function to fetch the latest science news headlines using the News API
 async function fetchScienceNewsHeadlines() {
