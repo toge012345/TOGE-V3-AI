@@ -37,7 +37,7 @@
 
 2. Upload the creds.json that you received to the session folder.
    <br>
-<a href='https://toge-v3.onrender.com/' target="_blank"><img alt='PAIR CODE' src='https://img.shields.io/badge/session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://toge-v3-web-app.onrender.com/' target="_blank"><img alt='PAIR CODE' src='https://img.shields.io/badge/session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 #
 

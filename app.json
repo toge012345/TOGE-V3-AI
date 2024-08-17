@@ -4,6 +4,32 @@
     "repository": "https://github.com/toge012345/TOGE-MD-V3",
     "logo": "https://telegra.ph/file/ba64c8bc27477844bfc75.jpg",
     "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+      "env": {
+       "OWNER_NAME": {
+      "description": "Put Owner Name Here"
+    },
+        "OWNER_NUMBER": {
+      "description": "Put your number here"
+    },
+         "BOTNAME": {
+      "description": "Name of your bot. Ex: - TOGE-MD-V3"
+    },
+     "PREFIX": {
+      "description": "set your bot prefix here ex:- '!' "
+     },
+    "AUTHOR": {
+      "description": "set your bot author name here"
+    },
+    "STICKER": {
+      "description": "set your bot sticker package name ex:- TOGE INUMAKI"
+    },     
+     "PM_BLOCKER": {
+      "description": "type True for enable Pm blocker"
+    },
+     "WELCOME": {
+      "description": "Type True for enable welcome message"
+    }     
+  },
     "buildpacks": [
       {
         "url": "heroku/nodejs"
