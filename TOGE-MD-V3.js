@@ -2179,8 +2179,6 @@ break;
 ┃✺ 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
 ┃✺ 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
 ┗━━━━━━━━━━━━━━━⊛ ${readmore}
-> 𝙰𝙻𝙻 𝙼𝙴𝙽𝚄 ${readmore}
-
 ┏━⍟ *GENERAL* ⍟
 ┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
@@ -2342,15 +2340,17 @@ break;
 ┃✺ ${prefix}blackjack
 ┃✺ ${prefix}compliment
 ┗━━━━━━━━━━━━━━━⊛
-┏━⍟ *VIRTEX* ⍟
+┏━⍟ *virtex* ⍟
 ┃✺ ${prefix}xandroid
 ┃✺ ${prefix}xandroid2
 ┃✺ ${prefix}xios
 ┃✺ ${prefix}xios2
 ┃✺ ${prefix}xsysui
 ┃✺ ${prefix}xgc
+┃✺ ${prefix}ioskill
 ┃✺ ${prefix}systemuicrash 
-┗━━━━━━━━━━━━━━━⊛`
+┗━━━━━━━━━━━━━━━⊛
+> 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝙱𝚈 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸`
 
   let menumsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
