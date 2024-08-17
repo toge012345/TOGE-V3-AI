@@ -46,15 +46,7 @@ global.mess = {
     group: '💫 *sensei, this feature is exclusively for groups*',
     private: '💫 *hello senpai, this feature is exclusively for private chats*',
     wait: '💫 *hello senpai, in process...* ',    
-    error: '💫 *hello senpai, there seems to be an error!*',   
-}
-
-module.exports = {
-ownernumber: global.ownernumber,
-ownername: global.ownername,
-AUTO_BLOCK : process.env.PM_BLOCKER,
-STATUS_SAVER : "true",
-ANTI_BOT:"true",
+    error: '💫 *hello senpai, there seems to be an error!*',
 }
 
 global.thumb = fs.readFileSync('./Media/thumb.jpg')
@@ -66,3 +58,4 @@ fs.watchFile(file, () => {
     delete require.cache[file]
     require(file)
 })
+    
