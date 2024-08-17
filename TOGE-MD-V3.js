@@ -3389,8 +3389,8 @@ let gamemsg = generateWAMessageFromContent(from, {
   }
 }, {})
 
-await Maria.relayMessage(gamesmsg.key.remoteJid, gamesmsg.message, {
-  messageId: gamesmsg.key.id
+await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
+  messageId: gamemsg.key.id
 })
  break
 
