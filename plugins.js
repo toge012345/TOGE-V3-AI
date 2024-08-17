@@ -361,7 +361,7 @@ MariaLft = await getBuffer(ppuser)
 	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 	            const xmembers = metadata.participants.length
 Mariabody = `│「 𝗛𝗶 👋 」
-└┬❖ 「  @@${MariaName.split("@")[0]}  」
+└┬❖ 「  @${MariaName.split("@")[0]}  」
    │✑  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
    │✑  ${metadata.subject}
    │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
@@ -389,7 +389,7 @@ Maria.sendMessage(anu.id,
                     const Mariamembers = metadata.participants.length  
      Mariabody = `┌─❖
 │「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
-└┬❖ 「  @@${MariaName.split("@")[0]}  」
+└┬❖ 「  @${MariaName.split("@")[0]}  」
    │✑  𝗟𝗲𝗳𝘁 
    │✑  ${metadata.subject}
    │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
