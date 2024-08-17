@@ -23,7 +23,7 @@
     "STICKER": {
       "description": "set your bot sticker package name ex:- TOGE INUMAKI"
     },
-     "SESSION ID": {
+     "id": {
       "description": "Put your session id here"
     },     
      "PM_BLOCKER": {
@@ -47,7 +47,7 @@
      "formation": {
           "worker": {
               "quantity": 1,
-              "size": "eco"
+              "size": "basic"
           }
      }
 }
