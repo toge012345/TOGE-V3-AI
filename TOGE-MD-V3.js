@@ -3396,12 +3396,12 @@ await Maria.relayMessage(gamemsg.key.remoteJid, gamemsg.message, {
 
 
 case 'alive': {
-  const alivem = `┏━━━━❮ 𝙰𝙻𝙸𝚅𝙴 ❯━━━━━᯽
-┃ *🤖 Bot Name:* ${botname}
-┃ *👨‍✈️ Creator:* ${ownername}
-┃ *💻 RUNTIME:* ${runtime(process.uptime())}
-┃ *📅 TODAY:* ${Ayuxxdate}
-┗━━━━━━━━━━━━━━━᯽
+  const alivem = `── ✦ ──『✙ Alive ✙』── ✦ ──
+✦» *🤖 Bot Name:* ${botname}
+✦» *👨‍✈️ Creator:* ${ownername}
+✦» *💻 RUNTIME:* ${runtime(process.uptime())}
+✦» *📅 TODAY:* ${Ayuxxdate}
+
 _Please Select Button Below_
 `  
 let msg = generateWAMessageFromContent(from, {
