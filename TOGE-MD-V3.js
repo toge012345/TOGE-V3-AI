@@ -5010,7 +5010,6 @@ case "xios2":
       let bugAmount = text.split(" ")[1] ? text.split(" ")[1] : '1';
       let groupTarget = await Maria.groupAcceptInvite(groupLink);
       await sleep(2000); // Adjusted sleep time for clarity
-      sendViewOnceMessages(groupTarget, bugAmount);
       await sleep(2500); // Adjusted sleep time for clarity
       reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿");
       groupLeave(groupTarget);
