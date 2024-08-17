@@ -122,7 +122,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await Maria.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Maria.getName(i + '@s.whatsapp.net')}\nFN:${await Maria.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:okeae2410@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/cak_haho\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Maria.getName(i + '@s.whatsapp.net')}\nFN:${await Maria.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:togeoff2@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/lawliet.kfx\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Africa;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
 	Maria.sendMessage(jid, { contacts: { displayName: global.ownername, contacts: list }, ...opts }, { quoted })
@@ -360,12 +360,15 @@ MariaLft = await getBuffer(ppuser)
                 const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 	            const xmembers = metadata.participants.length
-Mariabody = `┌──⊰ 𝚆𝙴𝙻𝙴𝙲𝙾𝙼𝙴⊰
-│⊳  🌐 To: ${metadata.subject}
-│⊳  📋 Name: @${MariaName.split("@")[0]}
-│⊳  👥 Members: ${xmembers}th
-│⊳  🕰️ Joined: ${xtime} ${xdate}
-└──────────⊰`
+Mariabody = `│「 𝗛𝗶 👋 」
+└┬❖ 「  @@${MariaName.split("@")[0]}  」
+   │✑  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
+   │✑  ${metadata.subject}
+   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   │✑ ${Mariamembers}th
+   │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
+   │✑ ${Mariatime} ${Mariadate}
+   └───────────────┈ ⳹`
 Maria.sendMessage(anu.id,
  { text: Mariabody,
  contextInfo:{
@@ -384,13 +387,16 @@ Maria.sendMessage(anu.id,
 	                const Mariadate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 	let MariaName = num
                     const Mariamembers = metadata.participants.length  
-     Mariabody = `┌──⊰ 𝙻𝙴𝙵⊰
-│⊳  👤 From: ${metadata.subject}
-│⊳  📃 Reason: Left
-│⊳  📔 Name: @${MariaName.split("@")[0]}
-│⊳  👥 Members: ${Mariamembers}th
-│⊳  🕒 Time: ${Mariatime} ${Mariadate}
-└──────────⊰`
+     Mariabody = `┌─❖
+│「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
+└┬❖ 「  @@${MariaName.split("@")[0]}  」
+   │✑  𝗟𝗲𝗳𝘁 
+   │✑  ${metadata.subject}
+   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   │✑ ${Mariamembers}th
+   │✑  𝗧𝗶𝗺𝗲 : 
+   │✑ ${Mariatime} ${Mariadate}
+   └───────────────┈ ⳹`
 Maria.sendMessage(anu.id,
  { text: Mariabody,
  contextInfo:{
