@@ -47,7 +47,16 @@ global.mess = {
     group: '💫 *sensei, this feature is exclusively for groups*',
     private: '💫 *hello senpai, this feature is exclusively for private chats*',
     wait: '💫 *hello senpai, in process...* ',    
-    error: '💫 *hello senpai, there seems to be an error!*',
+    error: '💫 *hello senpai, there seems to be an error!*',   
+}
+
+module.exports = {
+ownernumber: global.ownernumber,
+ownername: global.ownername,
+sessionId: process.env.id || " ", // paste your session id here
+AUTO_BLOCK : process.env.PM_BLOCKER,
+STATUS_SAVER : "true",
+ANTI_BOT:"true",
 }
 
 global.thumb = fs.readFileSync('./Media/thumb.jpg')
