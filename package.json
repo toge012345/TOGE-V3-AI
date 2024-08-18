@@ -20,8 +20,6 @@
         "@adiwajshing/keyed-db": "^0.2.4",
         "@hapi/boom": "^10.0.1",
         "@queenanya/invite": "^6.0.0",
-        "@queenanya/ytdlcore": "npm:@queenanya/ytdlcore",
-        "@queenanya/ytsearch": "npm:@queenanya/ytsearch",
         "anime-wallpaper": "^1.0.2",
         "api-dylux": "^1.4.4",
         "aptoide-scraper": "^1.0.1",
