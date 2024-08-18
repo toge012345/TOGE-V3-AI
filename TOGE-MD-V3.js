@@ -1642,8 +1642,9 @@ break;
        case 'ai': case 'gpt': case 'openai': {
 	if (!text) return replygcxlicon(`*• Example:* ${prefix + command} what is your name`);   
         try {
-let gpt = await (await fetch(`https://itzpire.com/ai/gpt?model=gpt-4&q=${text}`)).json()
-let msgs = generateWAMessageFromContent(m.chat, {
+let gpt = await (await fetch(`https://itzpire.com/ai/gpt?model=gpt-4&q=${message}`)).json()
+
+  let msgs = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
@@ -1652,20 +1653,23 @@ let msgs = generateWAMessageFromContent(m.chat, {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: '> Open Ai\n\n' + gpt.data.response
+            text: ""
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: botname
           }),
-          header: proto.Message.InteractiveMessage.Header.create({
-          hasMediaAttachment: false,
-          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer })
+                    header: proto.Message.InteractiveMessage.Header.create({
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
+            title: txt,
+            subtitle: themeemoji,
+            hasMediaAttachment: false
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-            buttons: [{
-            "name": "quick_reply",
-              "buttonParamsJson": `{\"display_text\":\"👀\",\"id\":\"\"}`
-            }],
+            buttons: [
+                            {
+  "name": "quick_reply",
+  "buttonParamsJson": `{"display_text":"𝙼𝙴𝙽𝚄 𝙻𝙸𝚂𝚃","id":"${prefix}list"}`
+   },
           }),
           contextInfo: {
                   mentionedJid: [m.sender], 
@@ -1686,7 +1690,7 @@ await Maria.relayMessage(m.chat, msgs.message, {})
  return reply("`*Error*`")
 }
 }
-    break;		    
+    break		    
                
              case 'dalle': {
        
