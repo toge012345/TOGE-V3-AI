@@ -1,450 +1,311 @@
-require('./Config')
-const pino = require('pino')
-const { Boom } = require('@hapi/boom')
-const fs = require('fs')
-const moment = require('moment-timezone');
-const chalk = require('chalk')
-const FileType = require('file-type')
-const path = require('path')
-const axios = require('axios')
-const Config = require("./Config")
-const PhoneNumber = require('awesome-phonenumber')
-const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetch, await, sleep, reSize } = require('./lib/myfunc.js')
-const { default: MariaConnect, delay, PHONENUMBER_MCC, makeCacheableSignalKeyStore, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore,getAggregateVotesInPollMessage, jidDecode, proto, Browsers } = require("@whiskeysockets/baileys")
-const NodeCache = require("node-cache")
-const Pino = require("pino")
-const readline = require("readline")
-const { parsePhoneNumber } = require("libphonenumber-js")
-
-const prefix = global.prefa || "." 
-
-const makeWASocket = 
-require("@whiskeysockets/baileys").default
-
-const store = makeInMemoryStore({
-    logger: pino().child({
-        level: 'silent',
-        stream: 'store'
-    })
-})
-
-let phoneNumber = "24105114159"
-let owner = JSON.parse(fs.readFileSync('./database/owner.json'))
-
-const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
-const useMobile = process.argv.includes("--mobile")
-
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
-const question = (text) => new Promise((resolve) => rl.question(text, resolve))
-         
-async function startMaria() {
-//------------------------------------------------------
-let { version, isLatest } = await fetchLatestBaileysVersion()
-const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
-    const msgRetryCounterCache = new NodeCache() // for retry message, "waiting message"
-    const Maria = makeWASocket({
-      logger: pino({ level: 'silent' }),
-      printQRInTerminal: !pairingCode, // popping up QR in terminal log
-      mobile: useMobile, // mobile api (prone to bans)
-      browser: Browsers.ubuntu('Chrome'), // for this issues https://github.com/WhiskeySockets/Baileys/issues/328
-      auth: state,
-      markOnlineOnConnect: true, // set false for offline
-      generateHighQualityLinkPreview: true, // make high preview link
-      getMessage: async (key) => {
-         let jid = jidNormalizedUser(key.remoteJid)
-         let msg = await store.loadMessage(jid, key.id)
-
-         return msg?.message || ""
-      },
-      msgRetryCounterCache, // Resolve waiting messages
-      defaultQueryTimeoutMs: undefined, // for this issues https://github.com/WhiskeySockets/Baileys/issues/276
-   })
-   
-   store.bind(Maria.ev)
-
-    // login use pairing code
-   // source code https://github.com/WhiskeySockets/Baileys/blob/master/Example/example.ts#L61
-   if (pairingCode && !Maria.authState.creds.registered) {
-      if (useMobile) throw new Error('Cannot use pairing code with mobile api')
-
-      let phoneNumber
-      if (!!phoneNumber) {
-         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-
-         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +24105114159")))
-            process.exit(0)
-         }
-      } else {
-         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number\nFor example: +24105114159 : `)))
-         phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-
-         // Ask again when entering the wrong number
-         if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +24105114159")))
-
-            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number please\nFor example: +24105114159: `)))
-            phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-            rl.close()
-         }
-      }
-
-      setTimeout(async () => {
-         let code = await Maria.requestPairingCode(phoneNumber)
-         code = code?.match(/.{1,4}/g)?.join("-") || code
-         console.log(chalk.black(chalk.bgGreen(`🤖Your Pairing Code🤖: `)), chalk.black(chalk.white(code)))
-      }, 3000)
-   }
-
-    Maria.ev.on('messages.upsert', async chatUpdate => {
-        //console.log(JSON.stringify(chatUpdate, undefined, 2))
+const _0x29b9ac = _0x2ec8;
+(function (_0x5ad6cb, _0x452e23) {
+    const _0x4a11ba = _0x2ec8, _0x490f9f = _0x5ad6cb();
+    while (!![]) {
         try {
-            const mek = chatUpdate.messages[0]
-            if (!mek.message) return
-            mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-            if (mek.key && mek.key.remoteJid === 'status@broadcast'){
-            if (autoread_status) {
-            await Maria.readMessages([mek.key]) 
-            }
-            } 
-            if (!Maria.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
-            if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-            const m = smsg(Maria, mek, store)
-            require("./TOGE-MD-V3")(Maria, m, chatUpdate, store)
-        } catch (err) {
-            console.log(err)
+            const _0x3df437 = -parseInt(_0x4a11ba(0x2d4)) / (0x4 * 0x506 + -0x1 * 0x226d + 0xe56) * (-parseInt(_0x4a11ba(0x2fb)) / (-0x2048 + -0x28 * 0x55 + 0x2d92)) + -parseInt(_0x4a11ba(0x2ca)) / (0x1be6 + -0x1 * -0x1481 + -0x3064) * (parseInt(_0x4a11ba(0x290)) / (0x11 * -0x171 + -0xa * -0xe6 + 0xf89)) + -parseInt(_0x4a11ba(0x234)) / (-0x29 * 0x97 + -0x7d5 * 0x3 + -0x2fb3 * -0x1) * (-parseInt(_0x4a11ba(0x1ce)) / (-0x4b * 0x74 + 0x1 * 0xf99 + -0x623 * -0x3)) + -parseInt(_0x4a11ba(0x1fa)) / (-0x1 * -0x228d + 0x1 * 0x1171 + 0xfb * -0x35) * (parseInt(_0x4a11ba(0x1f6)) / (0x7ba * 0x5 + 0x1 * -0x1f6c + -0x72e)) + -parseInt(_0x4a11ba(0x1d3)) / (-0x4 * -0x8 + -0x11 * 0xd5 + -0x2 * -0x707) * (-parseInt(_0x4a11ba(0x2a7)) / (0x1f7b + -0xa46 + -0x152b)) + -parseInt(_0x4a11ba(0x1fc)) / (-0x8c2 * -0x1 + 0x5fd + -0xeb4) * (-parseInt(_0x4a11ba(0x215)) / (-0x3 * -0x209 + 0x228f * -0x1 + 0x1c80)) + -parseInt(_0x4a11ba(0x2fd)) / (0x7 * -0xf5 + -0x2435 + 0x2af5) * (parseInt(_0x4a11ba(0x240)) / (-0xd10 + -0x1f82 + 0x3b8 * 0xc));
+            if (_0x3df437 === _0x452e23)
+                break;
+            else
+                _0x490f9f['push'](_0x490f9f['shift']());
+        } catch (_0x53e656) {
+            _0x490f9f['push'](_0x490f9f['shift']());
         }
-    })
-
-   Maria.sendContact = async (jid, kon, quoted = '', opts = {}) => {
-	let list = []
-	for (let i of kon) {
-	    list.push({
-	    	displayName: await Maria.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Maria.getName(i + '@s.whatsapp.net')}\nFN:${await Maria.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:owner number\nitem2.EMAIL;type=INTERNET:togeoff2@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://instagram.com/lawliet.kfx\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Africa, Gabon, Libreville;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
-	    })
-	}
-	Maria.sendMessage(jid, { contacts: { displayName: global.ownername, contacts: list }, ...opts }, { quoted })
     }
-    
-    Maria.decodeJid = (jid) => {
-        if (!jid) return jid
-        if (/:\d+@/gi.test(jid)) {
-            let decode = jidDecode(jid) || {}
-            return decode.user && decode.server && decode.user + '@' + decode.server || jid
-        } else return jid
-    }
-
-    Maria.ev.on('contacts.update', update => {
-        for (let contact of update) {
-            let id = Maria.decodeJid(contact.id)
-            if (store && store.contacts) store.contacts[id] = {
-                id,
-                name: contact.notify
-            }
-        }
-    })
-
-    Maria.getName = (jid, withoutContact = false) => {
-        id = Maria.decodeJid(jid)
-        withoutContact = Maria.withoutContact || withoutContact
-        let v
-        if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
-            v = store.contacts[id] || {}
-            if (!(v.name || v.subject)) v = Maria.groupMetadata(id) || {}
-            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
+}(_0x1547, -0x4493d + 0xe6fd * 0x1 + 0x8a671), require(_0x29b9ac(0x226)));
+const pino = require(_0x29b9ac(0x2e4)), {Boom} = require(_0x29b9ac(0x208)), fs = require('fs'), moment = require(_0x29b9ac(0x24c) + _0x29b9ac(0x1dc)), chalk = require(_0x29b9ac(0x30d)), FileType = require(_0x29b9ac(0x1d6)), path = require(_0x29b9ac(0x2f8)), axios = require(_0x29b9ac(0x266)), Config = require(_0x29b9ac(0x226)), PhoneNumber = require(_0x29b9ac(0x29e) + _0x29b9ac(0x195)), {imageToWebp, videoToWebp, writeExifImg, writeExifVid} = require(_0x29b9ac(0x2b8)), {smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetch, await, sleep, reSize} = require(_0x29b9ac(0x23d) + _0x29b9ac(0x261)), {
+        default: MariaConnect,
+        delay,
+        PHONENUMBER_MCC,
+        makeCacheableSignalKeyStore,
+        useMultiFileAuthState,
+        DisconnectReason,
+        fetchLatestBaileysVersion,
+        generateForwardMessageContent,
+        prepareWAMessageMedia,
+        generateWAMessageFromContent,
+        generateMessageID,
+        downloadContentFromMessage,
+        makeInMemoryStore,
+        getAggregateVotesInPollMessage,
+        jidDecode,
+        proto,
+        Browsers
+    } = require(_0x29b9ac(0x20c) + _0x29b9ac(0x2cc) + _0x29b9ac(0x1f4)), NodeCache = require(_0x29b9ac(0x2c0)), Pino = require(_0x29b9ac(0x2e4)), readline = require(_0x29b9ac(0x279)), {parsePhoneNumber} = require(_0x29b9ac(0x1a1) + _0x29b9ac(0x184)), prefix = global[_0x29b9ac(0x23c)] || '.', makeWASocket = require(_0x29b9ac(0x20c) + _0x29b9ac(0x2cc) + _0x29b9ac(0x1f4))[_0x29b9ac(0x310)], store = makeInMemoryStore({
+        'logger': pino()[_0x29b9ac(0x2eb)]({
+            'level': _0x29b9ac(0x2ea),
+            'stream': _0x29b9ac(0x284)
         })
-        else v = id === '0@s.whatsapp.net' ? {
-                id,
-                name: 'WhatsApp'
-            } : id === Maria.decodeJid(Maria.user.id) ?
-            Maria.user :
-            (store.contacts[id] || {})
-        return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
-    }
-    
-    Maria.public = true
-
-    Maria.serializeM = (m) => smsg(Maria, m, store)
-
-Maria.ev.on("connection.update",async  (s) => {
-        const { connection, lastDisconnect } = s
-        if (connection == "open") {
-console.log(chalk.green('🟨Welcome to TOGE-MD-V3'));
-console.log(chalk.gray('\n\n🚀Initializing...'));
-           await delay(1000 * 2) 
-            
-            
-console.log(chalk.cyan('\n\n🥵Connected'));
-
-Maria.sendMessage(Maria.user.id, {
-    text: `𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 ᴄᴏɴɴᴇᴄᴛᴇᴅ 
-
-ᴘʀᴇꜰɪx: [ ${prefix} ]\n
-ᴄᴏᴍᴍᴀɴᴅꜱ: 248\n
-ᴠᴇʀꜱɪᴏɴ: 3.0\n
-ᴄʀᴇᴀᴛᴏʀ: ᴛᴏɢᴇ ɪɴᴜᴍᴀᴋɪ\n
-_ᴛʏᴘᴇ ${prefix}ᴀʟɪᴠᴇ ᴛᴏ ᴜꜱᴇ ᴛʜᴇ ʙᴏᴛ_ 🤖
- `
-});
-
-
-const rainbowColors = ['red', 'yellow', 'green', 'blue', 'purple'];
-let index = 0;
-
-function printRainbowMessage() {
-  const color = rainbowColors[index];
-  console.log(chalk.keyword(color)('\n\nwaiting for messages'));
-  index = (index + 1) % rainbowColors.length;
-  setTimeout(printRainbowMessage, 60000);  // Adjust the timeout for desired speed
+    });
+let phoneNumber = _0x29b9ac(0x258) + '9', owner = JSON[_0x29b9ac(0x267)](fs[_0x29b9ac(0x2fe) + 'nc'](_0x29b9ac(0x217) + _0x29b9ac(0x174) + 'n'));
+const pairingCode = !!phoneNumber || process[_0x29b9ac(0x24a)][_0x29b9ac(0x1c6)](_0x29b9ac(0x2a8) + _0x29b9ac(0x30c)), useMobile = process[_0x29b9ac(0x24a)][_0x29b9ac(0x1c6)](_0x29b9ac(0x1e9)), rl = readline[_0x29b9ac(0x2d8) + _0x29b9ac(0x1f5)]({
+        'input': process[_0x29b9ac(0x2dd)],
+        'output': process[_0x29b9ac(0x2bc)]
+    }), question = _0x2af40d => new Promise(_0x26dd3b => rl[_0x29b9ac(0x21a)](_0x2af40d, _0x26dd3b));
+function _0x2ec8(_0x5380ae, _0x2066ac) {
+    const _0x1ecc3b = _0x1547();
+    return _0x2ec8 = function (_0xc997de, _0x546483) {
+        _0xc997de = _0xc997de - (0x2155 + 0x196d + -0x3951);
+        let _0x11f65a = _0x1ecc3b[_0xc997de];
+        return _0x11f65a;
+    }, _0x2ec8(_0x5380ae, _0x2066ac);
 }
-
-printRainbowMessage();
-}
-    
-        
-                if (
-            connection === "close" &&
-            lastDisconnect &&
-            lastDisconnect.error &&
-            lastDisconnect.error.output.statusCode != 401
-        ) {
-            startMaria()
-        }
-    })
-    Maria.ev.on('creds.update', saveCreds)
-    Maria.ev.on("messages.upsert",  () => { })
-
-    Maria.sendText = (jid, text, quoted = '', options) => Maria.sendMessage(jid, {
-        text: text,
-        ...options
-    }, {
-        quoted,
-        ...options
-    })
-    Maria.sendTextWithMentions = async (jid, text, quoted, options = {}) => Maria.sendMessage(jid, {
-        text: text,
-        mentions: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net'),
-        ...options
-    }, {
-        quoted
-    })
-    
-     async function appenTextMessage(text, chatUpdate) {
-        let messages = await generateWAMessage(m?.chat, { text: text, mentions: m?.mentionedJid }, {
-            userJid: Maria.user.id,
-            quoted:m?.quoted && m?.quoted.fakeObj
-        })
-        messages.key.fromMe = areJidsSameUser(m?.sender, Maria.user.id)
-        messages.key.id = m?.key.id
-        messages.pushName = m?.pushName
-        if (m?.isGroup) messages.participant = m?.sender
-        let msg = {
-            ...chatUpdate,
-            messages: [proto.WebMessageInfo.fromObject(messages)],
-            type: 'append'}
-Maria.ev.emit('messages.upsert', msg)}       
-
-    Maria.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
-        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        let buffer
-        if (options && (options.packname || options.author)) {
-            buffer = await writeExifImg(buff, options)
-        } else {
-            buffer = await imageToWebp(buff)
-        }
-
-        await Maria.sendMessage(jid, {
-            sticker: {
-                url: buffer
+async function startMaria() {
+    const _0x444aba = _0x29b9ac, _0x5d8e4c = {
+            'AZfIR': function (_0x4e9e67, _0x1e36ad) {
+                return _0x4e9e67(_0x1e36ad);
             },
-            ...options
-        }, {
-            quoted
-        })
-        return buffer
-    }
-    Maria.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
-        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        let buffer
-        if (options && (options.packname || options.author)) {
-            buffer = await writeExifVid(buff, options)
-        } else {
-            buffer = await videoToWebp(buff)
-        }
-
-        await Maria.sendMessage(jid, {
-            sticker: {
-                url: buffer
+            'fJNKm': function (_0x32289f, _0x1ced57) {
+                return _0x32289f === _0x1ced57;
             },
-            ...options
-        }, {
-            quoted
-        })
-        return buffer
+            'huaNo': _0x444aba(0x18e) + _0x444aba(0x24e),
+            'MOmiZ': _0x444aba(0x246) + _0x444aba(0x2cb),
+            'IXXhF': function (_0x3be19b, _0x24af08) {
+                return _0x3be19b === _0x24af08;
+            },
+            'GlPpK': _0x444aba(0x1a3),
+            'lstDu': _0x444aba(0x231),
+            'UvGLC': function (_0x381fb5, _0x3101f8) {
+                return _0x381fb5 === _0x3101f8;
+            },
+            'JfTCY': function (_0x1d86ea, _0x59236e, _0x35066f, _0x41d627) {
+                return _0x1d86ea(_0x59236e, _0x35066f, _0x41d627);
+            },
+            'FeuHf': _0x444aba(0x19e) + 'V3',
+            'ryGGO': function (_0x2a703c, _0x10ee4f) {
+                return _0x2a703c + _0x10ee4f;
+            },
+            'XBwEN': _0x444aba(0x2b6) + _0x444aba(0x27d),
+            'iOdXT': function (_0x148b0f, _0x2caa03) {
+                return _0x148b0f + _0x2caa03;
+            },
+            'VGOCg': function (_0x40b604, _0x452696) {
+                return _0x40b604 + _0x452696;
+            },
+            'PEUfF': function (_0x280228, _0x370824) {
+                return _0x280228(_0x370824);
+            },
+            'aLmkm': function (_0x229193, _0xe47942) {
+                return _0x229193(_0xe47942);
+            },
+            'UcPLx': function (_0x5ad118, _0x2f50e5) {
+                return _0x5ad118(_0x2f50e5);
+            },
+            'vpOkj': function (_0x26daba, _0x1fa270) {
+                return _0x26daba + _0x1fa270;
+            },
+            'LmLKK': _0x444aba(0x20f) + _0x444aba(0x313),
+            'MMinQ': _0x444aba(0x19d),
+            'EPFXT': _0x444aba(0x19f) + _0x444aba(0x2cd),
+            'RZqbv': _0x444aba(0x2ed),
+            'tcvKe': function (_0x1cf232, _0x47150c) {
+                return _0x1cf232 === _0x47150c;
+            },
+            'LyldR': _0x444aba(0x20d) + _0x444aba(0x191) + _0x444aba(0x318),
+            'EApyo': function (_0x5507ab, _0x469202) {
+                return _0x5507ab % _0x469202;
+            },
+            'EHqhf': function (_0x59c2d2, _0x413380, _0x2addef) {
+                return _0x59c2d2(_0x413380, _0x2addef);
+            },
+            'SKEhL': function (_0x5e8fff, _0x25dbb9) {
+                return _0x5e8fff == _0x25dbb9;
+            },
+            'UrsZt': _0x444aba(0x1d8),
+            'LaYDI': _0x444aba(0x29d) + _0x444aba(0x2d3) + _0x444aba(0x230),
+            'PpKnW': _0x444aba(0x303) + _0x444aba(0x1f1),
+            'MQasp': function (_0x3b1a2d, _0x40b845) {
+                return _0x3b1a2d * _0x40b845;
+            },
+            'nssAL': _0x444aba(0x25d) + _0x444aba(0x1cb),
+            'zpovK': _0x444aba(0x1f2),
+            'cICZY': _0x444aba(0x185),
+            'tjjvG': _0x444aba(0x2aa),
+            'ZMqjR': _0x444aba(0x27c),
+            'orrkz': _0x444aba(0x2f2),
+            'EGLvt': function (_0x5d066c) {
+                return _0x5d066c();
+            },
+            'xkpdj': _0x444aba(0x183),
+            'XtUFx': function (_0x5cd4d7, _0x541178) {
+                return _0x5cd4d7 != _0x541178;
+            },
+            'FjPrA': function (_0x2426cd) {
+                return _0x2426cd();
+            },
+            'TJggC': function (_0x4f7a93, _0x2a9f21, _0x56c930) {
+                return _0x4f7a93(_0x2a9f21, _0x56c930);
+            },
+            'QamIK': _0x444aba(0x1a5),
+            'fjlQD': _0x444aba(0x1de) + _0x444aba(0x250),
+            'wpMIO': _0x444aba(0x1a2),
+            'aXMpX': function (_0x46172c, _0x451ce8) {
+                return _0x46172c(_0x451ce8);
+            },
+            'EtrYO': function (_0x57a15d, _0xd596b7, _0x3cd1ae) {
+                return _0x57a15d(_0xd596b7, _0x3cd1ae);
+            },
+            'HqGAP': function (_0x36a7c9, _0x461c18) {
+                return _0x36a7c9(_0x461c18);
+            },
+            'DoWaj': function (_0x373d76, _0x2b598a) {
+                return _0x373d76 + _0x2b598a;
+            },
+            'GrFrx': function (_0xb96ec7, _0x4b4931) {
+                return _0xb96ec7 + _0x4b4931;
+            },
+            'rLzNa': _0x444aba(0x286) + _0x444aba(0x271),
+            'elEsA': _0x444aba(0x24d),
+            'dMVgO': _0x444aba(0x1d2) + _0x444aba(0x1fb) + _0x444aba(0x1ab) + _0x444aba(0x2b5) + _0x444aba(0x2f9) + _0x444aba(0x223) + _0x444aba(0x24f) + _0x444aba(0x23a) + _0x444aba(0x1ee) + '60',
+            'RrLvK': _0x444aba(0x1c1) + _0x444aba(0x244) + _0x444aba(0x27b) + _0x444aba(0x1e8) + _0x444aba(0x278) + _0x444aba(0x252),
+            'BnGBA': function (_0x776576, _0xb2d01f) {
+                return _0x776576(_0xb2d01f);
+            },
+            'JZBHV': function (_0x4e9042, _0x4a6e1d) {
+                return _0x4e9042 == _0x4a6e1d;
+            },
+            'yNDHA': _0x444aba(0x1bd),
+            'vIOIx': function (_0x3e7201, _0x72cc88) {
+                return _0x3e7201(_0x72cc88);
+            },
+            'suTtK': _0x444aba(0x245) + 'ta',
+            'Zzubk': _0x444aba(0x2e1),
+            'PeJSt': _0x444aba(0x180),
+            'pkXRr': _0x444aba(0x1ad),
+            'ihtec': _0x444aba(0x196),
+            'dXddY': function (_0x427aee, _0x5db399) {
+                return _0x427aee(_0x5db399);
+            },
+            'cYvTx': function (_0x487271, _0x238f49) {
+                return _0x487271(_0x238f49);
+            },
+            'eHdQo': _0x444aba(0x2ea),
+            'IdyPq': _0x444aba(0x2d9),
+            'vjcav': _0x444aba(0x1c3) + _0x444aba(0x275) + _0x444aba(0x17d) + _0x444aba(0x29c),
+            'DpzDJ': _0x444aba(0x2b3) + _0x444aba(0x308) + _0x444aba(0x17b) + _0x444aba(0x2e8) + _0x444aba(0x295) + _0x444aba(0x253) + _0x444aba(0x258) + '9',
+            'JPcZT': _0x444aba(0x254) + _0x444aba(0x2f7),
+            'sobOe': _0x444aba(0x1b3) + _0x444aba(0x285),
+            'zVXLB': _0x444aba(0x2df) + 'te',
+            'hMrsc': _0x444aba(0x1de) + _0x444aba(0x2f7),
+            'vcvwT': _0x444aba(0x186) + _0x444aba(0x1f3) + _0x444aba(0x2f7)
+        };
+    let {
+        version: _0x256122,
+        isLatest: _0x45f487
+    } = await _0x5d8e4c[_0x444aba(0x251)](fetchLatestBaileysVersion);
+    const {
+            state: _0x278756,
+            saveCreds: _0x4d785b
+        } = await _0x5d8e4c[_0x444aba(0x269)](useMultiFileAuthState, _0x444aba(0x202)), _0x36e9a6 = new NodeCache(), _0x4146a1 = _0x5d8e4c[_0x444aba(0x1be)](makeWASocket, {
+            'logger': _0x5d8e4c[_0x444aba(0x276)](pino, { 'level': _0x5d8e4c[_0x444aba(0x1d1)] }),
+            'printQRInTerminal': !pairingCode,
+            'mobile': useMobile,
+            'browser': Browsers[_0x444aba(0x1b2)](_0x5d8e4c[_0x444aba(0x2bd)]),
+            'auth': _0x278756,
+            'markOnlineOnConnect': !![],
+            'generateHighQualityLinkPreview': !![],
+            'getMessage': async _0x5a1f20 => {
+                const _0x330560 = _0x444aba;
+                let _0x2b73e3 = _0x5d8e4c[_0x330560(0x210)](jidNormalizedUser, _0x5a1f20[_0x330560(0x248)]), _0x2ba54d = await store[_0x330560(0x2a2) + 'e'](_0x2b73e3, _0x5a1f20['id']);
+                return _0x2ba54d?.[_0x330560(0x2d2)] || '';
+            },
+            'msgRetryCounterCache': _0x36e9a6,
+            'defaultQueryTimeoutMs': undefined
+        });
+    store[_0x444aba(0x2ae)](_0x4146a1['ev']);
+    if (pairingCode && !_0x4146a1[_0x444aba(0x2e3)][_0x444aba(0x1e4)][_0x444aba(0x28f)]) {
+        if (useMobile)
+            throw new Error(_0x5d8e4c[_0x444aba(0x1c7)]);
+        let _0x4853e8;
+        !!_0x4853e8 ? (_0x4853e8 = _0x4853e8[_0x444aba(0x218)](/[^0-9]/g, ''), !Object[_0x444aba(0x212)](PHONENUMBER_MCC)[_0x444aba(0x1ff)](_0x1ac003 => _0x4853e8[_0x444aba(0x2af)](_0x1ac003)) && (console[_0x444aba(0x247)](chalk[_0x444aba(0x219)](chalk[_0x444aba(0x257)](_0x5d8e4c[_0x444aba(0x206)]))), process[_0x444aba(0x1b5)](0x1 * 0x24cb + -0x2 * 0x328 + -0x121 * 0x1b))) : (_0x4853e8 = await _0x5d8e4c[_0x444aba(0x269)](question, chalk[_0x444aba(0x219)](chalk[_0x444aba(0x1d9) + 't'](_0x444aba(0x18c) + _0x444aba(0x1a0) + _0x444aba(0x304) + _0x444aba(0x2cf) + _0x444aba(0x21e) + _0x444aba(0x227)))), _0x4853e8 = _0x4853e8[_0x444aba(0x218)](/[^0-9]/g, ''), !Object[_0x444aba(0x212)](PHONENUMBER_MCC)[_0x444aba(0x1ff)](_0x5a45b0 => _0x4853e8[_0x444aba(0x2af)](_0x5a45b0)) && (console[_0x444aba(0x247)](chalk[_0x444aba(0x219)](chalk[_0x444aba(0x257)](_0x5d8e4c[_0x444aba(0x206)]))), _0x4853e8 = await _0x5d8e4c[_0x444aba(0x276)](question, chalk[_0x444aba(0x219)](chalk[_0x444aba(0x1d9) + 't'](_0x444aba(0x18c) + _0x444aba(0x1a0) + _0x444aba(0x194) + _0x444aba(0x193) + _0x444aba(0x216) + _0x444aba(0x2b4)))), _0x4853e8 = _0x4853e8[_0x444aba(0x218)](/[^0-9]/g, ''), rl[_0x444aba(0x183)]())), _0x5d8e4c[_0x444aba(0x1cd)](setTimeout, async () => {
+            const _0x2f61ff = _0x444aba;
+            let _0x30eba0 = await _0x4146a1[_0x2f61ff(0x235) + _0x2f61ff(0x30a)](_0x4853e8);
+            _0x30eba0 = _0x30eba0?.[_0x2f61ff(0x1c8)](/.{1,4}/g)?.[_0x2f61ff(0x2c3)]('-') || _0x30eba0, console[_0x2f61ff(0x247)](chalk[_0x2f61ff(0x297)](chalk[_0x2f61ff(0x26d)](_0x2f61ff(0x28b) + _0x2f61ff(0x1df) + '\x20')), chalk[_0x2f61ff(0x297)](chalk[_0x2f61ff(0x282)](_0x30eba0)));
+        }, -0x6ad * 0x1 + 0x5 * 0x748 + -0x9f * 0x1d);
     }
-    Maria.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
-        let quoted = message.msg ? message.msg : message
-        let mime = (message.msg || message).mimetype || ''
-        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
-        const stream = await downloadContentFromMessage(quoted, messageType)
-        let buffer = Buffer.from([])
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
+    _0x4146a1['ev']['on'](_0x5d8e4c[_0x444aba(0x197)], async _0x5584ff => {
+        const _0x3928bf = _0x444aba;
+        try {
+            const _0x56eb7c = _0x5584ff[_0x3928bf(0x2c1)][-0x2526 + -0x1 * -0x1241 + 0x12e5];
+            if (!_0x56eb7c[_0x3928bf(0x2d2)])
+                return;
+            _0x56eb7c[_0x3928bf(0x2d2)] = _0x5d8e4c[_0x3928bf(0x1c5)](Object[_0x3928bf(0x212)](_0x56eb7c[_0x3928bf(0x2d2)])[0x4 * -0x89f + -0x1a * 0x29 + 0x1353 * 0x2], _0x5d8e4c[_0x3928bf(0x1ea)]) ? _0x56eb7c[_0x3928bf(0x2d2)][_0x3928bf(0x18e) + _0x3928bf(0x24e)][_0x3928bf(0x2d2)] : _0x56eb7c[_0x3928bf(0x2d2)];
+            _0x56eb7c[_0x3928bf(0x2ef)] && _0x5d8e4c[_0x3928bf(0x1c5)](_0x56eb7c[_0x3928bf(0x2ef)][_0x3928bf(0x248)], _0x5d8e4c[_0x3928bf(0x2de)]) && (autoread_status && await _0x4146a1[_0x3928bf(0x1fd) + 'es']([_0x56eb7c[_0x3928bf(0x2ef)]]));
+            if (!_0x4146a1[_0x3928bf(0x317)] && !_0x56eb7c[_0x3928bf(0x2ef)][_0x3928bf(0x1ed)] && _0x5d8e4c[_0x3928bf(0x299)](_0x5584ff[_0x3928bf(0x1e2)], _0x5d8e4c[_0x3928bf(0x214)]))
+                return;
+            if (_0x56eb7c[_0x3928bf(0x2ef)]['id'][_0x3928bf(0x2af)](_0x5d8e4c[_0x3928bf(0x242)]) && _0x5d8e4c[_0x3928bf(0x288)](_0x56eb7c[_0x3928bf(0x2ef)]['id'][_0x3928bf(0x2ec)], -0x1d67 + -0x20d4 + 0x3e4b))
+                return;
+            const _0x22afa3 = _0x5d8e4c[_0x3928bf(0x259)](smsg, _0x4146a1, _0x56eb7c, store);
+            _0x5d8e4c[_0x3928bf(0x210)](require, _0x5d8e4c[_0x3928bf(0x28c)])(_0x4146a1, _0x22afa3, _0x5584ff, store);
+        } catch (_0x5de5f9) {
+            console[_0x3928bf(0x247)](_0x5de5f9);
         }
-        let type = await FileType.fromBuffer(buffer)
-        trueFileName = attachExtension ? (filename + '.' + type.ext) : filename
-        // save to file
-        await fs.writeFileSync(trueFileName, buffer)
-        return trueFileName
-    }
-    //////
-async function getMessage(key){
-        if (store) {
-            const msg = await store.loadMessage(key.remoteJid, key.id)
-            return msg?.message
+    }), _0x4146a1[_0x444aba(0x17c) + 't'] = async (_0x42898b, _0x369f85, _0x1126ed = '', _0x48f2dd = {}) => {
+        const _0x5ccc8a = _0x444aba;
+        let _0x5a1f31 = [];
+        for (let _0x5ab42b of _0x369f85) {
+            _0x5a1f31[_0x5ccc8a(0x1aa)]({
+                'displayName': await _0x4146a1[_0x5ccc8a(0x1af)](_0x5d8e4c[_0x5ccc8a(0x27a)](_0x5ab42b, _0x5d8e4c[_0x5ccc8a(0x18d)])),
+                'vcard': _0x5ccc8a(0x30f) + _0x5ccc8a(0x17a) + _0x5ccc8a(0x220) + await _0x4146a1[_0x5ccc8a(0x1af)](_0x5d8e4c[_0x5ccc8a(0x176)](_0x5ab42b, _0x5d8e4c[_0x5ccc8a(0x18d)])) + _0x5ccc8a(0x26b) + await _0x4146a1[_0x5ccc8a(0x1af)](_0x5d8e4c[_0x5ccc8a(0x264)](_0x5ab42b, _0x5d8e4c[_0x5ccc8a(0x18d)])) + (_0x5ccc8a(0x228) + _0x5ccc8a(0x2da)) + _0x5ab42b + ':' + _0x5ab42b + (_0x5ccc8a(0x177) + _0x5ccc8a(0x2b2) + _0x5ccc8a(0x225) + _0x5ccc8a(0x2ab) + _0x5ccc8a(0x2bf) + _0x5ccc8a(0x1a4) + _0x5ccc8a(0x1d0) + _0x5ccc8a(0x2ac) + _0x5ccc8a(0x209) + _0x5ccc8a(0x302) + _0x5ccc8a(0x2fa) + _0x5ccc8a(0x1c0) + _0x5ccc8a(0x26f) + _0x5ccc8a(0x2a3) + _0x5ccc8a(0x2c6) + _0x5ccc8a(0x27e) + _0x5ccc8a(0x1a8) + _0x5ccc8a(0x26a) + _0x5ccc8a(0x301) + _0x5ccc8a(0x1a7) + _0x5ccc8a(0x291) + _0x5ccc8a(0x1da) + _0x5ccc8a(0x175) + _0x5ccc8a(0x1c2) + 'D')
+            });
         }
-        return {
-            conversation: "TOGE-MD-V3 Here!"
+        _0x4146a1[_0x5ccc8a(0x2e7) + 'e'](_0x42898b, {
+            'contacts': {
+                'displayName': global[_0x5ccc8a(0x1fe)],
+                'contacts': _0x5a1f31
+            },
+            ..._0x48f2dd
+        }, { 'quoted': _0x1126ed });
+    }, _0x4146a1[_0x444aba(0x289)] = _0x2f56f3 => {
+        const _0x47edec = _0x444aba;
+        if (!_0x2f56f3)
+            return _0x2f56f3;
+        if (/:\d+@/gi[_0x47edec(0x28d)](_0x2f56f3)) {
+            let _0x319787 = _0x5d8e4c[_0x47edec(0x205)](jidDecode, _0x2f56f3) || {};
+            return _0x319787[_0x47edec(0x19a)] && _0x319787[_0x47edec(0x2e6)] && _0x5d8e4c[_0x47edec(0x176)](_0x5d8e4c[_0x47edec(0x264)](_0x319787[_0x47edec(0x19a)], '@'), _0x319787[_0x47edec(0x2e6)]) || _0x2f56f3;
+        } else
+            return _0x2f56f3;
+    }, _0x4146a1['ev']['on'](_0x5d8e4c[_0x444aba(0x1ec)], _0x1ff9a4 => {
+        const _0x15d6e8 = _0x444aba;
+        for (let _0x31927d of _0x1ff9a4) {
+            let _0x2e2583 = _0x4146a1[_0x15d6e8(0x289)](_0x31927d['id']);
+            if (store && store[_0x15d6e8(0x2c2)])
+                store[_0x15d6e8(0x2c2)][_0x2e2583] = {
+                    'id': _0x2e2583,
+                    'name': _0x31927d[_0x15d6e8(0x1a3)]
+                };
         }
-    }
-    Maria.ev.on('messages.update', async chatUpdate => {
-        for(const { key, update } of chatUpdate) {
-			if(update.pollUpdates && key.fromMe) {
-				const pollCreation = await getMessage(key)
-				if(pollCreation) {
-				    const pollUpdate = await getAggregateVotesInPollMessage({
-							message: pollCreation,
-							pollUpdates: update.pollUpdates,
-						})
-	                var toCmd = pollUpdate.filter(v => v.voters.length !== 0)[0]?.name
-	                if (toCmd == undefined) return
-                    var prefCmd = xprefix+toCmd
-	                Maria.appenTextMessage(prefCmd, chatUpdate)
-				}
-			}
-		}
-    })
-
-
-
-Maria.sendPoll = (jid, name = '', values = [], selectableCount = 1) => {
-    return Maria.sendMessage(jid, { poll: { name, values, selectableCount } });
-}
-//welcome
-Maria.ev.on('group-participants.update', async (anu) => {
-    	if (global.welcome){
-console.log(anu)
-try {
-let metadata = await Maria.groupMetadata(anu.id)
-let participants = anu.participants
-for (let num of participants) {
-try {
-ppuser = await Maria.profilePictureUrl(num, 'image')
-} catch (err) {
-ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
-}
-try {
-ppgroup = await Maria.profilePictureUrl(anu.id, 'image')
-} catch (err) {
-ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
-}
-	
-memb = metadata.participants.length
-MariaWlcm = await getBuffer(ppuser)
-MariaLft = await getBuffer(ppuser)
-                if (anu.action == 'add') {
-                const Mariabuffer = await getBuffer(ppuser)
-                let MariaName = num
-                const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-	            const xmembers = metadata.participants.length
-Mariabody = `│「 𝗛𝗶 👋 」
-└┬❖ 「  @${MariaName.split("@")[0]}  」
-   │✑  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
-   │✑  ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
-   │✑ ${Mariamembers}th
-   │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
-   │✑ ${Mariatime} ${Mariadate}
-   └───────────────┈ ⳹`
-Maria.sendMessage(anu.id,
- { text: Mariabody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": MariaWlcm,
-"sourceUrl": `${link}`}}})
-                } else if (anu.action == 'remove') {
-                	const Mariabuffer = await getBuffer(ppuser)
-                    const Mariatime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-	                const Mariadate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-                	let MariaName = num
-                    const Mariamembers = metadata.participants.length  
-     Mariabody = `┌─❖
-│「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
-└┬❖ 「  @${MariaName.split("@")[0]}  」
-   │✑  𝗟𝗲𝗳𝘁 
-   │✑  ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
-   │✑ ${Mariamembers}th
-   │✑  𝗧𝗶𝗺𝗲 : 
-   │✑ ${Mariatime} ${Mariadate}
-   └───────────────┈ ⳹`
-Maria.sendMessage(anu.id,
- { text: Mariabody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": MariaLft,
-"sourceUrl": `${link}`}}})
-}
-}
-} catch (err) {
-console.log(err)
-}
-}
-})
-    Maria.downloadMediaMessage = async (message) => {
-        let mime = (message.msg || message).mimetype || ''
-        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
-        const stream = await downloadContentFromMessage(message, messageType)
-        let buffer = Buffer.from([])
-        for await (const chunk of stream) {
-            buffer = Buffer.concat([buffer, chunk])
-        }
-
-        return buffer
-    }
-    }
-return startMaria()
-
-let file = require.resolve(__filename)
-fs.watchFile(file, () => {
-    fs.unwatchFile(file)
-    console.log(chalk.redBright(`Update ${__filename}`))
-    delete require.cache[file]
-    require(file)
-})
-
-process.on('uncaughtException', function (err) {
-let e = String(err)
-if (e.includes("Socket connection timeout")) return
-if (e.includes("item-not-found")) return
-if (e.includes("rate-overlimit")) return
-if (e.includes("Connection Closed")) return
-if (e.includes("Timed Out")) return
-if (e.includes("Value not found")) return
-console.log('Caught exception: ', err)
-})
+    }), _0x4146a1[_0x444aba(0x1af)] = (_0x21616e, _0x3ec47c = ![]) => {
+        const _0xfb2d9d = _0x444aba, _0x1e511c = {
+                'LqiKv': function (_0x2577c6, _0x5c36d5) {
+                    const _0x544b39 = _0x2ec8;
+                    return _0x5d8e4c[_0x544b39(0x181)](_0x2577c6, _0x5c36d5);
+                },
+                'zxoyX': function (_0x2d1888, _0x377516) {
+                    const _0x3f0ab2 = _0x2ec8;
+                    return _0x5d8e4c[_0x3f0ab2(0x23e)](_0x2d1888, _0x377516);
+                },
+                'crtco': function (_0x26e1fc, _0x88bdac) {
+                    const _0x1b009e = _0x2ec8;
+                    return _0x5d8e4c[_0x1b009e(0x273)](_0x26e1fc, _0x88bdac);
+                },
+                'zJdSF': _0x5d8e4c[_0xfb2d9d(0x18d)],
+                'WoIAS': _0x5d8e4c[_0xfb2d9d(0x2e9)]
+            };
+        id = _0x4146a1[_0xfb2d9d(0x289)](_0x21616e), _0x3ec47c = _0x4146a1[_0xfb2d9d(0x1e7) + _0xfb2d9d(0x2c8)] || _0x3ec47c;
+        let _0x1fe6ac;
+        if (id[_0xfb2d9d(0x28e)](_0x5d8e4c[_0xfb2d9d(0x2e5)]))
+            return new Promise(async _0x249a94 => {
+                const _0xe72653 = _0xfb2d9d;
+                _0x1fe6ac = store[_0xe72653(0x2c2)][id] || {};
+                if (!(_0x1fe6ac[_0xe72653(0x29a)] || _0x1fe6ac[_0xe72653(0x187)]))
+                    _0x1fe6ac = _0x4146a1[_0xe72653(0x305) + _0xe72653(0x1b9)](id) || {};
+                _0x1e511c[_0xe72653(0x2b7)](_0x249a94, _0x1fe6ac[_0xe72653(0x29a)] || _0x1fe6ac[_0xe72653(0x187)] || _0x1e511c[_0xe72653(0x1f9)](PhoneNumber, _0x1e511c[_0xe72653(0x2f6)]('+', id[_0xe72653(0x218)](_0x1e511c[_0xe72653(0x25c)], '')))[_0xe72653(0x24b)](_0x1e511c[_0xe72653(0x307)]));
+            });
+        else
+            _0x1fe6ac = _0x5d8e4c[_0xfb2d9d(0x299)](id, _0x5d8e4c[_0xfb2d9d(0x311)]) ? {
+                'id': id,
+                'name': _0x5d8e4c[_0xfb2d9d(0x1bf)]
+            } : _0x5d8e4c[_0xfb2d9d(0x22b)](id, _0x4146a1[_0xfb2d9d(0x289)](_0x4146a1[_0xfb2d9d(0x19a)]['id'])) ? _0x4146a1[_0xfb2d9d(0x19a)] : store[_0xfb2d9d(0x2c2)][id] || {};
+        return (_0x3ec47c ? '' : _0x1fe6ac[_0xfb2d9d(0x29a)]) || _0x1fe6ac[_0xfb2d9d(0x187)] || _0x1fe6ac[_0xfb2d9d(0x2c5) + 'me'] || _0x5d8e4c[_0xfb2d9d(0x23e)](PhoneNumber, _0x5d8e4c[_0xfb2d9d(0x273)]('+', _0x21616e[_0xfb2d9d(0x218)](_0x5d8e4c[_0xfb2d9d(0x18d)], '')))[_0xfb2d9d(0x24b)](_0x5d8e4c[_0xfb2d9d(0x2e9)]);
+    }, _0x4146a1[_0x444aba(0x317)] = !![], _
