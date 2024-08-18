@@ -1683,7 +1683,7 @@ let msgs = generateWAMessageFromContent(m.chat, {
 }, { quoted: m })
 await Maria.relayMessage(m.chat, msgs.message, {})
  } catch(e) {
- return replygcxlicon("`*Error*`")
+ return reply("`*Error*`")
 }
 }
     break;		    
@@ -3714,9 +3714,6 @@ case 'kickall': {
      : groupMetadata.participants
      .filter(item => item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
      .map(item => item.id);
- if (global.db.groups[m.chat].welcome === true) {
- global.db.groups[m.chat].welcome = false;
-  }
  for (let remove of Mariakickall) {
  await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${remove}@s.whatsapp.net` : remove], "remove");
  await sleep(100);	 
@@ -3731,7 +3728,7 @@ case 'joinrequest': {
     if (!isBotAdmins) return reply(mess.botAdmin)
     const response = await Maria.groupRequestParticipantsList(m.chat);
     if (!response || !response.length) {
-        Maria.sendMessage(m.chat, { text: 'No pending join requests. 😕' }, { quoted: m });
+        Maria.sendMessage(m.chat, { text: 'No pending join requests. 😕' }, { quoted:  });
         return;
     }
     let replyMessage = `🔖 Join Request List:\n`;
