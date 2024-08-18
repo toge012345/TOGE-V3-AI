@@ -1639,26 +1639,7 @@ await Maria.sendMessage(m.chat,{
 break;
 //////////////////////////Ai menu/////////////////////////
 
-      case 'ai':
-       const axios = require("axios");
-        if (!args[0]) {
-          return reply(`Please provide a message to chat with the TOGE-MD-V3 chatbot. Example: ${prefix}chat How are you toge ?`);
-        }
-
-        const message = encodeURIComponent(args.join(' '));
-        const gptapi = `https://aemt.me/openai?text=${message}`;
-
-        try {
-          const response = await axios.get(gptapi);
-          const result = response.data.result;
-          reply(result);
-        } catch (error) {
-          console.error('Error fetching AI chatbot response:', error);
-          reply('An error occurred while fetching the TOGE-MD-V3 chatbot response. Please try again later.');
-        }
-        break;
-			    
-	case 'gpt':
+         case 'ai':
        const axios = require("axios");
         if (!args[0]) {
           return reply(`Please provide a message to chat with the TOGE-MD-V3 chatbot. Example: ${prefix}chat How are you toge ?`);
