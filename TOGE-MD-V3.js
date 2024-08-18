@@ -1639,24 +1639,54 @@ await Maria.sendMessage(m.chat,{
 break;
 //////////////////////////Ai menu/////////////////////////
 
-         case 'ai':
-       const axios = require("axios");
-        if (!args[0]) {
-          return reply(`Please provide a message to chat with the TOGE-MD-V3 chatbot. Example: ${prefix}chat How are you toge ?`);
-        }
-
-        const message = encodeURIComponent(args.join(' '));
-        const gptapi = `//api.maher-zubair.tech/ai/chatgptv4?q=${message}`;
-
+       case 'ai': case 'gpt': case 'openai': {
+	if (!text) return replygcxlicon(`*• Example:* ${prefix + command} what is your name`);   
         try {
-          const response = await axios.get(gptapi);
-          const result = response.data.result;
-          reply(result);
-        } catch (error) {
-          console.error('Error fetching AI chatbot response:', error);
-          reply('An error occurred while fetching the TOGE-MD-V3 chatbot response. Please try again later.');
-        }
-        break;		    
+let gpt = await (await fetch(`https://itzpire.com/ai/gpt?model=gpt-4&q=${text}`)).json()
+let msgs = generateWAMessageFromContent(m.chat, {
+  viewOnceMessage: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: '> Open Ai\n\n' + gpt.data.response
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: botname
+          }),
+          header: proto.Message.InteractiveMessage.Header.create({
+          hasMediaAttachment: false,
+          ...await prepareWAMessageMedia({ image:  fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer })
+          }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [{
+            "name": "quick_reply",
+              "buttonParamsJson": `{\"display_text\":\"👀\",\"id\":\"\"}`
+            }],
+          }),
+          contextInfo: {
+                  mentionedJid: [m.sender], 
+                  forwardingScore: 999,
+                  isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                  newsletterJid: '1203632993333611780@newsletter',
+                  newsletterName: '𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸',
+                  serverMessageId: 143
+                }
+                }
+       })
+    }
+  }
+}, { quoted: m })
+await Maria.relayMessage(m.chat, msgs.message, {})
+ } catch(e) {
+ return replygcxlicon("`*Error*`")
+}
+}
+    break;		    
                
              case 'dalle': {
        
@@ -3645,8 +3675,9 @@ case 'profile':
       .map(item => item.id);
  for (let promote of Mariapromoteall) {
  await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${promote}@s.whatsapp.net` : promote], "promote");
+ await sleep(100);	 
  }
- reply(`🔺 *Promotion Successful* 🔺\n\nAll members have been promoted successfully!`);
+ reply(mess.done)
 }
 break
 case 'demoteall': {
@@ -3664,8 +3695,9 @@ if (!m.isGroup) return reply(mess.group);
       .map(item => item.id);
  for (let demote of Mariademoteall) {
  await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${demote}@s.whatsapp.net` : demote], "demote");
+ await sleep(100);	 
  }
- reply(`🔻 *Demotion Successful* 🔻\n\nAll members have been demoted successfully!`);
+ reply(mess.done)
 }
 break
 			    
@@ -3682,10 +3714,14 @@ case 'kickall': {
      : groupMetadata.participants
      .filter(item => item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
      .map(item => item.id);
- for (let kick of Mariakickall) {
- await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${remove}@s.whatsapp.net` : kick], "remove");
+ if (global.db.groups[m.chat].welcome === true) {
+ global.db.groups[m.chat].welcome = false;
+  }
+ for (let remove of Mariakickall) {
+ await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${remove}@s.whatsapp.net` : remove], "remove");
+ await sleep(100);	 
  }
- reply(`🔻 *kickall Successful* 🔻\n\nAll members have been kick successfully!`);
+ reply(mess.done)			   
 }
 break;
 			    
