@@ -1597,7 +1597,7 @@ break;
 case 'play':  case 'song': {
 Maria.sendMessage(from, { react: { text: "📥", key: m.key }}) 
 if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  𝒂𝒏𝒊𝒎𝒆 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑 𝒔𝒕𝒂𝒕𝒖𝒔`)
-const Ayushplaymp3 = require('./lib/ytdl-core')
+const Ayushplaymp3 = require('./lib/y2mate')
 let yts = require("youtube-yts")
         let search = await yts(text)
         let anup3k = search.videos[0]
@@ -1623,7 +1623,7 @@ await fs.unlinkSync(pl.path)
 break;
 
 case 'ytmp4': case 'ytvideo': {
-const Ayushvidoh = require('./lib/ytdl-core')
+const Ayushvidoh = require('./lib/y2mate')
 if (args.length < 1 || !isUrl(text) || !Ayushvidoh.isYTUrl(text)) reply(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
 const vid=await Ayushvidoh.mp4(text)
 const ytc=`
@@ -1644,11 +1644,11 @@ case 'chatgpt':
       case 'chatbot':
        const axios = require("axios");
         if (!args[0]) {
-          return reply(`Please provide a message to chat with the Maria chatbot. Example: ${prefix}chat How are you toge ?`);
+          return reply(`Please provide a message to chat with the TOGE-MD-V3 chatbot. Example: ${prefix}chat How are you toge ?`);
         }
 
         const message = encodeURIComponent(args.join(' '));
-        const gptapi = `https://api.maher-zubair.tech/ai/chatgpt3?q=${message}`;
+        const gptapi = `https://matrixcoder.tech/api/ai/chatgpt3?q=${message}`;
 
         try {
           const response = await axios.get(gptapi);
@@ -1993,36 +1993,34 @@ case 'truth':
 case 'insult': {
 	if (!m.isGroup) return reply(mess.group)
 	const insults = [
-  "You're as useless as the 'ueue' in 'queue'.",
-  "I'm jealous of all the people who haven't met you.",
-  "You bring everyone a lot of joy... when you leave the room.",
-  "If laughter is the best medicine, your face must be curing the world.",
-  "I'd like to see things from your point of view, but I can't seem to get my head that far up my butt.",
-  "If I wanted to kill myself, I'd climb your ego and jump to your IQ.",
-  "You're not stupid; you just have bad luck when thinking.",
-  "I'd slap you, but that would be animal abuse.",
-  "If you were any slower, you’d be going backward.",
-  "You must have been born on a highway because that's where most accidents happen.",
-  "I'd insult you, but then I'd have to explain it afterward.",
-  "You're not dumb. You just have bad luck thinking.",
-  "You're like a cloud. When you disappear, it's a beautiful day.",
-  "I bet your brain feels as good as new, seeing that you never use it.",
-  "You're the reason the gene pool needs a lifeguard.",
-  "It looks like your face caught on fire, and someone tried to put it out with a fork.",
-  "I'm sorry, I didn't mean to give you the impression that I actually cared about your opinion.",
-  "If brains were dynamite, you wouldn’t have enough to blow your nose.",
-  "If you were twice as smart, you'd still be stupid.",
-  "I'm not insulting you; I'm describing you.",
-  "I'm not saying you're stupid; I'm just saying you have bad luck when it comes to thinking.",
-  "The only way you'll ever get laid is if you crawl up a chicken's butt and wait.",
-  "You must have been born at a low altitude because your brain seems to lack oxygen.",
-  "You're not just a clown; you're the entire circus.",
-  "If you were any more inbred, you'd be a sandwich.",
-  "I'd agree with you, but then we'd both be wrong.",
-  "I'd call you a tool, but even they serve a purpose.",
-  "You're like Monday mornings - nobody likes you.",
-  "If ignorance is bliss, you must be the happiest person on Earth.",
-  "You're not the dumbest person in the world, but you'd better hope they don't die.",
+ "Je suis jaloux de tous les gens qui ne t'ont pas rencontré.", 
+ "Vous apportez beaucoup de joie à tout le monde... lorsque vous quittez la pièce.", 
+ "Si le rire est le meilleur remède, votre visage doit guérir le monde.", 
+ "J'aimerais voir les choses de votre point de vue, mais je n'arrive pas à mettre ma tête aussi loin dans mes fesses.", 
+ "Si je voulais me suicider, je grimperais sur votre ego et je sauterais sur votre QI.", 
+ "Tu n'es pas stupide, tu n'as juste pas de chance quand tu réfléchis.", 
+ "Je te giflerais bien, mais ce serait de la maltraitance animale.", 
+ "Si tu étais plus lent, tu reculerais.", 
+ "Vous devez être né sur une autoroute car c'est là que se produisent la plupart des accidents.", 
+ "Je t'insulterais, mais je devrais ensuite t'expliquer.", 
+ "Tu n'es pas stupide. Tu n'as juste pas de chance en pensant.", 
+ "Tu es comme un nuage. Quand tu disparais, c'est une belle journée.", 
+ "Je parie que ton cerveau est comme neuf, vu que tu ne l'utilises jamais.", 
+ "C'est grâce à vous que le patrimoine génétique a besoin d'un sauveteur.", 
+ "On dirait que ton visage a pris feu et que quelqu'un a essayé de l'éteindre avec une fourchette.", 
+ "Je suis désolé, je ne voulais pas vous donner l'impression que je me souciais réellement de votre opinion.", 
+ "Si les cerveaux étaient de la dynamite, vous n'en auriez pas assez pour vous moucher.", 
+ "Si tu étais deux fois plus intelligent, tu serais toujours stupide.", 
+ "Je ne t'insulte pas, je te décris.", 
+ "Je ne dis pas que tu es stupide ; je dis juste que tu n'as pas de chance quand il s'agit de réfléchir.", 
+ "La seule façon de baiser, c'est de ramper sur les fesses d'un poulet et d'attendre.", 
+ "Vous devez être né à basse altitude car votre cerveau semble manquer d'oxygène.", 
+ "Tu n'es pas qu'un clown ; tu es tout le cirque.", 
+ "Si tu étais plus consanguin, tu serais un sandwich.", 
+ "Je serais d'accord avec toi, mais alors nous aurions tous les deux tort.", 
+ "Je vous appellerais un outil, mais même eux, ils servent à quelque chose.", 
+ "Tu es comme le lundi matin, personne ne t'aime.", "Si l'ignorance est un bonheur, vous devez être la personne la plus heureuse sur Terre.", 
+ "Tu n'es pas la personne la plus stupide du monde, mais tu ferais mieux d'espérer qu'ils ne meurent pas.",
   
 ];
 
@@ -2156,7 +2154,7 @@ break;
                            
   case 'menu': case 'help': case 'bot': 
       const txt = `┏━⍟ 𝗧𝗢𝗚𝗘-𝗠𝗗-𝗩𝟯 ⍟
-┃✦» 𝖀𝖘𝖊𝖗: @${pushname.split("@")[0]} 
+┃✦» 𝖀𝖘𝖊𝖗: ${pushname.split("@")[0]} 
 ┃✦» 𝕭𝖔𝖙:  ${botname}
 ┃✦» 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
 ┃✦» 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
@@ -2218,6 +2216,7 @@ break;
 ┃✺ ${prefix}closetime
 ┃✺ ${prefix}opentime
 ┃✺ ${prefix}kick
+┃✺ ${prefix}kickall
 ┃✺ ${prefix}promote
 ┃✺ ${prefix}promoteall
 ┃✺ ${prefix}demote
@@ -2830,6 +2829,7 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
 ┃✺ ${prefix}closetime
 ┃✺ ${prefix}opentime
 ┃✺ ${prefix}kick
+┃✺ ${prefix}kickall
 ┃✺ ${prefix}promote
 ┃✺ ${prefix}demote
 ┃✺ ${prefix}setdesc
@@ -3672,7 +3672,28 @@ if (!m.isGroup) return reply(mess.group);
  reply(`🔻 *Demotion Successful* 🔻\n\nAll members have been demoted successfully!`);
 }
 break
-
+			    
+case 'kickall': {
+     if (!m.isGroup) return reply(mess.group)
+     if (!isAdmins && !isGroupOwner && !isCreator) return reply(mess.admin)
+     if (!isBotAdmins) return reply(mess.botAdmin)
+     const Mariakickall = (args[0] === 'numBut')
+     ? text.replace(`${args[0]} `, '').split('|')
+     : (Number(args[0]))
+     ? groupMetadata.participants
+     .filter(item => item.id.startsWith(args[0].replace('+', '')) && item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
+     .map(item => item.id)
+     : groupMetadata.participants
+     .filter(item => item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
+     .map(item => item.id);
+ for (let demote of Mariademoteall) {
+ await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${blockwww}@s.whatsapp.net` : remove], "remove");
+ await sleep(100);
+ }
+ reply(`🔻 *kickall Successful* 🔻\n\nAll members have been kick successfully!`);
+}
+break;
+			    
 case 'joinrequest': {
     if (!m.isGroup) return reply(mess.group);
     if (!isAdmins && !isGroupOwner && !isCreator) return reply(mess.admin)
