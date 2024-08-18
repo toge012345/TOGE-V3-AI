@@ -3645,7 +3645,6 @@ case 'profile':
       .map(item => item.id);
  for (let promote of Mariapromoteall) {
  await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${promote}@s.whatsapp.net` : promote], "promote");
- await sleep(100);
  }
  reply(`🔺 *Promotion Successful* 🔺\n\nAll members have been promoted successfully!`);
 }
@@ -3665,7 +3664,6 @@ if (!m.isGroup) return reply(mess.group);
       .map(item => item.id);
  for (let demote of Mariademoteall) {
  await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${demote}@s.whatsapp.net` : demote], "demote");
- await sleep(100);
  }
  reply(`🔻 *Demotion Successful* 🔻\n\nAll members have been demoted successfully!`);
 }
@@ -3686,7 +3684,6 @@ case 'kickall': {
      .map(item => item.id);
  for (let kick of Mariakickall) {
  await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${remove}@s.whatsapp.net` : kick], "remove");
- await sleep(100);
  }
  reply(`🔻 *kickall Successful* 🔻\n\nAll members have been kick successfully!`);
 }
