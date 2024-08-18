@@ -1646,7 +1646,7 @@ break;
         }
 
         const message = encodeURIComponent(args.join(' '));
-        const gptapi = await fetchJson(`https://aemt.me/openai?text=${q}`);
+        const gptapi = `https://aemt.me/openai?text=${message}`;
 
         try {
           const response = await axios.get(gptapi);
@@ -1665,8 +1665,7 @@ break;
         }
 
         const message = encodeURIComponent(args.join(' '));
-        const gptapi = await fetchJsonhttps:(`//api.maher-zubair.tech/ai/chatgptv4?q=${text}`
-	),
+        const gptapi = `//api.maher-zubair.tech/ai/chatgptv4?q=${message}`;
 
         try {
           const response = await axios.get(gptapi);
