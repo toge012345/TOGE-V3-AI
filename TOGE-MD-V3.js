@@ -1639,16 +1639,14 @@ await Maria.sendMessage(m.chat,{
 break;
 //////////////////////////Ai menu/////////////////////////
 
-case 'chatgpt':
-      case 'gpt':
-      case 'chatbot':
+      case 'ai':
        const axios = require("axios");
         if (!args[0]) {
           return reply(`Please provide a message to chat with the TOGE-MD-V3 chatbot. Example: ${prefix}chat How are you toge ?`);
         }
 
         const message = encodeURIComponent(args.join(' '));
-        const gptapi = `https://matrixcoder.tech/api/ai/chatgpt3?q=${message}`;
+        const gptapi = await fetchJson(`https://aemt.me/openai?text=${q}`);
 
         try {
           const response = await axios.get(gptapi);
@@ -1659,6 +1657,26 @@ case 'chatgpt':
           reply('An error occurred while fetching the TOGE-MD-V3 chatbot response. Please try again later.');
         }
         break;
+			    
+	case 'gpt':
+       const axios = require("axios");
+        if (!args[0]) {
+          return reply(`Please provide a message to chat with the TOGE-MD-V3 chatbot. Example: ${prefix}chat How are you toge ?`);
+        }
+
+        const message = encodeURIComponent(args.join(' '));
+        const gptapi = await fetchJsonhttps:(`//api.maher-zubair.tech/ai/chatgptv4?q=${text}`
+	),
+
+        try {
+          const response = await axios.get(gptapi);
+          const result = response.data.result;
+          reply(result);
+        } catch (error) {
+          console.error('Error fetching AI chatbot response:', error);
+          reply('An error occurred while fetching the TOGE-MD-V3 chatbot response. Please try again later.');
+        }
+        break;		    
                
              case 'dalle': {
        
@@ -3686,7 +3704,7 @@ case 'kickall': {
      : groupMetadata.participants
      .filter(item => item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
      .map(item => item.id);
- for (let demote of Mariademoteall) {
+ for (let kick of Mariakickall) {
  await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${blockwww}@s.whatsapp.net` : remove], "remove");
  await sleep(100);
  }
