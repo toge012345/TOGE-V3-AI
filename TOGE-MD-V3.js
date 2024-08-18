@@ -3685,7 +3685,7 @@ case 'kickall': {
      .filter(item => item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
      .map(item => item.id);
  for (let kick of Mariakickall) {
- await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${blockwww}@s.whatsapp.net` : remove], "remove");
+ await Maria.groupParticipantsUpdate(m.chat, [(args[0] === "numBut") ? `${blockwww}@s.whatsapp.net` : kick], "kick");
  await sleep(100);
  }
  reply(`🔻 *kickall Successful* 🔻\n\nAll members have been kick successfully!`);
