@@ -172,7 +172,7 @@ const getRandomImage = (directory) => {
 const imageDirectory = './Media/logo';
   const randomImage = getRandomImage(imageDirectory);
 
-//group chat msg by Ayush
+//group chat msg by toge
 const reply = (teks) => {
 Maria.sendMessage(m.chat,
 { text: teks,
@@ -1639,58 +1639,22 @@ await Maria.sendMessage(m.chat,{
 break;
 //////////////////////////Ai menu/////////////////////////
 
-       case 'ai': case 'gpt': case 'openai': {
-	if (!text) return replygcxlicon(`*• Example:* ${prefix + command} what is your name`);   
+       case 'ai': case 'gpt': case 'openai':
+	const axios = require("axios");
+        if (!args[0]) {		    
+	if (!text) return reply(`*• Example:* ${prefix + command} what is your name`);
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/gpt?model=gpt-4&q=${message}`)).json()
-
-  let msgs = generateWAMessageFromContent(from, {
-  viewOnceMessage: {
-    message: {
-        "messageContextInfo": {
-          "deviceListMetadata": {},
-          "deviceListMetadataVersion": 2
-        },
-        interactiveMessage: proto.Message.InteractiveMessage.create({
-          body: proto.Message.InteractiveMessage.Body.create({
-            text: ""
-          }),
-          footer: proto.Message.InteractiveMessage.Footer.create({
-            text: botname
-          }),
-                    header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
-            title: txt,
-            subtitle: themeemoji,
-            hasMediaAttachment: false
-          }),
-          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-            buttons: [
-                            {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"𝙼𝙴𝙽𝚄 𝙻𝙸𝚂𝚃","id":"${prefix}list"}`
-   },
-          }),
-          contextInfo: {
-                  mentionedJid: [m.sender], 
-                  forwardingScore: 999,
-                  isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                  newsletterJid: '1203632993333611780@newsletter',
-                  newsletterName: '𝚃𝚘𝙶𝚎 𝙸𝚗𝚄𝚖𝙰𝚔𝙸',
-                  serverMessageId: 143
-                }
-                }
-       })
-    }
-  }
-}, { quoted: m })
-await Maria.relayMessage(m.chat, msgs.message, {})
- } catch(e) {
- return reply("`*Error*`")
-}
-}
-    break		    
+const message = encodeURIComponent(args.join(' '));		
+          const response = await axios.get(gptapi);
+          const result = response.data.result;
+          reply(result);
+        } catch (error) {
+          console.error('Error fetching AI chatbot response:', error);
+          reply('An error occurred while fetching the Maria chatbot response. Please try again later.');
+        }
+        break
+  		    
                
              case 'dalle': {
        
