@@ -1643,9 +1643,9 @@ break;
 	const axios = require("axios");
         if (!args[0]) {		    
 	if (!text) return reply(`*• Example:* ${prefix + command} what is your name`);
-        try {
 let gpt = await (await fetch(`https://itzpire.com/ai/gpt?model=gpt-4&q=${message}`)).json()
-const message = encodeURIComponent(args.join(' '));		
+const message = encodeURIComponent(args.join(' '));
+	try {	
           const response = await axios.get(gptapi);
           const result = response.data.result;
           reply(result);
@@ -1656,9 +1656,8 @@ const message = encodeURIComponent(args.join(' '));
         break
   		    
                
-             case 'dalle': {
-       
-
+       case 'dalle': {
+		
         if (!q) return reply(`Please provide a query to generate an image. Example: ${prefix + command} Beautiful landscape`);
 
         const apiUrl = `https://gurugpt.cyclic.app/dalle?prompt=${encodeURIComponent(q)}`;
