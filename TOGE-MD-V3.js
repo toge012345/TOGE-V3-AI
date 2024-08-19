@@ -1227,7 +1227,7 @@ case 'tag': case 'tagall': case 'all':{
 
  if (!m.isGroup) return replay(mess.grouponly)
  if (!isAdmins && !isCreator) return replay(mess.useradmin)
- let teks = `🧩𝗧𝗮𝗴𝗮𝗹𝗹🧩
+ let teks = `乂 *Attention Everyone* 乂
   
  *Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`
  for (let mem of participants) {
@@ -1254,9 +1254,9 @@ case 'tag': case 'tagall': case 'all':{
                 if (!isAdmins && !isGroupOwner && !isCreator) return reply(mess.admin)
                 if (!isBotAdmins) return reply(mess.botAdmin)
                 if (args[0] === 'close') {
-                    await Maria.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`*_SUCCESSFULLY CLOSED THE GRUP_\n\ngrup has been closed for the time being 😽*`)).catch((err) => reply(json(err)))
+                    await Maria.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`*_SUCCESSFULLY CLOSED THE GROUP_*\n\n*_grup has been closed for the time being 😽_*`)).catch((err) => reply(json(err)))
                 } else if (args[0] === 'open') {
-                    await Maria.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`*THE GROUP HAS BEEN OPENED SUCCESSFULLY*`)).catch((err) => reply(json(err)))
+                    await Maria.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`*_THE GROUP HAS BEEN OPENED SUCCESSFULLY_*`)).catch((err) => reply(json(err)))
                 } else {
                     reply(`Mode ${command}\n\n\nType ${prefix + command}open/close`)
                 }
@@ -1266,9 +1266,9 @@ case 'tag': case 'tagall': case 'all':{
                 if (!isAdmins && !isGroupOwner && !isCreator) return reply(mess.admin)
                 if (!isBotAdmins) return reply(mess.botAdmin)
                 if (args[0] === 'open') {
-                    await Maria.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`Successfully Opened Group Edit Info 🕊️`)).catch((err) => reply(json(err)))
+                    await Maria.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`*_Successfully Opened Group Edit Info 🕊️_*`)).catch((err) => reply(json(err)))
                 } else if (args[0] === 'close') {
-                    await Maria.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Closed Group Edit Info🕊️`)).catch((err) => reply(json(err)))
+                    await Maria.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`*_Successfully Closed Group Edit Info🕊️_*`)).catch((err) => reply(json(err)))
                 } else {
                     reply(`Mode ${command}\n\n\nType ${prefix + command}on/off`)
                 }
@@ -1287,7 +1287,7 @@ case 'tag': case 'tagall': case 'all':{
             { detectLink: true }
           );
         }
-        await Maria.sendMessage(m.chat, { video: { url: `https://telegra.ph/file/71df5c808c38683e8b304.mp4` }, caption: 'I sent you the Group Link in personal message.\n Pls check.', gifPlayback: true }, { quoted: m });
+        await Maria.sendMessage(m.chat, { video: { url: `https://a.uguu.se/SYJVNqYh.mp4'` }, caption: 'I sent you the Group Link in personal message.\n Pls check.', gifPlayback: true }, { quoted: m });
         break;
         
             case 'revoke':
@@ -1319,7 +1319,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
 ©️ 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑 
 *❝ Dont forget to give a Star ⭐ to the repo.*`
 
-        Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: scritxt }, { quoted: m })
+        Maria.sendMessage(from, { video: { url: 'https://a.uguu.se/SYJVNqYh.mp4'' }, gifPlayback: true, caption: scritxt }, { quoted: m })
 }
         break;
         
@@ -1329,7 +1329,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
                                 case 'sticker':
             case 'stiker':
             case 's': {
-                if (!quoted) return reply(` Reply to Video/Image with Caption ${prefix + command} darling`)
+                if (!quoted) return reply(` Reply to Video/Image with Caption ${prefix + command} *TOGE-MD-V3*`)
                 if (/image/.test(mime)) {
                     let media = await quoted.download()
                     let encmedia = await Maria.sendImageAsSticker(m.chat, media, m, {
@@ -1346,7 +1346,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
                     })
                     await fs.unlinkSync(encmedia)
                 } else {
-                    return reply(` 🍭𝑹𝒆𝒑𝒍𝒚 𝒕𝒐 𝑽𝒊𝒅𝒆𝒐/𝑰𝒎𝒂𝒈𝒆 𝑾𝒊𝒕𝒉 𝑪𝒂𝒑𝒕𝒊𝒐𝒏 ${prefix + command} 𝒅𝒂𝒓𝒍𝒊𝒏𝒈`)
+                    return reply(` 🍭𝑹𝒆𝒑𝒍𝒚 𝒕𝒐 𝑽𝒊𝒅𝒆𝒐/𝑰𝒎𝒂𝒈𝒆 𝑾𝒊𝒕𝒉 𝑪𝒂𝒑𝒕𝒊𝒐𝒏 ${prefix + command} *TOGE-MD-V3*`)
                 }
             }
             break;
@@ -1389,7 +1389,7 @@ reply(`Photo/Video?`)
 break;
             case 'toimage':
             case 'toimg': {
-                if (!/webp/.test(mime)) return reply(`🍭𝑹𝒆𝒑𝒍𝒚 𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒘𝒊𝒕𝒉 𝒄𝒂𝒑𝒕𝒊𝒐𝒏 ${prefix + command} 𝑫𝒂𝒓𝒍𝒊𝒏𝒈`)
+                if (!/webp/.test(mime)) return reply(`🍭𝑹𝒆𝒑𝒍𝒚 𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒘𝒊𝒕𝒉 𝒄𝒂𝒑𝒕𝒊𝒐𝒏 ${prefix + command} *TOGE-MD-V3*`)
                 reply(mess.wait)
                 let media = await Maria.downloadAndSaveMediaMessage(qmsg)
                 let ran = await getRandom('.png')
@@ -1409,7 +1409,7 @@ break;
             break;
             case 'tomp4':
             case 'tovideo': {
-                if (!/webp/.test(mime)) return reply(`🍭𝑹𝒆𝒑𝒍𝒚 𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒘𝒊𝒕𝒉 𝒄𝒂𝒑𝒕𝒊𝒐𝒏 ${prefix + command} 𝑫𝒂𝒓𝒍𝒊𝒏𝒈`)
+                if (!/webp/.test(mime)) return reply(`🍭𝑹𝒆𝒑𝒍𝒚 𝒔𝒕𝒊𝒄𝒌𝒆𝒓 𝒘𝒊𝒕𝒉 𝒄𝒂𝒑𝒕𝒊𝒐𝒏 ${prefix + command} *TOGE-MD-V3*`)
                 reply(mess.wait)
                 let media = await Maria.downloadAndSaveMediaMessage(qmsg)
                 let webpToMp4 = await webp2mp4File(media)
@@ -1426,7 +1426,7 @@ break;
             }
             break;
             case 'checkdeath':
-             if (!text) return replay(`Use Someone's Name, Example : ${prefix + command} toge`)
+             if (!text) return replay(`Use Someone's Name, Example : ${prefix + command} *TOGE-MD-V3*`)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
               reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
               break;
@@ -1596,7 +1596,7 @@ break;
 
 case 'play':  case 'song': {
 Maria.sendMessage(from, { react: { text: "📥", key: m.key }}) 
-if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  𝒂𝒏𝒊𝒎𝒆 𝑾𝒉𝒂𝒕𝒔𝑨𝒑𝒑 𝒔𝒕𝒂𝒕𝒖𝒔`)
+if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  *TIAKOLA T.I.A*`)
 const Ayushplaymp3 = require('./lib/ytdl')
 let yts = require("youtube-yts")
         let search = await yts(text)
@@ -1721,7 +1721,7 @@ case 'chatgpt':
 
 
 ❁ ═══ ❃•✍🏻 *TOGE-MD-V2* ✍🏻•❃ ═══ ❁
-\`\`\`*_LINK:-*`
+\`\`\`*_LINK:-* https://github.com/toge012345/TOGE-MD-V2`
 
 Maria.sendMessage(m.chat, { image: { url: "https://a.uguu.se/SYJVNqYh.mp4'" }, caption: pifx, gifPlayback: true }, { quoted: m });
         break;
@@ -2155,7 +2155,7 @@ break;
                            
   case 'menu': case 'help': case 'bot': 
       const txt = `┏━⍟ 𝗧𝗢𝗚𝗘-𝗠𝗗-𝗩𝟯 ⍟
-┃✦» 𝖀𝖘𝖊𝖗: ${pushname.split("@")[0]} 
+┃✦» 𝖀𝖘𝖊𝖗:  @${MariaName.split("@")[0]} 
 ┃✦» 𝕭𝖔𝖙:  ${botname}
 ┃✦» 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
 ┃✦» 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
@@ -4479,7 +4479,7 @@ case 'ping':
         message: {
             contactMessage: {
                 displayName: 'TOGE-MD-V3 📱',
-                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:TOGE-MD-V3 📱\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:TOGE-MD-V3 📱\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:owner number\nEND:VCARD`
             }
         }
     };
