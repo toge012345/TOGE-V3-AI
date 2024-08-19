@@ -1287,7 +1287,7 @@ case 'tag': case 'tagall': case 'all':{
             { detectLink: true }
           );
         }
-        await Maria.sendMessage(m.chat, { video: { url: `https://a.uguu.se/SYJVNqYh.mp4'` }, caption: 'I sent you the Group Link in personal message.\n Pls check.', gifPlayback: true }, { quoted: m });
+        await Maria.sendMessage(m.chat, { video: { url: `https://telegra.ph/file/942c4dd39bd40933222d8.mp4'` }, caption: 'I sent you the Group Link in personal message.\n Pls check.', gifPlayback: true }, { quoted: m });
         break;
         
             case 'revoke':
@@ -1319,7 +1319,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
 ©️ 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑 
 *❝ Dont forget to give a Star ⭐ to the repo.*`
 
-        Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/942c4dd39bd40933222d8.mp4'' }, gifPlayback: true, caption: scritxt }, { quoted: m })
+        Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/942c4dd39bd40933222d8.mp4' }, gifPlayback: true, caption: scritxt }, { quoted: m })
 }
         break;
         
