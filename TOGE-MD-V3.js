@@ -1282,12 +1282,12 @@ case 'tag': case 'tagall': case 'all':{
           let response = await Maria.groupInviteCode(m.chat);
           Maria.sendText(
             m.sender,
-            ` 🤖𝐵𝑜𝑡 𝑛𝑎𝑚𝑒:- 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑\n\n🔖𝐺𝑟𝑜𝑢𝑝 𝑛𝑎𝑚𝑒:- ${groupMetadata.subject}\n\n🔰𝐺𝑟𝑜𝑢𝑝 𝑙𝑖𝑛𝑘:- https://chat.whatsapp.com/${response}`,
+            `𝐁𝐎𝐓 𝐍𝐀𝐌𝐄:- 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑\n\n𝐆𝐑𝐎𝐔𝐏 𝐍𝐀𝐌𝐄:- ${groupMetadata.subject}\n\n🔰𝐺𝑟𝑜𝑢𝑝 𝑙𝑖𝑛𝑘:- https://chat.whatsapp.com/${response}`,
             m,
             { detectLink: true }
           );
         }
-        await Maria.sendMessage(m.chat, { video: { url: `https://telegra.ph/file/942c4dd39bd40933222d8.mp4'` }, caption: 'I sent you the Group Link in personal message.\n Pls check.', gifPlayback: true }, { quoted: m });
+        await Maria.sendMessage(m.chat, { video: { url: `https://telegra.ph/file/942c4dd39bd40933222d8.mp4` }, caption: 'I sent you the Group Link in personal message.\n Pls check.', gifPlayback: true }, { quoted: m });
         break;
         
             case 'revoke':
@@ -1308,7 +1308,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
         let repo = repoInfo.data;
         console.log(repo);
 
-   const scritxt = `*🚀𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑.🚀*\n
+   const scritxt = `*𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑*\n
   *🌟 Creator:* 𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈\n
   *🌟 Repo:* ${repo.html_url}\n
   *🌟 Total Forks:* ${repo.forks_count}\n
@@ -1697,11 +1697,11 @@ case 'chatgpt':
         break;
       case "support":
      
-        let tex = `  [🎀𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋🎀]\n\n🔖https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`
+        let tex = `  [𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋]\n\nhttps://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`
 
-        await Maria.sendMessage(m.sender,{ video: {url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4'"}, caption: `${tex}`,gifPlayback: true},);
+        await Maria.sendMessage(m.sender,{ video: {url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4"}, caption: `${tex}`,gifPlayback: true},);
 
-        await Maria.sendMessage(m.chat, { video: { url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4'" }, caption: '*I sent you the Group Link in personal message Pls check.*', gifPlayback: true }, { quoted: m });
+        await Maria.sendMessage(m.chat, { video: { url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4" }, caption: '*I sent you the Group Link in personal message Pls check.*', gifPlayback: true }, { quoted: m });
         break;
 
       case "info":
