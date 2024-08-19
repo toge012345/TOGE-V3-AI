@@ -1639,13 +1639,18 @@ await Maria.sendMessage(m.chat,{
 break;
 //////////////////////////Ai menu/////////////////////////
 
-       case 'ai':
-	const axios = require("axios");
-        if (!args[0]) {		    
-	if (!text) return reply(`*• Example:* ${prefix + command} what is your name`);
-let gpt = await (await fetch(`https://itzpire.com/ai/gpt?model=gpt-4&q=${message}`)).json();
-const message = encodeURIComponent(args.join(' '));
-	try {	
+case 'chatgpt':			    
+      case 'gpt':const message = encodeURIComponent(args.join(' '));
+      case 'chatbot':
+       const axios = require("axios");
+        if (!args[0]) {
+          return reply(`Please provide a message to chat with the Maria chatbot. Example: ${prefix}chat How are you Maria ?`);
+        }
+
+        const message = encodeURIComponent(args.join(' '));
+        const gptapi = `https://api.maher-zubair.tech/ai/chatgpt3?q=${message}`;
+
+        try {
           const response = await axios.get(gptapi);
           const result = response.data.result;
           reply(result);
@@ -1654,10 +1659,10 @@ const message = encodeURIComponent(args.join(' '));
           reply('An error occurred while fetching the Maria chatbot response. Please try again later.');
         }
         break
-  		    
+               
              case 'dalle': {
-		
-		
+       
+
         if (!q) return reply(`Please provide a query to generate an image. Example: ${prefix + command} Beautiful landscape`);
 
         const apiUrl = `https://gurugpt.cyclic.app/dalle?prompt=${encodeURIComponent(q)}`;
@@ -1670,6 +1675,7 @@ const message = encodeURIComponent(args.join(' '));
         }
       }
         break;
+	
 
 
          
