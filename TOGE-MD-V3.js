@@ -1648,17 +1648,17 @@ case 'chatgpt':
         }
 
         const message = encodeURIComponent(args.join(' '));
-        const gptapi = `https://itzpire.com/ai/gpt?model=gpt-4&q=${message}`;
+        const gpt = `https://itzpire.com/ai/gpt?model=gpt-4&q=${message}`;
 
         try {
-          const response = await axios.get(gptapi);
+          const response = await axios.get(gpt);
           const result = response.data.result;
           reply(result);
         } catch (error) {
           console.error('Error fetching AI chatbot response:', error);
           reply('An error occurred while fetching the Maria chatbot response. Please try again later.');
         }
-        break
+        break;
                
              case 'dalle': {
        
