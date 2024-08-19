@@ -1648,7 +1648,7 @@ case 'chatgpt':
         }
 
         const message = encodeURIComponent(args.join(' '));
-        const gpt = `https://itzpire.com/ai/gpt?model=gpt-4&q=${message}`;
+        const gpt = `https://vihangayt.me/tools/blackbox?q=`;
 
         try {
           const response = await axios.get(gpt);
@@ -2142,9 +2142,9 @@ break;
       const txt = `┏━⍟「 𝗧𝗢𝗚𝗘-𝗠𝗗-𝗩𝟯 」⊛
 ┃✦» *Hi 👋*
 ┃✦» *${m.pushName}*
-┃✦» *How are you doing ?*
-┗━━━━━━━━━⊛ ${readmore}
-┏━━━━━━━━━⊛
+┃✦» *_How are you doing ?_*
+┗━━━┃
+┏━━━┃
 ┃✦» 𝕭𝖔𝖙:  ${botname}
 ┃✦» 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
 ┃✦» 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
@@ -2155,7 +2155,13 @@ break;
 ┃✦» 𝕻𝖑𝖆𝖙𝖊𝖋𝖔𝖗𝖒: ${os.platform()} 
 ┃✦» 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
 ┃✦» 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
-┗━━━━━━━━━━━━━━━⊛ ${readmore}
+┗━━━━━━━━━━━━━━━⊛
+
+> ☎️ *Cᴏɴᴛᴀᴄᴛ :* https://wa.me/${ownernumber}?text=Hello
+> 💻 *Sᴏᴜʀᴄᴇ Cᴏᴅᴇ :* https://github.com/toge012345/TOGE-MD-V3
+> 🎀 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@lawliet.kfx
+> 🔮 *Public Group :* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo
+
 ┏━⍟ *GENERAL* ⍟
 ┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
