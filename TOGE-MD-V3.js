@@ -712,7 +712,7 @@ reply(`Succes`)
 } else {
 var memeg = await Maria.updateProfilePicture(botNumber, { url: medis })
 fs.unlinkSync(medis)
-reply(`𝑺𝒖𝒄𝒄𝒆𝒔𝒔, 𝑻𝒉𝒂𝒏𝒌 𝒚𝒐𝒖 𝒇𝒐𝒓 𝒕𝒉𝒆 𝒏𝒆𝒘 𝒑𝒓𝒐𝒇𝒊𝒍𝒆 𝒑𝒉𝒐𝒕𝒐, 𝒎𝒚 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 😚`)
+reply(`𝑺𝒖𝒄𝒄𝒆𝒔𝒔, 𝑻𝒉𝒂𝒏𝒌 𝒚𝒐𝒖 𝖘𝖊𝖓𝖘𝖊𝖎 𝒇𝒐𝒓 𝒕𝒉𝒆 𝒏𝒆𝒘 𝒑𝒓𝒐𝒇𝒊𝒍𝒆 𝒑𝒉𝒐𝒕𝒐, 😚`)
 }
 }
 break;
@@ -1682,7 +1682,7 @@ case 'chatgpt':
 /////////////////////////////////////_//////////////
             case "rules":
       
-        const helptxt = `_*📍[Rules for toge-md-v3 usage]📍*_\n\n\n*>>>* use ${prefix}support to get the Official group link in your dm.\n\n*--->* If you want to add TOGE-MD-V3 in your group the contact the owner by *${prefix}owner/${prefix}mods* \n\n*--->* Dont use wrong command, use the command given in the *${prefix}help* list \n\n* Dont spam the bot with commands if TOGE-MD-V3 is not responding, its means the maybe owner is offline or facing internet issue. \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜* `
+        const helptxt = `📍𝗪𝗔𝗥𝗡📍*\n\n\n*>>>* *use* *${prefix}support to get the Official group link in your dm.*\n\n*--->* *If you want to add TOGE-MD-V3 in your group the contact the owner by* *${prefix}owner/${prefix}mods* \n\n*--->* *Dont use wrong command, use the command given in the* *${prefix}help* *list* \n\n* *Dont spam the bot with commands if TOGE-MD-V3 is not responding, its means the maybe owner is offline or facing internet issue.* \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜* `
 
         Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
 
@@ -1699,9 +1699,9 @@ case 'chatgpt':
      
         let tex = `  [🎀𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋🎀]\n\n🔖https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`
 
-        await Maria.sendMessage(m.sender,{ video: {url: "https://telegra.ph/file/71df5c808c38683e8b304.mp4"}, caption: `${tex}`,gifPlayback: true},);
+        await Maria.sendMessage(m.sender,{ video: {url: "https://a.uguu.se/SYJVNqYh.mp4'"}, caption: `${tex}`,gifPlayback: true},);
 
-        await Maria.sendMessage(m.chat, { video: { url: "https://telegra.ph/file/71df5c808c38683e8b304.mp4" }, caption: '🎀𝑪𝒉𝒆𝒄𝒌 𝑰 𝑺𝒆𝒏𝒕 𝒔𝒖𝒑𝒑𝒐𝒓𝒕 𝒈𝒓𝒐𝒖𝒑 𝒍𝒊𝒏𝒌 𝒊𝒏 𝒚𝒐𝒖𝒓 𝑫𝑴  𝑴𝒚 𝑫𝒂𝒓𝒍𝒊𝒏𝒈', gifPlayback: true }, { quoted: m });
+        await Maria.sendMessage(m.chat, { video: { url: "https://a.uguu.se/SYJVNqYh.mp4'" }, caption: '*I sent you the Group Link in personal message Pls check.*', gifPlayback: true }, { quoted: m });
         break;
 
       case "info":
@@ -1710,20 +1710,20 @@ case 'chatgpt':
 
 \`\`\`A FULL FLEDGED MULTI DEVICE WHATSAPP BOT WITH COOL FEATURES\`\`\`
 
-❁ ═══ ❃•📕 *INFORMATION*📕•❃ ═══ ❁
-\`\`\`A simple and easy-to-use WhatsApp bot project based on Multi-Device Baileys and written in JavaScript\`\`\`
+❁ ═══ ❃•📕 *GROUP*📕•❃ ═══ ❁
+\`\`\`*_LINK:-* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\`\`\`
 
-❁ ══════ ❃•📄 *NOTE* 📄•❃ ══════ ❁
-\`\`\`This bot is a free open source project by toge012345\`\`\`
+❁ ══════ ❃•📄 *CHANEL* 📄•❃ ══════ ❁
+\`\`\`*_LINK:-* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\`\`\`
 
 ❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁
-*_LINK:- https://github.com/toge012345/TOGE-MD-V3 ._*
+*_LINK:-* https://github.com/toge012345/TOGE-MD-V3
 
 
-❁ ═══ ❃•✍🏻 *CONTRIBUTE* ✍🏻•❃ ═══ ❁
-\`\`\`Feel free to open issues regarding any problems or if you have any feature feel free to contact owner by typing ${prefix}owner or ${prefix}mods`
+❁ ═══ ❃•✍🏻 *TOGE-MD-V2* ✍🏻•❃ ═══ ❁
+\`\`\`*_LINK:-*`
 
-Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/ba64c8bc27477844bfc75.jpg" }, caption: pifx, gifPlayback: true }, { quoted: m });
+Maria.sendMessage(m.chat, { image: { url: "https://a.uguu.se/SYJVNqYh.mp4'" }, caption: pifx, gifPlayback: true }, { quoted: m });
         break;
 
 
