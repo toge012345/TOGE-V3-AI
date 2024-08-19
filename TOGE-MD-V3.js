@@ -1640,15 +1640,15 @@ break;
 //////////////////////////Ai menu/////////////////////////
 
 case 'chatgpt':			    
-      case 'gpt':const message = encodeURIComponent(args.join(' '));
+      case 'gpt':
       case 'chatbot':
        const axios = require("axios");
         if (!args[0]) {
-          return reply(`Please provide a message to chat with the Maria chatbot. Example: ${prefix}chat How are you Maria ?`);
+          return reply(`Please provide a message to chat with the Maria chatbot. Example: ${prefix}chat How are you TOGE-MD-V3 ?`);
         }
 
         const message = encodeURIComponent(args.join(' '));
-        const gptapi = `https://api.maher-zubair.tech/ai/chatgpt3?q=${message}`;
+        const gptapi = `https://itzpire.com/ai/gpt?model=gpt-4&q=${message}`;
 
         try {
           const response = await axios.get(gptapi);
