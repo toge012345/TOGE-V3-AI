@@ -606,7 +606,7 @@ break
             
             case 'stealdp': {
             const user = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
-        if (user === botNumber) return m.reply('_🙅🏻 I can not steal my own profile picture, Darling 🍭_');
+        if (user === botNumber) return m.reply('_🙅🏻 I can not steal my own profile picture, sensei 🍭_');
         const {key} = await m.reply("𝒑𝒍𝒆𝒂𝒔𝒆 𝒘𝒂𝒊𝒕 𝑫𝒂𝒓𝒍𝒊𝒏𝒈 🍭");
         let picture;
         try {
@@ -1319,7 +1319,7 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
 ©️ 𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑 
 *❝ Dont forget to give a Star ⭐ to the repo.*`
 
-        Maria.sendMessage(from, { video: { url: 'https://a.uguu.se/SYJVNqYh.mp4'' }, gifPlayback: true, caption: scritxt }, { quoted: m })
+        Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/942c4dd39bd40933222d8.mp4'' }, gifPlayback: true, caption: scritxt }, { quoted: m })
 }
         break;
         
@@ -1684,7 +1684,7 @@ case 'chatgpt':
       
         const helptxt = `📍𝗪𝗔𝗥𝗡📍*\n\n\n*>>>* *use* *${prefix}support to get the Official group link in your dm.*\n\n*--->* *If you want to add TOGE-MD-V3 in your group the contact the owner by* *${prefix}owner/${prefix}mods* \n\n*--->* *Dont use wrong command, use the command given in the* *${prefix}help* *list* \n\n* *Dont spam the bot with commands if TOGE-MD-V3 is not responding, its means the maybe owner is offline or facing internet issue.* \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜* `
 
-        Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/71df5c808c38683e8b304.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
+        Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/942c4dd39bd40933222d8.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
 
         break;
       case 'toge':
@@ -1692,16 +1692,16 @@ case 'chatgpt':
         
         let txxt = `𝚑𝚎𝚕𝚕𝚘 ${pushname} 𝙸 𝚊𝚖 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚊 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚍 𝚋𝚢 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚘𝚠 𝚌𝚊𝚗 𝙸 𝚑𝚎𝚕𝚙 𝚢𝚘𝚞 𝚋𝚊𝚋𝚢 ?`
 
-        Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg" }, caption: txxt}, { quoted: m });
+        Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4" }, caption: txxt}, { quoted: m });
         
         break;
       case "support":
      
         let tex = `  [🎀𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋🎀]\n\n🔖https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`
 
-        await Maria.sendMessage(m.sender,{ video: {url: "https://a.uguu.se/SYJVNqYh.mp4'"}, caption: `${tex}`,gifPlayback: true},);
+        await Maria.sendMessage(m.sender,{ video: {url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4'"}, caption: `${tex}`,gifPlayback: true},);
 
-        await Maria.sendMessage(m.chat, { video: { url: "https://a.uguu.se/SYJVNqYh.mp4'" }, caption: '*I sent you the Group Link in personal message Pls check.*', gifPlayback: true }, { quoted: m });
+        await Maria.sendMessage(m.chat, { video: { url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4'" }, caption: '*I sent you the Group Link in personal message Pls check.*', gifPlayback: true }, { quoted: m });
         break;
 
       case "info":
@@ -1723,7 +1723,7 @@ case 'chatgpt':
 ❁ ═══ ❃•✍🏻 *TOGE-MD-V2* ✍🏻•❃ ═══ ❁
 \`\`\`*_LINK:-* https://github.com/toge012345/TOGE-MD-V2`
 
-Maria.sendMessage(m.chat, { image: { url: "https://a.uguu.se/SYJVNqYh.mp4'" }, caption: pifx, gifPlayback: true }, { quoted: m });
+Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4'" }, caption: pifx, gifPlayback: true }, { quoted: m });
         break;
 
 
