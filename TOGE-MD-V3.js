@@ -1706,22 +1706,7 @@ case 'chatgpt':
 
       case "info":
             Maria.sendMessage(from, { react: { text: "", key: m.key }}) 
-        let pifx = `❁ ════ ❃•💙 *TOGE-MD-V3* 💙•❃ ════ ❁
-
-\`\`\`A FULL FLEDGED MULTI DEVICE WHATSAPP BOT WITH COOL FEATURES\`\`\`
-
-❁ ═══ ❃•📕 *GROUP*📕•❃ ═══ ❁
-\`\`\`*_LINK:-* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\`\`\`
-
-❁ ══════ ❃•📄 *CHANEL* 📄•❃ ══════ ❁
-\`\`\`*_LINK:-* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\`\`\`
-
-❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁
-*_LINK:-* https://github.com/toge012345/TOGE-MD-V3
-
-
-❁ ═══ ❃•✍🏻 *TOGE-MD-V2* ✍🏻•❃ ═══ ❁
-\`\`\`*_LINK:-* https://github.com/toge012345/TOGE-MD-V2`
+        let pifx = `❁ ════ ❃•💙 *TOGE-MD-V3* 💙•❃ ════ ❁\n\n A FULL FLEDGED MULTI DEVICE WHATSAPP BOT WITH COOL FEATURES\n\n ❁ ═══ ❃•📕 *GROUP*📕•❃ ═══ ❁\n\n *_LINK:-* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\n\n ❁ ══════ ❃•📄 *CHANEL* 📄•❃ ══════ ❁\n\n *_LINK:-* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\n\n ❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁\n\n *_LINK:-* https://github.com/toge012345/TOGE-MD-V3\n\n ❁ ═══ ❃•✍🏻 *TOGE-MD-V2* ✍🏻•❃ ═══ ❁\n\n *_LINK:-* https://github.com/toge012345/TOGE-MD-V2`
 
 Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4'" }, caption: pifx, gifPlayback: true }, { quoted: m });
         break;
@@ -2154,8 +2139,11 @@ break;
                          
                            
   case 'menu': case 'help': case 'bot': 
-      const txt = `┏━⍟ 𝗧𝗢𝗚𝗘-𝗠𝗗-𝗩𝟯 ⍟
-┃✦» 𝖀𝖘𝖊𝖗:  @${MariaName.split("@")[0]} 
+      const txt = `╭──❍「 𝗧𝗢𝗚𝗘-𝗠𝗗-𝗩𝟯 」❍
+├ *Hi 👋*
+├ *${m.pushName}*  
+╰─┬────❍ ${readmore}
+┏━━━━━━━━━━━━━━⊛ 
 ┃✦» 𝕭𝖔𝖙:  ${botname}
 ┃✦» 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
 ┃✦» 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
