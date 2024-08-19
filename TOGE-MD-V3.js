@@ -3701,7 +3701,7 @@ case 'joinrequest': {
     if (!isBotAdmins) return reply(mess.botAdmin)
     const response = await Maria.groupRequestParticipantsList(m.chat);
     if (!response || !response.length) {
-        Maria.sendMessage(m.chat, { text: 'No pending join requests. 😕' }, { quoted:  });
+        Maria.sendMessage(m.chat, { text: 'No pending join requests. 😕' }, { quoted: m });
         return;
     }
     let replyMessage = `🔖 Join Request List:\n`;
