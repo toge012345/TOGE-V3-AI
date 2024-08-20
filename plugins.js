@@ -111,7 +111,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
             if (!Maria.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
             if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
             const m = smsg(Maria, mek, store)
-            require("./TOGE-MD-V3")(Maria, m, chatUpdate, store)
+            require("./lib/plugins/TOGE-MD-V3")(Maria, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }
