@@ -24,21 +24,21 @@ const { exec, spawn, execSync } = require("child_process")
 const { performance } = require('perf_hooks')
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
-const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./lib/uploader')
-const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./lib/converter')
-const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./lib/myfunc')
-let afk = require("./lib/afk");
+const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./lib/lib/uploader')
+const { toAudio, toPTT, toVideo, ffmpeg, addExifAvatar } = require('./lib/lib/converter')
+const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, json, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./lib/lib/myfunc')
+let afk = require("./lib/lib/afk");
 const { download } = require('aptoide-scraper');
-const { fetchBuffer, buffergif } = require("./lib/myfunc2")
+const { fetchBuffer, buffergif } = require("./lib/lib/myfunc2")
 /////log
- global.modnumber = '24105114159' 
+ global.modnumber = '6283833304947' 
 //Media/database
-let ntilinkall =JSON.parse(fs.readFileSync('./database/antilink.json'));
-// let autoblck =JSON.parse(fs.readFileSync('./Media/database/autoblock.json'));
-const isnsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'));
+let ntilinkall =JSON.parse(fs.readFileSync('./lib/database/antilink.json'));
+// let autoblck =JSON.parse(fs.readFileSync('./lib/database/autoblock.json'));
+const isnsfw = JSON.parse(fs.readFileSync('./lib/database/nsfw.json'));
 
-let _afk = JSON.parse(fs.readFileSync('./database/afk-user.json'))
-let hit = JSON.parse(fs.readFileSync('./database/total-hit-user.json'))
+let _afk = JSON.parse(fs.readFileSync('./lib/database/afk-user.json'))
+let hit = JSON.parse(fs.readFileSync('./lib/database/total-hit-user.json'))
 
 //time
 const replay = (teks) => {
@@ -169,7 +169,7 @@ const getRandomImage = (directory) => {
   }
 };
 
-const imageDirectory = './Media/logo';
+const imageDirectory = './lib/Assets/logo';
   const randomImage = getRandomImage(imageDirectory);
 
 //group chat msg by toge
@@ -191,7 +191,7 @@ newsletterJid: "1203632993333611780@newsletter",
 "body": `${ownername}`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./Media/thumb.jpg`),
+"thumbnail": fs.readFileSync(`./lib/Assets/thumb.jpg`),
 "sourceUrl": `${link}`}}},
 { quoted: m})
 }
@@ -280,7 +280,7 @@ async function Telesticker(url) {
         }
         
         if (autobio) {
-            Maria.updateProfileStatus(`𝙷𝚎𝚢, 𝚏𝚞𝚝𝚞𝚛𝚎 𝚕𝚎𝚊𝚍𝚎𝚛𝚜! 🌟 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚒𝚜 𝚑𝚎𝚛𝚎 𝚝𝚘 𝚒𝚗𝚜𝚙𝚒𝚛𝚎 𝚊𝚗𝚍 𝚕𝚎𝚊𝚍, 𝚝𝚑𝚊𝚗𝚔𝚜 𝚝𝚘  𝚝𝚘𝚐𝚎𝟶𝟷𝟸𝟹𝟺𝟻. ${runtime(process.uptime())} `).catch(_ => _)
+            Maria.updateProfileStatus(`𝚑𝚒 𝙸 𝚊𝚖 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚋𝚢 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 ${runtime(process.uptime())} `).catch(_ => _)
         }
         if (m.sender.startsWith('212') && global.anti212 === true) {
             return Maria.updateBlockStatus(m.sender, 'block')
@@ -323,12 +323,12 @@ async function Telesticker(url) {
         if (command) {
             const cmdadd = () => {
                 hit[0].hit_cmd += 1
-                fs.writeFileSync('./database/total-hit-user.json', JSON.stringify(hit))
+                fs.writeFileSync('./lib/database/total-hit-user.json', JSON.stringify(hit))
             }
             cmdadd()
-            const totalhit = JSON.parse(fs.readFileSync('./database/total-hit-user.json'))[0].hit_cmd
+            const totalhit = JSON.parse(fs.readFileSync('./lib/database/total-hit-user.json'))[0].hit_cmd
         }
-        const photooxy = require('./lib/photooxy')
+        const photooxy = require('./lib/lib/photooxy')
         
         
 
@@ -349,7 +349,7 @@ async function Telesticker(url) {
                 let getTime = Date.now() - afk.getAfkTime(getId, _afk)
                 let heheh = ms(getTime)
                 _afk.splice(afk.getAfkPosition(m.sender, _afk), 1)
-                fs.writeFileSync('./database/afk-user.json', JSON.stringify(_afk))
+                fs.writeFileSync('./lib/database/afk-user.json', JSON.stringify(_afk))
                 Maria.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} have returned from afk`, m)
             }
         }
@@ -455,7 +455,7 @@ return;
 
 	    //total features by xeon sir
 const mariafeature = () =>{
-            var mytext = fs.readFileSync("./TOGE-MD-V3.js").toString()
+            var mytext = fs.readFileSync("./Toge-v3.js").toString()
             var numUpper = (mytext.match(/case '/g) || []).length
             return numUpper
 }
@@ -581,7 +581,7 @@ const sendSlide = async (jid, title, message, footer, slides) => {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '24105114159@s.whatsapp.net',
+                  newsletterJid: '6283833304947@s.whatsapp.net',
                   newsletterName: ownername,
                   serverMessageId: 143
                 }
@@ -663,7 +663,7 @@ reply('Success in turning off all autoblock in this group')
 if (args[0] === "on") {
 if (AntiLinkAll) return reply('Already activated')
 ntilinkall.push(from)
-fs.writeFileSync('./database/antilink.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./lib/database/antilink.json', JSON.stringify(ntilinkall))
 reply('Success in turning on all antilink in this group')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -676,7 +676,7 @@ Maria.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\n𝙸�
 if (!AntiLinkAll) return reply('Already desactivated')
 let off = ntilinkall.indexOf(from)
 ntilinkall.splice(off, 1)
-fs.writeFileSync('./database/antilinkall.json', JSON.stringify(ntilinkall))
+fs.writeFileSync('./lib/database/antilinkall.json', JSON.stringify(ntilinkall))
 reply('Success in turning off all antilink in this group')
 } else {
   await reply(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
@@ -721,7 +721,7 @@ break;
             case 'delsession':
             case 'clearsession': {
                 if (!isCreator) return reply(mess.owner)
-                fs.readdir("./Media/session", async function(err, files) {
+                fs.readdir("./lib/session", async function(err, files) {
                     if (err) {
                         console.log('Unable to scan directory: ' + err);
                         return reply('Unable to scan directory: ' + err);
@@ -1036,7 +1036,7 @@ break;
             case 'getcase':
                 if (!isCreator) return reply(mess.owner)
                 const getCase = (cases) => {
-                    return "case" + `'${cases}'` + fs.readFileSync("TOGE-MD-V3.js").toString().split('case \'' + cases + '\'')[1].split("break;")[0] + "break;"
+                    return "case" + `'${cases}'` + fs.readFileSync("Toge-v3.js").toString().split('case \'' + cases + '\'')[1].split("break;")[0] + "break;"
                 }
                 reply(`${getCase(q)}`)
                 break;
@@ -1452,7 +1452,7 @@ break;
                 let media = await Maria.downloadMediaMessage(qmsg)
                 let {
                     toPTT
-                } = require('./lib/converter')
+                } = require('./lib/lib/converter')
                 let audio = await toPTT(media, 'mp4')
                 Maria.sendMessage(m.chat, {
                     audio: audio,
@@ -1582,7 +1582,7 @@ break;
       case 'qc': {
                 const {
                     quote
-                } = require('./lib/quote.js')
+                } = require('./lib/lib/quote.js')
                 if (!q) return reply('Enter Text')
                 let ppnyauser = await await Maria.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/2617e9472f08cb3d3c5e2.jpg')
                 const rest = await quote(q, pushname, ppnyauser)
@@ -1597,7 +1597,7 @@ break;
 case 'play':  case 'song': {
 Maria.sendMessage(from, { react: { text: "📥", key: m.key }}) 
 if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  *TIAKOLA T.I.A*`)
-const Ayushplaymp3 = require('./lib/ytdl')
+const Ayushplaymp3 = require('./lib/lib/ytdl2')
 let yts = require("youtube-yts")
         let search = await yts(text)
         let anup3k = search.videos[0]
@@ -1623,7 +1623,7 @@ await fs.unlinkSync(pl.path)
 break;
 
 case 'ytmp4': case 'ytvideo': {
-const Ayushvidoh = require('./lib/ytdl')
+const Ayushvidoh = require('./lib/lib/ytdl2')
 if (args.length < 1 || !isUrl(text) || !Ayushvidoh.isYTUrl(text)) reply(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
 const vid=await Ayushvidoh.mp4(text)
 const ytc=`
@@ -2162,7 +2162,7 @@ break;
 > 🎀 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@lawliet.kfx
 > 🔮 *Public Group :* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo
 
-┏━⍟ *GENERAL* ⍟
+┏━⍟ *GENERAL* ⍟ ${readmore}
 ┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
@@ -2422,7 +2422,7 @@ if (!text) return reply('Where is the text?')
         break
         
         case 'obfus': case 'obfuscate':{
-if (!q) return reply(`Example ${prefix+command} const toge = require('baileys')`)
+if (!q) return reply(`Example ${prefix+command} const togev3 = require('baileys')`)
 let meg = await obfus(q)
 reply(`Success
 ${meg.result}`)
@@ -2452,7 +2452,7 @@ Cieeee, What's Going On❤️💖👀`,
                   previewType: "PHOTO",
                   thumbnailUrl: ``,
                   thumbnail: fs.readFileSync(
-                    `./Media/thumb.jpg`
+                    `./lib/Assets/thumb.jpg`
                   ),
                   sourceUrl: `${link}`,
                 },
@@ -2506,7 +2506,7 @@ case 'public': {
 ┃✺ ${prefix}ᴄʜᴀɪɴ
 ┗━━━━━━━━━━━━━━━⊛ 
 `
-        Maria.sendMessage(m.chat, { image: { url: "./Media/nsfw.jpg" }, caption: nsfwmenu }, { quoted: m });
+        Maria.sendMessage(m.chat, { image: { url: "./lib/Assets/nsfw.jpg" }, caption: nsfwmenu }, { quoted: m });
         break;
         
 ////////////////////menu_v2.1///////////////////////
@@ -2541,7 +2541,7 @@ let gmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: generalmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2614,7 +2614,7 @@ let emsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: educationmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2685,7 +2685,7 @@ await Maria.relayMessage(emsg.key.remoteJid, emsg.message, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: codingmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2771,7 +2771,7 @@ let owmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: ownermenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2855,7 +2855,7 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: groupmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -2944,7 +2944,7 @@ let funmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: funmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -3024,7 +3024,7 @@ let dowmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: downloadmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -3095,7 +3095,7 @@ let wallmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: wallmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -3177,7 +3177,7 @@ await Maria.relayMessage(wallmsg.key.remoteJid, wallmsg.message, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
             title: snapblendmenu,
             subtitle: themeemoji,
             hasMediaAttachment: false
@@ -3415,7 +3415,7 @@ let msg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3493,7 +3493,7 @@ let liistmsg = generateWAMessageFromContent(from, {
             text: botname
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./Media/list.jpg')}, { upload: Maria.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./lib/Assets/list.jpg')}, { upload: Maria.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -3743,7 +3743,7 @@ break;
 {
     if (!isGroup) return reply('This feature is only for groups');
     if (!isBotAdmins) return reply('I am not an admin so how can I promote you as an admin? ');
-    if (sender !== '24105114159@s.whatsapp.net') return reply('Ahh, only my Darling toge can access this command...');
+    if (sender !== '6283833304947@s.whatsapp.net') return reply('Ahh, only my Darling toge can access this command...');
     // if (!isBotGroupAdmins) return reply('Bot Not Admin...');
     Maria.groupParticipantsUpdate(from, [sender], 'promote');
     reply('Mission successfully');
@@ -3754,7 +3754,7 @@ case 'dme':
 {
     if (!isGroup) return reply('This feature is only for groups');
     if (!isBotAdmins) return reply('Bro, just chill, I am also not an admin ');
-    if (sender !== '24105114159@s.whatsapp.net') return reply('Ahh, only my owner can use this command ');
+    if (sender !== '6283833304947@s.whatsapp.net') return reply('Ahh, only my owner can use this command ');
     // if (!isBotGroupAdmins) return reply('Bot Not Admin...');
     Maria.groupParticipantsUpdate(from, [sender], 'demote');
     reply('*_You had a good run but you are no longer an admin. Embrace the freedom! _*');
@@ -3778,7 +3778,7 @@ break;
 if (args[0] === "on") {
 if (AntiNsfw) return reply('Already activated✅️')
 isnsfw.push(from)
-fs.writeFileSync('./database/nsfw.json', JSON.stringify(isnsfw))
+fs.writeFileSync('./lib/database/nsfw.json', JSON.stringify(isnsfw))
 reply('Successfully activating nsfw mode in this group ✔️')
 var groupe = await Maria.groupMetadata(from)
 var members = groupe['participants']
@@ -3791,7 +3791,7 @@ Maria.sendMessage(from, {text:  `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw
 if (!AntiNsfw) return reply('Already deactivated')
 let off = isnsfw.indexOf(from)
 isnsfw.splice(off, 1)
-fs.writeFileSync('./database/nsfw.json', JSON.stringify(isnsfw))
+fs.writeFileSync('./lib/database/nsfw.json', JSON.stringify(isnsfw))
 reply('Successfully deactivating nsfw mode in this group ✔️')
 } else {
   await reply(`*Kindly input the choice as follows:*
@@ -3821,7 +3821,7 @@ case 'ribbons':
         case 'blowjob':
  if (!m.isGroup) return reply(mess.group);
    if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/blowjob.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./lib/database/nsfw/blowjob.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3829,7 +3829,7 @@ break;
 case 'cum':
  if (!m.isGroup) return reply(mess.group);
    if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/cum.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./lib/database/nsfw/cum.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3837,7 +3837,7 @@ break;
 case 'foot':
  if (!m.isGroup) return reply(mess.group); 
   if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/foot.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./lib/database/nsfw/foot.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3845,7 +3845,7 @@ break;
 case 'gangbang':
  if (!m.isGroup) return reply(mess.group);
    if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/gangbang.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./lib/database/nsfw/gangbang.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3853,7 +3853,7 @@ break;
 case 'hentai':
  if (!m.isGroup) return reply(mess.group);
    if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/hentai.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./lib/database/nsfw/hentai.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3861,7 +3861,7 @@ break;
 case 'pussy':
  if (!m.isGroup) return reply(mess.group);   
 if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/pussy.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./lib/database/nsfw/pussy.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -3869,7 +3869,7 @@ break;
 case 'ass':
  if (!m.isGroup) return reply(mess.group);  
  if (!isNsfw) return reply(mess.nsfw);
-var ahegaonsfw = JSON.parse(fs.readFileSync('./Media/nsfw/ass.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./lib/database/nsfw/ass.json'))
 var Mariayresult = pickRandom(ahegaonsfw)
 Maria.sendMessage(m.chat, { caption: mess.done, image: { url: Mariayresult.url } }, { quoted: m })
 break;
@@ -4075,7 +4075,7 @@ case 'zero-two': {
 			if (!quoted) return reply(`Where is the picture?`)
 			if (!/image/.test(mime)) return reply(`Send/Reply Photos With Captions ${prefix + command}`)
 			reply(mess.wait)
-			const { remini } = require('./lib/remini')
+			const { remini } = require('./lib/lib/remini')
 			let media = await quoted.download()
 			let proses = await remini(media, "enhance")
 			Maria.sendMessage(m.chat, { image: proses, caption: mess.done}, { quoted: m})
@@ -4132,7 +4132,7 @@ case 'hidetag': {
       case 'img': {
       if (!args.join(" ")) return reply(`🧩${pushname}Please provide a search term!`);
         reply(mess.waiting)
-        let { pinterest } = require('./lib/scraper');
+        let { pinterest } = require('./lib/lib/scraper');
         let anutrest = await pinterest(text);
         let results = [];
 
@@ -4468,7 +4468,7 @@ https://chat.whatsapp.com/${response}
         break;
  case 'p':
 case 'ping': 
-    let thumbnail = './Media/thumb.jpg';
+    let thumbnail = './lib/Assets/thumb.jpg';
     let fgg = {
         key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' },
         message: {
@@ -4506,9 +4506,9 @@ case 'ping':
   case 'mods':
 case 'developer':
 case 'dev':
-    const devmod = `𝚑𝚒 𝚖𝚢 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚒𝚜 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚎𝚛𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎𝚒𝚛 𝚗𝚞𝚖𝚋𝚎𝚛𝚜 @24105114159`;
+    const devmod = `𝚑𝚒 𝚖𝚢 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚒𝚜 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚎𝚛𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎𝚒𝚛 𝚗𝚞𝚖𝚋𝚎𝚛𝚜 @6283833304947`;
 
-    Maria.sendMessage(m.chat, { text: devmod, mentions: ["24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net","24102150169@s.whatsapp.net"] }, { quoted: m });
+    Maria.sendMessage(m.chat, { text: devmod, mentions: ["6283833304947@s.whatsapp.net", "6283833304947@s.whatsapp.net", "6283833304947@s.whatsapp.net","6283833304947@s.whatsapp.net"] }, { quoted: m });
     break;
 
 
