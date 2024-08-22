@@ -1692,7 +1692,7 @@ case 'chatgpt':
         
         let txxt = `𝚑𝚎𝚕𝚕𝚘 ${pushname} 𝙸 𝚊𝚖 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚊 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚍 𝚋𝚢 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚘𝚠 𝚌𝚊𝚗 𝙸 𝚑𝚎𝚕𝚙 𝚢𝚘𝚞 𝚋𝚊𝚋𝚢 ?`
 
-        Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4" }, caption: txxt}, { quoted: m });
+        Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/8732bb1721e4785718a02.jpg" }, caption: txxt}, { quoted: m });
         
         break;
       case "support":
@@ -2162,7 +2162,7 @@ break;
 > 🎀 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@lawliet.kfx
 > 🔮 *Public Group :* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo
 
-┏━⍟ *GENERAL* ⍟ ${readmore}
+┏━⍟ *GENERAL* ⍟
 ┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
