@@ -18,6 +18,7 @@
     "dependencies": {
         "@adiwajshing/baileys": "^5.0.0",
         "@adiwajshing/keyed-db": "^0.2.4",
+        "@queenanya/invite": "^6.0.0",
         "@bochilteam/scraper": "^4.2.3",
         "@distube/ytdl-core": "^4.14.3",
         "@google-cloud/vision": "^4.3.0",
