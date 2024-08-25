@@ -1595,7 +1595,7 @@ break;
             break;
 
 case 'play':  case 'song': {
-Maria.sendMessage(from, { react: { text: "📥", key: m.key }}) 
+Maria.sendMessage(from, { react: { text: "🙈", key: m.key }}) 
 if (!text) return reply(`🍭𝑷𝒍𝒆𝒂𝒔𝒆 𝒎𝒆𝒏𝒕𝒊𝒐𝒏 𝒂 𝒔𝒐𝒏𝒈 𝒏𝒂𝒎𝒆 𝒅𝒂𝒓𝒍𝒊𝒏𝒈 \n\n 𝑬𝒙𝒂𝒎𝒑𝒍𝒆: ${prefix + command}  *TIAKOLA T.I.A*`)
 const Ayushplaymp3 = require('./lib/lib/ytdl2')
 let yts = require("youtube-yts")
