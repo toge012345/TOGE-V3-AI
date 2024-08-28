@@ -1,5 +1,6 @@
 const fs = require('fs');
 const chalk = require('chalk');
+require('dotenv').config();
 
 //contact details
 global.ownernumber = [ process.env.OWNER_NUMBER || "6283833304947"],
@@ -47,6 +48,14 @@ global.mess = {
     private: '💫 *hello senpai, this feature is exclusively for private chats*',
     wait: '💫 *hello senpai, in process...* ',    
     error: '💫 *hello senpai, there seems to be an error!*',
+}
+module.exports = {
+ownernumber: global.ownernumber,
+ownername: global.ownername,
+sessionId: process.env.id || " ", // paste your session id here
+AUTO_BLOCK : process.env.PM_BLOCKER,
+STATUS_SAVER : "true",
+ANTI_BOT:"false",
 }
 
 global.thumb = fs.readFileSync('./lib/Assets/thumb.jpg')
