@@ -1,8 +1,8 @@
 ## TOGE-MD-V3 
 </div>
-  <a href="https://toge-md-web.onrender.com">
+  <a href="https://toge-v3-web-app.onrender.com/">
         <p align="center">
-   <img alt="toge01245" height="300" src="https://telegra.ph/file/83f41a017edaf21646b3f.jpg">
+   <img alt="toge012345" height="300" src="https://telegra.ph/file/6eda746b47a0be0999b40.jpg">
               </p>
   </a>
 </p>
@@ -124,11 +124,22 @@ jobs:
     <br>
 <a href='https://replit.com/github/toge012345/TOGE-MD-V3' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-IMPORT-black?style=for-the-badge&logo=replit'/></a>
 
-* Now fork it and enjoy 🗿🙌🏻
-##
-## ```𝘓𝘦𝘨𝘢𝘭 𝘋𝘪𝘴𝘤𝘭𝘢𝘪𝘮𝘦𝘳```
-- *I will only Assist You in Bot Deployment and Hosting, Not in Bot Development*
-- *If You Modify The Bot And Face Any Issue, I will not Responsible Because It is not Possible For Me To Help Everyone*
-- *This Bot is For Fun and Educational Purpose, I will not Responsible If You Spam and Misuse It*
-- ***Regards [developper](https://github.com/toge012345)***
+ ## `Main Dev` 
+<a href="https://github.com/toge012345"><img src="https://github.com/toge012345.png" width="250" height="250" alt="toge012345"/></a>
+  
+`TOGE-MD-V3 - By toge012345`
 
+##
+- This bot is not made by `WhatsApp Inc.` So misusing the bot might `ban` your `WhatsApp account!`(Though your WhatsApp account can be unbanned only once.)
+- I am not responsible for banning your account.
+- Use at your own risk by keeping this warning in mind.
+
+
+<h2 align="center">  NOTICE
+</h2>
+   
+##
+- Not For Sale
+- If A plugin's code is obfuscated , You don't have permission to edit it in any form 
+- Don't Forget to Give Credits If you are using or Reuploading My Plugins/files
+- Have A Good Day Ahead
