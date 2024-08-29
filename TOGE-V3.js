@@ -1,6 +1,6 @@
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getAggregateVotesInPollMessage,getContentType, delay, decodeJid } = require('@whiskeysockets/baileys')
 const { SendGroupInviteMessageToUser } = require("@queenanya/invite")
-const Config = require("./Config")
+const Config = require("./config")
 const os = require('os')
 const fs = require('fs')
 const mathjs = require('mathjs')
@@ -280,7 +280,7 @@ async function Telesticker(url) {
         }
         
         if (autobio) {
-            Maria.updateProfileStatus(`𝚑𝚒 𝙸 𝚊𝚖 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚋𝚢 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 ${runtime(process.uptime())} `).catch(_ => _)
+            Maria.updateProfileStatus(`𝚑𝚒 𝙸 𝚊𝚖 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚍 𝚋𝚢 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 ${runtime(process.uptime())} `).catch(_ => _)
         }
         if (m.sender.startsWith('212') && global.anti212 === true) {
             return Maria.updateBlockStatus(m.sender, 'block')
@@ -1036,7 +1036,7 @@ break;
             case 'getcase':
                 if (!isCreator) return reply(mess.owner)
                 const getCase = (cases) => {
-                    return "case" + `'${cases}'` + fs.readFileSync("Toge-v3.js").toString().split('case \'' + cases + '\'')[1].split("break;")[0] + "break;"
+                    return "case" + `'${cases}'` + fs.readFileSync("TOGE-V3.js").toString().split('case \'' + cases + '\'')[1].split("break;")[0] + "break;"
                 }
                 reply(`${getCase(q)}`)
                 break;
@@ -1572,6 +1572,25 @@ break;
             }
             break;
 
+	    case 'addowner':
+                if (!isCreator) return reply(mess.owner)
+if (!args[0]) return reply(`Use ${prefix+command} number\nExample ${prefix+command} ${ownernumber}`)
+bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
+let ceknye = await Maria.onWhatsApp(bnnd)
+if (ceknye.length == 0) return reply(`Enter A Valid And Registered Number On WhatsApp!!!`)
+owner.push(bnnd)
+fs.writeFileSync('./lib/database/owner.json', JSON.stringify(owner))
+reply(`*_Number ${bnnd} Has Become An owner!!!_*`)
+break
+case 'delowner':
+                if (!isCreator) return reply(mess.owner)
+if (!args[0]) return reply(`Use ${prefix+command} number\nExample ${prefix+command} 919931122319`)
+ya = q.split("|")[0].replace(/[^0-9]/g, '')
+unp = owner.indexOf(ya)
+owner.splice(unp, 1)
+fs.writeFileSync('./lib/database/owner.json', JSON.stringify(owner))
+reply(`*_The Number Has been deleted from owner list by the owner!!!_*`)
+break		    
             case 'afk':
                 if (!m.isGroup) return reply(mess.group)
                 if (isAfkOn) return reply("Already afk")
@@ -1639,26 +1658,42 @@ await Maria.sendMessage(m.chat,{
 break;
 //////////////////////////Ai menu/////////////////////////
 
-case 'chatgpt':			    
-      case 'gpt':
-      case 'chatbot':
-       const axios = require("axios");
-        if (!args[0]) {
-          return reply(`Please provide a message to chat with the Maria chatbot. Example: ${prefix}chat How are you TOGE-MD-V3 ?`);
-        }
-
-        const message = encodeURIComponent(args.join(' '));
-        const gpt = `https://vihangayt.me/tools/blackbox?q=`;
-
-        try {
-          const response = await axios.get(gpt);
-          const result = response.data.result;
-          reply(result);
-        } catch (error) {
-          console.error('Error fetching AI chatbot response:', error);
-          reply('An error occurred while fetching the Maria chatbot response. Please try again later.');
-        }
-        break;
+case 'chatgpt': case 'gpt':{
+              if (!q) return reply(`Please provide a text query. Example: ${prefix + command} Hello, ChatGPT!`);
+            
+              const apiUrl1 = `https://api.guruapi.tech/ai/gpt4?username=${userid}&query=hii${prompt}`;
+              const apiUrl2 = `https://gurugpt.cyclic.app/gpt4?prompt=${encodeURIComponent(q)}&model=llama`;
+            
+              try {
+                
+                const response1 = await fetch(apiUrl1);
+                const responseData1 = await response1.json();
+            
+                if (response1.status === 200 && responseData1 && responseData1.status === true && responseData1.data) {
+                  
+                  const message = responseData1.data;
+                  const me = m.sender;
+                  await Maria.sendMessage(m.chat, { text: message, mentions: [me] }, { quoted: m });
+                } else {
+                  
+                  const response2 = await fetch(apiUrl2);
+                  const responseData2 = await response2.json();
+            
+                  if (response2.status === 200 && responseData2 && responseData2.data) {
+                    
+                    const message = responseData2.data;
+                    const me = m.sender;
+                    await Maria.sendMessage(m.chat, { text: message, mentions: [me] }, { quoted: m });
+                  } else {
+                    reply("Sorry, I couldn't fetch a response from both APIs at the moment.");
+                  }
+                }
+              } catch (error) {
+                console.error(error);
+                reply("An error occurred while fetching the response from both APIs.");
+              }
+            }
+              break;
                
              case 'dalle': {
        
@@ -1671,18 +1706,15 @@ case 'chatgpt':
           await Maria.sendMessage(m.chat, { image: { url: apiUrl } }, { quoted: m });
         } catch (error) {
           console.error(error);
-          reply("An error occurred while generating the image.");
-        }
+          reply("error occurred while fetching the response from both APIs.");
+	}	
       }
-        break;
-	
-
-
-         
-/////////////////////////////////////_//////////////
+	break;
+			    
+   /////////////////////////////////////_//////////////
             case "rules":
       
-        const helptxt = `📍𝗪𝗔𝗥𝗡📍*\n\n\n*>>>* *use* *${prefix}support to get the Official group link in your dm.*\n\n*--->* *If you want to add TOGE-MD-V3 in your group the contact the owner by* *${prefix}owner/${prefix}mods* \n\n*--->* *Dont use wrong command, use the command given in the* *${prefix}help* *list* \n\n* *Dont spam the bot with commands if TOGE-MD-V3 is not responding, its means the maybe owner is offline or facing internet issue.* \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜* `
+        const helptxt = `📍𝗪𝗔𝗥𝗡📍\n\n\n*>>>* *use* *${prefix}support to get the Official group link in your dm.*\n\n*--->* *If you want to add TOGE-MD-V3 in your group the contact the owner by* *${prefix}owner/${prefix}mods* \n\n*--->* *Dont use wrong command, use the command given in the* *${prefix}help* *list* \n\n* *Dont spam the bot with commands if TOGE-MD-V3 is not responding, its means the maybe owner is offline or facing internet issue.* \n\n*IF YOU DONT FOLLOW THE RULES THEN YOU WILL BE BANNED* 🚫 \n\n\n*©️ 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜* `
 
         Maria.sendMessage(from, { video: { url: 'https://telegra.ph/file/942c4dd39bd40933222d8.mp4' }, gifPlayback: true, caption: helptxt }, { quoted: m })
 
@@ -2159,7 +2191,7 @@ break;
 
 > ☎️ *Cᴏɴᴛᴀᴄᴛ :* https://wa.me/${ownernumber}?text=Hello
 > 💻 *Sᴏᴜʀᴄᴇ Cᴏᴅᴇ :* https://github.com/toge012345/TOGE-MD-V3
-> 🎀 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@lawliet.kfx
+> 💨 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@lawliet.kfx
 > 🔮 *Public Group :* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo
 
 ┏━⍟ *GENERAL* ⍟
@@ -2191,6 +2223,8 @@ break;
 ┃✺ ${prefix}session
 ┃✺ ${prefix}join
 ┃✺ ${prefix}mode
+┃✺ ${prefix}addsession
+┃✺ ${prefix}delsession
 ┃✺ ${prefix}shutdown
 ┃✺ ${prefix}restart
 ┃✺ ${prefix}autoread
@@ -2323,9 +2357,7 @@ break;
 ┃✺ ${prefix}roulette
 ┃✺ ${prefix}blackjack
 ┃✺ ${prefix}compliment
-┗━━━━━━━━━━━━━━━⊛
-
-> 𝙱𝚈 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸`
+┗━━━━━━━━━━━━━━━⊛`
 
   let menumsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -2343,32 +2375,18 @@ break;
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
-            title: txt,
+            title: `𝙱𝚈 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸`,
             subtitle: themeemoji,
             hasMediaAttachment: false
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-                            {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"𝙼𝙴𝙽𝚄 𝙻𝙸𝚂𝚃","id":"${prefix}list"}`
-   },
-   
-                               {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"𝚂𝙲𝚁𝙸𝙿𝚃","id":"${prefix}sc"}`
-   },
               {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗢𝗨𝗧𝗨𝗕𝗘 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
-              }
-
-           ],
-          }),
+               name: "quick_reply",
+               buttonParamsJson: `{"display_text":"𝗢𝗪𝗡𝗘𝗥 ✨","id":"${prefix}owner"}`
+                }
+              ],
+            }) ,
           contextInfo: {
                   mentionedJid: [m.sender], 
                   forwardingScore: 999,
@@ -2422,7 +2440,7 @@ if (!text) return reply('Where is the text?')
         break
         
         case 'obfus': case 'obfuscate':{
-if (!q) return reply(`Example ${prefix+command} const togev3 = require('baileys')`)
+if (!q) return reply(`Example ${prefix+command} const togetext = require('baileys')`)
 let meg = await obfus(q)
 reply(`Success
 ${meg.result}`)
@@ -4194,11 +4212,11 @@ case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
             "name": "quick_reply",
-              "buttonParamsJson": `{\"display_text\":\"Menu✨\",\"id\":\"${prefix}help"}`
+              "buttonParamsJson": `{\"display_text\":\"𝗠𝗘𝗡𝗨\",\"id\":\"${prefix}help"}`
             },
                         {
             "name": "quick_reply",
-              "buttonParamsJson": `{\"display_text\":\"Script🎀\",\"id\":\"${prefix}sc"}`
+              "buttonParamsJson": `{\"display_text\":\"𝗦𝗖𝗥𝗜𝗣𝗧\",\"id\":\"${prefix}sc"}`
             }],
           }), 
           contextInfo: {
@@ -4238,11 +4256,11 @@ return await Maria.relayMessage(m.chat, msgs.message, {})
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
             "name": "quick_reply",
-              "buttonParamsJson": `{\"display_text\":\"Menu✨\",\"id\":\"${prefix}help"}`
+              "buttonParamsJson": `{\"display_text\":\"𝗠𝗘𝗡𝗨\",\"id\":\"${prefix}help"}`
             },
             {
             "name": "quick_reply",
-              "buttonParamsJson": `{\"display_text\":\"Script🎀\",\"id\":\"${prefix}sc"}`
+              "buttonParamsJson": `{\"display_text\":\"𝗦𝗖𝗥𝗜𝗣𝗧\",\"id\":\"${prefix}sc"}`
             }],
           }), 
           contextInfo: {
@@ -4473,7 +4491,7 @@ case 'ping':
         key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' },
         message: {
             contactMessage: {
-                displayName: 'TOGE-MD-V3 📱',
+                displayName: '𝚃𝙾𝙶𝙴 𝙼𝙳 𝚅𝟹',
                 vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:TOGE-MD-V3 📱\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:owner number\nEND:VCARD`
             }
         }
@@ -5065,7 +5083,7 @@ case '': {
             }),
             header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
-              title: `🍭𝑫𝒂𝒓𝒍𝒊𝒏𝒈 𝑫𝒊𝒅 𝒀𝒐𝒖 𝑴𝒆𝒂𝒏 ${prefix}𝒉𝒆𝒍𝒑`,
+              title: `𝖒𝖊𝖓𝖚 ? 𝕮𝖑𝖎𝖈𝖐 ${prefix}𝖍𝖊𝖑𝖕`,
               subtitle: themeemoji,
               hasMediaAttachment: true
             }),
@@ -5073,7 +5091,7 @@ case '': {
               buttons: [
                 {
                   name: "quick_reply",
-                  buttonParamsJson: `{"display_text":"HELP✨️","id":"${prefix}help"}`
+                  buttonParamsJson: `{"display_text":"𝗛𝗘𝗟𝗣","id":"${prefix}help"}`
                 }
               ],
             }) ,
