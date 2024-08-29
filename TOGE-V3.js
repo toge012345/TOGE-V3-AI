@@ -455,12 +455,90 @@ return;
 
 	    //total features by xeon sir
 const mariafeature = () =>{
-            var mytext = fs.readFileSync("./Toge-v3.js").toString()
+            var mytext = fs.readFileSync("./TOGE-V3.js").toString()
             var numUpper = (mytext.match(/case '/g) || []).length
             return numUpper
 }
+
+ async function react(emoji) {
+
+Maria.sendMessage(m.chat, { react: { text: emoji, key: m.key } })
+
+}
+
+ const emojis = ["", "", "", "", "", "", "", ""]; 
+const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+
+ if (global.react) {
+    Maria.sendMessage(m.chat, {
+        react: {
+            text: randomEmoji,
+            key: m.key,
+        }
+    });
+
+    if (!isCmd) {
+        react(randomEmoji);
+    }
+}
+
+
+if (global.groupOnly && !m.isGroup && !isCreator) {
+    if (isCmd) {
+        return reply(` Hey there! To keep things smooth please use my features in group chats only \n\n Need help? Just message my owner at wa.me/${ownernumber} `);
+    }
+}
   
             switch (command) {
+            	
+            case 'grouponly':
+    case 'pmblocker': {
+        if (!isCreator) return reply("This command can only be used by the bot owner.");
+
+        if (args.length < 1) return reply("Please specify 'on' or 'off'.");
+
+        if (args[0] === 'on') {
+            global.groupOnly = true;
+            reply("Group-only mode has been enabled.");
+        } else if (args[0] === 'off') {
+            global.groupOnly = false;
+            reply("Group-only mode has been disabled.");
+        } else {
+            reply("Invalid option. Use 'on' or 'off'.");
+        }
+        }
+        break;
+            
+            case 'repeat': {
+    if (!m.isGroup) return reply(mess.group);
+    if (!isAdmins && !isGroupOwner && !isCreator) return reply(mess.admin);
+
+    // Split the message text to get the number and the message
+    const parts = m.text.split(' ');
+    const repeatCount = parseInt(parts[1], 10);
+    const repeatMessage = parts.slice(2).join(' ');
+
+    // Validate the input
+    if (isNaN(repeatCount) || repeatCount <= 0) {
+        return Maria.sendMessage(m.chat, { text: `Invalid number of repetitions. Please provide a positive number.` }, { quoted: m });
+    }
+
+    if (!repeatMessage) {
+        return Maria.sendMessage(m.chat, { text: `Please provide a message to repeat.` }, { quoted: m });
+    }
+
+    // Create an array with the repeated message
+    const messagesToSend = Array(repeatCount).fill(repeatMessage).join('\n');
+
+    try {
+        await Maria.sendMessage(m.chat, { text: messagesToSend }, { quoted: m });
+        Maria.sendMessage(m.chat, { text: `Repeated the message ${repeatCount} times.` }, { quoted: m });
+    } catch (error) {
+        console.error('Error sending repeated message:', error.message);
+        Maria.sendMessage(m.chat, { text: 'Failed to send repeated message. ' }, { quoted: m });
+    }
+}
+break;
             	
             case 'tutorial':{
 	const slides = [
@@ -2198,6 +2276,7 @@ break;
 ┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
+┃✺ ${prefix}newfeatures 
 ┃✺ ${prefix}support
 ┃✺ ${prefix}tutorial
 ┃✺ ${prefix}rules
@@ -2252,6 +2331,12 @@ break;
 ┃✺ ${prefix}demote
 ┃✺ ${prefix}demoteall
 ┃✺ ${prefix}joinrequest
+┃✺ ${prefix}rejectall
+┃✺ ${prefix}mutegroup
+┃✺ ${prefix}unmutegroup
+┃✺ ${prefix}pinchat
+┃✺ ${prefix}unpichat
+┃✺ ${prefix}acceptall
 ┃✺ ${prefix}setdesc
 ┃✺ ${prefix}setppgc
 ┃✺ ${prefix}tagall
@@ -2406,8 +2491,43 @@ await Maria.relayMessage(menumsg.key.remoteJid, menumsg.message, {
   messageId: menumsg.key.id
 })
  break
+			    
     
-     
+case 'description': {
+    const { subject, desc } = await Maria.groupMetadata(m.chat);
+
+    const randomMessages = [
+        "🎉 *Let the good times roll!* 🎉",
+        "🌈 *Let the fun begin!* 🌈",
+        "🚀 *Blast off to awesomeness!* 🚀",
+        "✨ *Embrace the adventure!* ✨",
+        "🎊 *Celebrate every moment!* 🎊"
+    ];
+
+
+    const randomMessage = randomMessages[Math.floor(Math.random() * randomMessages.length)];
+
+    const styledDesc = `
+💨 *TOGE-MD-V3* 💨
+
+🍥 *GROUP:* ${subject}
+
+🔮 *Description:*
+${desc}\n
+${randomMessage}\n
+✨ *© 2024* 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜 ✨ ✨
+`;
+
+   
+    const imageUrl = 'https://telegra.ph/file/055d845df9c966d7240ab.jpg';
+    
+    await Maria.sendMessage(m.chat, {
+        image: { url: imageUrl },
+        caption: styledDesc
+    });
+}
+break;
+			    
        case 'circlevideo': {
 try {
 const Mariabaileys = await require("@whiskeysockets/baileys").generateWAMessageContent({ video: await m.quoted.download() }, { upload: Maria.waUploadToServer })
@@ -2534,6 +2654,7 @@ case 'generalmenu':
 ┃✺ ${prefix}toge
 ┃✺ ${prefix}dev
 ┃✺ ${prefix}info
+┃✺ ${prefix}newfeatures
 ┃✺ ${prefix}support
 ┃✺ ${prefix}rules
 ┃✺ ${prefix}term
@@ -2845,7 +2966,15 @@ await Maria.relayMessage(owmsg.key.remoteJid, owmsg.message, {
 ┃✺ ${prefix}kick
 ┃✺ ${prefix}kickall
 ┃✺ ${prefix}promote
+┃✺ ${prefix}promoteall
 ┃✺ ${prefix}demote
+┃✺ ${prefix}demoteall
+┃✺ ${prefix}rejectall
+┃✺ ${prefix}mutegroup
+┃✺ ${prefix}unmutegroup
+┃✺ ${prefix}pinchat
+┃✺ ${prefix}unpichat
+┃✺ ${prefix}acceptall
 ┃✺ ${prefix}setdesc
 ┃✺ ${prefix}setppgc
 ┃✺ ${prefix}tagall
@@ -3730,6 +3859,147 @@ case 'joinrequest': {
     Maria.sendMessage(m.chat, { text: replyMessage }, { quoted: m });
 };
 break;
+
+case 'acceptall': {
+    if (!m.isGroup) {
+        return reply(mess.group);
+    }
+    if (!isAdmins && !isGroupOwner && !isCreator) {
+        return reply(mess.admin);
+    }
+    if (!isBotAdmins) {
+        return reply(mess.botAdmin);
+    }
+
+    const response = await Maria.groupRequestParticipantsList(m.chat);
+    if (!response || !response.length) {
+        Maria.sendMessage(m.chat, { text: 'No pending join requests to accept. 😕' }, { quoted: m });
+        return;
+    }
+
+    const jids = response.map(request => request.jid);
+    const updateResponse = await Maria.groupRequestParticipantsUpdate(
+        m.chat, // Group ID
+        jids,
+        "approve"
+    );
+    console.log(updateResponse);
+
+    Maria.sendMessage(m.chat, { text: 'All join requests have been accepted. ✅' }, { quoted: m });
+}
+break;
+
+case 'rejectall': {
+    if (!m.isGroup) {
+        return reply(mess.group);
+    }
+    if (!isAdmins && !isGroupOwner && !isCreator) {
+        return reply(mess.admin);
+    }
+    if (!isBotAdmins) {
+        return reply(mess.botAdmin);
+    }
+
+    const response = await Maria.groupRequestParticipantsList(m.chat);
+    if (!response || !response.length) {
+        Maria.sendMessage(m.chat, { text: 'No pending join requests to reject. 😕' }, { quoted: m });
+        return;
+    }
+
+    const jids = response.map(request => request.jid);
+    const updateResponse = await Maria.groupRequestParticipantsUpdate(
+        m.chat, // Group ID
+        jids,
+        "reject"
+    );
+    console.log(updateResponse);
+
+    Maria.sendMessage(m.chat, { text: 'All join requests have been rejected. ❌' }, { quoted: m });
+}
+break;
+
+case 'pinchat': {
+    if (!m.isGroup) {
+        return reply(mess.group);
+    }
+    if (!isAdmins && !isGroupOwner && !isCreator) {
+        return reply(mess.admin);
+    }
+    if (!isBotAdmins) {
+        return reply(mess.botAdmin);
+    }
+
+    const chatId = m.chat;
+    await Maria.chatModify({
+        pin: true
+    }, chatId);
+    
+    Maria.sendMessage(m.chat, { text: 'Chat has been pinned. 📌' }, { quoted: m });
+}
+break;
+
+case 'unpinchat': {
+    if (!m.isGroup) {
+        return reply(mess.group);
+    }
+    if (!isAdmins && !isGroupOwner && !isCreator) {
+        return reply(mess.admin);
+    }
+    if (!isBotAdmins) {
+        return reply(mess.botAdmin);
+    }
+
+    const chatId = m.chat;
+    await Maria.chatModify({
+        pin: false
+    }, chatId);
+
+    Maria.sendMessage(m.chat, { text: 'Chat has been unpinned. 📍' }, { quoted: m });
+}
+break;
+
+case 'mutegroup': {
+    if (!isGroupOwner && !isAdmins) return reply(mess.admin); 
+
+    const duration = parseInt(args[0]); 
+    if (isNaN(duration) || duration <= 0) return reply('Please provide a valid duration in minutes.');
+
+    try {
+        
+        await Maria.groupSettingUpdate(m.chat, 'announcement');
+        Maria.sendMessage(m.chat, { text: `Group has been muted for ${duration} minutes.` }, { quoted: m });
+
+        setTimeout(async () => {
+            try {
+                await Maria.groupSettingUpdate(m.chat, 'not_announcement');
+                Maria.sendMessage(m.chat, { text: 'Group has been unmuted.' }, { quoted: m });
+            } catch (error) {
+                console.error('Error unmuting group:', error.message);
+            }
+        }, duration * 60000);
+    } catch (error) {
+        console.error('Error muting group:', error.message);
+        Maria.sendMessage(m.chat, { text: 'Failed to mute group. 😕' }, { quoted: m });
+    }
+}
+break;
+		
+case 'unmutegroup': {
+    if (!isGroupOwner && !isAdmins) return reply(mess.admin);
+
+    try {
+        
+        await Maria.groupSettingUpdate(m.chat, 'not_announcement');
+        Maria.sendMessage(m.chat, { text: 'Group has been unmuted.' }, { quoted: m });
+    } catch (error) {
+        console.error('Error unmuting group:', error.message);
+        Maria.sendMessage(m.chat, { text: 'Failed to unmute group. 😕' }, { quoted: m });
+    }
+}
+break;
+			    
+
+			    
 
 case 'getbio': {
   try {
@@ -5118,7 +5388,25 @@ case '': {
   break;
 }
 
+case 'newfeatures':
+    case 'features': {
+        const newFeatures = `
+        🆕 *New Features in TOGE-MD-V3* 🆕
 
+        ✅ *Accept All:* Automatically accepts all group invites.
+        ✅ *Reject All:* Automatically rejects all group invites.
+        ✅ *Mute Group:* Mutes a group chat.
+        ✅ *Unmute Group:* Unmutes a group chat.
+        ✅ *Pin Chat:* Pins a chat to the top.
+        ✅ *Unpin Chat:* Unpins a chat from the top.
+        ✅ *Auto React:* Automatically reacts to messages with an emoji.
+
+        ✨ *© 2024* 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜 ✨ ✨
+        `;
+        reply(newFeatures);
+        }
+        break;
+ 
 /////////////////////////////////////////////////////
 
 if(isCmd){
