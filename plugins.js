@@ -1,4 +1,4 @@
-require('./Config')
+require('./config')
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
@@ -7,7 +7,7 @@ const chalk = require('chalk')
 const FileType = require('file-type')
 const path = require('path')
 const axios = require('axios')
-const Config = require("./Config")
+const Config = require("./config")
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetch, await, sleep, reSize } = require('./lib/lib/myfunc.js')
@@ -29,7 +29,7 @@ const store = makeInMemoryStore({
     })
 })
 
-let phoneNumber = "6283833304947"
+let phoneNumber = "24102150169"
 let owner = JSON.parse(fs.readFileSync('./lib/database/owner.json'))
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
@@ -73,18 +73,18 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +6283833304947")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +919931122319")))
             process.exit(0)
          }
       } else {
-         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number\nFor example: +6283833304947 : `)))
+         phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number\nFor example: +919931122319 : `)))
          phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
 
          // Ask again when entering the wrong number
          if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +6283833304947")))
+            console.log(chalk.bgBlack(chalk.redBright("Start with country code of your WhatsApp Number, Example : +919931122319")))
 
-            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number please\nFor example: +6283833304947: `)))
+            phoneNumber = await question(chalk.bgBlack(chalk.greenBright(`Your WhatsApp bot number please\nFor example: +919931122319: `)))
             phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
             rl.close()
          }
@@ -96,7 +96,12 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
          console.log(chalk.black(chalk.bgGreen(`🤖Your Pairing Code🤖: `)), chalk.black(chalk.white(code)))
       }, 3000)
    }
-
+	Maria.ev.on('contacts.update', (update) => {
+		for (let contact of update) {
+			let id = Maria.decodeJid(contact.id)
+			if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
+		}
+	});
     Maria.ev.on('messages.upsert', async chatUpdate => {
         //console.log(JSON.stringify(chatUpdate, undefined, 2))
         try {
@@ -111,7 +116,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
             if (!Maria.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
             if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
             const m = smsg(Maria, mek, store)
-            require("./Toge-v3")(Maria, m, chatUpdate, store)
+            require("./TOGE-V3")(Maria, m, chatUpdate, store)
         } catch (err) {
             console.log(err)
         }
@@ -171,7 +176,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
 Maria.ev.on("connection.update",async  (s) => {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
-console.log(chalk.green('🟨Welcome to TOGE-MD-V3'));
+console.log(chalk.green('🟨Welcome to Maria-md'));
 console.log(chalk.gray('\n\n🚀Initializing...'));
            await delay(1000 * 2) 
             
@@ -185,8 +190,7 @@ Maria.sendMessage(Maria.user.id, {
 ᴄᴏᴍᴍᴀɴᴅꜱ: 248\n
 ᴠᴇʀꜱɪᴏɴ: 3.0\n
 ᴄʀᴇᴀᴛᴏʀ: ᴛᴏɢᴇ ɪɴᴜᴍᴀᴋɪ\n
-_ᴛʏᴘᴇ ${prefix}ᴀʟɪᴠᴇ ᴛᴏ ᴜꜱᴇ ᴛʜᴇ ʙᴏᴛ_ 🤖
- `
+_ᴛʏᴘᴇ ${prefix}ᴀʟɪᴠᴇ ᴛᴏ ᴜꜱᴇ ᴛʜᴇ ʙᴏᴛ_ 🤖`
 });
 
 
@@ -343,7 +347,7 @@ for (let num of participants) {
 try {
 ppuser = await Maria.profilePictureUrl(num, 'image')
 } catch (err) {
-ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+ppuser = 'https://telegra.ph/file/84c72f254095f1cb7748f.jpg'
 }
 try {
 ppgroup = await Maria.profilePictureUrl(anu.id, 'image')
@@ -352,8 +356,8 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 	
 memb = metadata.participants.length
-MariaWlcm = await getBuffer(ppuser)
-MariaLft = await getBuffer(ppuser)
+MariaWlcm = await getBuffer('https://telegra.ph/file/84c72f254095f1cb7748f.jpg')
+MariaLft = await getBuffer('https://telegra.ph/file/5236c4d25117ec5a7a9ad.jpg')
                 if (anu.action == 'add') {
                 const Mariabuffer = await getBuffer(ppuser)
                 let MariaName = num
@@ -369,18 +373,51 @@ Mariabody = `│「 𝗛𝗶 👋 」
    │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
    │✑ ${Mariatime} ${Mariadate}
    └───────────────┈ ⳹`
-Maria.sendMessage(anu.id,
- { text: Mariabody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": MariaWlcm,
-"sourceUrl": `${link}`}}})
+
+let msgs = generateWAMessageFromContent(anu.id, {
+  viewOnceMessage: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: Mariabody
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: botname
+          }),
+          header: proto.Message.InteractiveMessage.Header.create({
+          hasMediaAttachment: false,
+          ...await prepareWAMessageMedia({ image: MariaWlcm }, { upload: Maria.waUploadToServer })
+          }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [{
+            "name": "quick_reply",
+              "buttonParamsJson": `{"display_text":"𝗦𝗖𝗥𝗜𝗣𝗧","id":"${prefix}sc"}`
+            },
+            {
+            "name": "quick_reply",
+              "buttonParamsJson": `{"display_text":"𝗚𝗥𝗢𝗨𝗣 𝗗𝗘𝗦𝗖","id":"${prefix}description"}`
+            }
+],
+          }),
+          contextInfo: {
+                  mentionedJid: [num], 
+                  forwardingScore: 999,
+                  isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                  newsletterJid: '120363213318329067@newsletter',
+                  newsletterName: ownername,
+                  serverMessageId: 143
+                }
+                }
+       })
+    }
+  }
+}, {})
+Maria.relayMessage(anu.id, msgs.message, {})
                 } else if (anu.action == 'remove') {
                 	const Mariabuffer = await getBuffer(ppuser)
                     const Mariatime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
@@ -397,18 +434,51 @@ Maria.sendMessage(anu.id,
    │✑  𝗧𝗶𝗺𝗲 : 
    │✑ ${Mariatime} ${Mariadate}
    └───────────────┈ ⳹`
-Maria.sendMessage(anu.id,
- { text: Mariabody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": MariaLft,
-"sourceUrl": `${link}`}}})
+let msgs = generateWAMessageFromContent(anu.id, {
+  viewOnceMessage: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: Mariabody
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: botname
+          }),
+          header: proto.Message.InteractiveMessage.Header.create({
+          hasMediaAttachment: false,
+          ...await prepareWAMessageMedia({ image: MariaLft }, { upload: Maria.waUploadToServer })
+          }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [{
+            "name": "quick_reply",
+              "buttonParamsJson": `{"display_text":"𝗦𝗖𝗥𝗜𝗣𝗧","id":"${prefix}sc"}`
+            },
+            {
+            "name": "quick_reply",
+              "buttonParamsJson": `{"display_text":"𝗠𝗘𝗡𝗨","id":"${prefix}menu"}`
+            }
+],
+          }),
+         
+          contextInfo: {
+                  mentionedJid: [num], 
+                  forwardingScore: 999,
+                  isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                  newsletterJid: '120363213314829067@newsletter',
+                  newsletterName: ownername,
+                  serverMessageId: 143
+                }
+                }
+       })
+    }
+  }
+}, {})
+Maria.relayMessage(anu.id, msgs.message, {})
 }
 }
 } catch (err) {
@@ -448,4 +518,3 @@ if (e.includes("Timed Out")) return
 if (e.includes("Value not found")) return
 console.log('Caught exception: ', err)
 })
-                      
