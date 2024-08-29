@@ -1,5 +1,5 @@
 {
-  "name": "TOGE-MD-V3",
+  "name": "TOGE-V3-AI",
   "version": "3.0.0",
   "description": "WhatsApp Bot Using Nodejs",
   "main": "index.js",
@@ -60,4 +60,4 @@
     "ytdl-core": "^4.11.5"
   }
   }
-      
+    
