@@ -21,7 +21,7 @@
     "@hapi/boom": "^10.0.1",
     "@queenanya/invite": "^6.0.0",
     "@whiskeysockets/baileys": "latest",
-    "ytdl-core": "npm:@distube/ytdl-core",
+    "ytdl-core": "^4.11.5",
     "aptoide-scraper": "^1.0.1",
     "awesome-phonenumber": "^5.9.0",
     "axios": "^1.4.0",
