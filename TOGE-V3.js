@@ -1401,33 +1401,48 @@ let repoInfo = await axios.get("https://api.github.com/repos/toge012345/TOGE-MD-
 }
         break;
         
-        
+        case 'sticker':
+case 'steal':
+case 's': {
+    // Ensure quoted message exists
+    if (!quoted) return reply(`Reply to Video/Image with Caption ${prefix + command}`);
+
+    // Check for media type
+    let mime = (quoted.msg || quoted).mimetype || '';
+    if (/image/.test(mime)) {
+        // Handle image media
+        try {
+            let media = await quoted.download();
+            let encmedia = await Maria.sendImageAsSticker(m.chat, media, m, {
+                author: global.stickername || '𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈'
+            });
+            await fs.unlinkSync(encmedia);
+        } catch (error) {
+            console.error('Error handling image sticker:', error);
+            reply('An error occurred while processing the image.');
+        }
+    } else if (/video/.test(mime)) {
+        // Handle video media
+        if ((quoted.msg || quoted).seconds > 10) return reply('Maximum video duration is 10 seconds!');
+        try {
+            let media = await quoted.download();
+            let encmedia = await Maria.sendVideoAsSticker(m.chat, media, m, {
+                packname: global.stickername || '𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑',
+            });
+            await fs.unlinkSync(encmedia);
+        } catch (error) {
+            console.error('Error handling video sticker:', error);
+            reply('An error occurred while processing the video.');
+        }
+    } else {
+        // Handle unsupported media types
+        return reply(`Reply to a Video/Image with Caption ${prefix + command}`);
+    }
+}
+break;
             
 
-                                case 'sticker':
-            case 'stiker':
-            case 's': {
-                if (!quoted) return reply(` Reply to Video/Image with Caption ${prefix + command} *TOGE-MD-V3*`)
-                if (/image/.test(mime)) {
-                    let media = await quoted.download()
-                    let encmedia = await Maria.sendImageAsSticker(m.chat, media, m, {
-                        
-                        author: global.stickername
-                    })
-                    await fs.unlinkSync(encmedia)
-                } else if (isVideo || /video/.test(mime)) {
-                    if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
-                    let media = await quoted.download()
-                    let encmedia = await Maria.sendVideoAsSticker(m.chat, media, m, {
-                        packname: global.stickername,
-                       
-                    })
-                    await fs.unlinkSync(encmedia)
-                } else {
-                    return reply(` 🍭𝑹𝒆𝒑𝒍𝒚 𝒕𝒐 𝑽𝒊𝒅𝒆𝒐/𝑰𝒎𝒂𝒈𝒆 𝑾𝒊𝒕𝒉 𝑪𝒂𝒑𝒕𝒊𝒐𝒏 ${prefix + command} *TOGE-MD-V3*`)
-                }
-            }
-            break;
+                                
             case 'smeme': {
                 let respond = `Send/Reply image/sticker with caption ${prefix + command} text1|text2`
                 if (!/image/.test(mime)) return reply(respond)
