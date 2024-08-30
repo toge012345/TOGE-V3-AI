@@ -1,6 +1,6 @@
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getAggregateVotesInPollMessage,getContentType, delay, decodeJid } = require('@whiskeysockets/baileys')
 const { SendGroupInviteMessageToUser } = require("@queenanya/invite")
-const config = require("./Config")
+const Config = require("./Config")
 const os = require('os')
 const fs = require('fs')
 const mathjs = require('mathjs')
