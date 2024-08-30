@@ -4577,6 +4577,28 @@ case 'welcome':
                }
             }
             break;
+case 'react': {
+        if (!m.isGroup) {
+            return reply(mess.group);
+        }
+        if (!isCreator) {
+            return reply(mess.owner);
+        }
+        if (args.length < 1) {
+            return reply('Please specify "on" or "off".');
+        }
+
+        if (args[0] === 'on') {
+            global.react = true;
+            reply(`${command} is enabled`);
+        } else if (args[0] === 'off') {
+            global.react = false;
+            reply(`${command} is disabled`);
+        } else {
+            reply('Invalid option. Use "on" or "off".');
+        }
+        break;
+    }		    
 
 
 case 'git': case 'gitclone':
@@ -4725,7 +4747,7 @@ case 'ping':
         key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' },
         message: {
             contactMessage: {
-                displayName: '𝚃𝙾𝙶𝙴 𝙼𝙳 𝚅𝟹',
+                displayName: '𝐓𝐎𝐆𝐄-𝐀𝐈 💨',
                 vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:TOGE-MD-V3 📱\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:owner number\nEND:VCARD`
             }
         }
@@ -5355,7 +5377,7 @@ case '': {
 case 'newfeatures':
     case 'features': {
         const newFeatures = `
-        🆕 *New Features in TOGE-MD-V3* 🆕
+        🆕 *New Features in TOGE-AI* 🆕
 
         ✅ *Accept All:* Automatically accepts all group invites.
         ✅ *Reject All:* Automatically rejects all group invites.
