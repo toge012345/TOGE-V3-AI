@@ -1733,7 +1733,7 @@ case 'chatgpt':
           reply(result);
         } catch (error) {
           console.error('Error fetching AI chatbot response:', error);
-          reply('An error occurred while fetching the Maria chatbot response. Please try again later.');
+          reply('An error occurred while fetching the chatbot response. Please try again later.');
         }
         break;
                
@@ -2231,9 +2231,9 @@ break;
 ┃✦» 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
 ┗━━━━━━━━━━━━━━━⊛
 
-> ☎️ *Cᴏɴᴛᴀᴄᴛ :* https://wa.me/${ownernumber}?text=Hello
+> ☎️ *Cᴏɴᴛᴀᴄᴛ :* https://wa.me/${ownernumber}?text=hello.owner
 > 💻 *Sᴏᴜʀᴄᴇ Cᴏᴅᴇ :* https://github.com/toge012345/TOGE-MD-V3
-> 💨 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@lawliet.kfx
+> 💨 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@kenzo3146
 > 🔮 *Public Group :* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo
 
 ┏━⍟ *GENERAL* ⍟
@@ -5267,11 +5267,11 @@ let tifxmsg = generateWAMessageFromContent(from, {
 
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp🚀 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 \",\"url\":\"https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z\",\"merchant_url\":\"https://www.google.com\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Youtube 🥵 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"𝗬𝗼𝘂𝘁𝘂𝗯𝗲 \",\"url\":\"https://youtube.com/@kenzo3146\",\"merchant_url\":\"https://www.google.com\"}"
               }
 
            ],
@@ -5365,7 +5365,7 @@ case 'newfeatures':
         ✅ *Unpin Chat:* Unpins a chat from the top.
         ✅ *Auto React:* Automatically reacts to messages with an emoji.
 
-        ✨ *© 2024* 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜 ✨ ✨
+        *© 2024* 𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜
         `;
         reply(newFeatures);
         }
