@@ -3,9 +3,6 @@
 
 [![TOGE-MD-V3](https://telegra.ph/file/f79e424ea155c1b25eaf5.jpg)](https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo)
 
-<p align="center">
-<a href="https://github.com/toge012345"><img title="Author" src="https://img.shields.io/badge/CREATOR-SALMAN"></a>
-
 </p>
    
 <p align="center">
