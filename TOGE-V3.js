@@ -1440,10 +1440,7 @@ case 's': {
     }
 }
 break;
-            
-
-                                
-            case 'smeme': {
+case 'smeme': {
                 let respond = `Send/Reply image/sticker with caption ${prefix + command} text1|text2`
                 if (!/image/.test(mime)) return reply(respond)
                 if (!text) return reply(respond)
@@ -2231,7 +2228,7 @@ break;
       const txt = `┏━⍟「 𝗧𝗢𝗚𝗘-𝗠𝗗-𝗩𝟯 」⊛
 ┃✦» *Hi 👋*
 ┃✦» *${m.pushName}*
-┃✦» *_How are you doing ?_*
+┃✦» *${Ayushytimewisher}*
 ┗━━━┃
 ┏━━━┃
 ┃✦» 𝕭𝖔𝖙:  ${botname}
