@@ -1,20 +1,20 @@
 ## 🌟 `Bot Intro and Features`
 
 
-[![TOGE-MD-V3](https://telegra.ph/file/f79e424ea155c1b25eaf5.jpg)](https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo)
+ [![TOGE-MD-V3](https://telegra.ph/file/f79e424ea155c1b25eaf5.jpg)](https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo)
 
 </p>
    
 <p align="center">
 
-  <a aria-label="Join our chats" href="https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo" target="_blank">
+<a aria-label="Join our chats" href="https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo" target="_blank">
     <img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
 
   
 <p align="center">
 
-  <a aria-label="Tutorial" href="https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z" target="_blank">
+<a aria-label="Tutorial" href="https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z" target="_blank">
     <img alt="youtube" src="https://img.shields.io/badge/tutorial-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   
 <div align="center">
