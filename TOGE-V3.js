@@ -1648,27 +1648,7 @@ break;
                 flipe = quere.split('').reverse().join('')
                 reply(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
             }
-            break;
-
-	    case 'addowner':
-                if (!isCreator) return reply(mess.owner)
-if (!args[0]) return reply(`Use ${prefix+command} number\nExample ${prefix+command} ${ownernumber}`)
-bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
-let ceknye = await Maria.onWhatsApp(bnnd)
-if (ceknye.length == 0) return reply(`Enter A Valid And Registered Number On WhatsApp!!!`)
-owner.push(bnnd)
-fs.writeFileSync('./lib/database/owner.json', JSON.stringify(owner))
-reply(`*_Number ${bnnd} Has Become An owner!!!_*`)
-break
-case 'delowner':
-                if (!isCreator) return reply(mess.owner)
-if (!args[0]) return reply(`Use ${prefix+command} number\nExample ${prefix+command} 919931122319`)
-ya = q.split("|")[0].replace(/[^0-9]/g, '')
-unp = owner.indexOf(ya)
-owner.splice(unp, 1)
-fs.writeFileSync('./lib/database/owner.json', JSON.stringify(owner))
-reply(`*_The Number Has been deleted from owner list by the owner!!!_*`)
-break		    
+            break;	    
             case 'afk':
                 if (!m.isGroup) return reply(mess.group)
                 if (isAfkOn) return reply("Already afk")
