@@ -1,6 +1,6 @@
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getAggregateVotesInPollMessage,getContentType, delay, decodeJid } = require('@whiskeysockets/baileys')
 const { SendGroupInviteMessageToUser } = require("@queenanya/invite")
-const Config = require("./config")
+const config = require("./config")
 const os = require('os')
 const fs = require('fs')
 const mathjs = require('mathjs')
@@ -1736,42 +1736,26 @@ await Maria.sendMessage(m.chat,{
 break;
 //////////////////////////Ai menu/////////////////////////
 
-case 'chatgpt': case 'gpt':{
-              if (!q) return reply(`Please provide a text query. Example: ${prefix + command} Hello, ChatGPT!`);
-            
-              const apiUrl1 = `https://api.guruapi.tech/ai/gpt4?username=${userid}&query=hii${prompt}`;
-              const apiUrl2 = `https://gurugpt.cyclic.app/gpt4?prompt=${encodeURIComponent(q)}&model=llama`;
-            
-              try {
-                
-                const response1 = await fetch(apiUrl1);
-                const responseData1 = await response1.json();
-            
-                if (response1.status === 200 && responseData1 && responseData1.status === true && responseData1.data) {
-                  
-                  const message = responseData1.data;
-                  const me = m.sender;
-                  await Maria.sendMessage(m.chat, { text: message, mentions: [me] }, { quoted: m });
-                } else {
-                  
-                  const response2 = await fetch(apiUrl2);
-                  const responseData2 = await response2.json();
-            
-                  if (response2.status === 200 && responseData2 && responseData2.data) {
-                    
-                    const message = responseData2.data;
-                    const me = m.sender;
-                    await Maria.sendMessage(m.chat, { text: message, mentions: [me] }, { quoted: m });
-                  } else {
-                    reply("Sorry, I couldn't fetch a response from both APIs at the moment.");
-                  }
-                }
-              } catch (error) {
-                console.error(error);
-                reply("An error occurred while fetching the response from both APIs.");
-              }
-            }
-              break;
+case 'chatgpt':
+      case 'gpt':
+      case 'chatbot':
+       const axios = require("axios");
+        if (!args[0]) {
+          return reply(`Please provide a message to chat with the Maria chatbot. Example: ${prefix}chat How are you Maria ?`);
+        }
+
+        const message = encodeURIComponent(args.join(' '));
+        const gptapi = `https://api.maher-zubair.tech/ai/chatgpt3?q=${message}`;
+
+        try {
+          const response = await axios.get(gptapi);
+          const result = response.data.result;
+          reply(result);
+        } catch (error) {
+          console.error('Error fetching AI chatbot response:', error);
+          reply('An error occurred while fetching the Maria chatbot response. Please try again later.');
+        }
+        break;
                
              case 'dalle': {
        
@@ -2460,7 +2444,7 @@ break;
           }),
                     header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image : fs.readFileSync(randomImage)}, { upload: Maria.waUploadToServer})), 
-            title: `𝙱𝚈 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸`,
+            title: txt,
             subtitle: themeemoji,
             hasMediaAttachment: false
           }),
