@@ -1780,9 +1780,9 @@ case 'chatgpt':
 
       case "info":
             Maria.sendMessage(from, { react: { text: "", key: m.key }}) 
-        let pifx = `❁ ════ ❃•💙 *TOGE-MD-V3* 💙•❃ ════ ❁\n\n\nA FULL FLEDGED MULTI DEVICE WHATSAPP BOT WITH COOL FEATURES\n\n\n❁ ═══ ❃•📕 *GROUP*📕•❃ ═══ ❁\n\n\n*_LINK:-* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\n\n\n❁ ══════ ❃•📄 *CHANEL* 📄•❃ ══════ ❁\n\n\n*_LINK:-* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\n\n\n❁ ═════ ❃•📑 *GITHUB* 📑•❃ ═════ ❁\n\n\n*_LINK:-* https://github.com/toge012345/TOGE-MD-V3\n\n\n❁ ═══ ❃•✍🏻 *TOGE-MD-V2* ✍🏻•❃ ═══ ❁\n\n\n*_LINK:-* https://github.com/toge012345/TOGE-MD-V2`
+        let pifx = `✦ ───『 𝙸𝚗𝚏𝚘 𝚍𝚎𝚟 』─── ⚝\n\n\n◈𝐆𝐈𝐓𝐇𝐔𝐁:https://github.com/toge012345\n\n◈𝐘𝐎𝐔𝐓𝐔𝐁𝐄:https://youtube.com/@kenzo3146?si=FQ1JoEiF0T7ve-6W\n\n◈𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐆𝐑𝐎𝐔𝐏:https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo\n\n◈𝐆𝐑𝐎𝐔𝐏 𝐅𝐎𝐑 𝐍𝐔𝐌𝐁𝐄𝐑𝐒:https://chat.whatsapp.com/JoSaOEx3ill1JE0a19ATJr\n\n\n𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜 ✨`
 
-Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/942c4dd39bd40933222d8.mp4" }, caption: pifx, gifPlayback: true }, { quoted: m });
+Maria.sendMessage(m.chat, { image: { url: "https://telegra.ph/file/182542601d9dd6ae8bced.jpg" }, caption: pifx, gifPlayback: true }, { quoted: m });
         break;
 
 
@@ -2432,7 +2432,7 @@ break;
             buttons: [
               {
                name: "quick_reply",
-               buttonParamsJson: `{"display_text":"𝗢𝗪𝗡𝗘𝗥 ✨","id":"${prefix}owner"}`
+               buttonParamsJson: `{"display_text":"𝗢𝗪𝗡𝗘𝗥 💫","id":"${prefix}owner"}`
                 }
               ],
             }) ,
