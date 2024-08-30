@@ -21,6 +21,7 @@
     "@hapi/boom": "^10.0.1",
     "@queenanya/invite": "^6.0.0",
     "@whiskeysockets/baileys": "latest",
+    "ytdl-core": "npm:ytdl-core@latest",
     "aptoide-scraper": "^1.0.1",
     "awesome-phonenumber": "^5.9.0",
     "axios": "^1.4.0",
@@ -57,7 +58,6 @@
     "word-definition": "^2.1.6",
     "youtube-yts": "^2.0.0",
     "youtubedl-core": "^4.11.5",
-    "@ytdl-core": "latest",
   }
   }
     
