@@ -2,7 +2,7 @@
 </div>
   <a href="https://toge-v3-web-app.onrender.com/">
         <p align="center">
-   <img alt="toge012345" height="300" src="https://telegra.ph/file/6eda746b47a0be0999b40.jpg">
+   <img alt="toge012345" height="300" src="https://telegra.ph/file/f79e424ea155c1b25eaf5.jpg">
               </p>
   </a>
 </p>
@@ -127,7 +127,7 @@ jobs:
  ## `Main Dev` 
 <a href="https://github.com/toge012345"><img src="https://github.com/toge012345.png" width="250" height="250" alt="toge012345"/></a>
   
-`TOGE-MD-V3 - By toge012345`
+`TOGE-MD-V3.`
 
 ##
 - This bot is not made by `WhatsApp Inc.` So misusing the bot might `ban` your `WhatsApp account!`(Though your WhatsApp account can be unbanned only once.)
