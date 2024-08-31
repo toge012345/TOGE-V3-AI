@@ -1,6 +1,6 @@
 ## 🌟 `Bot Intro and Features`
 </div>
-  <a href="https://toge-md-web.onrender.com">
+  <a href="https://session-web.onrender.com/">
         <p align="center">
    <img alt="toge01245" height="300" src="https://telegra.ph/file/83f41a017edaf21646b3f.jpg">
               </p>
@@ -37,7 +37,7 @@
 
 2. Upload the creds.json that you received to the session folder.
    <br>
-<a href='https://toge-v3-web-app.onrender.com/' target="_blank"><img alt='PAIR CODE' src='https://img.shields.io/badge/session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://session-web.onrender.com/' target="_blank"><img alt='PAIR CODE' src='https://img.shields.io/badge/session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 ### DEPLOY TO WORKFLOWS
 
