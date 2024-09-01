@@ -124,7 +124,7 @@ jobs:
     <br>
 <a href='https://replit.com/github/toge012345/TOGE-MD-V3' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-IMPORT-black?style=for-the-badge&logo=replit'/></a>
 ##
-4. # Termux/Ssh/Ubuntu
+### Termux/Ssh/Ubuntu
 
 <details>
   <summary>Please click here for more assist.</summary>
@@ -159,7 +159,7 @@ npm start
     ***Extract the downloaded `.zip` file.***
 
   Step: 3
-    ***Edit `Config.js` file (enter ownernumber, session id etc...).***
+    ***Edit `lib/database/owner.json` file (enter ownernumber).***
     
   Step: 4
     ***Go to your `termux/Ssh/Ubuntu` terminal and navigate to your folder path.***
