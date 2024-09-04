@@ -409,32 +409,7 @@ if (isCreator) return reply(bvl)
 Maria.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} Has been kicked because of sending link in this group`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
 } else {
 }
-
-
- const verification = async () => {
-  try {
-    const group = await Maria.groupMetadata('120363292399307214@g.us');
-    const participants = group.participants.map(i => i.id);
-    if (participants.includes(botNumber) && participants.includes(ownernumber + "@s.whatsapp.net")) {
-      console.log(chalk.blueBright('=>Verify:'), chalk.green('Available in the Group ✅️'));
-return true;
-    } else {
-      console.log(chalk.blueBright('=>Verify:'), chalk.green('Not available  in the Group❌️'));
-return false;
-    }
-  } catch (error) {
-    return false;
-  }
-};
-
-const verificationBot = await verification();
-
-if (!verificationBot) {
-m.reply(`⛩️ *❯─「 TOGE-MD-V3 」─❮* ⛩️\n
-𝙹𝚘𝚒𝚗 𝚘𝚞𝚛 𝚜𝚞𝚙𝚙𝚘𝚛𝚝 𝚐𝚛𝚘𝚞𝚙 𝚝𝚘 𝚒𝚗𝚝𝚎𝚛𝚊𝚌𝚝 𝚠𝚒𝚝𝚑 𝚃𝙾𝙶𝙴-𝙼𝙳-𝚅𝟹 🌟 \n\n https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo`);
-return;
-}
-
+ 
 //============= [LIST RESPONCE CHECKING START ]================
         if(m.mtype === "interactiveResponseMessage"){
             console.log("interactiveResponseMessage Detected!")   
