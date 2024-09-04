@@ -32,7 +32,7 @@ const { download } = require('aptoide-scraper');
 const { fetchBuffer, buffergif } = require("./lib/lib/myfunc2")
 
 /////log
- global.modnumber = '6283833304947' 
+ global.modnumber = '24105114159' 
 //Media/database
 let ntilinkall =JSON.parse(fs.readFileSync('./lib/database/antilink.json'));
 // let autoblck =JSON.parse(fs.readFileSync('./lib/database/autoblock.json'));
@@ -2245,7 +2245,7 @@ break;
 ┗━━━━━━━━━━━━━━━⊛
 
 > ☎️ *Cᴏɴᴛᴀᴄᴛ :* https://wa.me/${ownernumber}?text=hello.owner
-> 💻 *Sᴏᴜʀᴄᴇ Cᴏᴅᴇ :* https://github.com/toge012345/TOGE-MD-V3
+> 💻 *Sᴏᴜʀᴄᴇ Cᴏᴅᴇ :* https://github.com/toge012345/TOGE-V3-AI
 > 💨 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@kenzo3146
 > 🔮 *Public Group :* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo
 
@@ -3600,8 +3600,31 @@ await Maria.relayMessage(msg.key.remoteJid, msg.message, {
 break
 
 
-case 'list': {
-  const alivem = ` Hey darling! 🌟 Please select the menu buttons here.`
+case 'list': case 'listmenu': {
+  const alivem = ` ┏━⍟「 𝗧𝗢𝗚𝗘-𝗠𝗗-𝗩𝟯 」⊛
+┃✦» *Hi 👋*
+┃✦» *${m.pushName}*
+┃✦» *${Ayushytimewisher}*
+┗━━━┃
+┏━━━┃
+┃✦» 𝕭𝖔𝖙:  ${botname}
+┃✦» 𝕻𝖗𝖊𝖋𝖎𝖝:  *${prefix}*
+┃✦» 𝕯𝖆𝖙𝖊: ${Ayuxxdate}
+┃✦» 𝕿𝖎𝖒𝖊:  ${xtime}
+┃✦» 𝕺𝖜𝖓𝖊𝖗: ${ownername}
+┃✦» 𝖁𝖊𝖗𝖘𝖎𝖔𝖓: ${mver}
+┃✦» 𝕳𝖔𝖘𝖙: ${os.hostname()}
+┃✦» 𝕻𝖑𝖆𝖙𝖊𝖋𝖔𝖗𝖒: ${os.platform()} 
+┃✦» 𝕽𝖚𝖓𝖙𝖎𝖒𝖊: ${runtime(process.uptime())}
+┃✦» 𝕿𝖔𝖙𝖆𝖑𝖈𝖒𝖉: ${mariafeature()}
+┗━━━━━━━━━━━━━━━⊛
+
+> ☎️ *Cᴏɴᴛᴀᴄᴛ :* https://wa.me/${ownernumber}?text=hello.owner
+> 💻 *Sᴏᴜʀᴄᴇ Cᴏᴅᴇ :* https://github.com/toge012345/TOGE-V3-AI
+> 💨 *YᴏᴜTᴜʙᴇ :* https://youtube.com/@kenzo3146
+> 🔮 *Public Group :* https://chat.whatsapp.com/JQ4s2pJuBReE7YL9wKJPHo
+
+🌟 *_Please select the menu buttons here._*`
 let liistmsg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
@@ -4008,7 +4031,7 @@ break;
 {
     if (!isGroup) return reply('This feature is only for groups');
     if (!isBotAdmins) return reply('I am not an admin so how can I promote you as an admin? ');
-    if (sender !== '6283833304947@s.whatsapp.net') return reply('Ahh, only my Darling toge can access this command...');
+    if (sender !== '24105114159@s.whatsapp.net') return reply('Ahh, only my Darling toge can access this command...');
     // if (!isBotGroupAdmins) return reply('Bot Not Admin...');
     Maria.groupParticipantsUpdate(from, [sender], 'promote');
     reply('Mission successfully');
@@ -4019,7 +4042,7 @@ case 'dme':
 {
     if (!isGroup) return reply('This feature is only for groups');
     if (!isBotAdmins) return reply('Bro, just chill, I am also not an admin ');
-    if (sender !== '6283833304947@s.whatsapp.net') return reply('Ahh, only my owner can use this command ');
+    if (sender !== '24105114159@s.whatsapp.net') return reply('Ahh, only my owner can use this command ');
     // if (!isBotGroupAdmins) return reply('Bot Not Admin...');
     Maria.groupParticipantsUpdate(from, [sender], 'demote');
     reply('*_You had a good run but you are no longer an admin. Embrace the freedom! _*');
@@ -4615,7 +4638,7 @@ case 'react': {
 
 
 case 'git': case 'gitclone':
-if (!text) return reply(`🧩Where is the link?\nExample :\n${prefix}${command} https://github.com/toge012345/TOGE-MD-V3 `)
+if (!text) return reply(`🧩Where is the link?\nExample :\n${prefix}${command} https://github.com/toge012345/TOGE-V3-AI `)
 if (!isUrl(text) && !text.includes('github.com')) return reply(`Link invalid!!`)
     let repo = text.split('/');
     let url = `https://api.github.com/repos/${repo[3]}/${repo[4]}/zipball`
@@ -4793,9 +4816,9 @@ case 'ping':
   case 'mods':
 case 'developer':
 case 'dev':
-    const devmod = `𝚑𝚒 𝚖𝚢 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚒𝚜 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚎𝚛𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎𝚒𝚛 𝚗𝚞𝚖𝚋𝚎𝚛𝚜 @6283833304947`;
+    const devmod = `𝚑𝚒 𝚖𝚢 𝚍𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛 𝚒𝚜 𝚃𝙾𝙶𝙴 𝙸𝙽𝚄𝙼𝙰𝙺𝙸 𝚑𝚎𝚛𝚎 𝚊𝚛𝚎 𝚝𝚑𝚎𝚒𝚛 𝚗𝚞𝚖𝚋𝚎𝚛𝚜 @24105114159`;
 
-    Maria.sendMessage(m.chat, { text: devmod, mentions: ["6283833304947@s.whatsapp.net", "6283833304947@s.whatsapp.net", "6283833304947@s.whatsapp.net","6283833304947@s.whatsapp.net"] }, { quoted: m });
+    Maria.sendMessage(m.chat, { text: devmod, mentions: ["24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net", "24105114159@s.whatsapp.net","24105114159@s.whatsapp.net"] }, { quoted: m });
     break;
 
 
