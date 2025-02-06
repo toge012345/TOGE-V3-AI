@@ -31,6 +31,76 @@ let afk = require("./lib/lib/afk");
 const { download } = require('aptoide-scraper');
 const { fetchBuffer, buffergif } = require("./lib/lib/myfunc2")
 
+/////new commands
+const fs = require('fs');
+const path = require('path');
+
+// Dossier où les sessions sont stockées
+const SESSION_DIR = './lib/sessions';
+
+// Créer le dossier des sessions s'il n'existe pas
+if (!fs.existsSync(SESSION_DIR)) {
+    fs.mkdirSync(SESSION_DIR, { recursive: true });
+}
+
+// Commande pour charger une session par ID
+case 'loadsession': {
+    if (!isCreator) return reply("🔒 Cette commande est réservée au propriétaire.");
+    if (!args[0]) return reply("❌ Veuillez fournir un ID de session.");
+
+    const sessionId = args[0];
+    const sessionFile = path.join(SESSION_DIR, `${sessionId}.json`);
+
+    if (!fs.existsSync(sessionFile)) {
+        return reply(`❌ Aucune session trouvée avec l'ID : ${sessionId}`);
+    }
+
+    try {
+        // Charger la session
+        const sessionData = JSON.parse(fs.readFileSync(sessionFile));
+        Maria.ev.emit('creds.update', sessionData); // Mettre à jour les crédentiels
+        reply(`✅ Session chargée avec succès : ${sessionId}`);
+    } catch (e) {
+        reply(`❌ Erreur lors du chargement de la session : ${e.message}`);
+    }
+    break;
+}
+
+// Commande pour sauvegarder une session avec un ID
+case 'savesession': {
+    if (!isCreator) return reply("🔒 Cette commande est réservée au propriétaire.");
+    if (!args[0]) return reply("❌ Veuillez fournir un ID de session.");
+
+    const sessionId = args[0];
+    const sessionFile = path.join(SESSION_DIR, `${sessionId}.json`);
+
+    try {
+        // Sauvegarder la session actuelle
+        const sessionData = Maria.authState.creds;
+        fs.writeFileSync(sessionFile, JSON.stringify(sessionData, null, 2));
+        reply(`✅ Session sauvegardée avec succès : ${sessionId}`);
+    } catch (e) {
+        reply(`❌ Erreur lors de la sauvegarde de la session : ${e.message}`);
+    }
+    break;
+}
+
+// Commande pour lister toutes les sessions disponibles
+case 'listsessions': {
+    if (!isCreator) return reply("🔒 Cette commande est réservée au propriétaire.");
+
+    const sessions = fs.readdirSync(SESSION_DIR)
+        .filter(file => file.endsWith('.json'))
+        .map(file => file.replace('.json', ''));
+
+    if (sessions.length === 0) {
+        return reply("❌ Aucune session trouvée.");
+    }
+
+    reply(`📂 Sessions disponibles :\n${sessions.join('\n')}`);
+    break;
+}
+
 /////log
  global.modnumber = '24105114159' 
 //Media/database
@@ -171,8 +241,20 @@ const getRandomImage = (directory) => {
 };
 
 const imageDirectory = './lib/Assets/logo';
-  const randomImage = getRandomImage(imageDirectory);
+  const randomImage = getRandomImage(imageDirectory)
+	    
+//session id
+const sessionId = process.env.SESSION_ID || 'default_session';
+const sessionFile = path.join(SESSION_DIR, `${sessionId}.json`);
 
+if (fs.existsSync(sessionFile)) {
+    const sessionData = JSON.parse(fs.readFileSync(sessionFile));
+    Maria.ev.emit('creds.update', sessionData);
+    console.log(`✅ Session chargée : ${sessionId}`);
+} else {
+    console.log(`❌ Aucune session trouvée pour l'ID : ${sessionId}`);
+}
+	    
 //group chat msg by toge
 const reply = (teks) => {
 Maria.sendMessage(m.chat,
