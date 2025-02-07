@@ -1,40 +1,53 @@
 const fs = require('fs');
 const chalk = require('chalk');
+const path = require('path');
+
+// Dossier où les sessions sont stockées
+global.SESSION_DIR = './lib/sessions';
+
+// Créer le dossier des sessions s'il n'existe pas
+if (!fs.existsSync(global.SESSION_DIR)) {
+    fs.mkdirSync(global.SESSION_DIR, { recursive: true });
+}
+
+// ID de session (peut être défini via une variable d'environnement)
+global.SESSION_ID = process.env.SESSION_ID || 'default_session'; // Utilisez une session par défaut si aucune n'est spécifiée
+
+// Chemin du fichier de session
+global.SESSION_FILE = path.join(global.SESSION_DIR, `${global.SESSION_ID}.json`);
 
 //contact details
-global.ownernumber = [ process.env.OWNER_NUMBER || "24105114159"],
-global.ownername = process.env.OWNER_NAME || "𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈",
-global.ytname = "YT: kenzo3146"
-global.socialm = "GitHub: toge012345"
-global.location = "Africa"
+global.ownernumber = [process.env.OWNER_NUMBER || "24105114159"];
+global.ownername = process.env.OWNER_NAME || "𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈";
+global.ytname = "YT: kenzo3146";
+global.socialm = "GitHub: toge012345";
+global.location = "Africa";
 
-global.botname = process.env.BOTNAME || "𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑",//name of the bot
+global.botname = process.env.BOTNAME || "𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑"; //name of the bot
 
 //sticker details
-global.stickername = process.env.STICKER || "𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑",
-global.packname = 'Sticker By'
-global.author = process.env.AUTHOR || "𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈",
+global.stickername = process.env.STICKER || "𝐓𝐎𝐆𝐄-𝐌𝐃-𝐕𝟑";
+global.packname = 'Sticker By';
+global.author = process.env.AUTHOR || "𓆩𝐓𝐎𝐆𝐄𓆪 ✇ ◤✞𝐈𝐍𝐔𝐌𝐀𝐊𝐈";
 //console view/theme
-global.themeemoji = '𓅃'
-global.wm = "𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜 ✨"
+global.themeemoji = '𓅃';
+global.wm = "𝐓𝐎𝐆𝐄_𝐁𝐎𝐓 𝐈𝐧𝐜 ✨";
 
 //theme link
-global.link = 'https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z'
+global.link = 'https://whatsapp.com/channel/0029VaiuD4s4IBhI0fzbv40Z';
 
 //custom prefix
-global.prefa = process.env.PREFIX || ".",
+global.prefa = process.env.PREFIX || ".";
 
 //false=disable and true=enable
-global.welcome = process.env.WELCOME || "false", //auto welcome
-global.autoRecording = false //auto recording
-global.autoTyping = false //auto typing
-global.autorecordtype = false //auto typing + recording
-global.autoread = false //auto read messages
-global.autobio = false //auto update bio
-global.anti212 = true //auto block +212
-global.autoread_status = false //auto view status/story
-
-
+global.welcome = process.env.WELCOME || "false"; //auto welcome
+global.autoRecording = false; //auto recording
+global.autoTyping = false; //auto typing
+global.autorecordtype = false; //auto typing + recording
+global.autoread = false; //auto read messages
+global.autobio = false; //auto update bio
+global.anti212 = true; //auto block +212
+global.autoread_status = false; //auto view status/story
 
 //reply messages
 global.mess = {
@@ -45,24 +58,26 @@ global.mess = {
     owner: '💫 *hello senpai, this feature is reserved for the owner only*',
     group: '💫 *sensei, this feature is exclusively for groups*',
     private: '💫 *hello senpai, this feature is exclusively for private chats*',
-    wait: '💫 *hello senpai, in process...* ',    
+    wait: '💫 *hello senpai, in process...* ',
     error: '💫 *hello senpai, there seems to be an error!*',
-}
+};
+
 module.exports = {
-ownernumber: global.ownernumber,
-ownername: global.ownername,
-AUTO_BLOCK : process.env.PM_BLOCKER,
-STATUS_SAVER : "true",
-ANTI_BOT:"false",
-}
+    ownernumber: global.ownernumber,
+    ownername: global.ownername,
+    AUTO_BLOCK: process.env.PM_BLOCKER,
+    STATUS_SAVER: "true",
+    ANTI_BOT: "false",
+    SESSION_ID: global.SESSION_ID, // Exporter l'ID de session
+    SESSION_FILE: global.SESSION_FILE, // Exporter le chemin du fichier de session
+};
 
-global.thumb = fs.readFileSync('./lib/Assets/thumb.jpg')
+global.thumb = fs.readFileSync('./lib/Assets/thumb.jpg');
 
-let file = require.resolve(__filename)
+let file = require.resolve(__filename);
 fs.watchFile(file, () => {
-    fs.unwatchFile(file)
-    console.log(chalk.redBright(`Update'${__filename}'`))
-    delete require.cache[file]
-    require(file)
-})
-    
+    fs.unwatchFile(file);
+    console.log(chalk.redBright(`Update '${__filename}'`));
+    delete require.cache[file];
+    require(file);
+});
